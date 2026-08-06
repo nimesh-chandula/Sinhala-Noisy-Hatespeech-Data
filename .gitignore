@@ -1,0 +1,25 @@
+# Virtual environment
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Raw downloads (large, re-fetchable; see data/PROVENANCE.json for source + hashes)
+data/raw/
+
+# Generated eval reports (regenerate with `python eval/harness.py`)
+eval/report.json
+eval/report.md
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Local tool state
+.claude/
+
+# Working notes / dev-loop files (not part of the published project)
+CLAUDE.md
+KICKOFF_PROMPT.md
+LOG.md

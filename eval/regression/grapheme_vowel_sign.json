@@ -1,0 +1,9 @@
+{
+  "id": "grapheme_vowel_sign",
+  "kind": "graphemes",
+  "description": "'කිය' (ki-ya) must cluster as ['කි','ය'] — base consonant ක plus vowel sign ි form ONE cluster (කි), not two; ය is its own cluster.",
+  "text": "කිය",
+  "expected_clusters": ["කි", "ය"],
+  "assert_lossless": true,
+  "assert_no_combining_start": true
+}

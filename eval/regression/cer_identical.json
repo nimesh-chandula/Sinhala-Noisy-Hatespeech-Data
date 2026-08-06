@@ -1,0 +1,9 @@
+{
+  "id": "cer_identical",
+  "kind": "cer",
+  "description": "CER of a string against itself must be exactly 0.",
+  "hypothesis": "kotta",
+  "reference": "kotta",
+  "expected_cer": 0.0,
+  "tolerance": 1e-9
+}

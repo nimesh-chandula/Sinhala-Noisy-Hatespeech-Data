@@ -1,0 +1,9 @@
+{
+  "id": "grapheme_zwj_conjunct",
+  "kind": "graphemes",
+  "description": "'ප්‍රියා' (priyaa): the virama+ZWJ that marks the ප්‍ර conjunct must stay bound to its own base consonant ('ප්‍' as one cluster), never split off alone or left as the start of the next cluster. (Per Unicode UAX#29 GB9, the default extended-grapheme-cluster boundary falls right after the ZWJ, before the following base ර — that boundary is correct and expected; what must never happen is a cluster starting WITH the combining virama/ZWJ, which would mean a syllable got torn apart mid-attachment.)",
+  "text": "ප්‍රියා",
+  "expected_clusters": ["ප්‍", "රි", "යා"],
+  "assert_lossless": true,
+  "assert_no_combining_start": true
+}

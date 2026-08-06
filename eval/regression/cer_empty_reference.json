@@ -1,0 +1,9 @@
+{
+  "id": "cer_empty_reference",
+  "kind": "cer",
+  "description": "An empty reference must yield CER 0.0, not a division-by-zero crash.",
+  "hypothesis": "abc",
+  "reference": "",
+  "expected_cer": 0.0,
+  "tolerance": 1e-9
+}

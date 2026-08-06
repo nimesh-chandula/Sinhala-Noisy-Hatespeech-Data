@@ -1,0 +1,52 @@
+{
+  "retrieved_at": "2026-07-31T06:08:34.674973+00:00",
+  "seed": 1337,
+  "sources": {
+    "sold_train": {
+      "url": "https://huggingface.co/datasets/sinhala-nlp/SOLD/resolve/main/SOLD_train.tsv",
+      "sha256": "d2659246313fbcb3dcc9106e47c1caf1806f2946bb77d1f36839d2a0785ae8ad",
+      "size_bytes": 4717681,
+      "n_rows": 7500,
+      "off_rate": 0.4235
+    },
+    "sold_test": {
+      "url": "https://huggingface.co/datasets/sinhala-nlp/SOLD/resolve/main/SOLD_test.tsv",
+      "sha256": "e2df6b690da12a704bcb49164d73958ca14c603d977ad0e7826ba071eff32a40",
+      "size_bytes": 1598725,
+      "n_rows": 2500,
+      "off_rate": 0.406
+    },
+    "swabhasha_sentences": {
+      "url": "https://huggingface.co/datasets/deshanksuman/SwaBhasha_Transliteration_Sinhala/resolve/main/test.csv",
+      "sha256": "96a5d3309d9816fec66e4abaf06f0ef515d77f3dfccd425440ced2bdef690bae",
+      "size_bytes": 3294011,
+      "n_raw_rows": 12123,
+      "n_valid_pairs": 11929
+    },
+    "swabhasha_words": {
+      "url": "https://huggingface.co/datasets/deshanksuman/Swabhasha_RomanizedSinhala_Dataset/resolve/main/train.csv",
+      "sha256": "ac78cdd5865f5aa1e27023af2f7a2bd90350a63218c126115c53f600ba8aee15",
+      "size_bytes": 292743112,
+      "n_raw_rows": 7122355,
+      "n_distinct_valid_words": 450207
+    }
+  },
+  "derived": {
+    "gold_sentences": {
+      "path": "data/gold/gold_sentences.jsonl",
+      "n": 400
+    },
+    "reference_singlish": {
+      "path": "data/reference/reference_singlish.txt",
+      "n": 11525
+    },
+    "gold_words": {
+      "path": "data/gold/gold_words.jsonl",
+      "n": 2000
+    },
+    "heldout_words": {
+      "path": "data/gold/heldout_words.txt",
+      "n": 2000
+    }
+  }
+}

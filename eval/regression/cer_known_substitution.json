@@ -1,0 +1,9 @@
+{
+  "id": "cer_known_substitution",
+  "kind": "cer",
+  "description": "Hand-checked edit distance: 'kota' is 'kotta' with one 't' dropped (1 deletion), reference length 5 clusters -> CER = 1/5 = 0.2.",
+  "hypothesis": "kota",
+  "reference": "kotta",
+  "expected_cer": 0.2,
+  "tolerance": 1e-9
+}

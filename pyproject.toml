@@ -1,0 +1,15 @@
+[project]
+name = "sinhala-noise-starter"
+version = "0.1.0"
+description = "Noised-variant generator for the SOLD Sinhala hate-speech dataset."
+requires-python = ">=3.11"
+license = { text = "MIT" }
+readme = "README.md"
+authors = [{ name = "meshmax", email = "nimeshcha123@gmail.com" }]
+
+[tool.setuptools.packages.find]
+include = ["src*", "eval*"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

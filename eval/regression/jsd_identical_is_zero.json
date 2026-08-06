@@ -1,0 +1,9 @@
+{
+  "id": "jsd_identical_is_zero",
+  "kind": "jsd",
+  "description": "Jensen-Shannon divergence of a character-3-gram distribution against itself must be exactly 0.",
+  "texts_a": ["mama giya", "oya kohomada", "eyaa hondai"],
+  "texts_b": ["mama giya", "oya kohomada", "eyaa hondai"],
+  "expected_jsd": 0.0,
+  "tolerance": 1e-9
+}

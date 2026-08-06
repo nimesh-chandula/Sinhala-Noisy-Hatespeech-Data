@@ -1,0 +1,17 @@
+{
+  "id": "schema_rejects_empty_noisy_text",
+  "kind": "schema",
+  "description": "src.schema.Row.validate() must raise on a whitespace-only noisy_text — a noiser bug that emits blank output must be caught here, not silently written to data/outputs/.",
+  "row": {
+    "source_id": "123",
+    "split": "train",
+    "condition": "clean",
+    "severity": "none",
+    "original_text": "hello",
+    "noisy_text": "   ",
+    "label": 0,
+    "realised_noise_rate": 0.0,
+    "generator_version": "phase0-stub"
+  },
+  "expect": "raises"
+}

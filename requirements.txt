@@ -1,0 +1,28 @@
+# Core
+regex                # grapheme-cluster handling via \X (NOT the stdlib re)
+requests             # HTTP fetch for SOLD (HF) and Swa-Bhasha (HF mirrors)
+
+# Metrics / utils
+python-Levenshtein   # fast CER; pure-Python fallback lives in eval/gold_cer.py
+numpy
+pandas
+scikit-learn         # tiny char-ngram discriminator: real vs generated (optional, Phase 2+)
+
+# Phase 1 (romanizer bake-off)
+aksharamukha         # real Sinhala support incl. a 'RomanColloquial' scheme; verified
+                     # its only network call is gated on src=='Tamil' (never triggered here)
+
+# `singlish` (asanka9/singlish, MIT) is NOT pip-installed: its PyPI sdist is broken
+# (setup.py references a README.md the tarball doesn't ship, and the tarball
+# erroneously bundles the author's entire local venv/ — 3.5MB of unrelated
+# packages). Its actual module is ~90 lines; vendored directly with attribution
+# at src/romanizers/_vendor/singlish_sinhala_to_singlish.py instead. See
+# src/romanizers/indic.py docstring for how it's wrapped.
+
+# indic-transliteration -- REJECTED: verified zero Sinhala support (no file in its
+#   source mentions "sinhala"; supported Brahmic scripts are Devanagari/Bengali/
+#   Telugu/Kannada/Gurmukhi/Tamil only). See src/romanizers/indic.py docstring.
+
+# --- Optional alternative SOLD loader — NOT installed in Phase 0 ---
+# datasets>=2.0        # load SOLD from HuggingFace via `datasets`; we fetch TSVs
+#                       # directly over HTTP instead (fewer deps, same determinism)

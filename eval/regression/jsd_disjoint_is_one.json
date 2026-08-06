@@ -1,0 +1,9 @@
+{
+  "id": "jsd_disjoint_is_one",
+  "kind": "jsd",
+  "description": "Two distributions built from completely non-overlapping alphabets (no shared 3-grams at all) must hit the maximum JSD of 1.0 (log2-based, range [0,1]).",
+  "texts_a": ["xxxxxxxx xxxxxxx xxxxxx", "xxxxxxxx xxxxxxx xxxxxx", "xxxxxxxx xxxxxxx xxxxxx", "xxxxxxxx xxxxxxx xxxxxx", "xxxxxxxx xxxxxxx xxxxxx"],
+  "texts_b": ["qqqqqqqq qqqqqqq qqqqqq", "qqqqqqqq qqqqqqq qqqqqq", "qqqqqqqq qqqqqqq qqqqqq", "qqqqqqqq qqqqqqq qqqqqq", "qqqqqqqq qqqqqqq qqqqqq"],
+  "expected_jsd": 1.0,
+  "tolerance": 1e-9
+}
