@@ -37,6 +37,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from src.graphemes import contains_sinhala  # noqa: E402
+
 REFERENCE_DIR = REPO_ROOT / "data" / "reference"
 REFERENCE_PATH = REFERENCE_DIR / "reference_singlish.txt"
 
@@ -107,26 +109,58 @@ SEVERITIES = ("light", "heavy")
 
 
 def load_generated_by_condition() -> dict[str, list[str]]:
-    """{condition_name: [generated_singlish, ...]} read from data/outputs/.
+    """{condition_severity: [generated_text, ...]} read from data/outputs/.
 
-    Pools both splits' noisy_text together per condition/severity (e.g.
-    "transliteration_heavy") — this is a read-only aggregate text statistic,
-    not a data-provenance operation, so it doesn't violate the rule that
-    train/test rows themselves are never merged or cross-written on disk.
-    Empty until a condition's output files exist (Phase 2+).
+    Conditions are DISCOVERED from whatever *.jsonl files are present under
+    data/outputs/{train,test}/ (keyed by filename stem, e.g.
+    "transliteration_heavy", "codemix_light") — not hardcoded to
+    "transliteration" — so a new noise vector's output is picked up the
+    moment it's generated, with no change needed here. Pools both splits'
+    noisy_text together per condition/severity — this is a read-only
+    aggregate text statistic, not a data-provenance operation, so it
+    doesn't violate the rule that train/test rows themselves are never
+    merged or cross-written on disk. Empty until any condition's output
+    files exist (Phase 2+).
     """
     out: dict[str, list[str]] = {}
-    for severity in SEVERITIES:
-        texts = []
-        for split in SPLITS:
-            path = OUTPUTS_DIR / split / f"transliteration_{severity}.jsonl"
-            if not path.exists():
-                continue
+    for split in SPLITS:
+        split_dir = OUTPUTS_DIR / split
+        if not split_dir.exists():
+            continue
+        for path in split_dir.glob("*.jsonl"):
+            condition_severity = path.stem
             with path.open(encoding="utf-8") as f:
-                texts.extend(json.loads(line)["noisy_text"] for line in f if line.strip())
-        if texts:
-            out[f"transliteration_{severity}"] = texts
+                texts = [json.loads(line)["noisy_text"] for line in f if line.strip()]
+            if texts:
+                out.setdefault(condition_severity, []).extend(texts)
     return out
+
+
+def _is_latin_only(texts: list[str], sample_size: int = 200) -> bool:
+    """True if none of a (sampled) condition's generated texts contain
+    Sinhala codepoints. Char-3-gram JSD against the reference corpus (which
+    is entirely Latin-script) only measures REALISM when both sides use the
+    same script — comparing Sinhala-containing text (e.g. codemix, which
+    deliberately keeps most of a post in Sinhala script — see
+    src/noisers/codemix.py) would measure script mismatch, not unrealistic
+    language use, and would be a meaningless number in the report."""
+    return not any(contains_sinhala(t) for t in texts[:sample_size])
+
+
+def realism_not_applicable() -> dict[str, str]:
+    """{condition_severity: reason} for every generated condition EXCLUDED
+    from run_realism() because its output isn't Latin-only — reported
+    explicitly (not just silently dropped) so a reader always knows why a
+    condition has no realism_jsd number."""
+    return {
+        cond: (
+            "generated text contains Sinhala script; char-3-gram JSD "
+            "against the pure-Latin reference corpus would measure script "
+            "mismatch, not realism"
+        )
+        for cond, texts in load_generated_by_condition().items()
+        if not _is_latin_only(texts)
+    }
 
 
 def baseline_jsd(reference: list[str], seed: int = 1337) -> float | None:
@@ -161,4 +195,5 @@ def run_realism() -> dict[str, float]:
     return {
         cond: jensen_shannon(_dist([normalize_v2(t) for t in texts]), ref_dist)
         for cond, texts in gen.items()
+        if _is_latin_only(texts)
     }

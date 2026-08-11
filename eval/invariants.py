@@ -235,14 +235,19 @@ def check_no_empty_outputs() -> bool:
 
 
 def check_determinism() -> bool:
-    """Same input + same backend => identical output, run twice. Checked
-    against every registered Phase 1 backend (no RNG in any of them yet).
-    Phase 3+ noisers must additionally be checked with a fixed seed once
-    they exist."""
+    """Same input + same backend/noiser => identical output, run twice.
+    Checked against every registered Phase 1 backend (no RNG in any of
+    them), AND against every implemented Phase 2+ noiser at a fixed seed
+    (per this check's own long-standing TODO) — a noiser's determinism
+    can't be assumed the way a backend's can, since it consumes a
+    random.Random(seed) internally."""
     words = _load_jsonl(GOLD_DIR / "gold_words.jsonl")
     if not words:
         _notes["determinism"] = "vacuous: no sample to check determinism over yet"
         return True
+
+    bad = []
+
     from eval.gold_cer import discover_backends
 
     backends = discover_backends()
@@ -250,25 +255,88 @@ def check_determinism() -> bool:
         _notes["determinism"] = "vacuous: no romanizer backend available yet"
         return True
     sample = [row["sinhala"] for row in words[:50]]
-    bad = []
     for name, fn in backends.items():
         run1 = [fn(s) for s in sample]
         run2 = [fn(s) for s in sample]
         if run1 != run2:
             bad.append(name)
+
+    import importlib
+
+    noiser_sample = [row["sinhala"] for row in words[:20]]
+    for noiser_name in ("transliteration", "codemix"):
+        try:
+            module = importlib.import_module(f"src.noisers.{noiser_name}")
+        except ImportError:
+            continue
+        for severity in getattr(module, "TARGET_NOISE_RATE", {}):
+            run1 = [module.apply(t, severity, seed=1337) for t in noiser_sample]
+            run2 = [module.apply(t, severity, seed=1337) for t in noiser_sample]
+            if run1 != run2:
+                bad.append(f"{noiser_name}/{severity}")
+
     ok = not bad
     if not ok:
-        _notes["determinism"] = f"non-deterministic backends: {bad}"
+        _notes["determinism"] = f"non-deterministic backends/noisers: {bad}"
     return ok
 
 
 def check_grapheme_integrity() -> bool:
-    """No noiser/romanizer output may split a Sinhala grapheme cluster
-    mid-syllable. Phase 0: nothing yet transforms Sinhala into fragments that
-    could exhibit this bug (the stub only maps whole clusters), so this
-    stays vacuous until Phase 2+ noisers exist."""
-    _notes["grapheme_integrity"] = "vacuous: no Phase 2+ noiser output to check yet"
-    return True
+    """No noiser output may split a Sinhala grapheme cluster mid-syllable —
+    checked over every row's noisy_text in data/outputs/{train,test}/*.jsonl,
+    via is_lossless() (a clean cluster round-trip) and
+    starts_with_combining() (a cluster beginning with a combining mark or
+    ZWJ/ZWNJ is definitionally a mid-syllable split). noisy_text won't
+    always contain Sinhala (transliteration output is pure Latin) — when it
+    doesn't, there's simply nothing to fail on; when it does (codemix
+    deliberately keeps most of a post in Sinhala script), it must stay
+    grapheme-safe exactly like the original.
+
+    A combining-starting cluster already present verbatim in original_text
+    is INHERITED, not introduced by noising, and must not fail this check —
+    SOLD's own raw scraped text has 4 posts with a stray leading ZWJ/ZWNJ
+    (an artifact of however the tweets were originally captured, wholly
+    unrelated to this pipeline), and every noiser passes non-Sinhala runs
+    through unchanged, so that leading character propagates into noisy_text
+    verbatim. Faithfully preserving it is correct — the same principle
+    already established for a source typo in Phase 2's GATE A review (see
+    LOG.md: fixing it would mean silently editing SOLD's original text,
+    which is out of scope for a noising pipeline). Only a NEW
+    combining-start cluster not present in original_text is a real failure."""
+    from src.graphemes import clusters, starts_with_combining
+
+    outputs_dir = REPO_ROOT / "data" / "outputs"
+    checked = 0
+    bad = []
+    for split in ("train", "test"):
+        split_dir = outputs_dir / split
+        if not split_dir.exists():
+            continue
+        for path in split_dir.glob("*.jsonl"):
+            for row in _load_jsonl(path):
+                text = row.get("noisy_text", "")
+                if not text:
+                    continue
+                checked += 1
+                if not is_lossless(text):
+                    bad.append((path.name, row.get("source_id"), "not lossless"))
+                    continue
+                bad_clusters = [c for c in clusters(text) if starts_with_combining(c)]
+                if not bad_clusters:
+                    continue
+                original = row.get("original_text", "")
+                inherited = {c for c in clusters(original) if starts_with_combining(c)} if original else set()
+                new_bad = [c for c in bad_clusters if c not in inherited]
+                if new_bad:
+                    bad.append((path.name, row.get("source_id"), f"{len(new_bad)} new combining-start clusters"))
+
+    if checked == 0:
+        _notes["grapheme_integrity"] = "vacuous: data/outputs/ has no generated files yet"
+        return True
+    ok = not bad
+    if not ok:
+        _notes["grapheme_integrity"] = f"{len(bad)}/{checked} rows failed grapheme integrity, e.g. {bad[:5]}"
+    return ok
 
 
 def check_split_isolation() -> bool:

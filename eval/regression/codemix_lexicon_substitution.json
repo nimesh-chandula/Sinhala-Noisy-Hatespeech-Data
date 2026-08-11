@@ -1,0 +1,11 @@
+{
+  "id": "codemix_lexicon_substitution",
+  "kind": "noiser",
+  "noiser": "codemix",
+  "description": "'ආණ්ඩුව' (government) is a lexicon entry (data/lexicon/codemix_lexicon.jsonl) with substitution 'government එක' — at heavy severity with a seed that draws below the attempt probability, it must be substituted, the Sinhala 'එක' particle must stay in Sinhala script (only the content word switches to English), and the untouched second word must pass through unchanged.",
+  "text": "ආණ්ඩුව අසාධාරණයි",
+  "severity": "heavy",
+  "seed": 7,
+  "expected_text": "government එක අසාධාරණයි",
+  "expected_rate": 0.5
+}

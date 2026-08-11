@@ -29,7 +29,7 @@ if str(EVAL_DIR) not in sys.path:
 
 from invariants import run_invariants, invariant_notes          # noqa: E402
 from gold_cer import run_gold_cer, run_gold_cer_detail, cer      # noqa: E402
-from realism import run_realism, load_reference, baseline_jsd, NORMALIZE_VERSION  # noqa: E402
+from realism import run_realism, realism_not_applicable, load_reference, baseline_jsd, NORMALIZE_VERSION  # noqa: E402
 from src.schema import Row                                       # noqa: E402
 
 REPORT_JSON = EVAL_DIR / "report.json"
@@ -98,11 +98,37 @@ def _run_schema_case(case: dict) -> tuple[bool, str]:
     return ok, f"raised={raised}, expected={case['expect']}"
 
 
+def _run_noiser_case(case: dict) -> tuple[bool, str]:
+    """Frozen hand-checked noiser output: apply(text, severity, seed) must
+    equal an exact expected string, AND running it twice must be identical
+    (determinism, per CLAUDE.md golden rule 4) — the same discipline as
+    check_determinism in invariants.py, but pinned to specific known input."""
+    import importlib
+
+    module = importlib.import_module(f"src.noisers.{case['noiser']}")
+    got_text, got_rate = module.apply(case["text"], case["severity"], case["seed"])
+    replay_text, _ = module.apply(case["text"], case["severity"], case["seed"])
+    reasons = []
+    ok = True
+    if got_text != case["expected_text"]:
+        ok = False
+        reasons.append(f"text={got_text!r} != expected={case['expected_text']!r}")
+    if got_text != replay_text:
+        ok = False
+        reasons.append("non-deterministic: two calls with the same (text, severity, seed) differed")
+    tol = case.get("tolerance", 1e-9)
+    if abs(got_rate - case["expected_rate"]) > tol:
+        ok = False
+        reasons.append(f"rate={got_rate} != expected={case['expected_rate']}")
+    return ok, "; ".join(reasons) if reasons else "ok"
+
+
 _CASE_RUNNERS = {
     "cer": _run_cer_case,
     "jsd": _run_jsd_case,
     "graphemes": _run_graphemes_case,
     "schema": _run_schema_case,
+    "noiser": _run_noiser_case,
 }
 
 # {condition: {severity: target_rate}} for every noiser that's actually
@@ -113,6 +139,12 @@ try:
     from src.noisers import transliteration as _transliteration_noiser
 
     _NOISER_TARGETS["transliteration"] = _transliteration_noiser.TARGET_NOISE_RATE
+except ImportError:
+    pass
+try:
+    from src.noisers import codemix as _codemix_noiser
+
+    _NOISER_TARGETS["codemix"] = _codemix_noiser.TARGET_NOISE_RATE
 except ImportError:
     pass
 
@@ -192,6 +224,7 @@ def main() -> None:
     gold_cer_detail = run_gold_cer_detail()
     gold_cer_primary = run_gold_cer()
     realism = run_realism()
+    realism_na = realism_not_applicable()
     regression = load_regression_cases()
     noise_rate_error = compute_noise_rate_error()
 
@@ -204,6 +237,7 @@ def main() -> None:
         "gold_cer": gold_cer_primary if gold_cer_primary else NO_CANDIDATE,
         "gold_cer_detail": gold_cer_detail if gold_cer_detail else NO_CANDIDATE,
         "realism_jsd": realism if realism else NO_CANDIDATE,
+        "realism_not_applicable": realism_na if realism_na else {},
         "realism_baseline_jsd": realism_floor if realism_floor is not None else NOT_APPLICABLE,
         "regression": regression if regression else NO_CANDIDATE,
         "noise_rate_error": noise_rate_error if noise_rate_error else NOT_APPLICABLE,
@@ -258,6 +292,8 @@ def _write_md(report: dict) -> None:
     else:
         for k, v in report["realism_jsd"].items():
             lines.append(f"- `{k}`: {round(v, 4)}")
+    for k, reason in report.get("realism_not_applicable", {}).items():
+        lines.append(f"- `{k}`: not_applicable — _{reason}_")
     lines.append("")
 
     lines.append("## regression")

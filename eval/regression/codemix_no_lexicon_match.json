@@ -1,0 +1,11 @@
+{
+  "id": "codemix_no_lexicon_match",
+  "kind": "noiser",
+  "noiser": "codemix",
+  "description": "None of these words are in the code-mixing lexicon (they're pronouns/particles/abstract nouns explicitly excluded — see data/lexicon/codemix_rejected_candidates.md), so even at heavy severity nothing may be substituted and realised_noise_rate must be exactly 0.0, not just close to it.",
+  "text": "මට කිසි දෙයක් අවශ්‍ය නෑ",
+  "severity": "heavy",
+  "seed": 7,
+  "expected_text": "මට කිසි දෙයක් අවශ්‍ය නෑ",
+  "expected_rate": 0.0
+}
