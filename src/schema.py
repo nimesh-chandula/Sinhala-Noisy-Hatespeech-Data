@@ -28,6 +28,14 @@ class Row:
     label: int              # inherited from source (0/1)
     realised_noise_rate: float   # actual fraction of tokens altered
     generator_version: str  # bump on every rule change
+    n_substitutions: int = 0     # count of distinct word/unit TYPES actually
+                                  # substituted (not occurrences) — 0 for every
+                                  # noiser that doesn't do type-level forced
+                                  # selection; codemix v2 is the first to set
+                                  # this. Additive field with a default so
+                                  # every existing call site (which all pass
+                                  # keyword args, never positional) keeps
+                                  # working unchanged.
 
     def validate(self) -> None:
         assert self.condition in CONDITIONS, self.condition

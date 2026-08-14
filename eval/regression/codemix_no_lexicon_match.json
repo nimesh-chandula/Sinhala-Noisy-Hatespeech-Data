@@ -2,10 +2,10 @@
   "id": "codemix_no_lexicon_match",
   "kind": "noiser",
   "noiser": "codemix",
-  "description": "None of these words are in the code-mixing lexicon (they're pronouns/particles/abstract nouns explicitly excluded — see data/lexicon/codemix_rejected_candidates.md), so even at heavy severity nothing may be substituted and realised_noise_rate must be exactly 0.0, not just close to it.",
-  "text": "මට කිසි දෙයක් අවශ්‍ය නෑ",
+  "description": "A real SOLD train post (source_id 1340570821111078915) with zero word-bank-eligible words — all its content is pronouns/verb-forms/particles the candidate filter excludes. Coverage jumped to 94% under v2 (up from v1's 21.8%), so the OLD zero-match regression text ('මට කිසි දෙයක් අවශ්‍ය නෑ') no longer qualifies — 'දෙයක්' and 'අවශ්‍ය' both got translated into the new word bank. This proves selection never invents a substitution where nothing is genuinely eligible, even at heavy severity, even though that's now the ~6% minority case rather than the ~80%+ majority case v1 left untouched.",
+  "text": "@USER  @USER නොදකින් තෝපි දෙන්නා",
   "severity": "heavy",
   "seed": 7,
-  "expected_text": "මට කිසි දෙයක් අවශ්‍ය නෑ",
+  "expected_text": "@USER  @USER නොදකින් තෝපි දෙන්නා",
   "expected_rate": 0.0
 }

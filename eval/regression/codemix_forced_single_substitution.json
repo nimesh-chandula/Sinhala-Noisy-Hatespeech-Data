@@ -1,0 +1,11 @@
+{
+  "id": "codemix_forced_single_substitution",
+  "kind": "noiser",
+  "noiser": "codemix",
+  "description": "Replaces codemix_attempt_probability_gate.json, whose whole premise (a probabilistic per-word 'attempt draw' that can leave an eligible lexicon match unsubstituted) no longer exists in v2 — see LOG.md / the plan for the v1->v2 redesign. 'ආණ්ඩුව' is the ONLY eligible word in this sentence (word bank entry, source=native, codemix_plausible=true). At light severity (k=1) it MUST always be substituted, for every seed, unconditionally — proving selection is now forced, not a probability-gated draw.",
+  "text": "ආණ්ඩුව අසාධාරණයි",
+  "severity": "light",
+  "seed": 0,
+  "expected_text": "government එක අසාධාරණයි",
+  "expected_rate": 0.5
+}

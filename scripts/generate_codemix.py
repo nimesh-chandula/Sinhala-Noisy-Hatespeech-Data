@@ -30,7 +30,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from src.noisers.codemix import apply, GENERATOR_VERSION  # noqa: E402
+from src.noisers.codemix import apply, _apply, GENERATOR_VERSION  # noqa: E402
 from src.schema import Row  # noqa: E402
 
 SOLD_DIR = REPO_ROOT / "data" / "sold"
@@ -65,9 +65,11 @@ def generate_split_severity(split: str, severity: str, rows: list[dict]) -> dict
     out_path = out_dir / f"codemix_{severity}.jsonl"
 
     rates = []
+    n_substituted_rows = 0
     with out_path.open("w", encoding="utf-8") as f:
         for row in rows:
-            noisy_text, realised_rate = apply(row["text"], severity, seed=_row_seed(row["post_id"]))
+            noisy_text, realised_rate, substituted_types = _apply(
+                row["text"], severity, seed=_row_seed(row["post_id"]))
             out_row = Row(
                 source_id=row["post_id"],
                 split=split,
@@ -78,14 +80,19 @@ def generate_split_severity(split: str, severity: str, rows: list[dict]) -> dict
                 label=row["label"],
                 realised_noise_rate=realised_rate,
                 generator_version=GENERATOR_VERSION,
+                n_substitutions=len(substituted_types),
             )
             out_row.validate()
             f.write(json.dumps(out_row.to_dict(), ensure_ascii=False) + "\n")
             rates.append(realised_rate)
+            n_substituted_rows += bool(substituted_types)
 
     avg_rate = sum(rates) / len(rates) if rates else 0.0
-    log(f"{split}/{severity}: {len(rows)} rows -> {out_path} (mean realised_noise_rate={avg_rate:.3f})")
-    return {"n_rows": len(rows), "mean_realised_noise_rate": avg_rate}
+    pct_touched = n_substituted_rows / len(rows) if rows else 0.0
+    log(f"{split}/{severity}: {len(rows)} rows -> {out_path} "
+        f"(mean realised_noise_rate={avg_rate:.3f}, {n_substituted_rows}/{len(rows)} rows touched = {pct_touched:.1%})")
+    return {"n_rows": len(rows), "mean_realised_noise_rate": avg_rate,
+            "rows_touched": n_substituted_rows, "pct_touched": pct_touched}
 
 
 def run_demo(path: Path) -> None:

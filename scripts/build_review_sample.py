@@ -17,10 +17,21 @@ Writes, per condition:
 
 Run:  python scripts/build_review_sample.py --condition transliteration
       python scripts/build_review_sample.py --condition codemix
+      python scripts/build_review_sample.py --condition codemix --only-changed
 
 (The original transliteration sample predates the --condition flag and is
 kept at its original path, data/outputs/human_review_sample.{jsonl,md},
 for continuity with GATE A's already-reviewed sample — see LOG.md.)
+
+--only-changed restricts the draw to rows where noisy_text != original_text
+(added for codemix v2's forced-selection redesign — see the plan / LOG.md).
+Without it, a condition where most rows are untouched draws a sample that's
+mostly unchanged text and reviews nothing; codemix v1 was ~86% untouched, so
+this flag existed as an unmet need well before v2 made it worth adding.
+Deliberately defined as a straight text comparison rather than reading
+n_substitutions or realised_noise_rate — it then works unchanged for every
+condition (transliteration, misspell, abbreviate, ...) regardless of
+whether that noiser populates n_substitutions at all.
 """
 
 from __future__ import annotations
@@ -45,12 +56,17 @@ def _load_jsonl(path: Path) -> list[dict]:
         return [json.loads(line) for line in f if line.strip()]
 
 
-def build_sample(condition: str) -> list[dict]:
+def build_sample(condition: str, only_changed: bool = False) -> list[dict]:
     rng = random.Random(SEED)
     sample: list[dict] = []
     for severity in ("light", "heavy"):
         rows = _load_jsonl(OUTPUTS_DIR / "train" / f"{condition}_{severity}.jsonl")
-        sample.extend(rng.sample(rows, N_PER_SEVERITY))
+        pool = [r for r in rows if r["noisy_text"] != r["original_text"]] if only_changed else rows
+        if only_changed and len(pool) < N_PER_SEVERITY:
+            print(f"[build_review_sample] WARNING: only {len(pool)} changed rows available "
+                  f"for {condition}/{severity} (< {N_PER_SEVERITY} requested) — sampling all of them")
+        n = min(N_PER_SEVERITY, len(pool))
+        sample.extend(rng.sample(pool, n))
     return sample
 
 
@@ -85,17 +101,22 @@ def main() -> None:
         "--condition", default="transliteration",
         help="condition to sample (must have data/outputs/train/{condition}_{light,heavy}.jsonl)",
     )
+    parser.add_argument(
+        "--only-changed", action="store_true",
+        help="restrict the draw to rows where noisy_text != original_text",
+    )
     args = parser.parse_args()
 
-    sample = build_sample(args.condition)
-    if args.condition == "transliteration":
+    sample = build_sample(args.condition, only_changed=args.only_changed)
+    if args.condition == "transliteration" and not args.only_changed:
         # original GATE A paths, kept stable for continuity with the
         # already-reviewed sample referenced throughout LOG.md
         jsonl_path = OUTPUTS_DIR / "human_review_sample.jsonl"
         md_path = OUTPUTS_DIR / "human_review_sample.md"
     else:
-        jsonl_path = OUTPUTS_DIR / f"human_review_sample_{args.condition}.jsonl"
-        md_path = OUTPUTS_DIR / f"human_review_sample_{args.condition}.md"
+        suffix = "_changed_only" if args.only_changed else ""
+        jsonl_path = OUTPUTS_DIR / f"human_review_sample_{args.condition}{suffix}.jsonl"
+        md_path = OUTPUTS_DIR / f"human_review_sample_{args.condition}{suffix}.md"
     write_sample(args.condition, sample, jsonl_path, md_path)
 
 

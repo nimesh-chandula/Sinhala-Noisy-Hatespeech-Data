@@ -631,6 +631,16 @@ had access to (§2 covers every data source used; none are bilingual
 dictionaries), so the entire phase amounts to building one from scratch,
 defensibly.
 
+This section covers two designs. **v1** (§9.1-9.2) built a small,
+rigorously-attested 210-entry lexicon and applied it probabilistically,
+word by word. It worked, but coverage was low enough (1.74% of Sinhala
+tokens) that most generated rows came out untouched. **v2** (§9.3
+onward) replaced the selection mechanism entirely — forced per-post
+substitution against a much larger, LLM-translated word bank, closed out
+by three rounds of human review covering every entry that actually fired.
+v1's lexicon and its "eka"-construction finding (§9.5) both survive
+unchanged inside v2, at the highest precedence in the merged word bank.
+
 ### 9.1 Measuring the natural rate before building anything
 
 `scripts/measure_codemix_rate.py`, run before any lexicon or noiser code,
@@ -709,35 +719,103 @@ religious/ethnic identity term is a categorically higher-risk kind of
 substitution in a hate-speech-labeled corpus than a neutral institutional
 noun, regardless of frequency.
 
-### 9.3 Severity design under a coverage ceiling
+**This 210-entry lexicon was not discarded when v2 replaced the selection
+mechanism (§9.3-9.4) — it persists unchanged, at the highest
+machine-verification precedence, inside the final 4,118-entry word bank.**
 
-Coverage is a hard ceiling on achievable `realised_noise_rate`: at
-`attempt_probability=1.0`, the maximum possible mean realised rate equals
-the coverage fraction exactly. With coverage at 1.74%, mirroring
-transliteration's targets (0.10/0.20) would clip `attempt_probability` to
-1.0 for both severities, collapsing light and heavy to the same ~1.74%
-ceiling — indistinguishable output, defeating the purpose of two severity
-levels. Resolved with targets set BELOW the ceiling with real separation:
-`TARGET_NOISE_RATE = {"light": 0.010, "heavy": 0.016}`
-(`attempt_probability` ≈57%/≈92%) — both small in absolute terms, because
-the measured real phenomenon (§9.1) is small, but heavy substitutes ~60%
-more words than light, a genuine, visible difference in generated output.
+### 9.3 v1's ceiling, and why it was replaced
 
-### 9.4 Grammatical form: the "eka" construction
+v1 applied the 210-entry lexicon probabilistically: each Sinhala word with
+a lexicon entry was substituted independently with probability
+`target_rate / coverage`. This produced a real measured problem — because
+coverage (1.74% of tokens) is a hard ceiling on achievable
+`realised_noise_rate`, and because substitution was decided per word
+rather than per post, **85.8%/79.7% of light/heavy generated rows came
+back byte-identical to their source**. Only 21.8% of posts contained any
+word the lexicon could match at all; even among those, the probabilistic
+draw skipped most of them. A "code-mixing noiser" that leaves 4 in 5 rows
+untouched fails the benchmarking purpose of the dataset, independent of
+how carefully each individual substitution was verified.
 
-Since Sinhala case-marks via suffixes on the noun stem, a naive
-word-for-word substitution destroys case information (e.g. "ගීතයට" (to
-the song) naively → bare "song" loses the dative). §9.1's eka-construction
-evidence directly informed the fix: substitution keys are EXACT INFLECTED
-SURFACE FORMS observed in SOLD (e.g. "ආණ්ඩුව", "ආණ්ඩුවේ", "ආණ්ඩුවට" are
-three separate lexicon entries, not one lemma with runtime inflection),
-each mapped to `"<english> එක<case-suffix>"` with the Sinhala particle
-kept in Sinhala script — matching exactly how real posts in SOLD already
-do this (§9.1). The noiser therefore never performs morphological
-analysis, only verified surface substitution, the same design as the
-Phase 2 word-variant lexicon (§6.2).
+The fix required abandoning probabilistic selection, which in turn
+required a much larger lexicon than 210 hand-verifiable entries — hence
+v2 below.
 
-### 9.5 A real bug this phase's new invariant found
+### 9.4 v2 architecture: forced per-post selection, on-demand translation
+
+**Selection.** For every post, `src/noisers/codemix.py::_apply()` forces
+exactly 1 (light) or 2 (heavy) distinct word-bank-eligible word TYPES to
+be substituted, capped at however many are actually present (never an
+error to have fewer). Selection prefers word bank entries flagged
+`codemix_plausible=true`, falling back to the full eligible pool only when
+nothing plausible is available — trading some naturalness for coverage
+rather than leaving a post untouched. `sorted()` before
+`random.Random(seed).sample(...)` is load-bearing: Python randomizes `str`
+hashing per process, so sampling from an unsorted set would silently
+differ across separate runs of the same `(text, severity, seed)` — a
+failure mode `check_determinism`'s single-process comparison cannot catch,
+verified separately here by running generation twice in two OS processes
+and diffing byte-for-byte.
+
+**The word bank this needed** (`data/lexicon/codemix_wordbank.jsonl`) is
+far larger than 210 entries: **4,118 entries** in the final build,
+assembled by `scripts/build_codemix_wordbank.py` from four sources in
+precedence order (each overrides the last on a conflict):
+1. The original 210-entry v1 lexicon (§9.2) — unchanged, `source: native`/`loanword`.
+2. 291 additional entries from an earlier, never-merged candidate-review
+   pass (`data/lexicon/codemix_candidates_review.csv`).
+3. **3,699 machine translations**, produced once, offline, via the
+   Anthropic Message Batches API (`claude-opus-5`) —
+   `scripts/select_codemix_targets.py` picked the top-4-by-frequency
+   candidate words per post (7,969 unique types, reaching 9,934/10,000
+   posts), `scripts/translate_codemix_worklist.py` translated the 7,638 of
+   those not already covered by sources 1-2 (3,939 rejected by the model
+   itself as untranslatable — mostly verb inflections and discourse
+   particles the candidate filter didn't catch), each carrying a
+   `codemix_plausible` judgment.
+4. **992 human review corrections** (§9.7) — always highest precedence.
+
+**Why this stays deterministic despite an LLM translating most of the
+bank**: translation happens exactly once, offline, before generation ever
+runs, and its output is frozen to disk. `_apply()` is a pure function of
+`(text, severity, seed, the frozen word bank file)` — no network call
+happens at generation time. `GENERATOR_VERSION` is stamped with the word
+bank's own SHA-256 (first 8 hex chars) specifically so a bank rebuild is
+always visible per output row even though the bank itself isn't part of
+the noiser's own function signature.
+
+**`TARGET_NOISE_RATE` changed roles.** Under forced selection, the
+realised rate is a *consequence* of post length (more Sinhala words in a
+post → a smaller fraction altered by the same fixed substitution count),
+not something the noiser tunes toward — so it's demoted from a design
+target to a drift tripwire: measured once from a completed generation run
+and hard-coded, so `eval/harness.py`'s `noise_rate_error` can catch
+unintended drift (a corrupted word bank, a corpus change) without implying
+a natural-rate claim. The actual design spec (1/2 substitutions, capped at
+availability, prefer-plausible) is checked directly by a new invariant,
+`check_codemix_substitution_spec`, which independently re-derives the
+eligible/plausible pool from the frozen bank for every persisted row
+(rather than re-calling `_apply()` and trivially agreeing with itself).
+
+### 9.5 Grammatical form: the "eka" construction
+
+Unchanged from v1, and still central to v2. Since Sinhala case-marks via
+suffixes on the noun stem, a naive word-for-word substitution destroys
+case information (e.g. "ගීතයට" (to the song) naively → bare "song" loses
+the dative). §9.1's eka-construction evidence directly informed the
+fix, applied identically whether an entry is hand-verified or
+LLM-translated: substitution keys are EXACT INFLECTED SURFACE FORMS
+observed in SOLD (e.g. "ආණ්ඩුව", "ආණ්ඩුවේ", "ආණ්ඩුවට" are three separate
+word bank entries, not one lemma with runtime inflection), each mapped to
+`"<english> එක<case-suffix>"` with the Sinhala particle kept in Sinhala
+script. The noiser never performs morphological analysis, only verified
+surface substitution — the same design as the Phase 2 word-variant lexicon
+(§6.2). This pattern turned out to be the single most common thing the
+LLM translator got wrong (dropping the particle entirely, e.g. `තීරණයක්`
+→ bare `decision` instead of `decision එකක්`), and so is also the
+dominant category in the human review corrections (§9.7).
+
+### 9.6 A real bug this phase's new invariant found
 
 Implementing `eval/invariants.py::check_grapheme_integrity` for real
 (previously a vacuous stub despite Phase 2 output already existing)
@@ -750,7 +828,48 @@ present in the source counts as a real failure — the same "faithfully
 preserve the source, don't silently edit it" principle already applied to
 the `බොරැ` typo case in the Phase 2 GATE A fixes (§8).
 
-### 9.6 Realism scoring: not applicable to standalone codemix
+### 9.7 Three-round human review
+
+`scripts/build_codemix_usage_report.py` produces
+`data/lexicon/codemix_usage_review.{csv,md}` — not the full 4,200-entry
+pre-correction word bank, but only the entries that **actually fired**
+during generation (3,136 of them, originally), impact-ordered by how many
+posts they touched. This inverted the review burden from v1-era planning
+(a 12,000-row blind candidate list) to a bounded, priority-ordered list
+where the top ~100 entries cover the large majority of all substitutions
+in the corpus.
+
+The user reviewed the entire document by hand across three rounds
+(2026-08-13 to 2026-08-14, covering editor lines 1-3135 — every entry),
+returning corrections in a Sinhala-English-mixed shorthand (e.g. "503
+should be joke ekak", "488 removed due to ambiguity"). Two mechanics
+worth recording:
+- **The review's line numbers were raw editor line numbers, not the
+  document's own `## N.` entry numbers** — the two schemes diverge because
+  each entry spans a variable number of lines. Caught in round 1 by
+  cross-checking distinctive corrections against actual word bank content
+  before trusting either numbering (e.g. entry #827's `ආප්ප` was
+  mistranslated "app" when it means the food "hoppers" — the user's
+  correction "827. hoppers" only makes sense under the entry-number
+  reading).
+- **Corrections were durably recorded**, not applied as one-off edits:
+  `data/lexicon/codemix_review_corrections.jsonl` is an append-only log
+  (`{sinhala, action: "correct"|"remove", english, note}`) loaded by
+  `build_codemix_wordbank.py` as the highest-precedence source, so the
+  same rebuild mechanism served all three rounds with no new tooling.
+
+**Final tally: 992 corrections — 910 corrected, 82 removed** — dropping
+the word bank from 4,200 to **4,118 entries**. The dominant pattern
+(~80% of corrections) was the missing eka-construction particle (§9.5);
+the remainder split between genuine mistranslation fixes (e.g. `මැරියන්`
+translated as the name "Marian" should be "die"; `කන්කජුලේසන්`
+translated "concentration" is actually a phonetic rendering of
+"congratulations") and removals of genuinely ambiguous words (e.g. `ඉඩ` =
+space/room/chance/opportunity, no single safe target) or ones the LLM's
+literal translation was wrong for with no clean fix (a handful of slurs
+and near-slurs that slipped past the automated filter).
+
+### 9.8 Realism scoring: not applicable to standalone codemix
 
 Codemix output mixes Sinhala and Latin script; the reference corpus is
 pure Latin. A char-3-gram JSD between them would measure script mismatch,
@@ -762,35 +881,53 @@ condition whose output isn't Latin-only, reporting it as
 or computing a misleading number. Realism scoring becomes meaningful again
 for the Phase 4 compound condition (codemix → transliteration, per the
 revised `NOISER_ORDER` in `src/pipeline.py` — codemix runs first, since it
-needs Sinhala input to match its lexicon against, and transliteration
+needs Sinhala input to match its word bank against, and transliteration
 would leave nothing for it to match if run first).
 
-### 9.7 Final results (Phase 3)
+### 9.9 Final results (Phase 3, v2)
 
-From `python eval/harness.py` after `scripts/generate_codemix.py`:
+From `python eval/harness.py --strict` after the final (post-review)
+`scripts/build_codemix_wordbank.py` → `scripts/generate_codemix.py`:
 
 | Metric | Value | Target | Met? |
 |---|---|---|---|
-| `noise_rate_error` — codemix_light | 0.0004 | < 0.05 | ✅ |
-| `noise_rate_error` — codemix_heavy | 0.0003 | < 0.05 | ✅ |
-| `gold_cer`, `realism_jsd` (transliteration) | unchanged | — | ✅ (Phase 3 didn't perturb Phase 2) |
-| Invariants (13 checks, 2 newly real) | all pass | all pass | ✅ |
-| Regression suite (11 cases, 3 new) | all pass | all pass | ✅ |
+| Rows touched (train, light/heavy) | 93.2% / 93.2% | — | up from v1's 14.2%/20.3% |
+| Rows touched (test, light/heavy) | 93.9% / 93.9% | — | up from v1's 14.2%/20.4% |
+| Mean `realised_noise_rate` — light (train/test) | 0.0886 / 0.0876 | tripwire only | ✅ |
+| Mean `realised_noise_rate` — heavy (train/test) | 0.1321 / 0.1306 | tripwire only | ✅ |
+| `noise_rate_error` — codemix_light | 0.00005 | < 0.05 | ✅ |
+| `noise_rate_error` — codemix_heavy | 0.00001 | < 0.05 | ✅ |
+| `gold_cer`, `realism_jsd` (transliteration) | unchanged | — | ✅ (Phase 3 didn't perturb Phase 1-2) |
+| Invariants (14 checks, incl. new `check_codemix_substitution_spec`) | all pass | all pass | ✅ |
+| Regression suite (13 cases) | all pass | all pass | ✅ |
 
-Measured realised rates land almost exactly on target: light
-0.0103/0.0100 (train/test), heavy 0.0166/0.0155. Real generated output
-spot-checked for naturalness — substitutions preserve Sinhala case-marking
-("birthday එක දවසේ", "call නෑ message නෑ", "news එක telecast
-කරනවනම්"), and multiple loanword substitutions compose correctly within
-one sentence ("ලිනක්ස්"→linux and "ඩිපාට්මන්ට්"→department both firing
-in the same post).
+Word bank: **4,118 entries** (sha256 `e3c5381c...`) — 501 human-verified
+(v1 lexicon + candidate-review pass) + 3,699 LLM-translated, less 82
+entries removed by human review, with 910 more corrected in place. 93.2%
+of train posts and 93.9% of test posts had at least one eligible,
+translated word and were touched — the residual ~6-7% genuinely lack any
+word bank match, a real ceiling (measured directly: 9,934/10,000 posts
+have *some* candidate word, but not all of those got a usable
+translation), not a bug.
 
-**Generated output**:
-`data/outputs/{train,test}/codemix_{light,heavy}.jsonl` — 20,000 rows
-total, same schema as Phase 2. **Manual-review checkpoint** (same
-unconditional design as §8): `data/outputs/human_review_sample_codemix.md`,
-100 items, same train-only/seed-1337 convention. As of this writing, that
-review is pending before Phase 4 (misspelling/abbreviation).
+Real generated output spot-checked for naturalness across all three
+review rounds — substitutions read like plausible code-switching in the
+large majority of cases (`madam`, `shop එකේ`, `court එකට`, `chance`,
+`police officer කෙනෙක්`), with the human review pass catching and fixing
+the minority that didn't (particle errors, outright mistranslations,
+genuinely ambiguous words removed outright).
+
+**Generated output**: `data/outputs/{train,test}/codemix_{light,heavy}.jsonl`
+— 20,000 rows total, same schema as Phase 2 plus one additive field,
+`n_substitutions` (count of distinct word types substituted). **Review
+artifacts**: `data/lexicon/codemix_usage_review.{csv,md}` (impact-ordered,
+post-correction snapshot) and
+`data/outputs/human_review_sample_codemix{,_changed_only}.{jsonl,md}`
+(100-item samples, train-only, seed 1337). The human-review gate for
+Phase 3 is **closed** as of this writing — see `LOG.md` for the full
+iteration-by-iteration record, including the real bugs found and fixed
+along the way (a slur-filter import pointing at the wrong module, two
+particle-romanization errors, an incomplete trailing-token parser).
 
 ---
 

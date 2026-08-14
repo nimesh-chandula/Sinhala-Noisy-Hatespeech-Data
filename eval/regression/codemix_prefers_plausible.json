@@ -1,0 +1,11 @@
+{
+  "id": "codemix_prefers_plausible",
+  "kind": "noiser",
+  "noiser": "codemix",
+  "description": "'රට' (country) is codemix_plausible=true; 'කතා' (talk) is an eligible word-bank entry but codemix_plausible=false (the LLM translator judged 'talk' as not a word a bilingual speaker would actually code-mix in). At light severity (k=1), the pool must prefer the plausible word — 'රට' must be the one substituted, for EVERY seed, never 'කතා', since selection only falls back to implausible words when NOTHING plausible is available (see src/noisers/codemix.py's `pool = plausible if plausible else eligible`).",
+  "text": "රට කතා",
+  "severity": "light",
+  "seed": 0,
+  "expected_text": "country කතා",
+  "expected_rate": 0.5
+}

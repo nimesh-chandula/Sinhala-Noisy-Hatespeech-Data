@@ -339,6 +339,74 @@ def check_grapheme_integrity() -> bool:
     return ok
 
 
+def check_codemix_substitution_spec() -> bool:
+    """codemix v2's real design spec, checked independently of trusting
+    src.noisers.codemix's own correctness: for every persisted codemix
+    output row, recompute the eligible-word-type pool straight from the
+    frozen word bank + original_text (reusing the noiser's own wordbank
+    loader and src.graphemes.text_runs, but NOT calling apply()/_apply() —
+    this must independently re-derive the pool, not just re-run the same
+    selection code and trivially agree with it), and assert:
+      1. n_substitutions == min(k, pool_size), where k is 1 (light) or 2
+         (heavy) and pool_size prefers plausible-flagged types, falling
+         back to all eligible types only when none are plausible — the
+         exact "prefer plausible, fall back to eligible, cap at k" contract
+         from the module docstring's "honest tradeoff" section.
+      2. A post with pool_size == 0 is byte-identical to its source
+         (noisy_text == original_text) — forced selection must never
+         invent a substitution where nothing is eligible.
+    This is the primary correctness gate for the v2 redesign — the whole
+    point of the redesign was fixing v1's 85.8%/79.7% untouched-row rate,
+    so the invariant checks the SPEC that fixes it, not a calibrated rate
+    number (see TARGET_NOISE_RATE's docstring in src/noisers/codemix.py for
+    why that's demoted to a drift tripwire instead)."""
+    from src.graphemes import text_runs as _text_runs
+    from src.noisers.codemix import _WORDS_PER_POST, _load_wordbank
+
+    outputs_dir = REPO_ROOT / "data" / "outputs"
+    codemix_files = []
+    for split in ("train", "test"):
+        split_dir = outputs_dir / split
+        if split_dir.exists():
+            codemix_files.extend(sorted(split_dir.glob("codemix_*.jsonl")))
+
+    if not codemix_files:
+        _notes["codemix_substitution_spec"] = "vacuous: no data/outputs/*/codemix_*.jsonl yet"
+        return True
+
+    wordbank = _load_wordbank()
+    if not wordbank:
+        _notes["codemix_substitution_spec"] = "vacuous: data/lexicon/codemix_wordbank.jsonl not yet built"
+        return True
+
+    checked = 0
+    bad = []
+    for path in codemix_files:
+        severity = "heavy" if "heavy" in path.stem else "light"
+        k = _WORDS_PER_POST[severity]
+        for row in _load_jsonl(path):
+            checked += 1
+            sinhala_words = {run for is_sinhala, run in _text_runs(row["original_text"]) if is_sinhala}
+            eligible = sinhala_words & wordbank.keys()
+            plausible = {w for w in eligible if wordbank[w]["codemix_plausible"]}
+            pool_size = len(plausible) if plausible else len(eligible)
+            expected_n = min(k, pool_size)
+            actual_n = row.get("n_substitutions", -1)
+            if actual_n != expected_n:
+                bad.append((path.name, row["source_id"], f"n_substitutions={actual_n}, expected {expected_n}"))
+            elif pool_size == 0 and row["noisy_text"] != row["original_text"]:
+                bad.append((path.name, row["source_id"], "pool_size=0 but noisy_text != original_text"))
+            if len(bad) > 20:
+                break
+        if len(bad) > 20:
+            break
+
+    ok = not bad
+    if not ok:
+        _notes["codemix_substitution_spec"] = f"{len(bad)}(+)/{checked} rows violate the substitution spec, e.g. {bad[:5]}"
+    return ok
+
+
 def check_split_isolation() -> bool:
     """No source_id may appear in both train and test NOISED outputs, and
     every row's own `split` field must match the directory it's written
@@ -390,6 +458,7 @@ def run_invariants() -> dict[str, bool]:
         "no_empty_outputs": check_no_empty_outputs,
         "determinism": check_determinism,
         "grapheme_integrity": check_grapheme_integrity,
+        "codemix_substitution_spec": check_codemix_substitution_spec,
         "split_isolation": check_split_isolation,
     }
     return {name: fn() for name, fn in checks.items()}
