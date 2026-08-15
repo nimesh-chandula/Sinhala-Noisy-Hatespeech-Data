@@ -28,7 +28,12 @@ if str(EVAL_DIR) not in sys.path:
     sys.path.insert(0, str(EVAL_DIR))
 
 from invariants import run_invariants, invariant_notes          # noqa: E402
-from gold_cer import run_gold_cer, run_gold_cer_detail, cer      # noqa: E402
+from gold_cer import (                                           # noqa: E402
+    run_gold_cer,
+    run_gold_cer_detail,
+    run_gold_cer_backends_unavailable,
+    cer,
+)
 from realism import run_realism, realism_not_applicable, load_reference, baseline_jsd, NORMALIZE_VERSION  # noqa: E402
 from src.schema import Row                                       # noqa: E402
 
@@ -134,19 +139,34 @@ _CASE_RUNNERS = {
 # {condition: {severity: target_rate}} for every noiser that's actually
 # implemented — read from the noiser module itself so the target lives in
 # exactly one place. Extend as Phase 3/4 noisers come online.
+#
+# _NOISERS_UNAVAILABLE records anything that failed to import so it can be
+# surfaced in the report instead of silently vanishing — a bare
+# `except ImportError: pass` here once let a whole interpreter's missing
+# `aksharamukha` package erase transliteration from noise_rate_error without
+# any trace in a "PASS" report. See LOG.md Stage 0 / gold_cer.py's
+# discover_backends_with_status() for the matching fix on the romanizer side.
 _NOISER_TARGETS = {}
+_NOISERS_UNAVAILABLE: dict[str, str] = {}
 try:
     from src.noisers import transliteration as _transliteration_noiser
 
     _NOISER_TARGETS["transliteration"] = _transliteration_noiser.TARGET_NOISE_RATE
-except ImportError:
-    pass
+except ImportError as _e:
+    _NOISERS_UNAVAILABLE["transliteration"] = str(_e)
 try:
     from src.noisers import codemix as _codemix_noiser
 
     _NOISER_TARGETS["codemix"] = _codemix_noiser.TARGET_NOISE_RATE
-except ImportError:
-    pass
+except ImportError as _e:
+    _NOISERS_UNAVAILABLE["codemix"] = str(_e)
+try:
+    from src.noisers import misspell as _misspell_noiser
+
+    if getattr(_misspell_noiser, "TARGET_NOISE_RATE", None):
+        _NOISER_TARGETS["misspell"] = _misspell_noiser.TARGET_NOISE_RATE
+except ImportError as _e:
+    _NOISERS_UNAVAILABLE["misspell"] = str(_e)
 
 
 def compute_noise_rate_error() -> dict[str, float]:
@@ -195,7 +215,7 @@ def load_regression_cases() -> dict[str, bool]:
 # Report assembly
 # ---------------------------------------------------------------------------
 
-def build_summary(invariants, gold_cer, realism, regression, noise_rate_error) -> str:
+def build_summary(invariants, gold_cer, realism, regression, noise_rate_error, backends_unavailable) -> str:
     inv_ok = all(invariants.values()) if invariants else True
     reg_ok = all(regression.values()) if regression else True
     best_cer = min(gold_cer.values()) if gold_cer else None
@@ -208,6 +228,12 @@ def build_summary(invariants, gold_cer, realism, regression, noise_rate_error) -
         f"realism_jsd={ {k: round(v, 4) for k, v in realism.items()} if realism else NO_CANDIDATE }",
         f"noise_rate_error={noise_rate_error if noise_rate_error else NOT_APPLICABLE}",
     ]
+    # Loud on purpose: a report must never say PASS while quietly missing a
+    # backend/noiser this interpreter couldn't import. See _NOISERS_UNAVAILABLE
+    # and gold_cer.discover_backends_with_status().
+    all_unavailable = {**backends_unavailable.get("romanizer_backends", {}), **backends_unavailable.get("noisers", {})}
+    if all_unavailable:
+        parts.append(f"WARNING backends_unavailable={sorted(all_unavailable)}")
     return " | ".join(parts)
 
 
@@ -223,10 +249,15 @@ def main() -> None:
     inv_notes = invariant_notes()
     gold_cer_detail = run_gold_cer_detail()
     gold_cer_primary = run_gold_cer()
+    romanizer_backends_unavailable = run_gold_cer_backends_unavailable()
     realism = run_realism()
     realism_na = realism_not_applicable()
     regression = load_regression_cases()
     noise_rate_error = compute_noise_rate_error()
+    backends_unavailable = {
+        "romanizer_backends": romanizer_backends_unavailable,
+        "noisers": _NOISERS_UNAVAILABLE,
+    }
 
     reference = load_reference()
     realism_floor = baseline_jsd(reference) if reference else None
@@ -241,6 +272,7 @@ def main() -> None:
         "realism_baseline_jsd": realism_floor if realism_floor is not None else NOT_APPLICABLE,
         "regression": regression if regression else NO_CANDIDATE,
         "noise_rate_error": noise_rate_error if noise_rate_error else NOT_APPLICABLE,
+        "backends_unavailable": backends_unavailable,
         "targets": {
             "gold_cer_primary_metric": "word_multi_min",
             "gold_cer": GOLD_CER_TARGET,
@@ -250,7 +282,9 @@ def main() -> None:
         "meta": {
             "realism_normalize_version": NORMALIZE_VERSION,
         },
-        "summary": build_summary(invariants, gold_cer_primary, realism, regression, noise_rate_error),
+        "summary": build_summary(
+            invariants, gold_cer_primary, realism, regression, noise_rate_error, backends_unavailable
+        ),
     }
 
     inv_ok = all(invariants.values()) if invariants else True
@@ -267,6 +301,21 @@ def main() -> None:
 
 def _write_md(report: dict) -> None:
     lines = ["# Eval report", "", f"**{report['summary']}**", ""]
+
+    unavailable = report.get("backends_unavailable", {})
+    all_unavailable = {**unavailable.get("romanizer_backends", {}), **unavailable.get("noisers", {})}
+    if all_unavailable:
+        lines.append("## ⚠️ backends_unavailable (this interpreter)")
+        lines.append(
+            "Every metric below was computed WITHOUT these — re-run with the "
+            "interpreter that has them installed before trusting `best_gold_cer` "
+            "or `noise_rate_error` as final numbers."
+        )
+        for name, reason in unavailable.get("romanizer_backends", {}).items():
+            lines.append(f"- romanizer backend `{name}`: {reason}")
+        for name, reason in unavailable.get("noisers", {}).items():
+            lines.append(f"- noiser `{name}`: {reason}")
+        lines.append("")
 
     lines.append("## invariants")
     for k, v in report["invariants"].items():

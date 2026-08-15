@@ -247,10 +247,11 @@ def check_determinism() -> bool:
         return True
 
     bad = []
+    skipped = []
 
-    from eval.gold_cer import discover_backends
+    from eval.gold_cer import discover_backends_with_status
 
-    backends = discover_backends()
+    backends, backends_unavailable = discover_backends_with_status()
     if not backends:
         _notes["determinism"] = "vacuous: no romanizer backend available yet"
         return True
@@ -260,24 +261,46 @@ def check_determinism() -> bool:
         run2 = [fn(s) for s in sample]
         if run1 != run2:
             bad.append(name)
+    skipped.extend(f"backend:{name}" for name in backends_unavailable)
 
     import importlib
 
     noiser_sample = [row["sinhala"] for row in words[:20]]
-    for noiser_name in ("transliteration", "codemix"):
+    # NOTE: an ImportError here used to be swallowed with a bare `continue`,
+    # which let this invariant report green while silently never having
+    # checked a noiser at all (caught when eval/report.json's committed run
+    # turned out to have skipped transliteration's determinism check
+    # entirely because aksharamukha wasn't installed in that interpreter —
+    # see Stage 0 in LOG.md). Any skip is now recorded in `skipped` and
+    # surfaced via invariant_notes so a green run can't hide it again.
+    for noiser_name in ("transliteration", "codemix", "misspell"):
         try:
             module = importlib.import_module(f"src.noisers.{noiser_name}")
-        except ImportError:
+        except ImportError as e:
+            skipped.append(f"noiser:{noiser_name} ({e})")
             continue
-        for severity in getattr(module, "TARGET_NOISE_RATE", {}):
-            run1 = [module.apply(t, severity, seed=1337) for t in noiser_sample]
-            run2 = [module.apply(t, severity, seed=1337) for t in noiser_sample]
+        target_rates = getattr(module, "TARGET_NOISE_RATE", {})
+        if not target_rates:
+            skipped.append(f"noiser:{noiser_name} (not implemented / no TARGET_NOISE_RATE)")
+            continue
+        for severity in target_rates:
+            try:
+                run1 = [module.apply(t, severity, seed=1337) for t in noiser_sample]
+                run2 = [module.apply(t, severity, seed=1337) for t in noiser_sample]
+            except NotImplementedError:
+                skipped.append(f"noiser:{noiser_name}/{severity} (not implemented)")
+                continue
             if run1 != run2:
                 bad.append(f"{noiser_name}/{severity}")
 
     ok = not bad
+    note_parts = []
     if not ok:
-        _notes["determinism"] = f"non-deterministic backends/noisers: {bad}"
+        note_parts.append(f"non-deterministic backends/noisers: {bad}")
+    if skipped:
+        note_parts.append(f"skipped (not available in this interpreter): {skipped}")
+    if note_parts:
+        _notes["determinism"] = "; ".join(note_parts)
     return ok
 
 

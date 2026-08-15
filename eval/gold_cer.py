@@ -170,7 +170,15 @@ def _romanize_uom_live(sinhala_text: str) -> str:
 
 
 def discover_backends() -> dict[str, callable]:
-    """Return {backend_name: romanize_fn} — the Phase 1 bake-off candidates.
+    """Backward-compatible view of discover_backends_with_status() that drops
+    the unavailable list. Prefer the with_status() version in new code — see
+    its docstring for why a silent drop here previously hid a real bug."""
+    backends, _unavailable = discover_backends_with_status()
+    return backends
+
+
+def discover_backends_with_status() -> tuple[dict[str, callable], dict[str, str]]:
+    """Return ({backend_name: romanize_fn}, {unavailable_backend_name: reason}).
 
     Each import is wrapped in try/except ImportError so a missing dependency
     degrades gracefully (harness still runs, that backend just doesn't
@@ -186,8 +194,16 @@ def discover_backends() -> dict[str, callable]:
       - singlish_pypi: vendored asanka9/singlish, wrapped to fix a real
         space/punctuation-dropping bug (registered from indic.py — see that
         module's docstring for why indic-transliteration was rejected)
+
+    The unavailable dict exists because a bare `except ImportError: pass`
+    once let a whole run silently drop the aksharamukha backends (missing
+    from the active interpreter's env) — the report still said "PASS" with
+    no hint that the actual Phase 1 winner (gold_cer ~0.039) had been
+    replaced by the runner-up (~0.17) in every downstream number. Callers
+    (eval/harness.py) must surface this dict instead of swallowing it again.
     """
     backends: dict[str, callable] = {}
+    unavailable: dict[str, str] = {}
 
     if UOM_LIVE_CACHE_PATH.exists():
         backends["uom_live"] = _romanize_uom_live
@@ -196,8 +212,8 @@ def discover_backends() -> dict[str, callable]:
         from src.romanizers.uom_rules import romanize as uom_romanize
 
         backends["uom_rules"] = uom_romanize
-    except ImportError:
-        pass
+    except ImportError as e:
+        unavailable["uom_rules"] = str(e)
 
     try:
         from src.romanizers.aksharamukha import (
@@ -209,17 +225,19 @@ def discover_backends() -> dict[str, callable]:
         backends["aksharamukha_colloquial"] = romanize_colloquial
         backends["aksharamukha_colloquial_raw"] = romanize_colloquial_raw
         backends["aksharamukha_loc"] = romanize_loc
-    except ImportError:
-        pass
+    except ImportError as e:
+        unavailable["aksharamukha_colloquial"] = str(e)
+        unavailable["aksharamukha_colloquial_raw"] = str(e)
+        unavailable["aksharamukha_loc"] = str(e)
 
     try:
         from src.romanizers.indic import romanize as singlish_romanize
 
         backends["singlish_pypi"] = singlish_romanize
-    except ImportError:
-        pass
+    except ImportError as e:
+        unavailable["singlish_pypi"] = str(e)
 
-    return backends
+    return backends, unavailable
 
 
 def _score_backend(fn: callable, gold_words: list[dict], gold_sentences: list[dict]) -> dict[str, float]:
@@ -248,11 +266,20 @@ def _score_backend(fn: callable, gold_words: list[dict], gold_sentences: list[di
     }
 
 
+def run_gold_cer_backends_unavailable() -> dict[str, str]:
+    """{backend_name: import_error} for every backend discover_backends_with_status()
+    could not register in THIS interpreter. Empty does not mean "nothing is
+    missing" in an absolute sense — it means nothing is missing right now,
+    which is exactly the distinction the silent-swallow bug erased."""
+    _backends, unavailable = discover_backends_with_status()
+    return unavailable
+
+
 def run_gold_cer_detail() -> dict[str, dict[str, float]]:
     """{backend_name: {word_multi_min, word_single, sent_single}}."""
     gold_words = load_gold_words()
     gold_sentences = load_gold_sentences()
-    backends = discover_backends()
+    backends, _unavailable = discover_backends_with_status()
     if not backends or (not gold_words and not gold_sentences):
         return {}
     return {name: _score_backend(fn, gold_words, gold_sentences) for name, fn in backends.items()}
