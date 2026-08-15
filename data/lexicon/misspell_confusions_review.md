@@ -1,5 +1,12 @@
 # Misspelling confusion-set review
 
+**Status: reviewed and approved as-is, 2026-08-15.** All 130 sets accepted
+with no corrections — `data/lexicon/misspell_confusions.jsonl`
+(sha256 `fff1e157...`) is the final, frozen artifact for Phase 4a. One
+known cosmetic oddity (set #16 `ne` contains a malformed-encoding
+duplicate-looking `නේ`, inherited from SOLD's raw text, freq=7) was
+flagged during review and left in place as immaterial.
+
 130 romanization-collision sets, impact-ordered by how many Sinhala word-tokens in SOLD contain >=1 member cluster (i.e. how much of the corpus this set could ever touch). Each set is a group of Sinhala grapheme clusters that a phonetic IME (type the roman spelling, get the Sinhala character) cannot distinguish between — see src/noisers/misspell.py and LOG.md's Phase 4a entry for why that's the misspelling mechanism modeled here.
 
 For each set: reject the whole set (`reject_set`) if the confusion isn't something a real typist would actually produce, or list specific clusters to drop (`remove_members`) if only some members are implausible. Leave both blank to accept as-is. Record corrections in data/lexicon/misspell_review_corrections.jsonl (one JSON line per set: {"key": ..., "action": "reject_set"} or {"key": ..., "action": "remove_members", "remove": [...]}).
