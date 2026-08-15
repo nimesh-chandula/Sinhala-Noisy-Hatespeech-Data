@@ -1,0 +1,130 @@
+{"key": "a", "type": "consonant_quality", "members": ["අ", "ඇ", "ආ"], "member_freq": {"අ": 10648, "ඇ": 2871, "ආ": 1910}}
+{"key": "aa", "type": "vowel_length", "members": ["අැ", "අා"], "member_freq": {"අැ": 61, "අා": 40}}
+{"key": "am", "type": "consonant_quality", "members": ["අං", "ආං"], "member_freq": {"අං": 72, "ආං": 12}}
+{"key": "ba", "type": "vowel_length", "members": ["බ", "බැ", "බා"], "member_freq": {"බ": 5135, "බැ": 1265, "බා": 476}}
+{"key": "bam", "type": "vowel_length", "members": ["බං", "බැං"], "member_freq": {"බං": 280, "බැං": 29}}
+{"key": "be", "type": "vowel_length", "members": ["බෙ", "බෑ", "බේ"], "member_freq": {"බෙ": 379, "බෑ": 371, "බේ": 281}}
+{"key": "bha", "type": "vowel_length", "members": ["භා", "භ"], "member_freq": {"භා": 203, "භ": 106}}
+{"key": "bhi", "type": "vowel_length", "members": ["භි", "භී"], "member_freq": {"භි": 26, "භී": 5}}
+{"key": "bhu", "type": "vowel_length", "members": ["භූ", "භු"], "member_freq": {"භූ": 17, "භු": 8}}
+{"key": "bi", "type": "vowel_length", "members": ["බි", "බී"], "member_freq": {"බි": 599, "බී": 161}}
+{"key": "bo", "type": "vowel_length", "members": ["බො", "බෝ"], "member_freq": {"බො": 666, "බෝ": 238}}
+{"key": "bu", "type": "vowel_length", "members": ["බු", "බූ"], "member_freq": {"බු": 562, "බූ": 130}}
+{"key": "cha", "type": "vowel_length", "members": ["ච", "චා", "චැ"], "member_freq": {"ච": 829, "චා": 182, "චැ": 39}}
+{"key": "che", "type": "vowel_length", "members": ["චේ", "චෙ"], "member_freq": {"චේ": 13, "චෙ": 12}}
+{"key": "chha", "type": "vowel_length", "members": ["ඡ", "ඡා"], "member_freq": {"ඡ": 100, "ඡා": 20}}
+{"key": "chi", "type": "vowel_length", "members": ["චි", "චී"], "member_freq": {"චි": 250, "චී": 114}}
+{"key": "cho", "type": "vowel_length", "members": ["චෝ", "චො"], "member_freq": {"චෝ": 16, "චො": 15}}
+{"key": "chu", "type": "vowel_length", "members": ["චූ", "චු"], "member_freq": {"චූ": 68, "චු": 39}}
+{"key": "d", "type": "consonant_quality", "members": ["ද්", "ඩ්"], "member_freq": {"ද්": 1854, "ඩ්": 521}}
+{"key": "da", "type": "mixed", "members": ["ද", "ඩ", "දා", "දැ", "ඩා", "ඩැ"], "member_freq": {"ද": 10242, "ඩ": 2750, "දා": 2180, "දැ": 1675, "ඩා": 569, "ඩැ": 13}}
+{"key": "dam", "type": "mixed", "members": ["දැං", "ඩං", "දං"], "member_freq": {"දැං": 50, "ඩං": 35, "දං": 14}}
+{"key": "de", "type": "mixed", "members": ["දෙ", "දේ", "ඩේ", "ඩෙ", "දෑ", "ඩෑ"], "member_freq": {"දෙ": 2343, "දේ": 946, "ඩේ": 380, "ඩෙ": 106, "දෑ": 52, "ඩෑ": 14}}
+{"key": "dha", "type": "vowel_length", "members": ["ධ", "ධා"], "member_freq": {"ධ": 356, "ධා": 199}}
+{"key": "dhi", "type": "vowel_length", "members": ["ධි", "ධී"], "member_freq": {"ධි": 276, "ධී": 27}}
+{"key": "dhu", "type": "vowel_length", "members": ["ධු", "ධූ"], "member_freq": {"ධු": 8, "ධූ": 5}}
+{"key": "di", "type": "mixed", "members": ["දි", "ඩි", "දී", "ඩී"], "member_freq": {"දි": 2493, "ඩි": 1374, "දී": 802, "ඩී": 63}}
+{"key": "dim", "type": "consonant_quality", "members": ["ඩිං", "දිං"], "member_freq": {"ඩිං": 11, "දිං": 5}}
+{"key": "do", "type": "mixed", "members": ["ඩො", "ඩෝ", "දො", "දෝ"], "member_freq": {"ඩො": 243, "ඩෝ": 118, "දො": 113, "දෝ": 68}}
+{"key": "du", "type": "mixed", "members": ["දු", "ඩු", "දූ", "ඩූ"], "member_freq": {"දු": 2016, "ඩු": 1156, "දූ": 63, "ඩූ": 9}}
+{"key": "e", "type": "consonant_quality", "members": ["එ", "ඒ", "ඈ", "එ්"], "member_freq": {"එ": 8392, "ඒ": 2595, "ඈ": 136, "එ්": 43}}
+{"key": "fa", "type": "vowel_length", "members": ["ෆ", "ෆා", "ෆැ"], "member_freq": {"ෆ": 102, "ෆා": 13, "ෆැ": 12}}
+{"key": "fe", "type": "vowel_length", "members": ["ෆේ", "ෆෙ", "ෆෑ"], "member_freq": {"ෆේ": 78, "ෆෙ": 23, "ෆෑ": 10}}
+{"key": "fi", "type": "vowel_length", "members": ["ෆි", "ෆී"], "member_freq": {"ෆි": 94, "ෆී": 12}}
+{"key": "fo", "type": "vowel_length", "members": ["ෆො", "ෆෝ"], "member_freq": {"ෆො": 86, "ෆෝ": 64}}
+{"key": "ga", "type": "vowel_length", "members": ["ග", "ගැ", "ගා"], "member_freq": {"ග": 5780, "ගැ": 1024, "ගා": 511}}
+{"key": "ge", "type": "mixed", "members": ["ගෙ", "ගේ", "ගෑ", "ගේ"], "member_freq": {"ගෙ": 3338, "ගේ": 3067, "ගෑ": 498, "ගේ": 6}}
+{"key": "gha", "type": "vowel_length", "members": ["ඝ", "ඝා"], "member_freq": {"ඝ": 24, "ඝා": 19}}
+{"key": "gi", "type": "vowel_length", "members": ["ගි", "ගී"], "member_freq": {"ගි": 1395, "ගී": 101}}
+{"key": "go", "type": "vowel_length", "members": ["ගො", "ගෝ"], "member_freq": {"ගො": 1092, "ගෝ": 136}}
+{"key": "gu", "type": "vowel_length", "members": ["ගු", "ගූ"], "member_freq": {"ගු": 351, "ගූ": 50}}
+{"key": "ha", "type": "vowel_length", "members": ["හ", "හැ", "හා"], "member_freq": {"හ": 6945, "හැ": 2131, "හා": 899}}
+{"key": "ham", "type": "vowel_length", "members": ["හං", "හැං"], "member_freq": {"හං": 69, "හැං": 16}}
+{"key": "he", "type": "vowel_length", "members": ["හෙ", "හේ", "හෑ"], "member_freq": {"හෙ": 1781, "හේ": 248, "හෑ": 33}}
+{"key": "hi", "type": "vowel_length", "members": ["හි", "හී"], "member_freq": {"හි": 3039, "හී": 101}}
+{"key": "ho", "type": "vowel_length", "members": ["හො", "හෝ"], "member_freq": {"හො": 1620, "හෝ": 243}}
+{"key": "hu", "type": "vowel_length", "members": ["හු", "හූ"], "member_freq": {"හු": 1574, "හූ": 42}}
+{"key": "i", "type": "consonant_quality", "members": ["ඉ", "ඊ"], "member_freq": {"ඉ": 3913, "ඊ": 307}}
+{"key": "ja", "type": "vowel_length", "members": ["ජ", "ජා", "ජැ"], "member_freq": {"ජ": 1529, "ජා": 696, "ජැ": 9}}
+{"key": "je", "type": "vowel_length", "members": ["ජෙ", "ජේ"], "member_freq": {"ජෙ": 113, "ජේ": 34}}
+{"key": "ji", "type": "vowel_length", "members": ["ජී", "ජි"], "member_freq": {"ජී": 292, "ජි": 273}}
+{"key": "jnya", "type": "vowel_length", "members": ["ඥ", "ඥා"], "member_freq": {"ඥ": 24, "ඥා": 20}}
+{"key": "jo", "type": "vowel_length", "members": ["ජෝ", "ජො"], "member_freq": {"ජෝ": 60, "ජො": 56}}
+{"key": "ju", "type": "vowel_length", "members": ["ජු", "ජූ"], "member_freq": {"ජු": 50, "ජූ": 15}}
+{"key": "ka", "type": "vowel_length", "members": ["ක", "කා", "කැ"], "member_freq": {"ක": 20360, "කා": 3001, "කැ": 811}}
+{"key": "kam", "type": "vowel_length", "members": ["කං", "කාං"], "member_freq": {"කං": 85, "කාං": 7}}
+{"key": "ke", "type": "vowel_length", "members": ["කෙ", "කේ", "කෑ"], "member_freq": {"කෙ": 1970, "කේ": 965, "කෑ": 537}}
+{"key": "ki", "type": "vowel_length", "members": ["කි", "කී"], "member_freq": {"කි": 7241, "කී": 343}}
+{"key": "ko", "type": "vowel_length", "members": ["කො", "කෝ"], "member_freq": {"කො": 2710, "කෝ": 1486}}
+{"key": "kri", "type": "vowel_length", "members": ["කෘ", "කෲ"], "member_freq": {"කෘ": 42, "කෲ": 5}}
+{"key": "ku", "type": "vowel_length", "members": ["කු", "කූ"], "member_freq": {"කු": 1772, "කූ": 92}}
+{"key": "la", "type": "mixed", "members": ["ල", "ලා", "ළ", "ලැ", "ළා"], "member_freq": {"ල": 11106, "ලා": 6070, "ළ": 695, "ලැ": 291, "ළා": 59}}
+{"key": "lam", "type": "mixed", "members": ["ලං", "ලාං", "ළං"], "member_freq": {"ලං": 492, "ලාං": 26, "ළං": 7}}
+{"key": "le", "type": "mixed", "members": ["ලෙ", "ලේ", "ලෑ", "ළේ", "ළෙ"], "member_freq": {"ලෙ": 1091, "ලේ": 794, "ලෑ": 70, "ළේ": 36, "ළෙ": 10}}
+{"key": "li", "type": "mixed", "members": ["ලි", "ලී", "ළි"], "member_freq": {"ලි": 2899, "ලී": 195, "ළි": 187}}
+{"key": "lo", "type": "mixed", "members": ["ලො", "ලෝ", "ළො"], "member_freq": {"ලො": 805, "ලෝ": 457, "ළො": 21}}
+{"key": "lu", "type": "mixed", "members": ["ලු", "ළු", "ලූ"], "member_freq": {"ලු": 1522, "ළු": 429, "ලූ": 51}}
+{"key": "ma", "type": "vowel_length", "members": ["ම", "මා", "මැ"], "member_freq": {"ම": 16290, "මා": 2516, "මැ": 886}}
+{"key": "mbe", "type": "vowel_length", "members": ["ඹේ", "ඹෙ"], "member_freq": {"ඹේ": 77, "ඹෙ": 30}}
+{"key": "me", "type": "vowel_length", "members": ["මේ", "මෙ", "මෑ"], "member_freq": {"මේ": 2983, "මෙ": 1498, "මෑ": 22}}
+{"key": "mi", "type": "vowel_length", "members": ["මි", "මී"], "member_freq": {"මි": 1860, "මී": 330}}
+{"key": "mo", "type": "vowel_length", "members": ["මො", "මෝ"], "member_freq": {"මො": 1193, "මෝ": 571}}
+{"key": "mu", "type": "vowel_length", "members": ["මු", "මූ"], "member_freq": {"මු": 1798, "මූ": 342}}
+{"key": "n", "type": "consonant_quality", "members": ["න්", "ණ්"], "member_freq": {"න්": 30002, "ණ්": 499}}
+{"key": "na", "type": "mixed", "members": ["න", "නා", "නැ", "ණ", "ණා"], "member_freq": {"න": 25409, "නා": 2733, "නැ": 2462, "ණ": 1185, "ණා": 142}}
+{"key": "nam", "type": "consonant_quality", "members": ["නං", "ණං"], "member_freq": {"නං": 265, "ණං": 5}}
+{"key": "nda", "type": "mixed", "members": ["ඳ", "ඬ", "ඳා", "ඬා"], "member_freq": {"ඳ": 705, "ඬ": 53, "ඳා": 11, "ඬා": 6}}
+{"key": "nde", "type": "vowel_length", "members": ["ඳේ", "ඳෙ"], "member_freq": {"ඳේ": 19, "ඳෙ": 6}}
+{"key": "ndi", "type": "mixed", "members": ["ඳි", "ඳී", "ඬි"], "member_freq": {"ඳි": 117, "ඳී": 19, "ඬි": 8}}
+{"key": "ndu", "type": "consonant_quality", "members": ["ඳු", "ඬු"], "member_freq": {"ඳු": 158, "ඬු": 28}}
+{"key": "ne", "type": "mixed", "members": ["නේ", "නෙ", "නෑ", "ණේ", "ණෙ", "ණෑ", "නේ"], "member_freq": {"නේ": 4067, "නෙ": 3843, "නෑ": 1903, "ණේ": 69, "ණෙ": 29, "ණෑ": 11, "නේ": 7}}
+{"key": "nga", "type": "vowel_length", "members": ["ඟ", "ඟා"], "member_freq": {"ඟ": 271, "ඟා": 11}}
+{"key": "nge", "type": "vowel_length", "members": ["ඟේ", "ඟෙ"], "member_freq": {"ඟේ": 19, "ඟෙ": 9}}
+{"key": "ni", "type": "mixed", "members": ["නි", "ණි", "නී", "ණී"], "member_freq": {"නි": 4099, "ණි": 640, "නී": 465, "ණී": 48}}
+{"key": "no", "type": "mixed", "members": ["නො", "නෝ", "ණො", "ණෝ"], "member_freq": {"නො": 1205, "නෝ": 225, "ණො": 12, "ණෝ": 5}}
+{"key": "nu", "type": "mixed", "members": ["නු", "ණු", "නූ"], "member_freq": {"නු": 1274, "ණු": 395, "නූ": 37}}
+{"key": "o", "type": "consonant_quality", "members": ["ඔ", "ඕ", "ඔ්"], "member_freq": {"ඔ": 2398, "ඕ": 1359, "ඔ්": 12}}
+{"key": "pa", "type": "vowel_length", "members": ["ප", "පා", "පැ"], "member_freq": {"ප": 7003, "පා": 2367, "පැ": 784}}
+{"key": "pam", "type": "vowel_length", "members": ["පං", "පාං"], "member_freq": {"පං": 186, "පාං": 5}}
+{"key": "pe", "type": "vowel_length", "members": ["පේ", "පෙ", "පෑ"], "member_freq": {"පේ": 852, "පෙ": 747, "පෑ": 55}}
+{"key": "pi", "type": "vowel_length", "members": ["පි", "පී"], "member_freq": {"පි": 3254, "පී": 112}}
+{"key": "po", "type": "vowel_length", "members": ["පො", "පෝ"], "member_freq": {"පො": 1462, "පෝ": 221}}
+{"key": "pu", "type": "vowel_length", "members": ["පු", "පූ"], "member_freq": {"පු": 2683, "පූ": 147}}
+{"key": "ra", "type": "vowel_length", "members": ["ර", "රා", "රැ"], "member_freq": {"ර": 14639, "රා": 1186, "රැ": 455}}
+{"key": "re", "type": "vowel_length", "members": ["රෙ", "රේ", "රෑ"], "member_freq": {"රෙ": 1414, "රේ": 705, "රෑ": 99}}
+{"key": "ri", "type": "vowel_length", "members": ["රි", "රී"], "member_freq": {"රි": 3396, "රී": 590}}
+{"key": "ro", "type": "vowel_length", "members": ["රෝ", "රො"], "member_freq": {"රෝ": 303, "රො": 187}}
+{"key": "ru", "type": "vowel_length", "members": ["රු", "රූ"], "member_freq": {"රු": 2809, "රූ": 84}}
+{"key": "sa", "type": "vowel_length", "members": ["ස", "සා", "සැ"], "member_freq": {"ස": 5781, "සා": 1437, "සැ": 350}}
+{"key": "se", "type": "vowel_length", "members": ["සෙ", "සේ", "සෑ"], "member_freq": {"සෙ": 1219, "සේ": 723, "සෑ": 62}}
+{"key": "sh", "type": "consonant_quality", "members": ["ශ්", "ෂ්"], "member_freq": {"ශ්": 284, "ෂ්": 81}}
+{"key": "sha", "type": "mixed", "members": ["ශ", "ෂ", "ශා", "ෂා", "ශැ"], "member_freq": {"ශ": 694, "ෂ": 487, "ශා": 96, "ෂා": 91, "ශැ": 7}}
+{"key": "she", "type": "mixed", "members": ["ශේ", "ශෙ", "ෂේ", "ෂෙ"], "member_freq": {"ශේ": 63, "ශෙ": 27, "ෂේ": 21, "ෂෙ": 14}}
+{"key": "shi", "type": "mixed", "members": ["ශි", "ෂි", "ශී", "ෂී"], "member_freq": {"ශි": 84, "ෂි": 68, "ශී": 39, "ෂී": 6}}
+{"key": "sho", "type": "mixed", "members": ["ශෝ", "ශො", "ෂෝ", "ෂො"], "member_freq": {"ශෝ": 34, "ශො": 20, "ෂෝ": 14, "ෂො": 5}}
+{"key": "shu", "type": "consonant_quality", "members": ["ශු", "ෂු"], "member_freq": {"ශු": 29, "ෂු": 18}}
+{"key": "si", "type": "vowel_length", "members": ["සි", "සී"], "member_freq": {"සි": 2286, "සී": 353}}
+{"key": "so", "type": "vowel_length", "members": ["සො", "සෝ"], "member_freq": {"සො": 150, "සෝ": 101}}
+{"key": "su", "type": "vowel_length", "members": ["සු", "සූ"], "member_freq": {"සු": 1752, "සූ": 76}}
+{"key": "ta", "type": "vowel_length", "members": ["ට", "ටා", "ටැ"], "member_freq": {"ට": 15561, "ටා": 134, "ටැ": 43}}
+{"key": "te", "type": "vowel_length", "members": ["ටේ", "ටෙ", "ටෑ"], "member_freq": {"ටේ": 471, "ටෙ": 199, "ටෑ": 12}}
+{"key": "tha", "type": "mixed", "members": ["ත", "තා", "තැ", "ථා", "ථ", "ඨා", "ඨ"], "member_freq": {"ත": 8779, "තා": 1893, "තැ": 338, "ථා": 150, "ථ": 74, "ඨා": 40, "ඨ": 28}}
+{"key": "the", "type": "vowel_length", "members": ["තේ", "තෙ", "තෑ"], "member_freq": {"තේ": 690, "තෙ": 545, "තෑ": 63}}
+{"key": "thi", "type": "mixed", "members": ["ති", "තී", "ථි"], "member_freq": {"ති": 5487, "තී": 251, "ථි": 49}}
+{"key": "tho", "type": "vowel_length", "members": ["තො", "තෝ"], "member_freq": {"තො": 883, "තෝ": 786}}
+{"key": "thu", "type": "vowel_length", "members": ["තු", "තූ"], "member_freq": {"තු": 2253, "තූ": 79}}
+{"key": "ti", "type": "vowel_length", "members": ["ටි", "ටී"], "member_freq": {"ටි": 2045, "ටී": 117}}
+{"key": "to", "type": "vowel_length", "members": ["ටෝ", "ටො"], "member_freq": {"ටෝ": 210, "ටො": 81}}
+{"key": "tu", "type": "vowel_length", "members": ["ටු", "ටූ"], "member_freq": {"ටු": 581, "ටූ": 24}}
+{"key": "u", "type": "consonant_quality", "members": ["උ", "ඌ"], "member_freq": {"උ": 4011, "ඌ": 316}}
+{"key": "wa", "type": "vowel_length", "members": ["ව", "වා", "වැ"], "member_freq": {"ව": 17341, "වා": 4662, "වැ": 2093}}
+{"key": "we", "type": "vowel_length", "members": ["වෙ", "වේ", "වෑ"], "member_freq": {"වෙ": 4730, "වේ": 1482, "වෑ": 27}}
+{"key": "wi", "type": "vowel_length", "members": ["වි", "වී"], "member_freq": {"වි": 3422, "වී": 619}}
+{"key": "wo", "type": "vowel_length", "members": ["වො", "වෝ"], "member_freq": {"වො": 261, "වෝ": 143}}
+{"key": "wu", "type": "vowel_length", "members": ["වු", "වූ"], "member_freq": {"වු": 1765, "වූ": 113}}
+{"key": "ya", "type": "vowel_length", "members": ["ය", "යා", "යැ"], "member_freq": {"ය": 17586, "යා": 3231, "යැ": 85}}
+{"key": "yam", "type": "vowel_length", "members": ["යං", "යාං"], "member_freq": {"යං": 75, "යාං": 13}}
+{"key": "ye", "type": "vowel_length", "members": ["යෙ", "යේ", "යෑ"], "member_freq": {"යෙ": 2108, "යේ": 906, "යෑ": 23}}
+{"key": "yi", "type": "vowel_length", "members": ["යි", "යී"], "member_freq": {"යි": 6604, "යී": 96}}
+{"key": "yo", "type": "vowel_length", "members": ["යෝ", "යො"], "member_freq": {"යෝ": 629, "යො": 373}}
+{"key": "yu", "type": "vowel_length", "members": ["යු", "යූ"], "member_freq": {"යු": 480, "යූ": 51}}
