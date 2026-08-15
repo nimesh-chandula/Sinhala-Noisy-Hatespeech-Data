@@ -931,7 +931,135 @@ particle-romanization errors, an incomplete trailing-token parser).
 
 ---
 
-## 10. Reproducibility appendix
+## 11. Misspelling noiser methodology (Phase 4a)
+
+The third noise vector: realistic Sinhala/Singlish typos, as opposed to
+transliteration's spelling-variance (§6) or codemix's word-choice
+substitution (§9). Two script-aware channels, dispatched per
+grapheme-cluster run.
+
+### 11.1 The mechanism: IME phonetic collision, not key adjacency
+
+Most Sinhala text today is typed through a phonetic IME on an English
+keyboard (Helakuru, Google Sinhala Input): the typist types a roman
+spelling and the keyboard resolves it to a Sinhala grapheme cluster.
+Where that roman→Sinhala mapping is genuinely ambiguous, the IME's choice
+is sometimes not the one intended — type "na" and receive න when ණ was
+meant. Two Sinhala grapheme clusters are therefore treated as
+IME-confusable exactly when they romanize to the SAME string under the
+Phase-1-winning backend (`romanize_colloquial`) — derived from SOLD
+itself (`scripts/build_misspell_confusions.py`), the same
+"measure, don't hand-guess" discipline §6.3 and §9.1 both established.
+
+Measured over SOLD train+test: 767 distinct grapheme clusters observed,
+grouped by romanization into **130 confusion sets** after dropping
+clusters occurring fewer than 5 times and any cluster containing a
+ZWJ/ZWNJ encoding artifact — covering **90.0%** of Sinhala cluster
+tokens in the corpus. Unlike codemix v1's 1.74% lexicon-coverage
+ceiling (§9.2), there is no coverage problem here: **99.4%** of Sinhala
+word *tokens* contain at least one confusable cluster.
+
+The sets land on textbook Sinhala orthographic confusions — nasal
+quality (න/ණ), lateral quality (ල/ළ), dental-vs-retroflex (ත/ථ/ඨ),
+consonant quality (ද/ඩ, ස/ශ/ෂ), and vowel length (e.g. "na" →
+[න, නා, නැ, ණ, ණා]) — not noise, confirmed both by inspection and by
+the human review round (§11.3).
+
+### 11.2 Two channels
+
+**Channel A (Sinhala script)**: one grapheme cluster swapped for another
+member of its confusion set — always exactly 1-for-1, so cluster count
+is structurally preserved (never checked after the fact and hoped for;
+guaranteed by construction). Candidate selection is **prefer attested,
+allow unattested**: a candidate is preferred if the resulting word form
+appears in `data/lexicon/misspell_attested_vocab.txt` (SOLD's own
+vocabulary unioned with the ~451K distinct Sinhala words in the
+Swa-Bhasha word list — the same raw source §6.2's word-variant lexicon
+draws from), falling back to the full confusion set only when nothing
+attested is available. This mirrors codemix v2's `codemix_plausible`
+prefer/fallback shape (§9.4) — attested-only would cap coverage at ~25%
+of SOLD word types, and a typo is often, definitionally, not a real word.
+
+**Channel B (Latin/Singlish script)**: rule-based, not lexicon-based —
+geminate consonant drop/add, vowel length, aspiration, sibilant, w/v
+swap, final -e/-a, and a deliberately low-weight QWERTY-adjacent slip.
+This channel exists for correctness once misspell runs after
+transliteration in the compound pipeline (`src/pipeline.py`'s
+`NOISER_ORDER`), but is **not exercised by Phase 4a's own generation** —
+the standalone `misspell` condition's input is always clean Sinhala SOLD
+text, so Channel B only ever fires on pre-existing Latin content already
+sitting inside a post (left unprotected deliberately: a realistic
+misspelled variant of a mixed-script post plausibly misspells the Latin
+portions too).
+
+**Orthogonality rule (load-bearing):** any Latin form appearing in
+`data/lexicon/word_variants.jsonl`'s attested romanizations is
+transliteration's territory, not misspelling's — Channel B excludes every
+candidate that lands on one of those forms. Without this, the two noise
+vectors would silently measure the same underlying phenomenon under two
+different names.
+
+### 11.3 Human review
+
+Single round (unlike codemix's three), reflecting a smaller, cleaner
+derivation needing less correction: 130 confusion sets, impact-ordered by
+corpus-token reach, reviewed against
+`data/lexicon/misspell_confusions_review.md` (each set shown with real
+before/after SOLD examples and an attested/unattested flag). **Result:
+approved as-is, zero corrections.** One cosmetic oddity was flagged and
+left in place as immaterial: one confusion set contained a visually
+duplicate-looking cluster that turned out to be a malformed vowel-sign
+encoding already present in SOLD's raw scraped text (frequency 7 of
+30,986 tokens the set touches) — the same class of pre-existing
+scrape artifact §9's slur/particle findings and the grapheme-integrity
+check (§9.6-equivalent) already establish this project treats as
+inherited, not introduced.
+
+### 11.4 Severity and final results
+
+Per-word attempt probability, coverage-corrected exactly like §6.3's
+transliteration mechanism: `probability = target_rate / coverage`, with
+`coverage = 0.9942` measured once over SOLD (fraction of Sinhala word
+tokens with ≥1 confusable cluster). `TARGET_NOISE_RATE = {light: 0.05,
+heavy: 0.15}` — deliberately below transliteration's 0.10/0.20, since
+over-noising damages intelligibility more here (a misspelled word can
+become unreadable; a code-mixed word is still a real word).
+
+| Metric | light | heavy |
+|---|---|---|
+| `TARGET_NOISE_RATE` | 0.05 | 0.15 |
+| Measured `realised_noise_rate` (pooled train+test) | ~0.0453 | ~0.1335 |
+| `noise_rate_error` | 0.00576 | 0.01702 |
+| Rows touched (≥1 word altered) | ~54% | ~83% |
+
+Both severities landed within the 0.05 tolerance on the first generation
+run — no recalibration needed, unlike transliteration's coverage-correction
+discovery (§6.3) or codemix's rate redesign (§9.3-9.4).
+
+**New invariant**: `check_misspell_substitution_spec` independently
+re-derives structure from `(original_text, noisy_text)` rather than
+trusting the noiser's own logic (the same discipline
+`check_codemix_substitution_spec` established, §9.6) — for every changed
+word it verifies exactly one cluster changed, cluster count and
+ZWJ/ZWNJ-freedom are preserved, the new cluster is an actual member of
+the old cluster's frozen confusion set (Channel A) or absent from the
+attested-variants exclusion set (Channel B), and the row's
+`realised_noise_rate` matches a from-scratch recomputation. **Result over
+all 20,000 generated rows: zero violations.**
+
+Full harness: **15/15 invariants, 17/17 regression (13 carried forward +
+4 new misspell cases)**, `status: PASS`.
+
+**Generated output**: `data/outputs/{train,test}/misspell_{light,heavy}.jsonl`
+— 20,000 rows, same schema as Phases 2-3. **Review artifacts**:
+`data/lexicon/misspell_confusions_review.{csv,md}` (impact-ordered,
+post-review snapshot — approved as-is) and
+`data/outputs/human_review_sample_misspell{,_changed_only}.{jsonl,md}`
+(100-item samples, train-only, seed 1337).
+
+---
+
+## 12. Reproducibility appendix
 
 **Seed used throughout the project:** `1337` (all sampling, shuffling,
 and noise-generation randomness is seeded from this value, directly or
@@ -949,7 +1077,9 @@ via a stable per-item hash derived from it).
 | `scripts/measure_codemix_rate.py` | Measures the natural English-insertion rate; produces `codemix_reference_stats.json` (§9.1) |
 | `scripts/build_codemix_lexicon.py` | Builds the code-mixing lexicon and rejected-candidates record (§9.2) |
 | `scripts/generate_codemix.py` | Generates the full codemix noised dataset (§9.7); also has a `--demo` mode |
-| `scripts/build_review_sample.py` | Builds a 100-item human-review sample for a given `--condition` (§8, §9.7) |
+| `scripts/build_misspell_confusions.py` | Derives the IME-collision confusion sets and attestation vocabulary (§11.1) |
+| `scripts/generate_misspell.py` | Generates the full misspell noised dataset (§11.4) |
+| `scripts/build_review_sample.py` | Builds a 100-item human-review sample for a given `--condition` (§8, §9.7, §11.3) |
 | `eval/harness.py` | Runs the full evaluation suite; produces `eval/report.json` / `.md` |
 
 **Key data artifacts and their locations:**
@@ -970,6 +1100,11 @@ via a stable per-item hash derived from it).
 | Generated codemix dataset | `data/outputs/{train,test}/codemix_{light,heavy}.jsonl` |
 | Transliteration human-review sample | `data/outputs/human_review_sample.{jsonl,md}` |
 | Codemix human-review sample | `data/outputs/human_review_sample_codemix.{jsonl,md}` |
+| Misspelling confusion sets (frozen) | `data/lexicon/misspell_confusions.jsonl` |
+| Misspelling attestation vocabulary | `data/lexicon/misspell_attested_vocab.txt` |
+| Misspelling confusion-set review | `data/lexicon/misspell_confusions_review.{csv,md}` |
+| Generated misspell dataset | `data/outputs/{train,test}/misspell_{light,heavy}.jsonl` |
+| Misspell human-review sample | `data/outputs/human_review_sample_misspell{,_changed_only}.{jsonl,md}` |
 | Full provenance record (URLs, hashes, counts) | `data/PROVENANCE.json` |
 | Full evaluation report | `eval/report.json` / `eval/report.md` |
 | Iteration-by-iteration project log | `LOG.md` |
