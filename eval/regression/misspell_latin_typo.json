@@ -1,0 +1,11 @@
+{
+  "id": "misspell_latin_typo",
+  "kind": "noiser",
+  "noiser": "misspell",
+  "description": "Channel B sanity + orthogonality check: 'kanna' (Singlish for the Sinhala word that light-severity case misspell_sinhala_confusion_substitution also uses) gets a geminate-vowel typo at this seed, producing 'kaanna'. 'kaanna' is independently confirmed NOT present in any romanization list in data/lexicon/word_variants.jsonl -- the orthogonality rule in src/noisers/misspell.py's module docstring that keeps Channel B from silently overlapping with transliteration's attested-spelling-variance lever.",
+  "text": "kanna",
+  "severity": "heavy",
+  "seed": 1,
+  "expected_text": "kaanna",
+  "expected_rate": 1.0
+}

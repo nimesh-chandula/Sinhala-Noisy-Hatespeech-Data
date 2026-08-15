@@ -1,0 +1,11 @@
+{
+  "id": "misspell_no_confusion_available",
+  "kind": "noiser",
+  "noiser": "misspell",
+  "description": "'ක්' (the pure consonant 'k', romanizes uniquely with no colliding cluster in data/lexicon/misspell_confusions.jsonl -- confirmed absent from every confusion set) must come back byte-identical regardless of severity or the attempt-probability roll: forced substitution must never invent a change where nothing is eligible, matching codemix's equivalent no-lexicon-match contract.",
+  "text": "ක්",
+  "severity": "heavy",
+  "seed": 1,
+  "expected_text": "ක්",
+  "expected_rate": 0.0
+}

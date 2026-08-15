@@ -1,0 +1,11 @@
+{
+  "id": "misspell_prefers_attested",
+  "kind": "noiser",
+  "noiser": "misspell",
+  "description": "Attestation prefer/fallback check (mirrors codemix_prefers_plausible). 'පරණ' (old/former) has an eligible cluster 'ණ' whose confusion set is ['න', 'නා', 'නැ', 'ණා'] -- substituting gives 'පරන' (attested, a real SOLD/Swa-Bhasha word) vs 'පරණා'/'පරණැ'/'පරණා'-style unattested forms. At this seed the noiser lands on 'ණ'->'න', the ONLY attested option among all 4 candidates -- proving selection actually prefers the attested pool rather than choosing uniformly (which would land on an unattested form the large majority of the time).",
+  "text": "පරණ",
+  "severity": "heavy",
+  "seed": 14,
+  "expected_text": "පරන",
+  "expected_rate": 1.0
+}

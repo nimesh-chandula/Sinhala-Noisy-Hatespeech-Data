@@ -430,6 +430,137 @@ def check_codemix_substitution_spec() -> bool:
     return ok
 
 
+def check_misspell_substitution_spec() -> bool:
+    """src.noisers.misspell's real design spec, checked independently of
+    trusting the noiser's own correctness — same discipline as
+    check_codemix_substitution_spec: recompute structure from
+    (original_text, noisy_text) and the FROZEN lexicon files, never by
+    re-running apply()'s own rng-driven selection.
+
+    Tokenizes both original_text and noisy_text into (kind, token) pairs
+    using the same static, non-random word-boundary rule apply() uses
+    (a Sinhala grapheme-cluster run is one token; each Latin alpha
+    substring inside a non-Sinhala run is its own token) — this rule is
+    structural, not a selection decision, so reusing it here doesn't
+    trivially agree with the noiser's choices. For every token that
+    changed, asserts:
+      - word count and token kind sequence are unchanged (neither channel
+        adds, drops, or reorders words);
+      - for a Sinhala token: EXACTLY ONE grapheme cluster differs, cluster
+        COUNT is unchanged, the new cluster is not a fresh ZWJ/ZWNJ
+        introduction, and the new cluster is an actual member of the old
+        cluster's confusion set in data/lexicon/misspell_confusions.jsonl
+        (Channel A must never invent a substitution outside its frozen,
+        human-reviewed lexicon);
+      - for a Latin token: the new form is not one of
+        data/lexicon/word_variants.jsonl's attested romanizations (Channel
+        B's orthogonality rule against overlapping with transliteration's
+        severity lever — see src/noisers/misspell.py's module docstring).
+    Finally, recomputes realised_noise_rate from the token diff and checks
+    it matches the persisted row's value — catching any drift between what
+    the row claims and what the text actually shows.
+    """
+    from src.graphemes import clusters as _clusters, text_runs as _text_runs, ZWJ, ZWNJ
+    from src.noisers.misspell import _LATIN_WORD_RE, _load_confusions, _load_word_variants_latin
+
+    outputs_dir = REPO_ROOT / "data" / "outputs"
+    misspell_files = []
+    for split in ("train", "test"):
+        split_dir = outputs_dir / split
+        if split_dir.exists():
+            misspell_files.extend(sorted(split_dir.glob("misspell_*.jsonl")))
+
+    if not misspell_files:
+        _notes["misspell_substitution_spec"] = "vacuous: no data/outputs/*/misspell_*.jsonl yet"
+        return True
+
+    confusions = _load_confusions()
+    if not confusions:
+        _notes["misspell_substitution_spec"] = "vacuous: data/lexicon/misspell_confusions.jsonl not yet built"
+        return True
+    excluded_latin = _load_word_variants_latin()
+
+    def _tokenize(text: str) -> list[tuple[str, str]]:
+        tokens = []
+        for is_sinhala, run in _text_runs(text):
+            if is_sinhala:
+                tokens.append(("sinhala", run))
+            else:
+                for m in _LATIN_WORD_RE.finditer(run):
+                    tokens.append(("latin", m.group(0)))
+        return tokens
+
+    RATE_TOLERANCE = 1e-6
+    checked = 0
+    bad = []
+    for path in misspell_files:
+        for row in _load_jsonl(path):
+            checked += 1
+            orig_tokens = _tokenize(row["original_text"])
+            noisy_tokens = _tokenize(row["noisy_text"])
+            if len(orig_tokens) != len(noisy_tokens):
+                bad.append((path.name, row["source_id"], "word count changed"))
+                continue
+
+            n_altered = 0
+            row_bad = False
+            for (kind_o, tok_o), (kind_n, tok_n) in zip(orig_tokens, noisy_tokens):
+                if kind_o != kind_n:
+                    bad.append((path.name, row["source_id"], "token kind mismatch"))
+                    row_bad = True
+                    break
+                if tok_o == tok_n:
+                    continue
+                n_altered += 1
+                if kind_o == "sinhala":
+                    cs_o, cs_n = _clusters(tok_o), _clusters(tok_n)
+                    if len(cs_o) != len(cs_n):
+                        bad.append((path.name, row["source_id"], f"cluster count changed: {tok_o!r}->{tok_n!r}"))
+                        row_bad = True
+                        break
+                    diffs = [(a, b) for a, b in zip(cs_o, cs_n) if a != b]
+                    if len(diffs) != 1:
+                        bad.append((path.name, row["source_id"],
+                                     f"expected exactly 1 changed cluster, got {len(diffs)}: {tok_o!r}->{tok_n!r}"))
+                        row_bad = True
+                        break
+                    old_c, new_c = diffs[0]
+                    if ZWJ in new_c or ZWNJ in new_c:
+                        bad.append((path.name, row["source_id"], f"ZWJ/ZWNJ introduced: {new_c!r}"))
+                        row_bad = True
+                        break
+                    if new_c not in confusions.get(old_c, []):
+                        bad.append((path.name, row["source_id"],
+                                     f"{new_c!r} not a member of {old_c!r}'s confusion set"))
+                        row_bad = True
+                        break
+                else:  # latin
+                    if tok_n in excluded_latin:
+                        bad.append((path.name, row["source_id"],
+                                     f"Channel B produced an attested transliteration variant: {tok_n!r}"))
+                        row_bad = True
+                        break
+            if row_bad:
+                continue
+
+            n_words = len(orig_tokens)
+            expected_rate = (n_altered / n_words) if n_words else 0.0
+            actual_rate = row.get("realised_noise_rate", -1)
+            if abs(actual_rate - expected_rate) > RATE_TOLERANCE:
+                bad.append((path.name, row["source_id"],
+                             f"realised_noise_rate={actual_rate}, recomputed {expected_rate}"))
+
+            if len(bad) > 20:
+                break
+        if len(bad) > 20:
+            break
+
+    ok = not bad
+    if not ok:
+        _notes["misspell_substitution_spec"] = f"{len(bad)}(+)/{checked} rows violate the substitution spec, e.g. {bad[:5]}"
+    return ok
+
+
 def check_split_isolation() -> bool:
     """No source_id may appear in both train and test NOISED outputs, and
     every row's own `split` field must match the directory it's written
@@ -482,6 +613,7 @@ def run_invariants() -> dict[str, bool]:
         "determinism": check_determinism,
         "grapheme_integrity": check_grapheme_integrity,
         "codemix_substitution_spec": check_codemix_substitution_spec,
+        "misspell_substitution_spec": check_misspell_substitution_spec,
         "split_isolation": check_split_isolation,
     }
     return {name: fn() for name, fn in checks.items()}

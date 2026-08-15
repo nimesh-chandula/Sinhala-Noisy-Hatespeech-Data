@@ -1,0 +1,11 @@
+{
+  "id": "misspell_sinhala_confusion_substitution",
+  "kind": "noiser",
+  "noiser": "misspell",
+  "description": "Basic Channel A sanity check: at this seed the single-word text 'කරන්න' (do/make) gets its leading 'ක' cluster IME-swapped for 'කැ' -- both members of romanization-collision key 'ka' (see data/lexicon/misspell_confusions.jsonl) -- producing 'කැරන්න', a genuine Sinhala phonetic-IME confusion, not degenerate output. rate=1.0 since the only word in the text was altered.",
+  "text": "කරන්න",
+  "severity": "heavy",
+  "seed": 1,
+  "expected_text": "කැරන්න",
+  "expected_rate": 1.0
+}
