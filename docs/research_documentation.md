@@ -6,6 +6,24 @@ during this project, intended as raw material for a research paper — not
 polished paper prose. Every number below is sourced from a specific file
 in the repository (cited inline) so it can be independently re-verified.
 
+**Status as of writing:** Phase 0 (verifier) and Phase 1 (romanizer
+selection) are complete. Phase 2 (transliteration noiser) is complete but
+paused at a mandatory manual-review checkpoint before the next *noise*
+phase (code-mixing) begins — see §8. In parallel with that pause, the
+Phase-2 transliteration output has been used to train and evaluate the
+first downstream hate-speech classifiers (SVM and XGBoost baselines) —
+see §9–§12. That parallel track is deliberate but carries a caveat
+recorded in §12.4: the classifiers were trained on data whose human
+review is still pending.
+
+**Scope note on the classifier sections (§9–§12):** both notebooks train
+and evaluate at *both* transliteration severities, but **this document
+records only the `heavy` severity condition**. Heavy is the harder,
+more discriminating condition and the one this project's benchmarking
+argument rests on. The light-severity numbers, and the light/heavy
+degradation analysis, are documented separately in
+[README_SVM_Transliteration_V7.md](README_SVM_Transliteration_V7.md) and
+[README_XGBoost_Transliteration.md](README_XGBoost_Transliteration.md).
 **Status as of writing:** Phases 0-2 (verifier, romanizer selection,
 transliteration noiser) are complete, including their manual-review
 checkpoint and fixes — see §8. Phase 3 (code-mixing noiser) is complete
@@ -38,6 +56,14 @@ not by inspection or intuition alone.
 | 3 | Build the code-mixing noiser; generate real output | Complete, paused at manual review |
 | 4 (not started) | Misspelling / abbreviation noise vectors | — |
 | 5 (not started) | Full dataset generation | — |
+| 6 | Downstream classifier baselines on the transliteration output (SVM, XGBoost) | Complete for the transliteration condition (§9–§12) |
+
+**Chronological reading order.** The document is ordered by when the work
+happened: data acquisition and gold-set construction (§2), verifier design
+(§3), romanizer bake-off (§4–§5), noiser construction and dataset
+generation (§6–§8), then downstream model training and results on the
+generated dataset (§9–§12), then reproducibility (§13). Everything from §9
+onward consumes the artifact produced in §7 and adds nothing to it.
 
 ---
 
@@ -620,6 +646,213 @@ project's fixed schema (`src/schema.py`): `source_id`, `split`,
 
 ---
 
+## 9. Downstream classifier baselines — shared experimental setup
+
+Phases 0–2 produced a dataset; §9–§12 record what happened when
+hate-speech classifiers were actually trained on it. Two traditional-ML
+baselines were run, in this order:
+
+| # | Model | Notebook | Purpose |
+|---|---|---|---|
+| 1 | Linear/RBF SVM on character TF-IDF | `SVM/SVM_Transliteration_V7.ipynb` | First baseline; establishes that the noised data is learnable at all |
+| 2 | XGBoost on character + word TF-IDF | `XgBoost/NLP_15.ipynb` | Stronger baseline; tests whether a non-linear ensemble improves on the SVM |
+
+`XgBoost/NLP_14 (1).ipynb` is an earlier version of the XGBoost notebook
+containing the same training and evaluation code; it produced
+byte-identical metrics and is superseded by `NLP_15.ipynb`, which adds
+read-only analysis sections on top. Both are retained.
+
+**As stated in the scope note above, only the `heavy` transliteration
+condition is recorded below.**
+
+### 9.1 Data consumed
+
+Both notebooks read the Phase-2 output described in §7:
+
+```text
+data/outputs/train/transliteration_heavy.jsonl   # 7,500 rows
+data/outputs/test/transliteration_heavy.jsonl    # 2,500 rows
+```
+
+(In the notebooks these are read from a Google Drive copy at
+`transliterations/{train,test}/transliteration_heavy.jsonl`; the content
+is the same generated artifact.)
+
+Of the schema's nine fields (§7), the classifiers use exactly two:
+
+| Field | Role |
+|---|---|
+| `noisy_text` | model input |
+| `label` | target (0 = not offensive, 1 = offensive) |
+
+**The clean `original_text` field is never used for training or
+inference in either notebook.** This is the point of the whole exercise —
+the classifier only ever sees the noised text. `source_id` is used only
+for leakage checking and for matching posts across severities.
+
+### 9.2 Class distribution
+
+Inherited unchanged from SOLD (§2.1), since the noiser rewrites text
+without touching labels:
+
+| Split | Rows | Not-offensive | Offensive | Offensive rate |
+|---|---:|---:|---:|---:|
+| Heavy train | 7,500 | 4,324 | 3,176 | 42.35% |
+| Heavy test | 2,500 | 1,485 | 1,015 | 40.60% |
+
+Both notebooks confirmed these counts at load time, and both match the
+provenance-verified SOLD figures in §2.1 exactly — an end-to-end check
+that the noiser preserved label integrity across 10,000 rows.
+
+### 9.3 Leakage controls
+
+Two distinct leakage risks were relevant, and they were handled
+differently by the two notebooks:
+
+**(a) Split leakage (`source_id` appearing in both train and test).**
+Guaranteed upstream by SOLD's own split isolation (§2.1) and by the
+noiser preserving `source_id`. The **SVM notebook verified this
+independently**, checking all four train/test severity combinations and
+finding zero overlap in every case:
+
+```text
+LIGHT train ∩ LIGHT test : 0
+LIGHT train ∩ HEAVY test : 0
+HEAVY train ∩ LIGHT test : 0
+HEAVY train ∩ HEAVY test : 0
+```
+
+The **XGBoost notebook does not perform this check** and relies on the
+upstream guarantee. Since both notebooks consume the same files, the
+SVM's verification covers the XGBoost run in practice — but it is not
+verified within that notebook.
+
+**(b) Feature leakage (TF-IDF fitted on data it will later be scored
+on).** Both notebooks handle this the same, correct way: the TF-IDF
+vectorizer(s) sit *inside* a scikit-learn `Pipeline` whose last step is
+the classifier, and the whole pipeline — not a pre-computed feature
+matrix — is what gets handed to the hyperparameter search. scikit-learn
+therefore clones and refits the vectorizers on each CV fold's training
+portion only, so a held-out fold's text never contributes to the
+vocabulary or IDF statistics used to score it. The final refit on the
+full training set, performed once after hyperparameters are chosen, is
+standard and is not leakage.
+
+The XGBoost notebook additionally attaches a `Pipeline(memory=...)` disk
+cache so that candidates differing only in tree hyperparameters reuse
+the fold's already-computed TF-IDF matrix instead of recomputing it —
+which is what makes per-fold refitting affordable on Colab's free tier.
+
+### 9.4 Shared evaluation protocol
+
+| Aspect | Setting |
+|---|---|
+| Model-selection metric | Macro-F1 (equal weight to both classes, so the 58/42 imbalance cannot be gamed by predicting the majority) |
+| Cross-validation | 5-fold stratified, shuffled |
+| Test set | Held out entirely from tuning; used once, at the end |
+| Reported metrics | Accuracy, macro-F1, weighted-F1, per-class precision/recall/F1, confusion matrix |
+| Baseline comparison | `DummyClassifier(strategy="most_frequent")` majority-class macro-F1 |
+| Seed | `RANDOM_STATE = 42` in both notebooks |
+
+**Seed note for §13:** the classifier notebooks use seed 42, *not* the
+project-wide seed 1337 used for all data generation. The two seeds govern
+disjoint stages (1337 fixes which data exists; 42 fixes how models are
+fit to it), so this is not a conflict — but it must be stated rather than
+assumed.
+
+---
+
+## 10. Baseline 1 — SVM (heavy transliteration)
+
+Source: `SVM/SVM_Transliteration_V7.ipynb`; full write-up in
+[README_SVM_Transliteration_V7.md](README_SVM_Transliteration_V7.md).
+
+### 10.1 Features
+
+Character-level TF-IDF only:
+
+```python
+TfidfVectorizer(analyzer="char_wb", ngram_range=(1, 5),
+                min_df=2, sublinear_tf=True)
+```
+
+Character n-grams rather than words, because transliterated Sinhala has
+no stable orthography — the same word is spelled several ways (this is
+precisely the property the Phase-2 noiser injects, §6.1), so word-level
+features fragment while shared character substrings survive. No
+handcrafted features (length, punctuation counts, sentiment, lexicon
+hits) were added.
+
+### 10.2 Model and tuning
+
+`sklearn.svm.SVC` with `class_weight="balanced"` to compensate for the
+42.35% offensive rate, tuned by exhaustive grid search:
+
+```python
+SVM_PARAM_GRID = {"svm__kernel": ["linear", "rbf"],
+                  "svm__C": [0.1, 1, 3, 10]}
+```
+
+8 candidates × 5 folds = **40 fits** for the heavy model.
+
+| Selected | Value |
+|---|---|
+| Kernel | RBF (selected automatically over linear) |
+| `C` | 10 |
+| CV macro-F1 | 0.7944 |
+
+The RBF kernel winning has a downstream consequence: the notebook's
+character-n-gram coefficient analysis only applies to linear SVMs, so it
+was automatically skipped. **The SVM baseline therefore yields no
+interpretable per-feature signal** — a gap the XGBoost run later filled
+(§11.5).
+
+### 10.3 Results — heavy train → heavy test
+
+| Metric | Value |
+|---|---:|
+| Accuracy | 0.8080 |
+| **Macro-F1** | **0.7944** |
+| Weighted-F1 | 0.8043 |
+
+| Class | Precision | Recall | F1 | Support |
+|---|---:|---:|---:|---:|
+| not-offensive (0) | 0.8029 | 0.8970 | 0.8473 | 1,485 |
+| offensive (1) | 0.8181 | 0.6778 | 0.7414 | 1,015 |
+
+| Baseline | Macro-F1 |
+|---|---:|
+| Majority-class | 0.3726 |
+| Minority-class | 0.2888 |
+| **SVM** | **0.7944** |
+
+Confusion matrix (reconstructed from the reported per-class
+precision/recall and supports — the SVM notebook plots the matrices
+rather than printing them; the reconstruction reproduces both reported
+precisions to four decimal places, so it is exact):
+
+|  | pred: not-offensive | pred: offensive |
+|---:|---:|---:|
+| **true: not-offensive** | 1,332 (TN) | 153 (FP) |
+| **true: offensive** | 327 (FN) | 688 (TP) |
+
+### 10.4 Principal finding
+
+Offensive recall (0.6778) is **0.2192 below** not-offensive recall
+(0.8970). The model is markedly better at recognising non-offensive
+content than offensive content: nearly a third of offensive posts are
+missed. Since false negatives are the costly error type for a hate-speech
+system, this asymmetry — not the headline macro-F1 — is the SVM
+baseline's most important result.
+
+---
+
+## 11. Baseline 2 — XGBoost (heavy transliteration)
+
+Source: `XgBoost/NLP_15.ipynb`; full write-up in
+[README_XGBoost_Transliteration.md](README_XGBoost_Transliteration.md).
+
+### 11.1 Features
 ## 9. Code-mixing noiser methodology (Phase 3)
 
 Code-mixing substitutes a real, attested English word for a Sinhala word,
@@ -933,9 +1166,295 @@ particle-romanization errors, an incomplete trailing-token parser).
 
 ## 10. Reproducibility appendix
 
-**Seed used throughout the project:** `1337` (all sampling, shuffling,
-and noise-generation randomness is seeded from this value, directly or
-via a stable per-item hash derived from it).
+Character TF-IDF **plus** word TF-IDF, combined with a `FeatureUnion`:
+
+```python
+char_vec = TfidfVectorizer(analyzer="char_wb", ngram_range=(1, 5),
+                           min_df=2, max_features=30000, sublinear_tf=True)
+word_vec = TfidfVectorizer(analyzer="word", ngram_range=(1, 2),
+                           min_df=2, max_features=15000, sublinear_tf=True,
+                           token_pattern=r"(?u)\b\w+\b")
+```
+
+Two differences from the SVM: word 1–2 grams are added, and both
+vectorizers are capped by `max_features` (≤45,000 dimensions total) for
+Colab memory. §11.5 shows the word features turned out to contribute
+almost nothing.
+
+### 11.2 Model and tuning
+
+`xgb.XGBClassifier(objective="binary:logistic", eval_metric="logloss",
+tree_method="hist", device="cuda")`, with class imbalance handled by
+`scale_pos_weight = n_neg / n_pos = 4324 / 3176 = 1.361` — computed from
+labels only, so not a source of feature leakage.
+
+Tuned by `RandomizedSearchCV` over nine hyperparameters
+(`n_estimators`, `max_depth`, `learning_rate`, `subsample`,
+`colsample_bytree`, `min_child_weight`, `gamma`, `reg_alpha`,
+`reg_lambda`), 20 sampled candidates × 5 folds = **100 fits** for the
+heavy model.
+
+| Selected | Value |
+|---|---:|
+| `n_estimators` | 534 |
+| `max_depth` | 7 |
+| `learning_rate` | 0.0249 |
+| `subsample` | 0.7958 |
+| `colsample_bytree` | 0.8048 |
+| `min_child_weight` | 1 |
+| `gamma` | 0.2513 |
+| `reg_alpha` | 0.2396 |
+| `reg_lambda` | 0.7898 |
+| CV macro-F1 | 0.8030 |
+
+### 11.3 Results — heavy train → heavy test
+
+| Metric | Value |
+|---|---:|
+| Accuracy | 0.8152 |
+| **Macro-F1** | **0.8041** |
+| Weighted-F1 | 0.8129 |
+| CV macro-F1 (for comparison) | 0.8030 |
+
+Test macro-F1 slightly *exceeds* CV macro-F1 (+0.0011), i.e. no evidence
+of overfitting to the CV folds.
+
+| Class | Precision | Recall | F1 | Support |
+|---|---:|---:|---:|---:|
+| not-offensive (0) | 0.8179 | 0.8862 | 0.8507 | 1,485 |
+| offensive (1) | 0.8103 | 0.7113 | 0.7576 | 1,015 |
+
+Confusion matrix (printed directly by the notebook):
+
+|  | pred: not-offensive | pred: offensive |
+|---:|---:|---:|
+| **true: not-offensive** | 1,316 (TN) | 169 (FP) |
+| **true: offensive** | 293 (FN) | 722 (TP) |
+
+Majority-class baseline macro-F1: 0.3726.
+
+### 11.4 Threshold-independent metrics and confidence interval
+
+| Metric | Value |
+|---|---:|
+| ROC AUC (offensive class) | 0.8814 |
+| Average Precision | 0.8620 |
+| Macro-F1 95% CI (2,000 bootstrap resamples) | [0.7880, 0.8198] |
+| Bootstrap std | 0.0081 |
+
+The confidence interval resamples already-computed test predictions, so
+it captures **test-set sampling variability only**, not training
+variance. It is a lighter-weight substitute for a multi-seed protocol,
+not equivalent to one.
+
+The gap between AUC (0.8814) and the macro-F1 achieved at the default 0.5
+threshold suggests the ranking is better than the hard predictions
+imply — i.e. threshold tuning is an unexploited lever for improving
+offensive recall.
+
+### 11.5 Feature importance — what the model actually keys on
+
+The XGBoost run supplies the interpretability the RBF SVM could not
+(§10.2). Top features for the heavy condition:
+
+| Rank | Feature | Importance |
+|---:|---|---:|
+| 1 | `char: puka` | 0.00799 |
+| 2 | `char: akkil` | 0.00672 |
+| 3 | `char: " hu"` | 0.00614 |
+| 4 | `char: " ponn"` | 0.00613 |
+| 5 | `char: kkil` | 0.00538 |
+
+Three observations, each of which bears on the dataset design rather
+than just the model:
+
+1. **24 of the top 25 features are character n-grams**; word n-grams are
+   almost absent despite being 15,000 of the ~45,000 available
+   dimensions. This is direct empirical support for the character-level
+   representation choice, and it independently corroborates §6.1's
+   premise that spelling variance destroys word-level stability in
+   transliterated text.
+2. **The top features are romanized profanity/slur fragments**, not
+   syntax or topic words — the model is running a lexical
+   pattern-matcher, which explains both its recall ceiling and its error
+   profile (§12.3).
+3. **Individual importances are low** (max ≈ 0.008), so the decision is
+   spread thinly across many weak features rather than driven by a
+   handful of keywords.
+
+### 11.6 Error profile
+
+| Error type | Count (of 2,500) |
+|---|---:|
+| False negatives (offensive missed) | 293 |
+| False positives (non-offensive flagged) | 169 |
+
+The most confident errors fall into two clean patterns:
+
+- **False negatives** (scored ≈0.09–0.12 offensive) are short posts that
+  are offensive *in context* but contain no explicit slur token — e.g.
+  `@USER ado eki jan wikrithi una ekakda?`. A lexical model has nothing
+  to fire on.
+- **False positives** (scored ≈0.90–0.99 offensive) contain strong
+  slur-like character n-grams used non-abusively or quoted — e.g. posts
+  containing `kalakanni`, `pako`, `hujja`. The same shortcut that
+  produces recall produces these.
+
+### 11.7 Analyses implemented but not executed
+
+Two analysis cells in `NLP_15.ipynb` contain complete code but have **no
+stored output**, meaning they were not run in the saved session:
+
+| Notebook section | Analysis | Status |
+|---|---|---|
+| 16 | McNemar's exact test across severities, matched by `source_id` | **No results recorded** |
+| 17 | OOV character-n-gram rate (tokenization-fragmentation proxy) | **No results recorded** |
+
+This is recorded here because §17 in particular is directly relevant to
+this project's methodology: it would have measured how badly heavy noise
+fragments text into n-grams the model has never seen, which is the
+model-side counterpart to the realism/JSD measurements in §3.2. **No
+fragmentation number exists yet.** Both cells are written and cheap to
+run.
+
+---
+
+## 12. Baseline comparison and findings
+
+### 12.1 Head-to-head (heavy transliteration, identical train/test files)
+
+| Metric | SVM (RBF) | XGBoost | Δ |
+|---|---:|---:|---:|
+| Accuracy | 0.8080 | **0.8152** | +0.0072 |
+| **Macro-F1** | 0.7944 | **0.8041** | **+0.0097** |
+| Weighted-F1 | 0.8043 | **0.8129** | +0.0086 |
+| CV macro-F1 | 0.7944 | **0.8030** | +0.0086 |
+| Not-offensive precision | 0.8029 | **0.8179** | +0.0150 |
+| Not-offensive recall | **0.8970** | 0.8862 | −0.0108 |
+| Not-offensive F1 | 0.8473 | **0.8507** | +0.0034 |
+| Offensive precision | **0.8181** | 0.8103 | −0.0078 |
+| **Offensive recall** | 0.6778 | **0.7113** | **+0.0335** |
+| Offensive F1 | 0.7414 | **0.7576** | +0.0162 |
+| Majority baseline | 0.3726 | 0.3726 | — |
+
+In error counts:
+
+| | SVM | XGBoost | Δ |
+|---|---:|---:|---:|
+| Offensive posts caught (TP) | 688 | **722** | **+34** |
+| Offensive posts missed (FN) | 327 | **293** | **−34** |
+| Non-offensive posts wrongly flagged (FP) | **153** | 169 | +16 |
+
+**XGBoost is the better baseline**, and the gain is concentrated exactly
+where it matters: it recovers 34 additional offensive posts (+3.35pp
+recall) at a cost of 16 additional false positives. Offensive precision
+falls only 0.0078, so this is a genuine recall gain, not a
+precision-for-recall trade dressed up as an improvement.
+
+### 12.2 Both models clear the trivial baselines decisively
+
+| Model | Macro-F1 | vs. majority baseline (0.3726) |
+|---|---:|---:|
+| SVM | 0.7944 | +0.4218 |
+| XGBoost | 0.8041 | +0.4315 |
+
+The heavily-noised transliteration dataset is comfortably learnable —
+heavy spelling variance does not render the signal inaccessible to
+traditional ML. This is the primary sanity result for the Phase-2
+artifact.
+
+*Baseline caveat:* in the XGBoost notebook the `DummyClassifier` is fit
+on `(X_test, y_test)`. `DummyClassifier` ignores `X` and
+`strategy="most_frequent"` reads only the label distribution, so 0.3726
+is correct as a *test-set* majority baseline — but it is not held out in
+the strict sense, and should be described that way if quoted.
+
+### 12.3 The consistent, cross-model finding
+
+| Model | Offensive recall | Not-offensive recall | Gap |
+|---|---:|---:|---:|
+| SVM | 0.6778 | 0.8970 | **−0.2192** |
+| XGBoost | 0.7113 | 0.8862 | **−0.1749** |
+
+Both models are substantially worse at detecting offensive content than
+non-offensive content, under two different feature sets, two different
+model families, and two different imbalance-correction mechanisms
+(`class_weight="balanced"` vs `scale_pos_weight`). XGBoost narrows the
+gap by 0.0443 but does not close it, and both still miss roughly
+28–32% of offensive posts.
+
+§11.5 and §11.6 together explain why: the signal these models extract is
+**lexical** — romanized slur fragments — so offensiveness carried by
+context, sarcasm, or implication is invisible to them, while innocuous
+posts containing slur-shaped substrings are over-flagged. This is a
+ceiling imposed by the representation, not by the tuning, which is
+consistent with a stronger tuner (100 fits vs 40) buying only +0.0097
+macro-F1.
+
+### 12.4 Limitations of the classifier baselines
+
+1. **Trained on data whose human review is still pending.** §8 records
+   that Phase 2 stops unconditionally at a 100-item manual-review
+   checkpoint, and that review has not been completed. The classifier
+   results are therefore valid as *baselines on the generated artifact*,
+   but they inherit any quality issue the review may yet surface. They
+   do not substitute for that review.
+2. **No fragmentation measurement.** The OOV-rate analysis that would
+   connect model performance back to this project's realism/JSD
+   framework was implemented but not run (§11.7).
+3. **No statistical test across conditions.** The McNemar test was
+   likewise not run (§11.7), so no significance claim is available for
+   any cross-condition difference.
+4. **Single seed, no seed averaging.** Both notebooks run once at
+   `RANDOM_STATE = 42`. The XGBoost bootstrap CI (§11.4) captures test
+   sampling variability only, not training variance.
+5. **XGBoost package versions unpinned.** The notebook installs with
+   `pip install -q --upgrade xgboost scikit-learn scipy joblib` and
+   stores no `pip freeze`, so exact reproduction on a future Colab image
+   is not guaranteed — a weaker reproducibility position than the rest of
+   this project maintains (§13).
+6. **Transliteration only.** Clean SOLD, code-mixing, misspelling,
+   abbreviation, and compound-noise conditions were not evaluated, since
+   Phases 3–5 have not started. Encoder models (mBERT/XLM-R) and SLMs are
+   likewise out of scope for these two baselines.
+7. **The SVM's features are uninterpretable.** RBF selection meant no
+   coefficient analysis was possible (§10.2), so the feature-level
+   findings in §11.5 come from XGBoost alone and are not corroborated by
+   a second model.
+
+### 12.5 Immediate next steps
+
+1. Complete the §8 manual review — it gates everything downstream.
+2. Run notebook sections 16–17 (`NLP_15.ipynb`) to obtain the McNemar
+   p-value and the OOV fragmentation rate; both are written and cheap.
+3. Pin classifier package versions.
+4. Explore decision-threshold tuning for the offensive class, which
+   §11.4's AUC/F1 gap indicates is an unexploited lever.
+5. Treat XGBoost macro-F1 **0.8041** and offensive recall **0.7113** as
+   the reference numbers the planned encoder/SLM models must beat on the
+   heavy transliteration condition.
+
+---
+
+## 13. Reproducibility appendix
+
+**Seeds.** Two seeds govern two disjoint stages, and both must be quoted
+to reproduce an end-to-end result:
+
+| Seed | Stage | Scope |
+|---|---|---|
+| `1337` | Data generation (§2–§7) | All sampling, shuffling, and noise-generation randomness, directly or via a stable per-item hash (`zlib.crc32`, not Python's `hash()` — see §6.5) |
+| `42` | Classifier training (§9–§12) | numpy, `StratifiedKFold`, `GridSearchCV`/`RandomizedSearchCV`, `SVC`/`XGBClassifier`, bootstrap RNG |
+
+Seed 1337 fixes *which data exists*; seed 42 fixes *how models are fit to
+it*. Determinism of the classifier stage under seed 42 is not merely
+asserted — the two XGBoost notebook runs (`NLP_14 (1)` and `NLP_15`)
+produced byte-identical metrics, which is direct empirical evidence.
+
+**Environment note:** the classifier notebooks were run on Google Colab
+with GPU (`device="cuda"`, `tree_method="hist"` for XGBoost) and install
+their dependencies **unpinned** (§12.4, item 5). The data-generation
+stage has no such gap.
 
 **Key scripts** (all runnable from the repository root):
 
@@ -951,6 +1470,20 @@ via a stable per-item hash derived from it).
 | `scripts/generate_codemix.py` | Generates the full codemix noised dataset (§9.7); also has a `--demo` mode |
 | `scripts/build_review_sample.py` | Builds a 100-item human-review sample for a given `--condition` (§8, §9.7) |
 | `eval/harness.py` | Runs the full evaluation suite; produces `eval/report.json` / `.md` |
+
+**Classifier notebooks** (Google Colab; consume the §7 output, produce
+the §10–§11 results):
+
+| Notebook | Purpose |
+|---|---|
+| `SVM/SVM_Transliteration_V7.ipynb` | SVM baseline — training, tuning, evaluation, leakage checks (§10) |
+| `SVM/SVM_Transliteration_V6.ipynb` | Earlier SVM version, superseded by V7 |
+| `XgBoost/NLP_15.ipynb` | XGBoost baseline + analysis sections — authoritative (§11) |
+| `XgBoost/NLP_14 (1).ipynb` | Earlier XGBoost version; identical metrics, no analysis sections |
+
+Per-notebook write-ups, including the light-severity results excluded
+from this document by scope: `docs/README_SVM_Transliteration_V7.md` and
+`docs/README_XGBoost_Transliteration.md`.
 
 **Key data artifacts and their locations:**
 
@@ -973,3 +1506,19 @@ via a stable per-item hash derived from it).
 | Full provenance record (URLs, hashes, counts) | `data/PROVENANCE.json` |
 | Full evaluation report | `eval/report.json` / `eval/report.md` |
 | Iteration-by-iteration project log | `LOG.md` |
+
+**Classifier artifacts** (written to Google Drive by the notebooks, not
+committed to this repository):
+
+| Artifact | Path (relative to the notebook's results dir) |
+|---|---|
+| Fitted SVM pipelines (TF-IDF + SVC) | `svm_artifacts/svm_pipeline_heavy.joblib` |
+| SVM test predictions | `svm_artifacts/svm_predictions_heavy_train__heavy_test.csv` |
+| SVM results table / metadata | `svm_artifacts/svm_transliteration_results.csv`, `svm_metadata_heavy.json` |
+| Fitted XGBoost pipeline (TF-IDF + XGBClassifier) | `results/xgboost/xgboost_pipeline_heavy.joblib` |
+| XGBoost test predictions (with offensive probability) | `results/xgboost/test_predictions_heavy.csv` |
+| XGBoost results table | `results/xgboost/xgboost_results_summary.csv` |
+| XGBoost analysis outputs (ROC/PR, CIs, feature importance, error samples) | `results/xgboost/analysis/` |
+
+Each saved `.joblib` bundles the fitted vectorizer(s) *and* the model, so
+inference on raw noisy text is a single `pipeline.predict(texts)` call.
