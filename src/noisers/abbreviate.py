@@ -73,12 +73,15 @@ LEXICON_HASH_PATH = REPO_ROOT / "data" / "lexicon" / ".abbreviate_initialisms.sh
 # in eval/invariants.py for the exact contract).
 _BIGRAMS_PER_POST = {"light": 1, "heavy": 2}
 
-# Measured once from a completed generation run (see LOG.md's Phase 4b
-# Stage 5 entry) -- a drift tripwire, not a natural-rate claim. See the
-# module docstring's "Severity" section and src/noisers/codemix.py's
-# TARGET_NOISE_RATE docstring for why forced-per-post selection makes this
-# a consequence of post length and lexicon coverage, not something tuned.
-TARGET_NOISE_RATE = {"light": 0.0, "heavy": 0.0}
+# Measured once from a completed generation run (pooled mean
+# realised_noise_rate across train+test, 10,000 posts each severity, 378-
+# bigram lexicon sha256 2766d949... -- see LOG.md's Phase 4b Stage 5 entry)
+# -- a drift tripwire, not a natural-rate claim. See the module docstring's
+# "Severity" section and src/noisers/codemix.py's TARGET_NOISE_RATE
+# docstring for why forced-per-post selection makes this a consequence of
+# post length and lexicon coverage, not something tuned. 32.79%/30.84%
+# (train/test) of posts had >=1 eligible bigram and were touched.
+TARGET_NOISE_RATE = {"light": 0.0436, "heavy": 0.0518}
 
 
 def initials(word1: str, word2: str) -> str:
