@@ -1,0 +1,11 @@
+{
+  "id": "abbreviate_overlap_resolution",
+  "kind": "noiser",
+  "noiser": "abbreviate",
+  "description": "Three consecutive words where BOTH the first-two and the last-two are independently approved bigrams, sharing the middle word. Only the LEFTMOST (greedy left-to-right, non-overlapping) may fire -- the middle word can't be consumed by two substitutions in the same pass. Confirmed at heavy severity (k=2) that only 1 substitution happens even though k=2 would otherwise allow a second, because only 1 non-overlapping occurrence actually exists in the eligible pool.",
+  "text": "කවුද කියලා දෙන්න",
+  "severity": "heavy",
+  "seed": 0,
+  "expected_text": "ක. කි. දෙන්න",
+  "expected_rate": 0.6666666666666666
+}

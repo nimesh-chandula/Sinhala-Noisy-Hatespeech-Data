@@ -1,0 +1,11 @@
+{
+  "id": "abbreviate_heavy_two_occurrences",
+  "kind": "noiser",
+  "noiser": "abbreviate",
+  "description": "Text has two NON-OVERLAPPING eligible bigrams (both approved, sharing no words). At heavy severity (k=2, capped at availability) BOTH must be abbreviated, for every seed -- proving heavy takes up to 2 rather than always just 1. The connector word 'saha' between the two bigrams is untouched.",
+  "text": "පලයන් බන් සහ කියන ඒවා",
+  "severity": "heavy",
+  "seed": 0,
+  "expected_text": "ප. බ. සහ කි. ඒ.",
+  "expected_rate": 0.8
+}

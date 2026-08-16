@@ -167,6 +167,12 @@ try:
         _NOISER_TARGETS["misspell"] = _misspell_noiser.TARGET_NOISE_RATE
 except ImportError as _e:
     _NOISERS_UNAVAILABLE["misspell"] = str(_e)
+try:
+    from src.noisers import abbreviate as _abbreviate_noiser
+
+    _NOISER_TARGETS["abbreviate"] = _abbreviate_noiser.TARGET_NOISE_RATE
+except ImportError as _e:
+    _NOISERS_UNAVAILABLE["abbreviate"] = str(_e)
 
 
 def compute_noise_rate_error() -> dict[str, float]:

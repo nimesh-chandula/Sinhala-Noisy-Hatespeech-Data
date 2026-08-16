@@ -273,7 +273,7 @@ def check_determinism() -> bool:
     # entirely because aksharamukha wasn't installed in that interpreter —
     # see Stage 0 in LOG.md). Any skip is now recorded in `skipped` and
     # surfaced via invariant_notes so a green run can't hide it again.
-    for noiser_name in ("transliteration", "codemix", "misspell"):
+    for noiser_name in ("transliteration", "codemix", "misspell", "abbreviate"):
         try:
             module = importlib.import_module(f"src.noisers.{noiser_name}")
         except ImportError as e:
@@ -561,6 +561,75 @@ def check_misspell_substitution_spec() -> bool:
     return ok
 
 
+def check_abbreviate_substitution_spec() -> bool:
+    """src.noisers.abbreviate's forced-per-post design spec, checked
+    independently of trusting the noiser's own selection logic — same
+    discipline and same rigor level as check_codemix_substitution_spec
+    (which this deliberately mirrors: recompute the eligible pool from
+    scratch and check spec-compliance, not byte-for-byte reconstruct which
+    exact occurrences were chosen, since WHICH ones get picked is legitimately
+    rng's job and not independently re-derivable without re-running the
+    noiser's own draw).
+
+    Reuses the noiser's own PURE, non-random helper functions
+    (`_find_occurrences`, `_non_overlapping`) to recompute the eligible,
+    non-overlapping bigram-occurrence pool straight from original_text and
+    the frozen lexicon — but never calls `_apply()`/`apply()`, which involve
+    the rng draw this check must not simply agree with by construction.
+    Asserts:
+      1. `n_substitutions == min(k, pool_size)`, where k is 1 (light) or 2
+         (heavy) — forced-per-post selection must always take exactly this
+         many, never fewer just because a draw "chose" fewer.
+      2. A post with `pool_size == 0` is byte-identical to its source
+         (`noisy_text == original_text`) — forced selection must never
+         invent a substitution where nothing is eligible.
+    """
+    from src.graphemes import text_runs as _text_runs
+    from src.noisers.abbreviate import _BIGRAMS_PER_POST, _find_occurrences, _non_overlapping, _load_lexicon
+
+    outputs_dir = REPO_ROOT / "data" / "outputs"
+    abbreviate_files = []
+    for split in ("train", "test"):
+        split_dir = outputs_dir / split
+        if split_dir.exists():
+            abbreviate_files.extend(sorted(split_dir.glob("abbreviate_*.jsonl")))
+
+    if not abbreviate_files:
+        _notes["abbreviate_substitution_spec"] = "vacuous: no data/outputs/*/abbreviate_*.jsonl yet"
+        return True
+
+    lexicon = _load_lexicon()
+    if not lexicon:
+        _notes["abbreviate_substitution_spec"] = "vacuous: data/lexicon/abbreviate_initialisms.jsonl not yet built"
+        return True
+
+    checked = 0
+    bad = []
+    for path in abbreviate_files:
+        severity = "heavy" if "heavy" in path.stem else "light"
+        k = _BIGRAMS_PER_POST[severity]
+        for row in _load_jsonl(path):
+            checked += 1
+            runs = _text_runs(row["original_text"])
+            pool = _non_overlapping(_find_occurrences(runs, lexicon))
+            pool_size = len(pool)
+            expected_n = min(k, pool_size)
+            actual_n = row.get("n_substitutions", -1)
+            if actual_n != expected_n:
+                bad.append((path.name, row["source_id"], f"n_substitutions={actual_n}, expected {expected_n}"))
+            elif pool_size == 0 and row["noisy_text"] != row["original_text"]:
+                bad.append((path.name, row["source_id"], "pool_size=0 but noisy_text != original_text"))
+            if len(bad) > 20:
+                break
+        if len(bad) > 20:
+            break
+
+    ok = not bad
+    if not ok:
+        _notes["abbreviate_substitution_spec"] = f"{len(bad)}(+)/{checked} rows violate the substitution spec, e.g. {bad[:5]}"
+    return ok
+
+
 def check_split_isolation() -> bool:
     """No source_id may appear in both train and test NOISED outputs, and
     every row's own `split` field must match the directory it's written
@@ -614,6 +683,7 @@ def run_invariants() -> dict[str, bool]:
         "grapheme_integrity": check_grapheme_integrity,
         "codemix_substitution_spec": check_codemix_substitution_spec,
         "misspell_substitution_spec": check_misspell_substitution_spec,
+        "abbreviate_substitution_spec": check_abbreviate_substitution_spec,
         "split_isolation": check_split_isolation,
     }
     return {name: fn() for name, fn in checks.items()}

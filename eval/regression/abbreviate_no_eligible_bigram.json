@@ -1,0 +1,11 @@
+{
+  "id": "abbreviate_no_eligible_bigram",
+  "kind": "noiser",
+  "noiser": "abbreviate",
+  "description": "No word pair in this text is an approved bigram in data/lexicon/abbreviate_initialisms.jsonl. Text must come back byte-identical regardless of severity or seed -- forced selection must never invent a substitution where nothing is eligible (pool_size=0 implies noisy_text==original_text, the same contract check_abbreviate_substitution_spec enforces over real generated output).",
+  "text": "මම අද ගෙදර යනවා",
+  "severity": "heavy",
+  "seed": 0,
+  "expected_text": "මම අද ගෙදර යනවා",
+  "expected_rate": 0.0
+}

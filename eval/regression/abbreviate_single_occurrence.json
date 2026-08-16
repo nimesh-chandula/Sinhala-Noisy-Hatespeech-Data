@@ -1,0 +1,11 @@
+{
+  "id": "abbreviate_single_occurrence",
+  "kind": "noiser",
+  "noiser": "abbreviate",
+  "description": "Forced-selection sanity check: the text has exactly ONE eligible back-to-back bigram from the frozen, human-approved lexicon. At light severity (k=1) it MUST always be abbreviated, for every seed, unconditionally -- proving selection is forced, not a probability-gated draw. Output uses the mechanical initials() rule: first grapheme cluster of each word joined as 'X. Y.'.",
+  "text": "පලයන් බන් අද",
+  "severity": "light",
+  "seed": 0,
+  "expected_text": "ප. බ. අද",
+  "expected_rate": 0.6666666666666666
+}
