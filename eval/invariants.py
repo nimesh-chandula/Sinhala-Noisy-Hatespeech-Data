@@ -235,14 +235,19 @@ def check_no_empty_outputs() -> bool:
 
 
 def check_determinism() -> bool:
-    """Same input + same backend => identical output, run twice. Checked
-    against every registered Phase 1 backend (no RNG in any of them yet).
-    Phase 3+ noisers must additionally be checked with a fixed seed once
-    they exist."""
+    """Same input + same backend/noiser => identical output, run twice.
+    Checked against every registered Phase 1 backend (no RNG in any of
+    them), AND against every implemented Phase 2+ noiser at a fixed seed
+    (per this check's own long-standing TODO) — a noiser's determinism
+    can't be assumed the way a backend's can, since it consumes a
+    random.Random(seed) internally."""
     words = _load_jsonl(GOLD_DIR / "gold_words.jsonl")
     if not words:
         _notes["determinism"] = "vacuous: no sample to check determinism over yet"
         return True
+
+    bad = []
+
     from eval.gold_cer import discover_backends
 
     backends = discover_backends()
@@ -250,25 +255,156 @@ def check_determinism() -> bool:
         _notes["determinism"] = "vacuous: no romanizer backend available yet"
         return True
     sample = [row["sinhala"] for row in words[:50]]
-    bad = []
     for name, fn in backends.items():
         run1 = [fn(s) for s in sample]
         run2 = [fn(s) for s in sample]
         if run1 != run2:
             bad.append(name)
+
+    import importlib
+
+    noiser_sample = [row["sinhala"] for row in words[:20]]
+    for noiser_name in ("transliteration", "codemix"):
+        try:
+            module = importlib.import_module(f"src.noisers.{noiser_name}")
+        except ImportError:
+            continue
+        for severity in getattr(module, "TARGET_NOISE_RATE", {}):
+            run1 = [module.apply(t, severity, seed=1337) for t in noiser_sample]
+            run2 = [module.apply(t, severity, seed=1337) for t in noiser_sample]
+            if run1 != run2:
+                bad.append(f"{noiser_name}/{severity}")
+
     ok = not bad
     if not ok:
-        _notes["determinism"] = f"non-deterministic backends: {bad}"
+        _notes["determinism"] = f"non-deterministic backends/noisers: {bad}"
     return ok
 
 
 def check_grapheme_integrity() -> bool:
-    """No noiser/romanizer output may split a Sinhala grapheme cluster
-    mid-syllable. Phase 0: nothing yet transforms Sinhala into fragments that
-    could exhibit this bug (the stub only maps whole clusters), so this
-    stays vacuous until Phase 2+ noisers exist."""
-    _notes["grapheme_integrity"] = "vacuous: no Phase 2+ noiser output to check yet"
-    return True
+    """No noiser output may split a Sinhala grapheme cluster mid-syllable —
+    checked over every row's noisy_text in data/outputs/{train,test}/*.jsonl,
+    via is_lossless() (a clean cluster round-trip) and
+    starts_with_combining() (a cluster beginning with a combining mark or
+    ZWJ/ZWNJ is definitionally a mid-syllable split). noisy_text won't
+    always contain Sinhala (transliteration output is pure Latin) — when it
+    doesn't, there's simply nothing to fail on; when it does (codemix
+    deliberately keeps most of a post in Sinhala script), it must stay
+    grapheme-safe exactly like the original.
+
+    A combining-starting cluster already present verbatim in original_text
+    is INHERITED, not introduced by noising, and must not fail this check —
+    SOLD's own raw scraped text has 4 posts with a stray leading ZWJ/ZWNJ
+    (an artifact of however the tweets were originally captured, wholly
+    unrelated to this pipeline), and every noiser passes non-Sinhala runs
+    through unchanged, so that leading character propagates into noisy_text
+    verbatim. Faithfully preserving it is correct — the same principle
+    already established for a source typo in Phase 2's GATE A review (see
+    LOG.md: fixing it would mean silently editing SOLD's original text,
+    which is out of scope for a noising pipeline). Only a NEW
+    combining-start cluster not present in original_text is a real failure."""
+    from src.graphemes import clusters, starts_with_combining
+
+    outputs_dir = REPO_ROOT / "data" / "outputs"
+    checked = 0
+    bad = []
+    for split in ("train", "test"):
+        split_dir = outputs_dir / split
+        if not split_dir.exists():
+            continue
+        for path in split_dir.glob("*.jsonl"):
+            for row in _load_jsonl(path):
+                text = row.get("noisy_text", "")
+                if not text:
+                    continue
+                checked += 1
+                if not is_lossless(text):
+                    bad.append((path.name, row.get("source_id"), "not lossless"))
+                    continue
+                bad_clusters = [c for c in clusters(text) if starts_with_combining(c)]
+                if not bad_clusters:
+                    continue
+                original = row.get("original_text", "")
+                inherited = {c for c in clusters(original) if starts_with_combining(c)} if original else set()
+                new_bad = [c for c in bad_clusters if c not in inherited]
+                if new_bad:
+                    bad.append((path.name, row.get("source_id"), f"{len(new_bad)} new combining-start clusters"))
+
+    if checked == 0:
+        _notes["grapheme_integrity"] = "vacuous: data/outputs/ has no generated files yet"
+        return True
+    ok = not bad
+    if not ok:
+        _notes["grapheme_integrity"] = f"{len(bad)}/{checked} rows failed grapheme integrity, e.g. {bad[:5]}"
+    return ok
+
+
+def check_codemix_substitution_spec() -> bool:
+    """codemix v2's real design spec, checked independently of trusting
+    src.noisers.codemix's own correctness: for every persisted codemix
+    output row, recompute the eligible-word-type pool straight from the
+    frozen word bank + original_text (reusing the noiser's own wordbank
+    loader and src.graphemes.text_runs, but NOT calling apply()/_apply() —
+    this must independently re-derive the pool, not just re-run the same
+    selection code and trivially agree with it), and assert:
+      1. n_substitutions == min(k, pool_size), where k is 1 (light) or 2
+         (heavy) and pool_size prefers plausible-flagged types, falling
+         back to all eligible types only when none are plausible — the
+         exact "prefer plausible, fall back to eligible, cap at k" contract
+         from the module docstring's "honest tradeoff" section.
+      2. A post with pool_size == 0 is byte-identical to its source
+         (noisy_text == original_text) — forced selection must never
+         invent a substitution where nothing is eligible.
+    This is the primary correctness gate for the v2 redesign — the whole
+    point of the redesign was fixing v1's 85.8%/79.7% untouched-row rate,
+    so the invariant checks the SPEC that fixes it, not a calibrated rate
+    number (see TARGET_NOISE_RATE's docstring in src/noisers/codemix.py for
+    why that's demoted to a drift tripwire instead)."""
+    from src.graphemes import text_runs as _text_runs
+    from src.noisers.codemix import _WORDS_PER_POST, _load_wordbank
+
+    outputs_dir = REPO_ROOT / "data" / "outputs"
+    codemix_files = []
+    for split in ("train", "test"):
+        split_dir = outputs_dir / split
+        if split_dir.exists():
+            codemix_files.extend(sorted(split_dir.glob("codemix_*.jsonl")))
+
+    if not codemix_files:
+        _notes["codemix_substitution_spec"] = "vacuous: no data/outputs/*/codemix_*.jsonl yet"
+        return True
+
+    wordbank = _load_wordbank()
+    if not wordbank:
+        _notes["codemix_substitution_spec"] = "vacuous: data/lexicon/codemix_wordbank.jsonl not yet built"
+        return True
+
+    checked = 0
+    bad = []
+    for path in codemix_files:
+        severity = "heavy" if "heavy" in path.stem else "light"
+        k = _WORDS_PER_POST[severity]
+        for row in _load_jsonl(path):
+            checked += 1
+            sinhala_words = {run for is_sinhala, run in _text_runs(row["original_text"]) if is_sinhala}
+            eligible = sinhala_words & wordbank.keys()
+            plausible = {w for w in eligible if wordbank[w]["codemix_plausible"]}
+            pool_size = len(plausible) if plausible else len(eligible)
+            expected_n = min(k, pool_size)
+            actual_n = row.get("n_substitutions", -1)
+            if actual_n != expected_n:
+                bad.append((path.name, row["source_id"], f"n_substitutions={actual_n}, expected {expected_n}"))
+            elif pool_size == 0 and row["noisy_text"] != row["original_text"]:
+                bad.append((path.name, row["source_id"], "pool_size=0 but noisy_text != original_text"))
+            if len(bad) > 20:
+                break
+        if len(bad) > 20:
+            break
+
+    ok = not bad
+    if not ok:
+        _notes["codemix_substitution_spec"] = f"{len(bad)}(+)/{checked} rows violate the substitution spec, e.g. {bad[:5]}"
+    return ok
 
 
 def check_split_isolation() -> bool:
@@ -322,6 +458,7 @@ def run_invariants() -> dict[str, bool]:
         "no_empty_outputs": check_no_empty_outputs,
         "determinism": check_determinism,
         "grapheme_integrity": check_grapheme_integrity,
+        "codemix_substitution_spec": check_codemix_substitution_spec,
         "split_isolation": check_split_isolation,
     }
     return {name: fn() for name, fn in checks.items()}

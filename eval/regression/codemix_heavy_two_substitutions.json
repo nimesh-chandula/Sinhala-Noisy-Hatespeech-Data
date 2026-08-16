@@ -1,0 +1,11 @@
+{
+  "id": "codemix_heavy_two_substitutions",
+  "kind": "noiser",
+  "noiser": "codemix",
+  "description": "Three eligible, plausible word-bank entries ('සල්ලි'->money, 'බස්'->bus, 'ආදරේ'->love, all human-verified/source=native or loanword). At heavy severity (k=2) exactly 2 distinct word TYPES must be substituted, not 1 and not 3 — proves heavy genuinely draws 2 when 2+ are available, distinct from the capped-at-1 behavior covered by codemix_lexicon_substitution.json.",
+  "text": "සල්ලි බස් ආදරේ",
+  "severity": "heavy",
+  "seed": 0,
+  "expected_text": "money bus ආදරේ",
+  "expected_rate": 0.6666666666666666
+}
