@@ -1,0 +1,12 @@
+{
+  "id": "pipeline_abbreviate_fires_in_compound",
+  "kind": "pipeline",
+  "description": "Pins down the Phase 5 ordering fix: 'කරන්න එපා' (both words present in the abbreviate lexicon as an approved bigram, neither word in codemix's wordbank) must come out as its initials 'ka. e.' after the full compound chain. Under the OLD, buggy NOISER_ORDER (abbreviate last, after transliteration already romanized everything), this would have failed -- abbreviate's Sinhala-keyed lexicon would have found nothing left to match. expect_substring is the real assertion here; expected_text/rate/n_substitutions pin the whole chain's output exactly.",
+  "text": "කරන්න එපා",
+  "severity": "light",
+  "seed": 1,
+  "expect_substring": "ka. e.",
+  "expected_text": "ka. e.",
+  "expected_rate": 0.25,
+  "expected_n_substitutions": 1
+}

@@ -1,0 +1,12 @@
+{
+  "id": "pipeline_misspell_fires_after_transliteration",
+  "kind": "pipeline",
+  "description": "No codemix or abbreviate matches in this text (n_substitutions=0), so it isolates transliteration + misspell's Channel B, which must still fire correctly in their (unchanged) position at the end of the fixed order. expect_substring pins one specific Channel B typo ('khiya', an aspiration-expansion of a transliterated word) surviving into the final compound output.",
+  "text": "ඔය බනින්නෙ.. හරකා, මී හරකා කිය කිය...",
+  "severity": "heavy",
+  "seed": 1,
+  "expect_substring": "khiya",
+  "expected_text": "oya baninn.. haraka, mi haraka kiya khiya...",
+  "expected_rate": 0.07142857142857142,
+  "expected_n_substitutions": 0
+}

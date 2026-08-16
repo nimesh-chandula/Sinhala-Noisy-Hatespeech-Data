@@ -128,12 +128,47 @@ def _run_noiser_case(case: dict) -> tuple[bool, str]:
     return ok, "; ".join(reasons) if reasons else "ok"
 
 
+def _run_pipeline_case(case: dict) -> tuple[bool, str]:
+    """Frozen hand-checked COMPOUND pipeline output: src.pipeline.run(text,
+    severity, seed) must equal an exact expected string, AND running it
+    twice must be identical — same discipline as _run_noiser_case, but for
+    the 4-stage chain rather than a single noiser. Also supports an
+    optional `expect_substring` field so a case can pin down "some specific
+    stage actually fired in the chain" (e.g. abbreviate, whose Phase 3-era
+    NOISER_ORDER position was a real bug fixed in Phase 5 — see LOG.md)
+    without having to freeze the entire multi-stage output verbatim."""
+    from src import pipeline
+
+    got_text, got_rate, got_n_sub = pipeline.run(case["text"], case["severity"], case["seed"])
+    replay_text, _replay_rate, _replay_n_sub = pipeline.run(case["text"], case["severity"], case["seed"])
+    reasons = []
+    ok = True
+    if "expected_text" in case and got_text != case["expected_text"]:
+        ok = False
+        reasons.append(f"text={got_text!r} != expected={case['expected_text']!r}")
+    if got_text != replay_text:
+        ok = False
+        reasons.append("non-deterministic: two calls with the same (text, severity, seed) differed")
+    if "expect_substring" in case and case["expect_substring"] not in got_text:
+        ok = False
+        reasons.append(f"expected substring {case['expect_substring']!r} not found in {got_text!r}")
+    tol = case.get("tolerance", 1e-9)
+    if "expected_rate" in case and abs(got_rate - case["expected_rate"]) > tol:
+        ok = False
+        reasons.append(f"rate={got_rate} != expected={case['expected_rate']}")
+    if "expected_n_substitutions" in case and got_n_sub != case["expected_n_substitutions"]:
+        ok = False
+        reasons.append(f"n_substitutions={got_n_sub} != expected={case['expected_n_substitutions']}")
+    return ok, "; ".join(reasons) if reasons else "ok"
+
+
 _CASE_RUNNERS = {
     "cer": _run_cer_case,
     "jsd": _run_jsd_case,
     "graphemes": _run_graphemes_case,
     "schema": _run_schema_case,
     "noiser": _run_noiser_case,
+    "pipeline": _run_pipeline_case,
 }
 
 # {condition: {severity: target_rate}} for every noiser that's actually
@@ -173,6 +208,12 @@ try:
     _NOISER_TARGETS["abbreviate"] = _abbreviate_noiser.TARGET_NOISE_RATE
 except ImportError as _e:
     _NOISERS_UNAVAILABLE["abbreviate"] = str(_e)
+try:
+    from src import pipeline as _pipeline_module
+
+    _NOISER_TARGETS["compound"] = _pipeline_module.TARGET_NOISE_RATE
+except ImportError as _e:
+    _NOISERS_UNAVAILABLE["compound"] = str(_e)
 
 
 def compute_noise_rate_error() -> dict[str, float]:

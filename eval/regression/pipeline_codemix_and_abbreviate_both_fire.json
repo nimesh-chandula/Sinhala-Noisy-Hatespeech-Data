@@ -1,0 +1,11 @@
+{
+  "id": "pipeline_codemix_and_abbreviate_both_fire",
+  "kind": "pipeline",
+  "description": "A 3-word text where the first word is codemix-eligible (substituted to an English word) and the last two words are an approved abbreviate bigram (neither in codemix's wordbank, so codemix running first per NOISER_ORDER doesn't consume either of them). Confirms n_substitutions correctly SUMS both stages' contributions (1 + 1 = 2), not just the last stage's, and that codemix running before abbreviate in the fixed order doesn't accidentally block a bigram it has no wordbank entry for.",
+  "text": "පට්ට නම් හරි",
+  "severity": "heavy",
+  "seed": 7,
+  "expected_text": "awesome n. ha.",
+  "expected_rate": 0.4583333333333333,
+  "expected_n_substitutions": 2
+}

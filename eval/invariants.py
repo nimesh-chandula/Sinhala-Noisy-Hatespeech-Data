@@ -293,6 +293,27 @@ def check_determinism() -> bool:
             if run1 != run2:
                 bad.append(f"{noiser_name}/{severity}")
 
+    # The compound pipeline lives in src.pipeline, not src.noisers.*, so it
+    # can't go through the loop above — checked separately, same discipline.
+    try:
+        from src import pipeline as _pipeline_module
+    except ImportError as e:
+        skipped.append(f"pipeline:compound ({e})")
+    else:
+        pipeline_targets = getattr(_pipeline_module, "TARGET_NOISE_RATE", {})
+        if not pipeline_targets:
+            skipped.append("pipeline:compound (not implemented / no TARGET_NOISE_RATE)")
+        else:
+            for severity in pipeline_targets:
+                try:
+                    run1 = [_pipeline_module.run(t, severity, seed=1337) for t in noiser_sample]
+                    run2 = [_pipeline_module.run(t, severity, seed=1337) for t in noiser_sample]
+                except NotImplementedError:
+                    skipped.append(f"pipeline:compound/{severity} (not implemented)")
+                    continue
+                if run1 != run2:
+                    bad.append(f"compound/{severity}")
+
     ok = not bad
     note_parts = []
     if not ok:
