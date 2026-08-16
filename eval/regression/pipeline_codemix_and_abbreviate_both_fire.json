@@ -6,6 +6,6 @@
   "severity": "heavy",
   "seed": 7,
   "expected_text": "awesome n. ha.",
-  "expected_rate": 0.4583333333333333,
+  "expected_rate": 0.5833333333333334,
   "expected_n_substitutions": 2
 }

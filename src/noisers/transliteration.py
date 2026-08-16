@@ -67,7 +67,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from src.graphemes import text_runs  # noqa: E402
+from src.graphemes import clusters, text_runs  # noqa: E402
 from src.romanizers.aksharamukha import romanize_colloquial  # noqa: E402
 from eval.gold_cer import cer  # noqa: E402
 
@@ -100,14 +100,54 @@ def _load_variants() -> dict[str, list[str]]:
     return _variants_cache
 
 
-def apply(text: str, severity: str, seed: int) -> tuple[str, float]:
+def _is_abbreviation_fragment(runs: list[tuple[bool, str]], i: int) -> bool:
+    """True if the Sinhala run at index i in `runs` looks like one half of
+    src.noisers.abbreviate's initials() output ("X. Y.") -- a single
+    grapheme cluster immediately joined to a literal ". " (as word1) or
+    immediately preceded by one (as word2). Structural pattern match, not a
+    flag passed in from abbreviate itself, so this module stays decoupled
+    from abbreviate.py entirely (see apply()'s `mixed_script_rate` docstring
+    for why this needs to be detected at all: leaving one half of an
+    abbreviation pair in Sinhala script while romanizing the other would
+    read as broken, not as realistic mixing)."""
+    is_sinhala, run = runs[i]
+    if not is_sinhala or len(clusters(run)) != 1:
+        return False
+    if i + 1 < len(runs) and runs[i + 1] == (False, ". "):
+        return True
+    if i - 1 >= 0 and runs[i - 1] == (False, ". "):
+        return True
+    return False
+
+
+def apply(text: str, severity: str, seed: int, mixed_script_rate: float = 0.0) -> tuple[str, float]:
     """Sinhala -> Singlish at the given severity ("light" | "heavy").
 
     Returns (noisy_text, realised_noise_rate). Deterministic: the same
-    (text, severity, seed) always produces the same output — a single
-    random.Random(seed) is consumed sequentially over words in
-    left-to-right order, which is itself a deterministic function of the
-    input text.
+    (text, severity, seed, mixed_script_rate) always produces the same
+    output — a single random.Random(seed) is consumed sequentially over
+    words in left-to-right order, which is itself a deterministic function
+    of the input text.
+
+    `mixed_script_rate` defaults to 0.0, reproducing this module's original
+    behavior EXACTLY (every Sinhala word gets romanized, per the module
+    docstring's "both severities produce FULLY Latin-script output" design)
+    — the standalone `transliteration` condition's generation script never
+    passes this argument, so its output is untouched by this parameter's
+    existence. It exists only for src/pipeline.py's compound condition,
+    where the user asked for a REAL script mixture (some words stay in
+    Sinhala, some get romanized) rather than the standalone condition's
+    uniform full-Latin output. When > 0.0: `mixed_script_rate` is the
+    fraction of Sinhala words that get romanized at all (the rest are left
+    byte-identical to the input) -- an ordinary word's fate is an
+    independent coin flip, EXCEPT a word produced by abbreviate's
+    initials() (detected structurally, see _is_abbreviation_fragment) is
+    ALWAYS romanized, never subject to the flip, so an abbreviation pair
+    can't end up half-Sinhala/half-Latin. In this mode realised_noise_rate
+    is redefined to mean "fraction of Sinhala words that got romanized at
+    all" (the mixing outcome itself), not the standalone mode's "fraction
+    with a non-canonical spelling" -- a different, more relevant notion of
+    alteration for what this mode is measuring.
     """
     if severity not in TARGET_NOISE_RATE:
         raise ValueError(f"unknown severity {severity!r}, expected one of {list(TARGET_NOISE_RATE)}")
@@ -116,25 +156,51 @@ def apply(text: str, severity: str, seed: int) -> tuple[str, float]:
     variants = _load_variants()
     rng = random.Random(seed)
 
-    out_parts: list[str] = []
+    if mixed_script_rate <= 0.0:
+        out_parts: list[str] = []
+        n_words = 0
+        n_altered = 0
+        for is_sinhala, run in text_runs(text):
+            if not is_sinhala:
+                out_parts.append(run)
+                continue
+            n_words += 1
+            canonical = romanize_colloquial(run)
+            word_variants = variants.get(run)
+            chosen = canonical
+            if word_variants and rng.random() < attempt_probability:
+                # Closest variant to canonical (by CER), not uniform random —
+                # see module docstring: uniform selection over-represents rare,
+                # heavily-truncated attested spellings and hurt realism_jsd.
+                chosen = min(word_variants, key=lambda v: cer(v, canonical))
+            if chosen != canonical:
+                n_altered += 1
+            out_parts.append(chosen)
+
+        realised_noise_rate = (n_altered / n_words) if n_words else 0.0
+        return "".join(out_parts), realised_noise_rate
+
+    # --- mixed-script mode (compound pipeline only) ---
+    runs = text_runs(text)
+    out_parts = []
     n_words = 0
-    n_altered = 0
-    for is_sinhala, run in text_runs(text):
+    n_romanized = 0
+    for i, (is_sinhala, run) in enumerate(runs):
         if not is_sinhala:
             out_parts.append(run)
             continue
         n_words += 1
+        force_romanize = _is_abbreviation_fragment(runs, i)
+        if not force_romanize and rng.random() >= mixed_script_rate:
+            out_parts.append(run)  # stays in Sinhala script, byte-identical
+            continue
+        n_romanized += 1
         canonical = romanize_colloquial(run)
         word_variants = variants.get(run)
         chosen = canonical
         if word_variants and rng.random() < attempt_probability:
-            # Closest variant to canonical (by CER), not uniform random —
-            # see module docstring: uniform selection over-represents rare,
-            # heavily-truncated attested spellings and hurt realism_jsd.
             chosen = min(word_variants, key=lambda v: cer(v, canonical))
-        if chosen != canonical:
-            n_altered += 1
         out_parts.append(chosen)
 
-    realised_noise_rate = (n_altered / n_words) if n_words else 0.0
+    realised_noise_rate = (n_romanized / n_words) if n_words else 0.0
     return "".join(out_parts), realised_noise_rate

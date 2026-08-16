@@ -556,223 +556,223 @@ For each: does the noisy text read like something a real person would type, does
 
 ## compound/heavy (27 items)
 
-### 1. `1464958759357267976` — label=OFF, realised_noise_rate=0.08
-- **original**: @USER So , is that Gotha responsible for it , crazy , හරියට ගෑස් ලිපක් අරගෙන පාවිච්චි කරපන් බූරුවො එතකොට ඕක පුපුරක් නැතුව ඇයි හැමදේටම රජය තමයි වගකියන්න ඕනේ අනේද කියන්නේ මුන් නම් පුත්තලම් බූරුවො ජාතියක් මේ ලංකාවේ ඉන්නේ
-- **noisy**: @USER So , is that Gotha responsible for it , crazy , hariyat ges lipk aragena use kaarapan burruwo ethakota oka pupurak nethuwa ayi hamadetama rajaya thamayi wagakiyanna on aneda kiyanne moon nam puththalam buruwo species ekak me lankawe inne
+### 1. `859652077823434753` — label=NOT, realised_noise_rate=0.23
+- **original**: @USER තෝ යාකෝ බැලුවොත් හදේ නෙ
+- **noisy**: @USER තෝ යාකෝ baaluwoth haade නෑ
 
-### 2. `1421746648003203076` — label=NOT, realised_noise_rate=0.25
-- **original**: @USER Sinopharm දෙවෙනි මාත්‍රාව දියතෙ පටන්ගන්නෙ කවදාද?
-- **noisy**: @USER Sinopharm deweni dose eaka diyathe start karann kawadad?
+### 2. `918142492578422784` — label=NOT, realised_noise_rate=0.21
+- **original**: ටහුඩු අද #internationaldayofthegirl ද? අද දවසම .... එක්කෝ ඕනේ නෑ...
+- **noisy**: ටහුඩු අද #internationaldayofthegirl da? ada dawasama .... either one ne...
 
-### 3. `1392865886113918976` — label=NOT, realised_noise_rate=0.11
-- **original**: ඔවුන් විශ්වාස කරන්නේ සුනඛයා වසර60ක් පමණ එහි සිට ඇත.කම්කරුවන්ට අනුව ඔවුන් විශ්වාස කරන්නේ බල්ලා යමක් පසුපස හඹාගොස් කඳ තුළ සිරවී ඇති බවයි.ඔහු ගසෙහි හිරවුන අතර කිසිවෙකු ඔහු ගසතුල සිටින බවක දුටුවේ නැත. පැන යාමට නොහැකි වූ ඔහු එම අහම්බ උගුලේ රැඳී සිටිමින් අවසානයේදී මිය ගියේය
-- **noisy**: owun wishwasa karann sunakhaya year eaka60k pamana eh sitta atha.kamkaruwanta anuwa owwun wisshwasa karanne balle yamak pasupasa hambagos kanda thula siravi athi bawayi.oho gashi hirawuna atare kisiweku oho gasathula sitia bawaka dutuwe natha. pena yamata nohaki wu oho eama ahamba ugule randi sithimin awasanayedi miy giyeya
+### 3. `1191331536915726342` — label=NOT, realised_noise_rate=0.14
+- **original**: මහ පාරෙ යන බයික් එකේ කොල්ලෙක් එක අතක් අතඇරල රේස් යනව ට්‍රේන් එකත් එක්ක..ඒ මදිවට ට්‍රේන් එක දිහාත් බලනව.. ගොනා කියල මරන්න යෑ.. ගිහින් ලයිට් කනුවක් බදාගත්තම ට්‍රේන් එක නවත්තල එන්න කියල යෑ... මෙමත් උන්
+- **noisy**: maha parr යන bike එකේ kllek eka athak athaerala රේස් යනව train එකත් එක්ක..e madewata traeen එක දිහාත් බලනව.. ගොනා කියල මරන්න යේ.. gihin ලයිට් කනුවක් බදාගත්තම trrain එක නවත්තල එන්න කියල ye... memath උන්
 
-### 4. `1332001952377548803` — label=OFF, realised_noise_rate=0.18
-- **original**: මොකක්ද පකෝ කරේ..මගෙ නමත් තියාගෙන ගම කෑවනේ  අපරාදේ චන්දිගේ විකට් එක
-- **noisy**: mokaakda pakho kare..mage name ejath thiyagena village eaka kewane  aparad chandige wikt eaka
+### 4. `1383844522879188992` — label=OFF, realised_noise_rate=0.16
+- **original**: සිරසේ ඔක්කොම නිකං  සිංහල සිංදුවලට අලංකාර දානවා කියලා හක්ක පටස් කාපු උං ටිකක් වගේ චැව් චැව් ගාන්නේ ඇයි සිංහල ඉංග්‍රීසි දෙකට අවජාතක ඉස්ටැයිලකින්?  දැවෙන ප්‍රශ්න මේ The following media includes potentially sensitive content. Change settings View
+- **noisy**: සිරසේ ඔක්කෝම නිකං  සිංහල sinduvalata අලංකර දානවා kiyala හක්ක pats කාපු උං ටිකක් wage චැව් චැව් ගාන්නේ ayi sinhala english dekat awajathak ඉස්ටැයිලකින්?  dawena problems me The following media includes potentially sensitiwe conntent. Change settings View
 
-### 5. `1275096936702328834` — label=OFF, realised_noise_rate=0.10
-- **original**: @USER  @USER ඒඉ වරෙං යන්න ආං ඵුකක් නානවා.. අපි ගිහිං වැටෙමු.. . තෝ පල.. අපි එන්නෙ ඊළඟ එකට.. . අර පුක්ලෝලි හූන සහ යාළුවො ..
-- **noisy**: @USER  @USER ei waarem yanna am phukak nanawa.. api gijim waatemu.. . th pal.. api ene next ekata.. . ara pukloli huna saha friends ..
+### 5. `1049267924714840065` — label=OFF, realised_noise_rate=0.14
+- **original**: පුකරංගල නැගලා කිලෝමීටර් ගාණක් ඈතින් තියෙන සීගිරි ලලනාවන්ගෙ තං වලට හුජ්ජ කරලා, ලෝකෙට පුක පෙන්නලා ආතල්ලෙකක් ගත්තු කොල්ලොංගෙ කළු පුකවල් බලලා පයි උරුක් කරගෙන, ඇඟවටේ ඔතං ඉන්න සිවුරු හීනියට රෝල් කරලා පුකේ ගහගෙන, ඉවසං... URL
+- **noisy**: pukarangala නැගලා kilometer ගාණක් ඈතින් තියෙන සීගිරි ලලනාවැන්ගෙ tham walata හුජ්ජැ karala, loketa පුක පෙන්නලා athallekak ගත්තු කොල්ලොංගෙ කළු පුකවල් බලලා පයි උරුක් කරගේන, ඇඟවටේ otham ඉන්න siwuru heniyata rol කරලා puke gahagena, iwasam... URL
 
-### 6. `1461376095358443524` — label=NOT, realised_noise_rate=0.09
-- **original**: @USER  වසරේ පැවැත්වෙන 19න් පහළ ලෝක කුසලාන එක්දින ක්‍රිකට් තරගාවලියෙන් නවසීලන්තය ඉවත් වි තිබේ.  නිරෝධායන කොන්දේසි සැලකිල්ලට ගනිමින් නවසීලන්තය මෙම පියවර ගෙන ඇති බව වාර්තා වෙයි.
-- **noisy**: @USER  grade eke pawathwena 19n pahala loka kisalana ekdina cricket tharagawaliyen nawasilanthaya iwwath wi thib.  nirodhayana kondesi salakillata ganimin nawasilanthaya mema piyawar geba a. ba. wartha weyi.
+### 6. `1481575987586662403` — label=NOT, realised_noise_rate=0.10
+- **original**: @USER  @USER ඒ කියන්නේ oic එක්ක බිවුවොත් අල්ලන්නෑ,වෙන අය එක්ක බිවුවොත් අල්ලනවා ...
+- **noisy**: @USER  @USER e කියන්නේ oic එක්ක බිවුවොත් allanne,වෙන අය එක්ක බිවුවොත් catch karanawa ...
 
-### 7. `1239122747583840256` — label=NOT, realised_noise_rate=0.05
-- **original**: @USER වහලම දැම්මනම් නරකද?? රටේ ඇති වෙලා තියෙන අවදානම් තත්වය නැති වෙනකන්..
-- **noisy**: @USER wahalama dammanam bad da?? country eke athi wela thiyena awadanam thathwaya nathi wenakan..
+### 7. `569321897990733824` — label=NOT, realised_noise_rate=0.14
+- **original**: පිස්සට දැන් ඉස්සර තරම්වත් ලයික් නෑ.බුකියෙන් ලොග් අවුට් වෙලා හිටපු දවස් ටිකට උබලට මාව අමතක වෙලා ඔව් දුකයි ඈ :/ :( :'(  #පිස්සා
+- **noisy**: peessata dan ඉස්සර තරම්වත් like නෑ.බුකියෙන් ලොග් out වෙලා හිටපු dawes ටිකට ubalata mava අමතක වෙලා ow දුකැයි ඈ :/ :( :'(  #piss
 
-### 8. `1249611136518905856` — label=NOT, realised_noise_rate=0.08
-- **original**: හැකියාවන්, දක්ෂතාවයන්, පුද්ගල වගකීම්, වගවීම්, පසු විපරම් වැඩක් නෑ...බහුතරේ හුරේ කියල එකෙක් හොඳයි කියනවනම් මෝඩ රැල වගේ බහුතරයක් අනික් උනුත් ඌට ඡන්දේ දීල දිනවනවා. මේක තමයි රටේ ස්වභාවය.
-- **noisy**: hakiyawan, dakshathawayan, pudgala wagakim, wagawim, paasu wiparam wdak ne...bahuthare hure kiyala ekek hndaui kiyanawanam moda rela wage majority ekha anik unuth uta chhande dila dinawanawa. meka thamayi country eke swabhaway.
+### 8. `708946345013280768` — label=OFF, realised_noise_rate=0.25
+- **original**: මොන හත්තිලව්වටද යකෝ කරන්ට් කපුවේ? මේ සීත්ලේ තිබ්බ එකම සහනය ෆෑන් එක විතරයි දැන් ඒ මගුලත් නෑ. නොදකින් මූසල විදුලි සංස්ථාව
+- **noisy**: මොන හත්ථිලව්වටද යකො current kapuwe? m sithle thibb ekama සහනය ෆෑන් e. wi. දැන් එ maggulath ne. නොදකින් moosala electricity samsthawa
 
-### 9. `1272410300248014848` — label=NOT, realised_noise_rate=0.08
-- **original**: @USER ඉස්පිරිතාලෙ කොමන් වාට්ටුවක මං දෙවතාවක් උන්නා.. හොඳ හොඳ කෑම පලතුරු බිස්කට් ආදිය සෙයා වෙනෝ.. කීපවතාවක්ම අපි තේවතුර නෙස්ටමෝල් හොඳ ට හදාගෙන බොනෝ.. කරාපිටියෙ නම් එකපාරක් ඇඳක් නැතුව අනාථ ලෙඩෙක් විදිහට කොරිඩෝවෙත් උන්නා.. ඒකත් ආතල්.. මං රවූමක් ගිහින් එද්දි මගේ ඇඳෙ වෙන අමාරු ලෙඩෙක්..
-- **noisy**: @USER ispirithale comment wattuwaka mam dewathawak unna.. honda hnda kema palaturu biskat adiya seya weno.. kipawathawakma apj thewathura nestamol honda ta hadagena bhono.. kaarapitiye name ekapark andak natthuwa anatha patient kenek widihata koridoweth unna.. ekth atjal.. mam rawumak gihin eddi mag ande wena amaru patient kenek..
+### 9. `1034865248656752641` — label=OFF, realised_noise_rate=0.18
+- **original**: කරන්න තියෙන ඔක්කොම බලු වැඩ කරලා අහිංසක ජීවිත ගොඩ නොඑන අගාද වලටම ඇදලා දාලා තමන් හොද වෙන්න අර අගාදේ ඉන්න උන්ටම  වරද පටවන සක්කිලි එවුන් මේ ලෝකේ ඉන්නවා.
+- **noisy**: karanna තියෙන ඔක්කොම ba. wa. කරලා innocent life gda noena අගාද වළාටම adala දාලා taman hode වෙන්න අර අගාදේ ඉන්න unthama  වාරද පටවන සක්කිලි එවුන් මෑ ලෝකෙ ඉන්නවා.
 
-### 10. `1186828399525781504` — label=NOT, realised_noise_rate=0.11
-- **original**: පලවෙනි බැච් ට්‍රිප් එක යන්න ඕගනයිස් කෙරුව දවසෙ ඉඳන් එකෙක් හෙන ටෝක්ස්. "හම්මට බොනව යකෝ කරටි කැඩෙන්න. අඩො මාත් එක්ක ඔය එකෙක්ටවත් බොන්න බෑ. බ්ලා බ්ලා..." ට්‍රිප් එක යන්න අරන් පැය බාගෙන් මූ කබා දානව. ඇහුවා මොකෝ සීන් එක. එකෙක් කිව්වා "මූ redbull එකෙන් උගුරු දෙකයි බිව්වෙ කබරයා දානවා"
-- **noisy**: first batch trip eka yann oganayis keruwa davase indan ekek hena talkhs. "hammata bonawa yako karatee kadenna. ado ma. e. oyq ekektavath bnna be. bla bl..." trip eaka yann arang paya bagen mu kaba danawa. ahuwa moko si. e.. ekek kiwwa "mu redbull ekhn uguru dekyi biwwe kabaraya danawa"
+### 10. `1114535558125162496` — label=OFF, realised_noise_rate=0.19
+- **original**: @USER මාත් අද ට්‍රේන් එකේ දැක්ක නාකි ලොක්කෙක් රටකජු කවරෙ රේල්පාරට විසික් කරනව.මාත් කල්පනා කරේ ඕකුන් ටික මැරිල ගියාම ඉතුරු වෙන පරම්පාරාවෙ ඔලුගෙඩි ටික හැදුවනම් හරි එයාලව වෙනස් කරන්න මහන්සි නොවී..මොකද කොච්චර කිව්වත් ඒ මිනිස්සුන්ගෙ ආකල්ප වෙනස් කරන්න බෑ
+- **noisy**: @USER math අද train ඒකේ dakka naakee ලොක්කෙක් රැටකජු කවරෙ රේල්පාරට wisik කරනව.math kalpana kare ඕකුන් ටිකා මැරිල ගියාම ithooru වෙන පරම්පාරාවෙ ඔලුගෙඩි ටික haduwanam හරී එයාලව we. ka. tired nowi..මොකද කොච්චරැ kiwwath ඒ මිනිස්සුන්ගෙ ආකල්ප w. ka. be
 
-### 11. `1144044979737772032` — label=NOT, realised_noise_rate=0.11
-- **original**: සාධා රෙන සමාජයට තවත් රටට කෙලවිය හැකි සෝභිත ඈබෑර්තුවක් තියෙනවලු..  රටේ කරුමෙට උපන් තවත් සෝභිත හිමිලා ඉන්නවද ?
-- **noisy**: sadh renq society ekata thawath country ekata kelawiya haki sobhitha ebherthuwak thiyenawalu..  rate karumet upan thhawath sobhitha himila innaawada ?
+### 11. `1043540564308832256` — label=NOT, realised_noise_rate=0.23
+- **original**: අඩො ආයෙත් මාස ගානකට fb එන්න වෙන්නෙ නෑ...පරිසිස්සමින්  ඉදහල්ලා මන් යනො සෙට් වෙමු ආයෙ ජීවත් වෙලා හිටියොක්
+- **noisy**: ado ayeth masa ganakata fb ඈන්න wenne නෑ...පරිසිස්සමින්  ඉදහල්ලා man යනො sett wemu aye ji. we. හිටියොක්
 
-### 12. `1060767218420604929` — label=OFF, realised_noise_rate=0.08
-- **original**: හුරුවෙයන් මුරලිලා, අනුරලා වගේ කෙලින් කතාකරන එකෙක් නොවී මහින්දට කඩේ යන එකෙක් වෙන්න..  මහින්දට විරුද්ධ හැමෝටම ජාතක කතා ලියන අවජාතක උන් එදාට උඹට ගෞරව කරාවි..  URL
-- **noisy**: huruweyan muralila, annurala wage kelin khathakarana ekek nowi mahindata shop ekhe yanna ekk wenna..  mahindata wirooddha hamotama jathaka katha write karana awajathaka un edat umbata gaurawa karawi..  URL
+### 12. `1237310919266439168` — label=OFF, realised_noise_rate=0.06
+- **original**: @USER පචයාගේ ඊලඟ පක්ශේ කියා ඔබත් නයෙක් දිනා ගන්න.
+- **noisy**: @USER පචයාගේ next පක්ෂේ කියා ඔබත් නයෙක් දිනා ගන්න.
 
-### 13. `1486682136954372100` — label=NOT, realised_noise_rate=0.08
-- **original**: @USER අහ් ඒක වෙන්නැති. මම කියපු කථාව සීරියස් බම්. අපේ ෆැමිලි එකේ කීප දෙනෙක්ම ඕක කිව්වා. ගොඩක් අමාරු වෙලා තියෙනවා ටෙස්ට් එකට පස්සේ.
-- **noisy**: @USER ah eka wennatthi. mama kiypu story eka siriyaas bam. ape famili ek kipa denekma oka kiwwe. godak amaru wela thiyenawa test ekata passe.
+### 13. `998508813945745408` — label=NOT, realised_noise_rate=0.22
+- **original**: @USER ගෙදරින් බත් කාලා හමාර වෙන ප්‍රශ්න අහන්නෙපා ඩාලින්...
+- **noisy**: @USER ගෙදරින් rice කාලා hamara wena ප්‍රෂ්න ahannepa darling...
 
-### 14. `638957518874652672` — label=NOT, realised_noise_rate=0.08
-- **original**: අඩි 12 ක් උසට බිත්තිය දිගේ පනින අපුරු බල්ලා හිතාගන්න බැහැ - සම්මානයකුත් දිනලා බලන්න මේ අපුරු බල්ලා මීටර් 4ක් එනම්... URL
-- **noisy**: feet 12 k usat biththiya dige panina apuru balla hithaghann baha - sammanayakuth dinala balanna me apuru bslla meter 4k enam... URL
+### 14. `1149789551189286912` — label=NOT, realised_noise_rate=0.14
+- **original**: @USER වැදුනු සද එලියට ගිනිකන්න වැටිලා  තහනම් කරත් මොදුවෙන වෙලාවට ලොකයට පිස්සු වැටනව නෙව. අහෝ සඳ ඉරෙන් ගත්ත එලිය උ⁣ඹේකරගෙන අඩම්බරෙන් පුරාජේරැව කියන කැත.නොදකු .ඉර එලිය නැතුව කවදාවත් එලියක් එන් නෑ සඳ ඔයාට තේලුලාද
+- **noisy**: @USER wadunu shada eliyat ගිනිකන්න වැටිලා  banned karath මොදුවෙන welawata ලොකයට crazy වැටනව නෙවැ. අහෝ සඳ ඉරෙන් ගත්ත eliy උ⁣mbekaragena අඩම්බරෙන් purajerawa kiyana katha.නොදකු .eera එලිය nathuwa කවදාවත් එලියක් එන් n සඳ ඔයාට තේලුලැද
 
-### 15. `1264231099858857986` — label=OFF, realised_noise_rate=0.09
-- **original**: තේරුම් ගනින්!  මේ සෝශල් මීඩියා හදලා තියෙන්නේ අනුන්ගේ කුනුගොඩවල් හොයන්න වගේම තමන්ගේ කුනුගොඩවල් පෙන්නන්න!  ඒ නිසා කවදාවත් කියන්න එපා අනුන්ගේ කුනුගොඩවල් හොයන්නේ නැතුව ඉන්න කියලා! එහෙන්ම් ඒකට සෝශල් මීඩියා ඕනේ නෑනේ! අනික තොපි හැමදාම මේකේ රිංගන්නෙත් දිය බුං ගහන්න නෙවේනේ!
-- **noisy**: therum ganin!  me soshal midiyaa hadala thiyenne anunge kunugodawal hoyanna wagema thamange kunugodawal pennanna!  e neesa kawadawath ki. e. anunge koonugodawal hoyann na. i. kiyaala! ehenm ekata soshal miduya one nene! anika thopee hemadama meke ringanneth water bum hit karanna newene!
+### 15. `650159001187975168` — label=NOT, realised_noise_rate=0.16
+- **original**: හාහා ඊයේ මොනා නැතත් කැත ගැහිල්ලක් ගැහුවේ ඉන්දියාවට  #IndvsSA #T20
+- **noisy**: හාහැ iye මොණ නැතත් katha ගැහිල්ලැක් ගැහුවේ India වලට  #IndvsSA #T20
 
-### 16. `1218500153595707393` — label=OFF, realised_noise_rate=0.09
-- **original**: @USER ,  @USER  @USER රටේ නීතිය ගැන තෝ දන්නවද වඳ වේසිගේ පුතෝ ?  දන්නැත්තං ඉගෙනගං!  ජාතික වනසත්ත්ව හා තුරුලතා ආරක්ෂණ ආඥාපනත කියලා එකක් තියෙනවා. ඒකට අනුව ලංකාවේ හමුවන සර්ප විශේෂ 103න්, 98ක්ම ආරක්ෂිත සතුන්. (උග්‍ර විශ පහ හැර).  එහෙම තොට ඕන ඕන විදිහට මරන්න කොටන්න බෑ. නීතය ගැන කියන්න කලින් ඉගෙනගනිං බූරුවා!
-- **noisy**: @USER ,  @USER  @USER rate law e. ga. th dannawada wanda wesige puth ?  dannaththam igenagam!  national wanasaththwa ha thurulatha arakshana ajnyapanatha kiyala ekak theeyenawa. ekata anuwa lankawe hamuwana saarpa wisheshs 103n, 98kma arakhitha sthun. (ugr wisha paha hara).  ehema thota ona ona widihata marann kottanna be. netthaya gana kiyanna kaliwn igenaganim buruva!
+### 16. `636220599853912064` — label=NOT, realised_noise_rate=0.26
+- **original**: @USER @USER  අඩො...මම ඒත් බැලුවා ඇයි පූසෙක් කියලා
+- **noisy**: @USER @USER  ado...මම eth baluwa ai caat කෙනෙක් kiyyal
 
-### 17. `581008005166055424` — label=OFF, realised_noise_rate=0.07
-- **original**: විකට් ගනින් යකෝ .. තොපි ගෙදර යන්නද හදන්නේ .. ඒ දර්මේ අන්කල් .. ඇගිල්ල උස්සපන් යකොව් මොකේට හරි ..  #CWC15 #AUSvIND
-- **noisy**: wicket ganin yak .. thpi gedara yannada hadanne .. e darme ankal .. finger eka ussapan yakow moketa hari ..  #CWC15 #AUSvIND
+### 17. `634029568601362432` — label=NOT, realised_noise_rate=0.18
+- **original**: උපුල් නුවන් විදහා ඔබ ගොනා උනා  මම සිනා සුනා
+- **noisy**: උපුල් eyes widaha ඔබ gona una  මම sin suna
 
-### 18. `1221084764851052544` — label=NOT, realised_noise_rate=0.11
-- **original**: @USER  @USER මොකද බං ගල උඩ ඉඳන් කොල්ලො භාවනා කරන dp දාන් ඉන්නෙ
-- **noisy**: @USER  @USER mokada bam sttone eka uda indn boys bhhawana karana dp dan inne
+### 18. `1436158396906946571` — label=NOT, realised_noise_rate=0.18
+- **original**: @USER @USER  ස' මුන් ඉන්ටර්නෙට් එකටත් දහස් ගනං ගෙවනවා ස' මාසේගානේ. ඉන්ටර්නෙට් මොන එසෙන්ශල්ද ස. ස'මාර්ට් ෆෝනුත් නැති එකේ ඉන්ටර්නෙට් මොකටද. ඔන්න 2G දෙන්න 4G අයින් කරලා. 5G වලට සල්ලි වියදම් කරන්න එපා ස'. ස' හොඳට තදට කරන්න ස'. දෙන්න එපා ස' බුරුලක් ස. ස' තමයි හොඳටම කරේ ස'
+- **noisy**: @USER @USER  ස' මුන් internet එකටාත් දහස් ganam gewanawa ස' මාසේගානේ. ඉන්ටර්නෙට් mna එසෙන්ශල්ද sa. sa'mart fonuth නැති එකේ intarnet මොකටද. onn 2G dennaa 4G අයින් කරලා. 5G walata money expenses ka. e. sa'. ස' හොඳට thadata කරන්න ස'. de. e. sa' බුරුලක් s. sa' thamayi හොඳටම kaare ස'
 
-### 19. `1479078747798224906` — label=NOT, realised_noise_rate=0.17
-- **original**: අහක යන නයි රෙද්ද අස්සේ දාගන්න එපා කියලා කියමනක් අහල තිබුනට දැක්කෙ අද අප්පා . :16 ,052 views
-- **noisy**: a. ya. snakes re. a. daganna epa kiyala kiyamanak ahal thibunata dakke ad apps . :16 ,052 wiews
+### 19. `925165333907898368` — label=NOT, realised_noise_rate=0.25
+- **original**: අල්ලපු ගෙදර එකාගෙ ඔලුවට තඩි ගලකින් ගසා ඔලුව පැලීම #childhoodmemories
+- **noisy**: අල්ලපු home එකාගෙ head ekat thadu ගැලකින් ගසා oluva pelima #childhoodmemories
 
-### 20. `962705807862149120` — label=NOT, realised_noise_rate=0.16
-- **original**: @USER ඒකනම් ඇත්ත......මොනා උනත් දැන් මිනිස්සු මෝඩ නෑ එකපාරක් දෙපාරක් මට්ටු උනානේ....දැන් හොදට හිතල බලල තීරණ ගන්නෙ
-- **noisy**: @USER ekanam aththa......mo. u. dan people mode ne ekapark deparak mttu unane....den hdata hithale balala decisions gaanne
+### 20. `1478656593751277568` — label=NOT, realised_noise_rate=0.10
+- **original**: @USER ඔව්. උඹලට හොරාකන්න බෑනේ ඒවගෙන්.
+- **noisy**: @USER ඔව්. උඹලට steal කරන්න bene ඒවගෙන්.
 
-### 21. `1413131146255237123` — label=NOT, realised_noise_rate=0.06
-- **original**: @USER උබලගෙ ප්‍රවෘත්තිත් වෙපා කාලකන්න
-- **noisy**: @USER ubalage news wepa kalakanna
+### 21. `1018555190121619456` — label=NOT, realised_noise_rate=0.19
+- **original**: @USER ජිල් බෝලෙත් ඉල්ලන් පලයන්
+- **noisy**: @USER ජිල් ball ekath ඉල්ලන් palayan
 
-### 22. `610090909670113280` — label=NOT, realised_noise_rate=0.07
-- **original**: @USER @USER  අනිවා බඩුව පරණ උනත් සුපිරියට තාම වැඩ..
-- **noisy**: @USER @USER  aniwa baduwa old unath supiriyata thama work..
+### 22. `1176673305769607171` — label=NOT, realised_noise_rate=0.04
+- **original**: @USER පිලිගැනීම විතරයි. විපක්ෂ නායක වෙන්න බෑ
+- **noisy**: @USER පිලිගැනීම විතරයි. විපක්ෂ leader වෙන්න බෑ
 
-### 23. `886099084595019777` — label=OFF, realised_noise_rate=0.07
-- **original**: හුරුවෙයන් Channel EYE එකේ මැච් බලන්න, ඒක පට්ට! #SLvZIM #අම්මගෙරෙද්ද
-- **noisy**: huruweyan Channel EYE eke match balanna, eka awesome! #SLvZIM #ammageredda
+### 23. `765953948507267072` — label=NOT, realised_noise_rate=0.22
+- **original**: අපේ අම්ම මට මේම කවදා කියයිදෝ..... දැවෙන ප්‍රස්න තමා ඉතිං මේව.. URL This Tweet is unavailable.
+- **noisy**: ape momm mata මේම kawada kiyayido..... දැවෙන problems තමා ithim මේව.. URL This Tweet is unavailablr.
 
-### 24. `1275759546170961920` — label=NOT, realised_noise_rate=0.09
-- **original**: තව ටික ද්දවසයි බණ්ඩිය හකුලගෙන අමාරුවෙන් 4to ගහන්නේ ඊට පස්සේ උඩ කෑල්ල නිරුවත් 4toම දානවා... . . . .හරිය.
-- **noisy**: tawa tika ddawasayi bandiya hakulagena amaruwen 4to gahann i. pa. uda kella nude 4toma danawa... . . . .hariya.
+### 24. `810206975648665600` — label=NOT, realised_noise_rate=0.10
+- **original**: සැබෑ ආදරය බලාගන්න ඕනනම් පල කණ්නාඩිය ඉස්සරහට,තොට තෝ විතරයි,මට මන් විතරයි..
+- **noisy**: සැබෑ love බලාගන්න ඕනනම් පල කණ්නාඩිය ඉස්සරහට,තොට tho විතරයි,mata man witharai..
 
-### 25. `670255525754343424` — label=NOT, realised_noise_rate=0.05
-- **original**: @USER @USER  පට්ට නේ.. ඒ තමුසෙ මට FB මිතුදම් ඉල්ලීමක් එවනවකෝ.. ඒ ක්ල්ල ඔය පෝස්ට් එක inbox කරන්නකො.
-- **noisy**: @USER @USER  patta ne.. e thamuse mata FB mithudam request ekak eqanawako.. e klla oya post eka inbox karannako.
+### 25. `1394214649910882307` — label=NOT, realised_noise_rate=0.17
+- **original**: තමන්ගේ කැමැත්ත අකමැත්ත මත එන්නත් නොගන්න එක වෙනම එකක්, හැබැයි තමන්ගේ මෝඩ, අන්තවාදී මතවාද සමාජ මාධ්‍ය ඔස්සේ පතුරවලා යම්කිසි කොටසක් brainwash කරන්න තැත් කරනවා නම් ඔවුන්ට විරුද්ධව නීතිමය ක්‍රියාමාර්ග ගන්න ඕන.  තමන් මෝඩයෙක් උනාට කමක් නෑ, රටක ඔළු විනාස කරලා ඒ රටේ herd immunity එකට...
+- **noisy**: thamange කමැත්ත akamaththa මත එන්නත් noganna එක වෙනම ekak, හැබැයි තමන්ගේ මෝඩ, anthawadi mathawad social මාධ්‍ය ඔස්සේ pathurawala යම්කිසි kotasak brainwash කරන්න තැත් ka. n. ovunta විරුද්ධව nithimaaya khriyamarga ගන්න oba.  තාමන් මෝදයෙක් උනාට kamak නෑ, රටක ඔළු winasha කරලා ඒ counntry එකේ herd immunnity එකට...
 
-### 26. `1135413185492660225` — label=NOT, realised_noise_rate=0.11
-- **original**: @USER මෙච්චරකල් ඕක කරන්නේ නැතුවද ඉන්නේ, ඔහ් තව රටේ ප්‍රශ්න වැඩිවෙනකන් ඉන්නවද?
-- **noisy**: @USER mechcharakal oka karanne nathuwada inne, oh tawa country ekke problemsh wadiwenakan innawada?
+### 26. `970628615867047936` — label=NOT, realised_noise_rate=0.11
+- **original**: වෛරය වෙනුවට ආදරය පතුරුවන්න අමාරු ඇයි...  ප්‍රචණ්ඩත්වයට වඩා ලිංගිකත්වයට ආස මිනිස්සු වෛරයට වඩා ආදරයට ආස නැත්තේ ඇයි?
+- **noisy**: hate වෙනුවට love පතුරුවන්න අමාරු ඇයි...  ප්‍රචණ්ඩත්වයට වඩා ලිංගිකත්වයට ආස මීනිස්සු වෛරයට වඩා ආදරයට ආස na. a.?
 
-### 27. `1216360083178704897` — label=NOT, realised_noise_rate=0.08
-- **original**: මට මගේ පාඩුවෙ ඉන්න දෙන, ඕනිවට වඩා නීති දාන්නෙ නැති ශොට් එකක් බෙදාගෙන ගහලා, බයිට් එක කාල ජොලියෙ ඉන්න කෙනෙක්. මගේ පිස්සුව හොදට තේරුම් ගත්ත මට පිස්සු වැඩි උනාම ආතල් එකේ බලන් ඉන්න. මගේ කාලෙන් කාලෙට අලුත් වෙන හොබී වලට අත හිත දෙන කෙනෙක්.  ගොඩාක් romantic පොඩ්ඩක් stubborn පිස්සෙක් 🅷🆁🆂🅷 | බණ්ඩාර @USER  · 12 Jan 2020 ට්වීටර් යෙහෙලියන්ට විවෘත ආරාධනයක්....  ඔබ ඔබේ පෙම්වතා/සහකරු/සැමියා ගෙන් බලපොරොත්තු වන පුද්ගල පෞරුෂත්වය පහලින් කොටාගෙන යන්න....  කමෙන්ට් පිලීස්
-- **noisy**: mata mage paduwe inna dena, oniwata wada nitthi dann nathi shot ekake bedagena gahhala, bite eka kala joleeye inna kenk. mage pissoowa hodata teroom gaththa matq craazy wadi unama a. e. ba. i.. mage kaln kaleta aluth wena hobi walata atha hita den kenek.  godak romanthic poddak stubborn pissek 🅷🆁🆂🅷 | bandara @USER  · 12 Jan 2020 twitar yeheliyanta wiwritha aradhanayak....  oba obe penwatha/sahakaru/samiya gen balaporoththu wana pudgala paurushathwaya pahalin kotagena yanna....  comment pilis
+### 27. `1080864516206776321` — label=NOT, realised_noise_rate=0.22
+- **original**: @USER වැදගත් ගොනා කවුද කියලා මං මේ කල්පනා කලේ  උන් දෙන්නම වැදගත් නෑනේ
+- **noisy**: @USER imporyant ගොන ka. ki. mam මෙ කල්පනා කලේ  උන් දෙන්නම important නෑනේ
 
 ## compound/light (27 items)
 
-### 1. `1318480215346016256` — label=NOT, realised_noise_rate=0.05
-- **original**: @USER කාට කියන්නද මේ ගොං ශෝ..
-- **noisy**: @USER kata kiyannada me gom show..
+### 1. `692684303071838208` — label=OFF, realised_noise_rate=0.13
+- **original**: මෝඩ සින්හල හැත්ත, තොපිට 10.000ක් වැඩි කලේ මේවා ගෙවන්න තමයී,  දැන් ඉතින් ගෙවපියව්,  මීට හකීම් අන්කල් ( හම්මෝ මෙයාට... URL
+- **noisy**: මෝඩ Sinhala හැත්ත, තොපිට 10.000ක් වැඩි kale මේවා gewanna තමයී,  d. i. ගෙවපියව්,  mitta හකීම් අන්කල් ( හම්මෝ මෙයාට... URL
 
-### 2. `1264945009498796036` — label=OFF, realised_noise_rate=0.06
-- **original**: @USER ඒකට අපේ ගෑණු  "තෝ කලින් එකීටත් කිව්වෙ ඕක නේද..? තෝ මට ඕක කියන්නෙපා ආයෙ.. ආයෙ මට ඕක කිව්වොත් තමුසෙගෙ බෙල්ල කපලා මරන්නෙ"
-- **noisy**: @USER ekata ape genu  "tho kalin ekitath kiwwe oka neda..? tho mata ok kiyannep aye.. aye mat oka kivwoth thamusege neck eka kapala maranne"
+### 2. `1070363717269839872` — label=NOT, realised_noise_rate=0.15
+- **original**: @USER සිරිසෙන අනිත් පක්ශවල අඩුපාඩු හොයනවා. තමන්ගෙ පක්ශෙ පිස්සු කෙලිනකොට
+- **noisy**: @USER sirisena ආනිත් පක්ශවල අඩුපාඩු හොයනවා. thamange පක්ශෙ crazy kelinakota
 
-### 3. `1210567211791704064` — label=OFF, realised_noise_rate=0.06
-- **original**: @USER  @USER මම හැමදාම කියනවා මේ හැසිරීම අනුමත කරන්න බෑ. හැබැයි මේකේ ඉන්න එකාලා පුක කැඩිච්ච කඩි වගේ ෆයර් වෙන්නේ මේවට. හාමුදුරුවන්ට ගහන්න ආපුවට අරවට මේවාට මීක් නෑ.
-- **noisy**: @USER  @USER mama hamadama kiyanaw me hasirima approve karanna be. habayi me. i. ekala pyka kadichcha kadi wage fayar wenne mewata. hamuduruwanta gahanna apuwatha arawata mewata mik ne.
+### 3. `1324994496174710785` — label=NOT, realised_noise_rate=0.15
+- **original**: @USER අඩො නෝ...අඩො Y බං
+- **noisy**: @USER ado no...අඩො Y බං
 
-### 4. `1351093693923659780` — label=OFF, realised_noise_rate=0.05
-- **original**: අද දින වන විට ලක් වැසියන් 250+ කෝවිඩ් හේතුවෙන් මියගොස් ඇත.  මැණික් ගල් කුළුණු, අනිවාර්ය හමුදා පුහුණුව, ගංජා පැණි වැනි මෝඩ ජිල්මාට් වලින් අප චූන් වී, මෙම යථාර්ථය අපට අමතක වේ යැයි සිතන සමහරක් සිටිති.  අපි ගොබ්බ වැඩ කල පමණින් ගොබ්බයෝ යැයි සිතීම ඔවුන් වරද්දා ගන්නා තැනය.
-- **noisy**: ada dina wana wita lak wesiyan 250+ kowid hethuwen miyagos atha.  manik gaal kulunu, aniwarya army puhunuwa, gannja pani wani moda jilmat walin apa chun wi, mema yatharthaya apat amathaka we yayi sitana sammaharak sitithi.  api gobba wada kale pamanin gobayo yayi sithima oun waradda ganna thanaya.
+### 4. `1485013095164559361` — label=OFF, realised_noise_rate=0.09
+- **original**: @USER තොපි වගේ කාලකන්නි අවජාතක බල්ලෝ මුංට කඩේ යනකම් රට විකුණනවා බොරු කිය කියා. යකෝ මේවා විකුණුවේ ප්‍රකෝටි ගණන් කොමිස් ගහලා. තුට්ට දෙකට කඩේ යන කාලකන්නි තොපිට කොහෙද රටක් ගැන කැක්කුමක් දඩාවතේ යන බල්ලෝ!
+- **noisy**: @USER tho. wa. කාලකන්නි අවජාතක බල්ලෝ munta shop එකේ යනකම් රට විකුණනවා බොරු කිය kiya. යකෝ මේවා විකුණුවේ ප්‍රකෝටි ගණන් කොමිස් ගහලා. thutta දෙකට shop එකේ yana kalakanni thopita කොහෙද රටක් ගැන කැක්කුමක් දඩාවතේ යන බල්ලෝ!
 
-### 5. `1458120550077796358` — label=OFF, realised_noise_rate=0.05
-- **original**: @USER මම දැක්කේ නෑ වගේයන්නේ පොටෝ එක  දැක්කාම හිනා යනවා පකෝ
-- **noisy**: @USER mama dakke ne wageyanne photo ekha  dakkama hina yanawa pako
+### 5. `1427961519980138496` — label=NOT, realised_noise_rate=0.12
+- **original**: @USER මන් ඌට මැසේජ් එකක් දෑම්මා දැන් ටික කාලෙකට කලින් වැඩ සෙට් වෙයි කරන් පලයන් කියල. ඌ සතියකට පස්සෙ වගේ රිප්ලයි කලේ . ඕකුන් ඔක්කොම එකයි බන්.
+- **noisy**: @USER මන් උට message එකක් දෑම්මා දැන් ටික කාලෙකට kaliwn වැඩ සෙට් වෙයි කරන් palayan කියල. u සතියකට පස්සෙ වගේ රිප්ලයි kale . okoon o. e. බන්.
 
-### 6. `1262516114359271425` — label=OFF, realised_noise_rate=0.06
-- **original**: බොලව් යඛ්ඛයිනේ  . . . .  බිජ්ජ උල්ද?
-- **noisy**: blaw yakhkhayine  . . . .  bijja ulda?
+### 6. `705425769485438976` — label=NOT, realised_noise_rate=0.15
+- **original**: @USER @USER  @USER  ඒච්ච අපි දුප්පත් යකූ
+- **noisy**: @USER @USER  @USER  ඒච්ච api poor යකූ
 
-### 7. `1123260577927688192` — label=OFF, realised_noise_rate=0.05
-- **original**: මගේ Account එකට පුක දීපු පරබල්ලෝ. දවස් 7 මේ Account එකෙන් FB පොස්ට් දාන්න බැරි වුනට මං FB ආවා බල්ලො.තොපි හිතන තරම් ලේසියෙන් මගේ කට වහන එක ලේසි නෑ හිකනල් කැරි වේස තම්බියෝ. පුලුවන් තරම් Report කරපිය.තව Account හදන් එනව බල්ලො
-- **noisy**: mage Account ekata puka dipu paraballo. dawas 7 me Account eken FB post danna bari wunat maam FB awa ballo.thopi hithan tharam lesiyen mage kat wahana eka lesi ne hikanal keri wesa thambiyo. puluwan tharam Report karapiya.tawa Account hadan ennawa ballo
+### 7. `1377295629089574914` — label=OFF, realised_noise_rate=0.07
+- **original**: @USER  @USER යකෝ ඔච්චර හොද කෑම තියන රටේ මොන ලබ්බටද අමු මාලු කන්නෙ
+- **noisy**: @USER  @USER යකෝ ඔච්චර good කෑම තියන රටේ මොන ලාබ්බටද අමු මාලු kanne
 
-### 8. `812625682966646784` — label=OFF, realised_noise_rate=0.07
-- **original**: ගොනා වගේ බෝල් කර කර ඉන්න ඇති , මල්ලි පොර වගේ ගහන්ඩ ඇති ..
-- **noisy**: go. wa. ball kara kara inna athi , malli pora wage gahanda athi ..
+### 8. `1162344731239563264` — label=OFF, realised_noise_rate=0.10
+- **original**: @USER මේ වගේ අමු පට්ටපල් බොරු දාලා, delete නොකර ඉන්නේ මොකෝ දන්නේ නෑ NGO uncle?  Delete කරොත් account එකට වැටෙන $ ටිකට කෙල වෙන නිසාද ? ඊයා ලැජ්ජයි මේ වගේ සක්කිලි වැඩ ගැන. අන්න ජාත්‍යන්තර මාධ්‍ය වලත් යනවා. ඒකනේ කරගන්න ඕන උනේ නෙහ්?
+- **noisy**: @USER මේ වගේ අමු පට්ටපල් බොරු dala, delete nokara ඉණ්නේ moko දන්නේ ne NGO uncle?  Delete කරොත් account එකට වැටෙන $ ටිකට කෙල wena නිසාද ? ඊයා ලැජ්ජයි me w. sa. work ගැන. අන්න jathyanthar මාධ්‍ය වලත් යනවා. ekane කරගන්න ඕන උනේ නෙහ්?
 
-### 9. `1360188879760805894` — label=NOT, realised_noise_rate=0.04
-- **original**: @USER ,  @USER  @USER කනවා තමා හරියට තමුසෙ වගේ නෑ...... බෝලේ වගේ ඉන්නෙ හොදට කාලා...
-- **noisy**: @USER ,  @USER  @USER kanawa thamq hariyata thamuse wage ne...... ball eka wage inne hodata kala...
+### 9. `1092246692861218822` — label=OFF, realised_noise_rate=0.09
+- **original**: නිදහස් දිනේ සමරන්නෙ නැත්තන් සමරන්නෙ නැතුව ඉඳපන් ඕයි නිකන් පකේ ටෝක්ස් දෙන්නෙ නැතුව. මේක හරි එක නෙමෙයිලු, රණවිරුවො හොරුන්ට වඳින දවසලු  අනේ බං තොපි හුජ්ජ දැන් ඇඬුවට අවුරුදු 133 ඉංග්‍රීසින්ට යට වෙලා හිටපු උන්ට අද ලොකු වෙන්න ඇති. ඇරත් පාර්ලිමේන්තුවේ ඉන්නෙ මේ සමාජෙන්ම ආපු එවුන් තමා.
+- **noisy**: ණිදහස් දිනේ සාමරන්නෙ නැත්තන් samaranne නැතුව ඉඳපන් ඕයි නිකන් පකේ talks දෙන්නෙ නැතුව. මේක hari එක නෙමෙයිලු, රණවිරුවො හොරුන්ට වඳින දවසලු  අනේ බං තොපී හුජ්ජ දැන් ඇඬුවට awurudu 133 ඉංග්‍රීසින්ට යට වෙලා හිටපු උන්ට අද ලොකු we. a.. ඇරත් parlimenthuwe inne මේ samajenma apu එවුන් thama.
 
-### 10. `1466013154073141257` — label=OFF, realised_noise_rate=0.08
-- **original**: @USER Mekage බිජ්ජ ට කෙටුවා නම් තමයි වැඩේ
-- **noisy**: @USER Mekage bijja ta ketuwa nam thamayi work eaka
+### 10. `1422195779989508098` — label=OFF, realised_noise_rate=0.17
+- **original**: @USER  @USER අඩෝ සිරාවට කව්ද ඒ පිස්සා
+- **noisy**: @USER  @USER ado සිරාවට කව්ද e maniac
 
-### 11. `918406307052318720` — label=NOT, realised_noise_rate=0.05
-- **original**: ඒ  යකො තොට සල්ලි ගෙවලා කව්රුත් බැදපු ඉස්සෝ තියලා සලාද කන්න කියල නැති හින්දා :D URL
-- **noisy**: e  yako thota money gewala kawruth badapu isso thiyala saladha kanna keyala nathi hinda :D URL
+### 11. `821879500875010048` — label=OFF, realised_noise_rate=0.17
+- **original**: @USER ,  @USER  @USER තියෙනවා... ඔය ඩයල් එක හෙන වල් හලෝ. ඒකයි
+- **noisy**: @USER ,  @USER  @USER තියෙනවා... ඔය dial e. he. වල් හලෝ. ඒකයි
 
-### 12. `1439977728984371209` — label=OFF, realised_noise_rate=0.08
-- **original**: බල්ලෝ පොර කනවා  බැල්ලි බේදාගන්න බැරිව.
-- **noisy**: ballo boss kanawa  balli bedaganna bhariwa.
+### 12. `900228007117410306` — label=OFF, realised_noise_rate=0.30
+- **original**: @USER පට්ට බැල්ලි ගහනව තොට වැලි
+- **noisy**: @USER awesome බැල්ලි ගහනව tho. wa.
 
-### 13. `808605306439745536` — label=OFF, realised_noise_rate=0.07
-- **original**: ණයට කහින්නෑ අපි හුත්තො කැස්සොත් දෙනවා කටට
-- **noisy**: nayata kahinne apj huththo kassoth denawa mouth ekata
+### 13. `835332875285254146` — label=OFF, realised_noise_rate=0.17
+- **original**: @USER පල පල මම සුදුයි යකෝ..තොට තෑන්ක්ස් කරාටත් පාඩුයි නොදකින් විතරක්
+- **noisy**: @USER පල පල මම සුදුයි යකෝ..තොට thanks කරාටත් psduyi no. wi.
 
-### 14. `1387024570247303171` — label=OFF, realised_noise_rate=0.06
-- **original**: @USER දස කැරියො වගේ ගහගන්න යනව හුජ්ජ පැටව්.ොය ගහන පාරක් වැරදිලා කෙල උන දාට බිජ්ජ උල් කරං ගහන්න ගිය උන් මීයො වගේ හැංගි හැංගි අඬන්නෙ..ඕනම රණ්ඩුවකදි ගහන උන්ට වඩා ගුටි කන එකාට තමා වැඩිම වාසිය තියෙන්නෙ..
-- **noisy**: @USER daasa kariyo waage gahaganna yanava hujj pataw.oya gahana parak waradila kela una data bijja ul karam gahanna giya un miyo wage hangi hangi andanne..onama randuwakadi gahana unt wad guti kana ekata tama most wasiya thiyenne..
+### 14. `1127782149791162370` — label=NOT, realised_noise_rate=0.16
+- **original**: @USER ආයේ නාවට කමක් නේ
+- **noisy**: @USER again නාවාට කමක් ණෑ
 
-### 15. `863914870810394624` — label=NOT, realised_noise_rate=0.09
-- **original**: @USER ඒක ලස්සනට තිබ්බා ඒකයි ටහුඩු කිව්වේ..
-- **noisy**: @USER ek beautifully thibba ekayi tahudu kiwwe..
+### 15. `969103377224232961` — label=OFF, realised_noise_rate=0.03
+- **original**: කොටි බුවාලට පට්ට අප්සේට්ලු බන්. පවු කියලත් හිතෙනවා වෙලාවක  @USER  යි  @USER  @USER  @USER  යි මුන්ව කඩේ යවන හැටියට #srilanka  @USER  @USER  @USER  @USER
+- **noisy**: කොටි බුවාලට awesome අප්සේට්ලු බන්. පවු කියලත් හිතෙනවා welawaka  @USER  යි  @USER  @USER  @USER  යි මුන්ව කඩේ යවන හැටියට #srilanka  @USER  @USER  @USER  @USER
 
-### 16. `638927710241165312` — label=NOT, realised_noise_rate=0.05
-- **original**: @USER @USER ඒවා ඇවිත් නෑ... මීට ටික දොහොකට කලින් නම් තිබුණා..... ඒත් ඒවා වික්කා .... හෙන කරදර ඒවා
-- **noisy**: @USER @USER ewa awith n... meta tika dohokata kalin nam thibuna..... eth ewa wikka .... very karadara ewa
+### 16. `1462998990186692612` — label=NOT, realised_noise_rate=0.10
+- **original**: @USER තව නෙලුම් කුලුනක් හදමු
+- **noisy**: @USER තව නෙලුම් tower එකක් හඩාමු
 
-### 17. `786945949041958912` — label=NOT, realised_noise_rate=0.06
-- **original**: ටහුඩු නංගිලා දන්න දේවල්  URL This Tweet is unavailable.
-- **noisy**: tahudu sisters la danna dewal  URL This Tweet is unavailable.
+### 17. `1461734587537637377` — label=NOT, realised_noise_rate=0.08
+- **original**: ඔන්න අපි මොනව හරි කන්න ගන්නකොටම ගෙදර බල්ලා හරි පූසා හරි ඇවිල්ලා "අඩෝ මොනවද බොසා කන්නෙ, අපිටත් දියංකො" කියන්න වගේ බලන් ඉන්නව හරිද. අනේ අපිටත් ඉතින් දුක හිතිලා ඒකෙන් ටිකක් දෙනවා. දෙනකන් ඉඳල ඉවකරලා "හෑයියා මේ මොන ජරාවක්ද" කියන්න වගේ ඌ යනවා.   ඉතින් එතකොට අපි mk යාලුවනේ?
+- **noisy**: onna අපි මෝනව හරි කන්න ගන්නකොටම ge. ba. හරි පූසා හරි ඇවිල්ලා "අඩෝ mnawada බොසා කන්නෙ, apitath diyanko" කියන්න වගේ balan ඉන්නව okay da. ane අපිටත් ඉතින් duka හිතිලා ඒකෙන් ටිකක් දෙනවා. දෙනකන් ඉඳල ඉවකරලා "හෑයියා මේ මොන ජරාවක්ද" කියන්න වගේ ඌ යනවා.   ඉතින් එතකොට අපි mk යාලුවණෙ?
 
-### 18. `910883500227567616` — label=NOT, realised_noise_rate=0.07
-- **original**: #LankanMaleLokuLines කෙල්ලොනම් මොනාද මම ඊයෙත් පට්ට කෙල්ලෙකට බෑ කීවා
-- **noisy**: #LankanMaleLokuLines kellonam monada mam iyeth awesome kellekata be kiwa
+### 18. `1057174122323632135` — label=NOT, realised_noise_rate=0.10
+- **original**: -සුදු පැටියෝ  -ඇයි ඒයි  -කවද්ද ඔවා මාව බඳින්නේ  -මං ඔවාව බඳින්නේ නෑ  මොකද මනුස්ස්යෝ ඒ  -මට බයයි  -ඇයි අනේ   -දැන්ම ඔයා පුදුම වදයක් දෙන්නෙ මට මහ රෑට ඒම මේම කරන්න කියලා.බැන්දම මාසෙටම අර දවස් දෙක තුනක් හැර කවදාවත් නිදාගන්න නැති වේවී  -මැරියන් තෝ
+- **noisy**: -සුදු පැටියෝ  -ayi eyi  -කවද්ද ඔවා මාව බඳින්නේ  -මං owawa බඳින්නේ නෑ  මොකද මානුස්ස්යෝ ඒ  -mat බයයි  -ඇයි ane   -danma oaya පුදුම වදයක් දෙන්නෙ මට මහ රෑට ඒම මේම ka. ki..bandama masetama ara දවස් දෙක තුනක් හැර කවදාවත් nidagann නැති වේවී  -die tho
 
-### 19. `1290921531418144772` — label=OFF, realised_noise_rate=0.04
-- **original**: @USER  @USER වේසකමේ ගිහින් ජාතක වෙච්ච උඹ, අම්මගෙන් අහපන් පුලුවන් නම් එදා ඇනපු එකාගේ එක හිට්ටේ හරහටද කියලා පොඩ්ඩක්. ඊට කලින් පොඩ්ඩක් හොයලා බලපන් එදා කීදෙනෙක් ඉදලද කියලා. එතන අනිවාර්යයෙන්ම බිජ්ජ කොට එකෙක් ඉදලා තියනවා. ඒකයි උඹ දකින හැමඑකාගෙන්ම ලොකුද පොඩිද අහන්නේ.
-- **noisy**: @USER  @USER wesakame gihin jathaka wechcha umba, ammagen ahapan puluan nam eda anapu ekage eka hitte harahatada kiyala poddak. i. ka. poddak hoyala baalapan eda kidenek idalada kiyala. ethana definitely bijja kotaa ekek idala thiyanawa. ekayi umba dakina hamaekagenma lokuda podida ahanne.
+### 19. `998266543728308224` — label=NOT, realised_noise_rate=0.21
+- **original**: @USER  @USER ඇයි අයිසෙ මාව මෙන්සන් කරේ..
+- **noisy**: @USER  @USER ayi අයිසෙ මාව menthion kare..
 
-### 20. `1389795902689222665` — label=OFF, realised_noise_rate=0.04
-- **original**: @USER මෝදි දුන්න සුවසැරියේ නැගීලා  ජින්පින් දුන්න නෙලුම් කුලුන බලල්ලා කැරොලින් පුෂ්පිකාගේ වත උනාලා මිරිස් කකා  බුලත් පයිය කොටල්ලා මැදමුලනේ සංහුරේ  රජ කොරල්ලා  තොපේ පැටව් මහ මුහුදට දමල්ලා යන්න රටක්  ඇත්දැයි වටේ බලල්ලා  නොහැකි එවුන් දෙකට නැවී හපල්ලා
-- **noisy**: @USER moddi dunn suvasariye nagila  jinpin dunns nelum kuluna balalla karolin pushpikage watha unala miris kaka  bulath payiya kotalla madamulane samhure  raj koralla  thope pataw maha muhudata damalla yanna country ekak  athdayi wate balalla  nohaki ewun dekata nawi hapalla
+### 20. `1370612183185301504` — label=NOT, realised_noise_rate=0.09
+- **original**: @USER කමෙක් නෑ. ඒකුන්ව පෝෂණය කරන්ඩත් බදු ගෙවන්ඩ හුදී ජනයලා සැදී පැහැදී ඉන්නෝ
+- **noisy**: @USER කමෙක් ne. ඒකුන්ව පෝෂණය කරන්ඩත් tax ගෙවන්ඩ හුදී ජනයලා sadi pahadi ඉන්නෝ
 
-### 21. `1173572538154147842` — label=NOT, realised_noise_rate=0.04
-- **original**: @USER හොද හොද අපරාද බලාගන්න පුලුවන්. හුරේ........
-- **noisy**: @USER hoda hoda crimes balaganna puluwan. hure........
+### 21. `726485303712604161` — label=OFF, realised_noise_rate=0.05
+- **original**: නොට්ටිගේ..මාමාගේ නොට්ටිගේ..පුතා මේ දිනවල පිස්සු බලු බෙහෙත් බීමෙන් වැලකී සිටින නිසා..  මහජනතාවනී ඉතා ප්‍රවේසම්වන්න !!
+- **noisy**: නොට්ටීගේ..මාමාගේ නොට්ටිගේ..පුතා මේ දිනවල crazy balu බෙහෙත් බීමෙන් වැලකී සිටින නිසා..  මහජනතාවනී ඉතා ප්‍රවේසම්වන්න !!
 
-### 22. `1187639540766232577` — label=NOT, realised_noise_rate=0.07
-- **original**: අවුරුදු 4.5 ක් පොල් ගෑවද යකෝ... අඩුම තරමෙ විපක්ෂ කණ්ඬායම් ටික කරපු තරමෙ දෙයක්වත් කොරාද ?
-- **noisy**: awurudu 4.5 k coconut gewada yako... adhuma tharame wipaksha kanndayam teka karapu tharame deyaakwath korada ?
+### 22. `753243521247612928` — label=NOT, realised_noise_rate=0.09
+- **original**: @USER ^ටහුඩු..!! මුං   @USER  දැං උඩින් යන්නේ නෙහ්..
+- **noisy**: @USER ^ටහුඩු..!! මුං   @USER  dam above යන්නේ නෙහ්..
 
-### 23. `1363131183349964806` — label=OFF, realised_noise_rate=0.06
-- **original**: තමන්ගෙ බිරිඳට මහ පාර මැද දාගෙන කැති පහරවල් 35 ක් ගහපු cctv දර්ශනය..  වේදනාව කියන්නෙ ඒ ලගින් යනව පොලිස් කාරයෙක් මූ ක්ෂණික බයික් එක හරවන් යනව..යකෝ කැත්තෙන් කොටපු මිනිහට නඩු දාන්න කලින් අර පොලිස් කාර⁣යගෙ වැඩ තහනම් කරන්න ඕන..ඔය වගේ කාලකණ්ණි නීතියටත් නින්දාවක් @USER  @USER
-- **noisy**: thamange birindata maha parra mada dagena kathi paharawal 35 k gahapu cctv darshanaya..  wedanawa kianne e lagin yanawa polis karayek mu kshanika bayyik eka harawan yanawa..yako kaththen kotapu minihat nadu danna kalin ara police kara⁣yage work thahanam karanna ona..o. wa. kalakanni netheeyatath nindawak @USER  @USER
+### 23. `978568732761976833` — label=OFF, realised_noise_rate=0.17
+- **original**: බැල්ලි කිව්වටම තරහ යන්නෙ නෑ මුලට විශේශන පදයක් දාන්න ඕන.
+- **noisy**: balli කිව්වටම ථරහ යන්නෙ නෑ මුලට විශේශන word එකක් d. o..
 
-### 24. `1462418182262517766` — label=OFF, realised_noise_rate=0.07
-- **original**: කෘෂිකර්ම ඇමති කියනවා රසායනික පොහොර ගේන්න තිරණයක් නෑ කෘෂිකර්ම ලේකම් කියනවා නම් යුරියා ඇගේ ගාන්නත් හොදයි ලු එනිසා ගෙන්නනවා ලු. කෘෂි පෝෂක /  පොහොර  කෘෂි ආරක්ෂක /  කෘමි නාශක තනිකර කෙළින්නේ පිස්සු. පිස්සා  තනිකර කෙළින්නේ පිස්සු..
-- **noisy**: krishikarma ammathi kiyanawa rasayanika pohora genna thiranayk ne krrishikarma lekam ki. na. yuriya aghe gannath hodayi lu enisa gennanawa lu. krishi poshaka /  pohora  krishi security /  krrimi nashaka thanikara kelinne pissu. pisa  thanikara kelinne pissu..
+### 24. `1179717950829285377` — label=NOT, realised_noise_rate=0.21
+- **original**: @USER ඇප නෑ ... වෛරය,
+- **noisy**: @USER bail නෑ ... wairaya,
 
-### 25. `1073271775583100928` — label=OFF, realised_noise_rate=0.04
-- **original**: ඒත් පබාගේ පස්ස නම්... ඉස්සෝ කොටුවක් උනත් දාන්න පුලාම්  Fifty Shades Crazy @USER  · 13 Dec 2018 පස්සෙ ඉත්තෑවො කියනවට වඩා ලේසි  සහ ගැලපෙනවා පස්සෙ ඉස්සෙක් කිව්වනං   <
-- **noisy**: eth pabage passa nam... iso kotuwak unath danna pulam  Fifty Shades Crazy @USER  · 13 Dec 2018 passe iththewo kiyanawata wada easy  saha galapenawa passe issk kiwwanam   <
+### 25. `605634121662996480` — label=OFF, realised_noise_rate=0.25
+- **original**: මෙක මහ කරුමයක් යකො රෙද්ද....
+- **noisy**: මෙක ma. ka. යකො redda....
 
-### 26. `1344111439926099968` — label=OFF, realised_noise_rate=0.06
-- **original**: @USER  @USER මොන නවනිංගිරාවක්ද මේ? කලුතරට පිටින් ආපු කාලකණ්ණි රැලක් කරපු වැඩක්..  කලුතර බෝධිය පහුකරද්දි නැගිටලා වැඳලා පඬුරකුත් දාලා යන අය මෙහේ ඉන්නේ ..
-- **noisy**: @USER  @USER mona nawaningirawakda me? kalutharata pitin apu kalakanni gang karapu wadak..  kaluthar bodhiya pahukaraddi nagitala wendala pandurakuth dal yana ay mehe inne ..
+### 26. `1427926012218679297` — label=NOT, realised_noise_rate=0.05
+- **original**: කොරෝනා මිනිස්සුන්ගෙ ජීවිත කොච්චර වෙනස් කරනවද කියනවනම් මේ මොහොතෙ අපේ අම්මයි තාත්තයි හෙන උනන්දුවෙන් ඩොක්ටර් නවරියන් බලනවා
+- **noisy**: කෝරෝනා මිනිස්සුන්ගෙ ජීවිත කොච්චර වෙනස් කරනවද කියනවනම් me මොහොතෙ අපේ අම්මයි තාත්තයි හෙන උනන්දුවෙන් doctor නවරියන් බලනවා
 
-### 27. `1027180536471515141` — label=OFF, realised_noise_rate=0.03
-- **original**: "සිද්ධාර්ථ තමුසෙ වගේ මාලිගා නෑ අයිසෙ අපිට දාල යන්න අපි භාවනා කලොත් ගෙදර උන් බඩගින්නෙ "  අවස්ථා සම්බන්ධය සොයන්න.
-- **noisy**: "siddhartha thamuse wage maliga ne ayise apita dala yanna api bhawana kaloth home un badaginne "  awastha sambandaya soyanna.
+### 27. `1482221407610499073` — label=NOT, realised_noise_rate=0.13
+- **original**: සෙට් එකක් එක්ක අමාරුවෙන් සෙට් උනාම ඔක්කොම අහනවා සෙට් වෙමුද කියලා. කොහෙ තියන සල්ලිද යකෝ..
+- **noisy**: set එකක් එක්ක අමාරුවෙන් set උනාම ඔක්කොම අහනවා set වෙමුද කියලා. kohe thiyana sallida යාකෝ..
 
 ## misspell/heavy (27 items)
 

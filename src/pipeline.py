@@ -24,6 +24,23 @@ ever. Fixed here, before compound generation ever ran for real, per the
 plan's Stage 1. See eval/regression/pipeline_abbreviate_fires_in_compound.json
 for the regression case that pins this down.
 
+--- Real script mixing, not uniform full-Latin (user request) ---
+The standalone `transliteration` condition deliberately romanizes 100% of
+remaining Sinhala words (see src/noisers/transliteration.py's module
+docstring) -- correct for THAT condition, but a real bilingual typist's
+message is rarely uniform: some words stay in Sinhala script, some get
+typed in Latin, within the same post. Compound uses transliteration's
+`mixed_script_rate` parameter (default 0.0, so the standalone dataset is
+completely unaffected -- verified byte-identical against all 20,000
+already-shipped rows before this was wired in here) to romanize only a
+FRACTION of remaining Sinhala words: MIXED_SCRIPT_RATE below, 20% at light
+/ 40% at heavy (heavier severity = more total deviation from the clean
+all-Sinhala baseline, consistent with what "severity" means everywhere
+else in this project). A word produced by abbreviate's initials() is
+always romanized regardless of this rate (never left half-Sinhala/
+half-Latin within a single abbreviation pair) -- see
+transliteration.py's `_is_abbreviation_fragment`.
+
 --- Why misspell still runs last ---
 Misspell is unique among the four in being SCRIPT-AWARE by design
 (src/noisers/misspell.py's Channel A operates on Sinhala, Channel B on
@@ -85,13 +102,21 @@ _MODULES = {
 }
 _HAS_APPLY3 = {"codemix", "abbreviate"}
 
+# Fraction of remaining Sinhala words transliteration romanizes in the
+# compound chain (the rest stay in Sinhala script) -- see module docstring's
+# "Real script mixing" section. Only ever passed to transliteration.apply()
+# from here; the standalone transliteration condition never sees this.
+MIXED_SCRIPT_RATE = {"light": 0.20, "heavy": 0.40}
+
 # Measured once from a completed generation run (pooled mean compound_rate
-# across train+test, 10,000 posts each severity -- see LOG.md's Phase 5
-# Stage 2 entry) -- a drift tripwire, not a natural-rate claim, same
-# convention as codemix's and abbreviate's TARGET_NOISE_RATE. 100% of posts
-# touched at both severities (transliteration alone guarantees this; the
-# rate captures INTENSITY across all four stages, not whether any fired).
-TARGET_NOISE_RATE = {"light": 0.0667, "heavy": 0.1230}
+# across train+test, 10,000 posts each severity, AFTER the mixed-script
+# transliteration change -- see LOG.md's Phase 5 entries) -- a drift
+# tripwire, not a natural-rate claim, same convention as codemix's and
+# abbreviate's TARGET_NOISE_RATE. 98.8%/99.8% (light/heavy) of posts
+# touched -- no longer a guaranteed 100% now that transliteration only
+# romanizes a fraction of remaining Sinhala words (a very short post can
+# get unlucky and have nothing altered by any of the four stages).
+TARGET_NOISE_RATE = {"light": 0.1029, "heavy": 0.1851}
 
 
 def _stage_seed(seed: int, stage_name: str) -> int:
@@ -123,6 +148,10 @@ def run(
         if stage_name in _HAS_APPLY3:
             noisy_text, rate, detail = module._apply(current_text, severity, stage_seed)
             n = len(detail) if isinstance(detail, list) else detail
+        elif stage_name == "transliteration":
+            noisy_text, rate = module.apply(
+                current_text, severity, stage_seed, mixed_script_rate=MIXED_SCRIPT_RATE[severity])
+            n = 0
         else:
             noisy_text, rate = module.apply(current_text, severity, stage_seed)
             n = 0
