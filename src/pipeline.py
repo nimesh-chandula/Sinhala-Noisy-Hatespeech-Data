@@ -85,12 +85,13 @@ _MODULES = {
 }
 _HAS_APPLY3 = {"codemix", "abbreviate"}
 
-# Measured once from a completed generation run (mean of the four stages'
-# own TARGET_NOISE_RATE at the time of measurement -- see LOG.md's Phase 5
-# entry) -- a drift tripwire, not a natural-rate claim, same convention as
-# codemix's and abbreviate's TARGET_NOISE_RATE. Placeholder until Stage 2
-# generates real compound output to measure.
-TARGET_NOISE_RATE = {"light": 0.0, "heavy": 0.0}
+# Measured once from a completed generation run (pooled mean compound_rate
+# across train+test, 10,000 posts each severity -- see LOG.md's Phase 5
+# Stage 2 entry) -- a drift tripwire, not a natural-rate claim, same
+# convention as codemix's and abbreviate's TARGET_NOISE_RATE. 100% of posts
+# touched at both severities (transliteration alone guarantees this; the
+# rate captures INTENSITY across all four stages, not whether any fired).
+TARGET_NOISE_RATE = {"light": 0.0667, "heavy": 0.1230}
 
 
 def _stage_seed(seed: int, stage_name: str) -> int:
