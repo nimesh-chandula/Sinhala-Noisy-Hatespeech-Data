@@ -70,7 +70,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from src.graphemes import clusters, text_runs  # noqa: E402
+from src.graphemes import text_runs  # noqa: E402
+from src.noisers.abbreviate import initials  # noqa: E402
 
 DATA_DIR = REPO_ROOT / "data"
 SOLD_DIR = DATA_DIR / "sold"
@@ -95,13 +96,6 @@ def _load_jsonl(path: Path) -> list[dict]:
         return []
     with path.open(encoding="utf-8") as f:
         return [json.loads(line) for line in f if line.strip()]
-
-
-def initials(word1: str, word2: str) -> str:
-    """The mechanical abbreviation rule, shared with src/noisers/abbreviate.py
-    so mining, review display, and generation can never disagree about what
-    an approved bigram actually produces."""
-    return f"{clusters(word1)[0]}. {clusters(word2)[0]}."
 
 
 def mine_bigrams() -> tuple[dict[tuple[str, str], int], dict[tuple[str, str], int], dict[tuple[str, str], list[str]]]:
