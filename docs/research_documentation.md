@@ -1059,7 +1059,181 @@ post-review snapshot — approved as-is) and
 
 ---
 
-## 12. Reproducibility appendix
+## 13. Abbreviation noiser methodology (Phase 4b)
+
+The fourth and final individual noise vector. Unlike the other three, this
+one changed shape mid-implementation based on direct user review — the
+original two-channel design collapsed to one, and the surviving channel's
+own scope was pinned down in several rounds of iterative review. Both
+changes are documented here in full rather than smoothed over, since the
+process is as informative as the result.
+
+### 13.1 Original design: two channels, one dropped
+
+The initial plan mirrored misspelling's shape: a **Channel A** (single-word
+clipping — a word losing a trailing syllable, e.g. an agglutinative suffix
+drop) mined by requiring an exact grapheme-cluster prefix match on all but
+a candidate's last cluster, then bounding only that cluster's edit distance
+against the original word's remaining tail (reusing
+`eval.gold_cer.edit_distance`, no new distance code). This single rule
+captured both pure truncation and final-syllable fusion at once. Measured
+at `FREQ_FLOOR=15`: 504 high-confidence (tail-distance-1) candidate pairs,
+spot-checked as genuine colloquial suffix-drops, plus a much noisier
+5,456-pair tier-2 tail dropped down to its top 150 highest-impact entries
+for review-burden reasons.
+
+**The user's review verdict was unambiguous: "total garbage... i dont
+think that would be a good pathway to abbreviate."** Channel A —
+`scripts/build_abbreviate_clippings.py` and every
+`data/lexicon/abbreviate_clippings*` artifact — was removed from the repo
+entirely, not merely deprioritized. This is recorded here specifically
+because it's a case where a linguistically-motivated, empirically-tested
+mining approach still failed the "would a real person type this" bar on
+direct human judgment — the mechanical rigor of the derivation didn't
+substitute for that judgment.
+
+### 13.2 Channel B: phrase initialism — the surviving mechanism
+
+The second channel, **phrase initialism**, collapses an approved two-word
+Sinhala phrase to its first grapheme clusters, e.g. a phrase → `"X. Y."`.
+This exists because the user identified a real, project-relevant pattern
+the clipping mechanism could never produce: casual Sinhala texting
+abbreviates **offensive multi-word phrases** to their initials, directly
+useful for a pipeline whose entire purpose is benchmarking a hate-speech
+classifier's robustness to realistic noise (§1) — an evasively-abbreviated
+slur is exactly the kind of noise such a classifier needs to be tested
+against, and SOLD's own labels are preserved untouched (inherited from
+source, never recomputed), so this transforms already-labeled text rather
+than inventing new offensive content.
+
+**Corpus-grounded candidate surfacing.** `scripts/build_abbreviate_initialisms.py`
+mines every Sinhala word bigram occurring back-to-back (whitespace-only
+between the two words, no intervening punctuation) in SOLD at
+`freq >= 8`, computing each one's OFF-label association rate (fraction of
+its occurrences sitting in an OFF-labeled post) alongside raw frequency —
+purely from SOLD's own statistics, no hand-listed slurs. 524 candidates
+surfaced; 59 were >85% OFF-associated, a corpus-grounded, reviewable signal
+for "this pair co-occurs almost exclusively in offensive posts."
+
+**Opt-in, unlike every other lexicon in this project.** Every prior
+lexicon (word variants, codemix's word bank, misspelling's confusion sets)
+defaults to "accept unless a human rejects it." Channel B inverts that:
+nothing enters the frozen `data/lexicon/abbreviate_initialisms.jsonl`
+without an explicit `approve_bigram` correction — an unreviewed or
+rejected candidate is simply absent. Chosen because this is the one
+mechanism in the whole project whose highest-value use case is modeling
+evasive obscenity, warranting a more conservative default than anywhere
+else in the pipeline.
+
+### 13.3 Review process
+
+Three rounds, driven entirely by direct user requests rather than a
+pre-planned rubric:
+
+1. **Structural filter — single-character words.** User: drop any bigram
+   where at least one word is a single Sinhala grapheme cluster (too
+   degenerate to abbreviate meaningfully). 524 → 400 candidates. Presented
+   as a clean word-only list (no example sentences, per explicit request,
+   for faster scanning), split into "high offensive-association" and
+   "general" tables — directly actionable for the user's stated priority
+   of surfacing hate-speech word pairs.
+2. **Structural filters — degenerate initials.** User: drop pairs where the
+   same word repeats twice, and pairs where two *different* words happen to
+   share the same first cluster (would abbreviate to a repeated-letter
+   pattern like "P. P.", which doesn't read as a real initialism). 400 →
+   378 candidates (8 + 14 dropped).
+3. **Audit and sign-off.** Full removed-pairs list produced across all
+   three exclusion reasons for a final check; confirmed correct ("okay. go
+   ahead."). All 378 remaining candidates approved and frozen — sha256
+   `2766d949...`.
+
+**A fourth, post-generation check surfaced one more finding.** Reading the
+100-item generation sample (§13.5) in full sentence context — something
+the word-pair-only review rounds structurally couldn't see — revealed that
+a meaningful share of the 378 approved bigrams are common grammatical
+collocations (modal/auxiliary constructions, case-marked noun phrases)
+rather than genuine recognizable fixed phrases, so their initialism reads
+as confusing truncation rather than a natural shorthand in those cases —
+even though every mechanical check (determinism, grapheme integrity, the
+substitution spec) passes cleanly on them. Flagged to the user with
+concrete examples; **verdict: "accept as is."** Recorded as a deliberate,
+known tradeoff, not an oversight — the mechanism and the offensive-phrase
+use case that motivated it both work as intended; a fraction of the
+approved general-vocabulary bigrams simply abbreviate less naturally.
+
+### 13.4 Mechanism and severity
+
+The abbreviated form is a **fixed mechanical rule**, `initials()` — first
+grapheme cluster of each word, joined as `"X. Y."` — defined once in
+`src/noisers/abbreviate.py` and imported (not reimplemented) by the mining
+script, so mining, review display, and generation can never disagree about
+what an approved bigram produces. Unlike codemix, there is no
+"propose-a-translation" step: once a bigram is approved, its abbreviated
+form is a pure function of the two words.
+
+A bigram *occurrence* is only eligible when its two words sit back-to-back
+in the text with nothing but whitespace between them (matching exactly how
+the lexicon was mined). Overlapping occurrences (e.g. three consecutive
+words where both the first-two and last-two are independently approved)
+are resolved by greedy left-to-right selection — the leftmost wins, and a
+word already consumed by one substitution can never also be consumed by a
+second in the same pass.
+
+Coverage is inherently sparse and post-dependent — a post either contains
+an eligible, back-to-back approved bigram or it doesn't — so severity uses
+**codemix's forced-per-post model** rather than misspelling/
+transliteration's probabilistic one: light abbreviates 1 occurrence if
+present, heavy up to 2, both capped at whatever non-overlapping eligible
+occurrences actually exist (never an error to have fewer). `n_substitutions`
+is populated for every row — the second noiser after codemix to use that
+schema field for real.
+
+### 13.5 Verifier and final results
+
+`check_abbreviate_substitution_spec` (`eval/invariants.py`) matches
+`check_codemix_substitution_spec`'s rigor level deliberately, not more: it
+reuses the noiser's own pure, non-random helper functions
+(`_find_occurrences`, `_non_overlapping`) to recompute the eligible pool
+from `original_text` and the frozen lexicon, then asserts
+`n_substitutions == min(k, pool_size)` and that a zero-pool post is
+byte-identical to its source. It does not attempt a byte-for-byte
+reconstruction of exactly which occurrences the rng chose — that draw is
+legitimately the rng's job, not independently re-derivable without
+re-running it, the same reasoning codemix's own check applies. Four
+regression cases cover a forced single occurrence, a forced two-occurrence
+case, a no-eligible-bigram no-op, and the overlap-resolution guarantee on a
+real lexicon triple.
+
+| Metric | light | heavy |
+|---|---|---|
+| `TARGET_NOISE_RATE` (measured tripwire, not a target) | 0.0436 | 0.0518 |
+| `noise_rate_error` | ~0.00001 | ~0.00002 |
+| Posts touched | 32.79% (train) / 30.84% (test) | same |
+
+The touch-rate ceiling is real and expected, not a bug: Channel B has no
+fallback-to-unapproved mechanism the way codemix's plausible/eligible
+fallback does — nothing fires beyond the 378 explicitly human-approved
+bigrams, by deliberate safety-conscious design.
+
+Full harness: **16/16 invariants, 21/21 regression (17 carried forward + 4
+new abbreviate cases)**, `status: PASS`.
+
+**Generated output**: `data/outputs/{train,test}/abbreviate_{light,heavy}.jsonl`
+— 20,000 rows, same schema as Phases 2-4a. **Review artifacts**:
+`data/lexicon/abbreviate_initialisms_candidates.md` (all 524 mined
+candidates), `abbreviate_initialisms_final_wordlist.md` and `_removed.md`
+(the filtered/audit views from the review rounds), and
+`data/outputs/human_review_sample_abbreviate{,_changed_only}.{jsonl,md}`
+(100-item samples, train-only, seed 1337).
+
+With this, all four planned noise vectors (transliteration, codemix,
+misspelling, abbreviation) are implemented, reviewed, and generated. The
+compound pipeline (`src/pipeline.py`) and GATE B's full-scale, all-
+conditions human sample remain open — see LOG.md for current status.
+
+---
+
+## 14. Reproducibility appendix
 
 **Seed used throughout the project:** `1337` (all sampling, shuffling,
 and noise-generation randomness is seeded from this value, directly or
@@ -1079,7 +1253,9 @@ via a stable per-item hash derived from it).
 | `scripts/generate_codemix.py` | Generates the full codemix noised dataset (§9.7); also has a `--demo` mode |
 | `scripts/build_misspell_confusions.py` | Derives the IME-collision confusion sets and attestation vocabulary (§11.1) |
 | `scripts/generate_misspell.py` | Generates the full misspell noised dataset (§11.4) |
-| `scripts/build_review_sample.py` | Builds a 100-item human-review sample for a given `--condition` (§8, §9.7, §11.3) |
+| `scripts/build_abbreviate_initialisms.py` | Mines Channel B candidate bigrams and merges review approvals into the frozen lexicon (§13.2-13.3) |
+| `scripts/generate_abbreviate.py` | Generates the full abbreviate noised dataset (§13.5) |
+| `scripts/build_review_sample.py` | Builds a 100-item human-review sample for a given `--condition` (§8, §9.7, §11.3, §13.3) |
 | `eval/harness.py` | Runs the full evaluation suite; produces `eval/report.json` / `.md` |
 
 **Key data artifacts and their locations:**
@@ -1105,6 +1281,10 @@ via a stable per-item hash derived from it).
 | Misspelling confusion-set review | `data/lexicon/misspell_confusions_review.{csv,md}` |
 | Generated misspell dataset | `data/outputs/{train,test}/misspell_{light,heavy}.jsonl` |
 | Misspell human-review sample | `data/outputs/human_review_sample_misspell{,_changed_only}.{jsonl,md}` |
+| Abbreviation initialism lexicon (frozen, 378 approved bigrams) | `data/lexicon/abbreviate_initialisms.jsonl` |
+| Abbreviation candidate review / audit trail | `data/lexicon/abbreviate_initialisms_candidates.md`, `_final_wordlist.md`, `_removed.md` |
+| Generated abbreviate dataset | `data/outputs/{train,test}/abbreviate_{light,heavy}.jsonl` |
+| Abbreviate human-review sample | `data/outputs/human_review_sample_abbreviate{,_changed_only}.{jsonl,md}` |
 | Full provenance record (URLs, hashes, counts) | `data/PROVENANCE.json` |
 | Full evaluation report | `eval/report.json` / `eval/report.md` |
 | Iteration-by-iteration project log | `LOG.md` |
