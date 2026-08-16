@@ -1,0 +1,11 @@
+{
+  "id": "codemix_lexicon_substitution",
+  "kind": "noiser",
+  "noiser": "codemix",
+  "description": "'ආණ්ඩුව' (government) is a word bank entry with substitution 'government එක' — the Sinhala 'එක' particle stays in Sinhala script (only the content word switches to English) and the untouched second word passes through unchanged. Also doubles as the cap-at-availability case: at heavy severity (k=2) only 1 word ('ආණ්ඩුව') is eligible in this sentence, so selection is capped at 1 substitution, not an error and not padded out to 2 — same expected output as the light-severity case in codemix_forced_single_substitution.json, but now via the cap path rather than k=1 directly.",
+  "text": "ආණ්ඩුව අසාධාරණයි",
+  "severity": "heavy",
+  "seed": 7,
+  "expected_text": "government එක අසාධාරණයි",
+  "expected_rate": 0.5
+}

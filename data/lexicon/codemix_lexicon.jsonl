@@ -1,0 +1,210 @@
+{"sinhala": "සල්ලි", "english": "money", "source": "native", "sold_frequency": 185, "evidence": "SOLD freq 185; latin_token(money)=2 — MODERATE CONFIDENCE, low attestation count, flagged for review"}
+{"sinhala": "ඩාලින්", "english": "darling", "source": "loanword", "sold_frequency": 139, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "බස්", "english": "bus", "source": "loanword", "sold_frequency": 120, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ආදරේ", "english": "love", "source": "native", "sold_frequency": 78, "evidence": "latin_token(love)=23; colloquial form"}
+{"sinhala": "ජනාධිපති", "english": "president", "source": "native", "sold_frequency": 69, "evidence": "latin_token(president)=6"}
+{"sinhala": "සීන්", "english": "scene", "source": "loanword", "sold_frequency": 66, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "මාධ්‍ය", "english": "media", "source": "native", "sold_frequency": 65, "evidence": "latin_token(media)=9"}
+{"sinhala": "ජනතාව", "english": "people", "source": "native", "sold_frequency": 63, "evidence": "latin_token(people)=8"}
+{"sinhala": "ආණ්ඩුව", "english": "government එක", "source": "native", "sold_frequency": 55, "evidence": "latin_token(government)=4; eka-particle pattern extrapolated"}
+{"sinhala": "ට්වීට්", "english": "tweet", "source": "loanword", "sold_frequency": 50, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "මැච්", "english": "match", "source": "loanword", "sold_frequency": 49, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ටෝක්", "english": "talk", "source": "loanword", "sold_frequency": 48, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "කොරෝනා", "english": "corona", "source": "loanword", "sold_frequency": 47, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ක්‍රිකට්", "english": "cricket", "source": "loanword", "sold_frequency": 46, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "කෝල්", "english": "call", "source": "loanword", "sold_frequency": 45, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ජීවිතේ", "english": "life එක", "source": "native", "sold_frequency": 45, "evidence": "SOLD freq 45; colloquial spelling of ජීවිතය"}
+{"sinhala": "ඇමති", "english": "minister", "source": "native", "sold_frequency": 44, "evidence": "SOLD freq 44; plausible, moderate confidence (no direct latin-token hit)"}
+{"sinhala": "ෆොටෝ", "english": "photo", "source": "loanword", "sold_frequency": 43, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ඩොලර්", "english": "dollar", "source": "loanword", "sold_frequency": 41, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "රිප්ලයි", "english": "reply", "source": "loanword", "sold_frequency": 38, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ට්විටර්", "english": "twitter", "source": "loanword", "sold_frequency": 36, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "පොටෝ", "english": "photo", "source": "loanword", "sold_frequency": 34, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "කැම්පස්", "english": "campus", "source": "loanword", "sold_frequency": 34, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "නිව්ස්", "english": "news", "source": "loanword", "sold_frequency": 33, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "පෝස්ට්", "english": "post", "source": "loanword", "sold_frequency": 33, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "බ්ලොක්", "english": "block", "source": "loanword", "sold_frequency": 32, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "සමාජ", "english": "social", "source": "native", "sold_frequency": 32, "evidence": "latin_token(social)=6"}
+{"sinhala": "වීඩියෝ", "english": "video", "source": "loanword", "sold_frequency": 31, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ලයික්", "english": "like", "source": "loanword", "sold_frequency": 30, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "නිවුස්", "english": "news", "source": "loanword", "sold_frequency": 30, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "මුදල්", "english": "money", "source": "native", "sold_frequency": 30, "evidence": "SOLD freq 30; more formal synonym of සල්ලි, same target"}
+{"sinhala": "පොලිස්", "english": "police", "source": "loanword", "sold_frequency": 28, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "බෝම්බ", "english": "bomb", "source": "loanword", "sold_frequency": 28, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "මැසේජ්", "english": "message", "source": "loanword", "sold_frequency": 28, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ෆිල්ම්", "english": "film", "source": "loanword", "sold_frequency": 27, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ලයින්", "english": "line", "source": "loanword", "sold_frequency": 26, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ලව්", "english": "love", "source": "loanword", "sold_frequency": 25, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ආදරය", "english": "love", "source": "native", "sold_frequency": 24, "evidence": "latin_token(love)=23; formal form"}
+{"sinhala": "මාස්ක්", "english": "mask", "source": "loanword", "sold_frequency": 22, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ආණ්ඩුවට", "english": "government එකට", "source": "native", "sold_frequency": 22, "evidence": "dative form"}
+{"sinhala": "ආණ්ඩුවේ", "english": "government එකේ", "source": "native", "sold_frequency": 18, "evidence": "locative form"}
+{"sinhala": "කමෙන්ට්", "english": "comment", "source": "loanword", "sold_frequency": 17, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ෆේල්", "english": "fail", "source": "loanword", "sold_frequency": 17, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "චැනල්", "english": "channel", "source": "loanword", "sold_frequency": 17, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "පොලිසිය", "english": "police", "source": "loanword", "sold_frequency": 17, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ලෝකෙ", "english": "world එක", "source": "native", "sold_frequency": 17, "evidence": "colloquial short form of ලෝකය"}
+{"sinhala": "නයිට්", "english": "night", "source": "loanword", "sold_frequency": 16, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ගුඩ්", "english": "good", "source": "loanword", "sold_frequency": 16, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ජොබ්", "english": "job", "source": "loanword", "sold_frequency": 16, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ඔෆිස්", "english": "office", "source": "loanword", "sold_frequency": 15, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "බෝඩ්", "english": "board", "source": "loanword", "sold_frequency": 15, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ලයිට්", "english": "light", "source": "loanword", "sold_frequency": 15, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "පොස්ට්", "english": "post", "source": "loanword", "sold_frequency": 15, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ටීම්", "english": "team", "source": "loanword", "sold_frequency": 14, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ටෝක්ස්", "english": "talks", "source": "loanword", "sold_frequency": 13, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ටයිම්", "english": "time", "source": "loanword", "sold_frequency": 13, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "කැබිනට්", "english": "cabinet", "source": "loanword", "sold_frequency": 13, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ලයිෆ්", "english": "life", "source": "loanword", "sold_frequency": 13, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ජීවිතය", "english": "life එක", "source": "native", "sold_frequency": 13, "evidence": "latin_token(life)=8; eka_construction(life)=2"}
+{"sinhala": "දරුවෝ", "english": "children", "source": "native", "sold_frequency": 13, "evidence": "latin_token(children)=3"}
+{"sinhala": "මාකට්", "english": "market", "source": "loanword", "sold_frequency": 12, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ඩයලොග්", "english": "dialog", "source": "loanword", "sold_frequency": 12, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ජනවාරි", "english": "january", "source": "loanword", "sold_frequency": 12, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ගේම්", "english": "game", "source": "loanword", "sold_frequency": 12, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "පොලීසිය", "english": "police", "source": "loanword", "sold_frequency": 12, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "කාඩ්", "english": "card", "source": "loanword", "sold_frequency": 11, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "මයික්", "english": "mike", "source": "loanword", "sold_frequency": 11, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ටවුන්", "english": "town", "source": "loanword", "sold_frequency": 11, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "චැට්", "english": "chat", "source": "loanword", "sold_frequency": 11, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ඩේටා", "english": "data", "source": "loanword", "sold_frequency": 11, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ලෝකයේ", "english": "world එකේ", "source": "native", "sold_frequency": 11, "evidence": "latin_token(world)=6; locative form"}
+{"sinhala": "අදහසක්", "english": "comment එකක්", "source": "native", "sold_frequency": 11, "evidence": "indefinite form"}
+{"sinhala": "ක්ලාස්", "english": "class", "source": "loanword", "sold_frequency": 10, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "බියර්", "english": "beer", "source": "loanword", "sold_frequency": 10, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "පැකට්", "english": "packet", "source": "loanword", "sold_frequency": 10, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "කෝට්", "english": "coat", "source": "loanword", "sold_frequency": 9, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "මීටර්", "english": "meter", "source": "loanword", "sold_frequency": 9, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ටයිප්", "english": "type", "source": "loanword", "sold_frequency": 9, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "තෑන්ක්ස්", "english": "thanks", "source": "loanword", "sold_frequency": 9, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "එඩිට්", "english": "edit", "source": "loanword", "sold_frequency": 9, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "බැංකු", "english": "banks", "source": "loanword", "sold_frequency": 9, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ඡන්දය", "english": "vote එක", "source": "native", "sold_frequency": 9, "evidence": "latin_token(vote)=2,(votes)=5"}
+{"sinhala": "දරුවා", "english": "child", "source": "native", "sold_frequency": 9, "evidence": "latin_token(child)=1 — LOW CONFIDENCE; sensitive term, flagged for review"}
+{"sinhala": "ළමයා", "english": "child", "source": "native", "sold_frequency": 9, "evidence": "colloquial synonym of දරුවා; same confidence note"}
+{"sinhala": "ලෙවල්", "english": "level", "source": "loanword", "sold_frequency": 8, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ඇමරිකන්", "english": "american", "source": "loanword", "sold_frequency": 8, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "පේපර්", "english": "paper", "source": "loanword", "sold_frequency": 8, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ටෙස්ට්", "english": "test", "source": "loanword", "sold_frequency": 8, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "හොටෙල්", "english": "hotel", "source": "loanword", "sold_frequency": 8, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "රිපෝට්", "english": "report", "source": "loanword", "sold_frequency": 8, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ජනාධිපතිතුමා", "english": "president", "source": "native", "sold_frequency": 8, "evidence": "latin_token(president)=6; drops honorific, natural in casual Singlish"}
+{"sinhala": "ඡන්දයක්", "english": "vote එකක්", "source": "native", "sold_frequency": 8, "evidence": "indefinite form"}
+{"sinhala": "ලෝකය", "english": "world එක", "source": "native", "sold_frequency": 8, "evidence": "bare/definite form"}
+{"sinhala": "රූම්", "english": "room", "source": "loanword", "sold_frequency": 7, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ෆුල්", "english": "full", "source": "loanword", "sold_frequency": 7, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "බීච්", "english": "beach", "source": "loanword", "sold_frequency": 7, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ප්ලෑන්", "english": "plan", "source": "loanword", "sold_frequency": 7, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ශෙයා", "english": "share", "source": "loanword", "sold_frequency": 7, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "කොපි", "english": "copy", "source": "loanword", "sold_frequency": 7, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ෆ්‍රී", "english": "free", "source": "loanword", "sold_frequency": 7, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ඇපල්", "english": "apple", "source": "loanword", "sold_frequency": 7, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "කැමරා", "english": "camera", "source": "loanword", "sold_frequency": 7, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ට්‍රේන්", "english": "train", "source": "loanword", "sold_frequency": 7, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "අදහස", "english": "comment", "source": "native", "sold_frequency": 7, "evidence": "latin_token(comment)=10; SEMANTIC NUANCE: literal meaning is 'opinion/idea', mapped to social-media 'comment' sense — flagged for review"}
+{"sinhala": "පේජ්", "english": "page", "source": "loanword", "sold_frequency": 6, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ප්ලාස්ටික්", "english": "plastic", "source": "loanword", "sold_frequency": 6, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ප්‍රොෆයිල්", "english": "profile", "source": "loanword", "sold_frequency": 6, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ඔන්ලයින්", "english": "online", "source": "loanword", "sold_frequency": 6, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "චෙක්", "english": "check", "source": "loanword", "sold_frequency": 6, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ට්‍රැක්", "english": "track", "source": "loanword", "sold_frequency": 6, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "වයිෆ්", "english": "wife", "source": "loanword", "sold_frequency": 6, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "එක්සෑම්", "english": "exam", "source": "loanword", "sold_frequency": 6, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ෆයිල්", "english": "file", "source": "loanword", "sold_frequency": 6, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ෆන්", "english": "fan", "source": "loanword", "sold_frequency": 6, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ගෝල්", "english": "goal", "source": "loanword", "sold_frequency": 6, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ජීවිතයක්", "english": "life එකක්", "source": "native", "sold_frequency": 6, "evidence": "indefinite form"}
+{"sinhala": "මිත්‍රයා", "english": "friend", "source": "native", "sold_frequency": 6, "evidence": "formal synonym of යාළුවා"}
+{"sinhala": "බර්ත්ඩේ", "english": "birthday", "source": "loanword", "sold_frequency": 5, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "මේජර්", "english": "major", "source": "loanword", "sold_frequency": 5, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ඩිලීට්", "english": "delete", "source": "loanword", "sold_frequency": 5, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "පෙබරවාරි", "english": "february", "source": "loanword", "sold_frequency": 5, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "බ්‍රේක්", "english": "break", "source": "loanword", "sold_frequency": 5, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ඩුබායි", "english": "dubai", "source": "loanword", "sold_frequency": 5, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ස්ට්‍රයික්", "english": "strike", "source": "loanword", "sold_frequency": 5, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "අප්‍රේල්", "english": "april", "source": "loanword", "sold_frequency": 5, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ඉන්ටර්නෙට්", "english": "internet", "source": "loanword", "sold_frequency": 5, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "සුපර්", "english": "super", "source": "loanword", "sold_frequency": 5, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "සීසන්", "english": "season", "source": "loanword", "sold_frequency": 5, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ඔරිජිනල්", "english": "original", "source": "loanword", "sold_frequency": 5, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "කාපට්", "english": "carpet", "source": "loanword", "sold_frequency": 5, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "හෝටල්", "english": "hotel", "source": "loanword", "sold_frequency": 5, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "මෝනින්", "english": "morning", "source": "loanword", "sold_frequency": 5, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ස්ටේටස්", "english": "status", "source": "loanword", "sold_frequency": 5, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "සෙල්ෆි", "english": "selfie", "source": "loanword", "sold_frequency": 5, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ඇමතිතුමා", "english": "minister", "source": "native", "sold_frequency": 5, "evidence": "SOLD freq 5; drops honorific"}
+{"sinhala": "වර්ජනය", "english": "strike එක", "source": "native", "sold_frequency": 5, "evidence": "latin_token(strike)=4"}
+{"sinhala": "මැතිවරණය", "english": "election එක", "source": "native", "sold_frequency": 5, "evidence": "latin_token(election)=1 — LOW CONFIDENCE, flagged for review"}
+{"sinhala": "යාළුවෝ", "english": "friends", "source": "native", "sold_frequency": 5, "evidence": "plural form"}
+{"sinhala": "බයිසිකල්", "english": "bicycle", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ඩිල්", "english": "deal", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ස්වීට්", "english": "sweet", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "වර්ල්ඩ්", "english": "world", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ෆ්‍රෙන්ඩ්", "english": "friend", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ජීප්", "english": "jeep", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "සිවිල්", "english": "civil", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "මේකප්", "english": "makeup", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "සුනාමි", "english": "tsunami", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "සීරීස්", "english": "series", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "රෙකෝඩ්", "english": "record", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "අප්ඩේට්", "english": "update", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "නම්බර්", "english": "number", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ශුවර්", "english": "sure", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ඕඩර්", "english": "order", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "රෙජිස්ටර්", "english": "register", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "මාර්තු", "english": "march", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ජූලි", "english": "july", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "රොකට්", "english": "rocket", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "පාටි", "english": "party", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ටියුබ්", "english": "tube", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ක්‍රොස්", "english": "cross", "source": "loanword", "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ලැප්ටොප්", "english": "laptop", "source": "loanword", "sold_frequency": 4, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "හොස්පිට්ල්", "english": "hospital", "source": "loanword", "sold_frequency": 4, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "හොස්පිටල්", "english": "hospital", "source": "loanword", "sold_frequency": 4, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ඩ්‍රාමා", "english": "drama", "source": "loanword", "sold_frequency": 4, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ට්‍රැෆික්", "english": "traffic", "source": "loanword", "sold_frequency": 4, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "ෆැමිලි", "english": "family", "source": "loanword", "sold_frequency": 4, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "බොස්", "english": "boss", "source": "loanword", "sold_frequency": 4, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "බුක්", "english": "book", "source": "loanword", "sold_frequency": 4, "evidence": "Phase 3 frequency scan, hand-verified"}
+{"sinhala": "බිරිඳ", "english": "wife", "source": "native", "sold_frequency": 4, "evidence": "latin_token(wife)=1 — LOW CONFIDENCE, flagged for review"}
+{"sinhala": "එන්නත", "english": "vaccine එක", "source": "native", "sold_frequency": 4, "evidence": "latin_token(vaccine)=3; eka_construction(vaccine)=2"}
+{"sinhala": "අකවුන්ට්", "english": "account", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ෆයිනල්", "english": "final", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "බර්ත්", "english": "birth", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "සපොර්ට්", "english": "support", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "කානිවල්", "english": "carnival", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "සෙකන්ඩ්", "english": "second", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ෆෙඩරල්", "english": "federal", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "බේබි", "english": "baby", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "පෝස්ටර්", "english": "poster", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "මෝටර්", "english": "motor", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "පාස්වර්ඩ්", "english": "password", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "මේල්", "english": "mail", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "වයිෆයි", "english": "wifi", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ප්‍රයිස්", "english": "price", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "දෙසැම්බර්", "english": "december", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ජනරාල්", "english": "general", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ඩොක්ටර්", "english": "doctor", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ක්ලික්", "english": "click", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "බටර්", "english": "butter", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ප්‍රෙස්", "english": "press", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ඩවුන්", "english": "down", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "මාක්ස්", "english": "marks", "source": "loanword", "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "යාළුවා", "english": "friend", "source": "native", "sold_frequency": 3, "evidence": "latin_token(friend)=5"}
+{"sinhala": "විවාහය", "english": "wedding එක", "source": "native", "sold_frequency": 3, "evidence": "eka_construction(wedding)=6"}
+{"sinhala": "ගීතය", "english": "song එක", "source": "native", "sold_frequency": 3, "evidence": "eka_construction(song)=4"}
+{"sinhala": "චයීනීස්", "english": "chinese", "source": "loanword", "sold_frequency": 2, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "සයිකල්", "english": "cycle", "source": "loanword", "sold_frequency": 2, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ඉශූ", "english": "issue", "source": "loanword", "sold_frequency": 2, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "සමූහය", "english": "group එක", "source": "native", "sold_frequency": 2, "evidence": "eka_construction(group)=4; native form rare in SOLD (freq 2)"}
+{"sinhala": "ලිනක්ස්", "english": "linux", "source": "loanword", "sold_frequency": 1, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "අයිටී", "english": "it", "source": "loanword", "sold_frequency": 1, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ඩිපාට්මන්ට්", "english": "department", "source": "loanword", "sold_frequency": 1, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "හැන්සම්", "english": "handsome", "source": "loanword", "sold_frequency": 1, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "රේසිං", "english": "racing", "source": "loanword", "sold_frequency": 1, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "ඇක්ශන්", "english": "action", "source": "loanword", "sold_frequency": 1, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
+{"sinhala": "පින්තූරය", "english": "photo එක", "source": "native", "sold_frequency": 1, "evidence": "eka_construction(photo)=7; native form rare in SOLD (freq 1)"}
+{"sinhala": "පින්තූරයක්", "english": "photo එකක්", "source": "native", "sold_frequency": 1, "evidence": "indefinite form"}
+{"sinhala": "ගීතයක්", "english": "song එකක්", "source": "native", "sold_frequency": 1, "evidence": "indefinite form"}
+{"sinhala": "පත්‍රය", "english": "paper එක", "source": "native", "sold_frequency": 1, "evidence": "eka_construction(paper)=3; native form rare in SOLD (freq 1)"}
+{"sinhala": "සේවාව", "english": "service එක", "source": "native", "sold_frequency": 1, "evidence": "eka_construction(service)=2; native form rare in SOLD (freq 1)"}

@@ -21,7 +21,7 @@ inspection alone.
 | 0 | Build the verifier (harness, metrics, gold/reference data) | Complete |
 | 1 | Select a Sinhala→Romanized ("Singlish") conversion backend | Complete |
 | 2 | Build the transliteration noiser; generate real output | Complete, paused at manual review |
-| 3 | Code-mixing noise vector | Not started |
+| 3 | Code-mixing noise vector | Complete — human-review gate closed |
 | 4 | Misspelling / abbreviation noise vectors | Not started |
 | 5 | Full dataset generation | Not started |
 
@@ -33,7 +33,11 @@ inspection alone.
   against a target of 0.076 (30% reduction from baseline) — **target not
   met**, recorded as-is rather than adjusted to look better. See
   `docs/research_documentation.md` §7–8 for the full discussion.
-- All 13 invariants and 8 regression cases pass.
+- `codemix`: **93.2% / 93.9%** of posts (train/test) touched by a real
+  substitution, up from an earlier probabilistic design's 14-20% — see
+  `docs/research_documentation.md` §9 for the full v1→v2 redesign and the
+  3-round human review that followed it.
+- All 14 invariants and 13 regression cases pass.
 
 See `docs/research_documentation.md` for the complete methodology,
 data-source provenance, and results writeup.
@@ -47,9 +51,19 @@ pip install -r requirements.txt
 
 python scripts/fetch_data.py              # fetch SOLD + Swa-Bhasha, build gold/reference sets
 python eval/harness.py                     # run the full evaluation suite -> eval/report.json
+
+# transliteration
 python scripts/build_word_variants.py      # build the spelling-variant lexicon
 python scripts/generate_transliteration.py # generate the noised dataset
-python scripts/build_review_sample.py      # build a 100-item sample for manual review
+python scripts/build_review_sample.py --condition transliteration
+
+# code-mixing (word bank already built; these scripts rebuild it from source)
+python scripts/select_codemix_targets.py       # candidate words per post -> translation worklist
+python scripts/translate_codemix_worklist.py --submit   # one-time LLM batch translation
+python scripts/build_codemix_wordbank.py       # merge verified + LLM + human-review-corrections -> frozen word bank
+python scripts/generate_codemix.py             # generate the noised dataset
+python scripts/build_codemix_usage_report.py   # impact-ordered review report
+python scripts/build_review_sample.py --condition codemix
 ```
 
 ## Repository layout
@@ -59,14 +73,17 @@ data/
   sold/          SOLD train/test, parsed to JSONL (never edited)
   gold/          Sinhala<->Romanized pairs held out for CER scoring
   reference/     real Singlish text used for realism scoring
-  lexicon/       attested spelling-variant lookup (built by build_word_variants.py)
-  outputs/       generated noised sets + the human-review sample
+  lexicon/       word_variants.jsonl (spelling variants, transliteration);
+                 codemix_wordbank.jsonl (frozen, code-mixing — merged from
+                 the hand-curated lexicon, LLM translation, and 3 rounds of
+                 human review corrections; see docs §9)
+  outputs/       generated noised sets + human-review samples
 src/
   graphemes.py       grapheme-cluster utilities (Sinhala syllables are multi-codepoint)
   schema.py          output row schema + validation
   pipeline.py         compound noising pipeline
   romanizers/        Sinhala -> Singlish backends (aksharamukha, UoM-rules reimplementation, etc.)
-  noisers/           transliteration.py (done), codemix/misspell/abbreviate (stubs)
+  noisers/           transliteration.py, codemix.py (both done); misspell/abbreviate (stubs)
 eval/
   harness.py         runs everything, writes eval/report.json + report.md
   invariants.py       hard pass/fail checks
