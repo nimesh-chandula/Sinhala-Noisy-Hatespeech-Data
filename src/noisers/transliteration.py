@@ -106,10 +106,16 @@ def _is_abbreviation_fragment(runs: list[tuple[bool, str]], i: int) -> bool:
     grapheme cluster immediately joined to a literal ". " (as word1) or
     immediately preceded by one (as word2). Structural pattern match, not a
     flag passed in from abbreviate itself, so this module stays decoupled
-    from abbreviate.py entirely (see apply()'s `mixed_script_rate` docstring
-    for why this needs to be detected at all: leaving one half of an
-    abbreviation pair in Sinhala script while romanizing the other would
-    read as broken, not as realistic mixing)."""
+    from abbreviate.py entirely.
+
+    Used to EXEMPT abbreviation fragments from mixed-script romanization
+    entirely (see apply()'s `mixed_script_rate` docstring) -- per explicit
+    user feedback on a real GATE B sample, an abbreviation like "දැන් ඉතින්"
+    -> "ද. ඉ." should stay in Sinhala letters, not become a Latin "d. i.",
+    which read as broken/unrecognizable rather than a real abbreviation.
+    Also guarantees both halves of a pair get the SAME treatment (can't end
+    up half-Sinhala/half-Latin), which a fragment-by-fragment coin flip
+    could otherwise produce."""
     is_sinhala, run = runs[i]
     if not is_sinhala or len(clusters(run)) != 1:
         return False
@@ -142,9 +148,13 @@ def apply(text: str, severity: str, seed: int, mixed_script_rate: float = 0.0) -
     byte-identical to the input) -- an ordinary word's fate is an
     independent coin flip, EXCEPT a word produced by abbreviate's
     initials() (detected structurally, see _is_abbreviation_fragment) is
-    ALWAYS romanized, never subject to the flip, so an abbreviation pair
-    can't end up half-Sinhala/half-Latin. In this mode realised_noise_rate
-    is redefined to mean "fraction of Sinhala words that got romanized at
+    NEVER romanized, always exempt from the flip -- abbreviations should
+    read in Sinhala letters, not Latin (explicit user feedback: a Latin
+    "d. i." was judged unrecognizable where the Sinhala clusters would
+    have read as a real abbreviation), and this also guarantees both
+    halves of a pair get the same treatment rather than risking a
+    half-Sinhala/half-Latin split. In this mode realised_noise_rate is
+    redefined to mean "fraction of Sinhala words that got romanized at
     all" (the mixing outcome itself), not the standalone mode's "fraction
     with a non-canonical spelling" -- a different, more relevant notion of
     alteration for what this mode is measuring.
@@ -190,8 +200,15 @@ def apply(text: str, severity: str, seed: int, mixed_script_rate: float = 0.0) -
             out_parts.append(run)
             continue
         n_words += 1
-        force_romanize = _is_abbreviation_fragment(runs, i)
-        if not force_romanize and rng.random() >= mixed_script_rate:
+        if _is_abbreviation_fragment(runs, i):
+            # Always stays in Sinhala script, never subject to the mixing
+            # roll — see apply()'s docstring: abbreviations should read in
+            # Sinhala letters, not Latin, per explicit user feedback on the
+            # GATE B sample (a Latin "d. i." was judged wrong/unreadable
+            # where the Sinhala clusters would have been recognizable).
+            out_parts.append(run)
+            continue
+        if rng.random() >= mixed_script_rate:
             out_parts.append(run)  # stays in Sinhala script, byte-identical
             continue
         n_romanized += 1

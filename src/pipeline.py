@@ -109,14 +109,14 @@ _HAS_APPLY3 = {"codemix", "abbreviate"}
 MIXED_SCRIPT_RATE = {"light": 0.20, "heavy": 0.40}
 
 # Measured once from a completed generation run (pooled mean compound_rate
-# across train+test, 10,000 posts each severity, AFTER the mixed-script
-# transliteration change -- see LOG.md's Phase 5 entries) -- a drift
-# tripwire, not a natural-rate claim, same convention as codemix's and
-# abbreviate's TARGET_NOISE_RATE. 98.8%/99.8% (light/heavy) of posts
-# touched -- no longer a guaranteed 100% now that transliteration only
-# romanizes a fraction of remaining Sinhala words (a very short post can
-# get unlucky and have nothing altered by any of the four stages).
-TARGET_NOISE_RATE = {"light": 0.1029, "heavy": 0.1851}
+# across train+test, 10,000 posts each severity, AFTER abbreviation
+# fragments were exempted from mixed-script romanization -- see LOG.md's
+# Phase 5 entries) -- a drift tripwire, not a natural-rate claim, same
+# convention as codemix's and abbreviate's TARGET_NOISE_RATE. 98.8%/99.8%
+# (light/heavy) of posts touched -- no longer a guaranteed 100% now that
+# transliteration only romanizes a fraction of remaining Sinhala words (a
+# very short post can get unlucky and have nothing altered by any stage).
+TARGET_NOISE_RATE = {"light": 0.0919, "heavy": 0.1737}
 
 
 def _stage_seed(seed: int, stage_name: str) -> int:

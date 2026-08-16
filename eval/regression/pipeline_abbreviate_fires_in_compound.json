@@ -1,12 +1,12 @@
 {
   "id": "pipeline_abbreviate_fires_in_compound",
   "kind": "pipeline",
-  "description": "Pins down the Phase 5 ordering fix: 'කරන්න එපා' (both words present in the abbreviate lexicon as an approved bigram, neither word in codemix's wordbank) must come out as its initials 'ka. e.' after the full compound chain. Under the OLD, buggy NOISER_ORDER (abbreviate last, after transliteration already romanized everything), this would have failed -- abbreviate's Sinhala-keyed lexicon would have found nothing left to match. Both single-cluster fragments of an abbreviation pair are ALWAYS romanized regardless of transliteration's mixed_script_rate (see transliteration.py's _is_abbreviation_fragment), so this 2-word all-abbreviation text stays fully Latin even though most compound text now keeps a majority of words in Sinhala script. expect_substring is the real assertion here; expected_text/rate/n_substitutions pin the whole chain's output exactly.",
+  "description": "Pins down the Phase 5 ordering fix: 'කරන්න එපා' (both words present in the abbreviate lexicon as an approved bigram, neither word in codemix's wordbank) must come out as its initials 'ක. එ.' after the full compound chain. Under the OLD, buggy NOISER_ORDER (abbreviate last, after transliteration already romanized everything), this would have failed -- abbreviate's Sinhala-keyed lexicon would have found nothing left to match. Both single-cluster fragments of an abbreviation pair are ALWAYS exempted from transliteration's mixed_script_rate romanization (see transliteration.py's _is_abbreviation_fragment) and stay in Sinhala script -- per explicit user feedback that a Latin-rendered abbreviation like 'd. i.' read as broken where the Sinhala clusters would be recognizable. expect_substring is the real assertion here; expected_text/rate/n_substitutions pin the whole chain's output exactly.",
   "text": "කරන්න එපා",
   "severity": "light",
   "seed": 1,
-  "expect_substring": "ka. e.",
-  "expected_text": "ka. e.",
-  "expected_rate": 0.5,
+  "expect_substring": "ක. එ.",
+  "expected_text": "ක. එ.",
+  "expected_rate": 0.25,
   "expected_n_substitutions": 1
 }

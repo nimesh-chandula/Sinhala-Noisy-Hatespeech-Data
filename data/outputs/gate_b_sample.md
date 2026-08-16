@@ -584,21 +584,21 @@ For each: does the noisy text read like something a real person would type, does
 - **original**: පිස්සට දැන් ඉස්සර තරම්වත් ලයික් නෑ.බුකියෙන් ලොග් අවුට් වෙලා හිටපු දවස් ටිකට උබලට මාව අමතක වෙලා ඔව් දුකයි ඈ :/ :( :'(  #පිස්සා
 - **noisy**: peessata dan ඉස්සර තරම්වත් like නෑ.බුකියෙන් ලොග් out වෙලා හිටපු dawes ටිකට ubalata mava අමතක වෙලා ow දුකැයි ඈ :/ :( :'(  #piss
 
-### 8. `708946345013280768` — label=OFF, realised_noise_rate=0.25
+### 8. `708946345013280768` — label=OFF, realised_noise_rate=0.20
 - **original**: මොන හත්තිලව්වටද යකෝ කරන්ට් කපුවේ? මේ සීත්ලේ තිබ්බ එකම සහනය ෆෑන් එක විතරයි දැන් ඒ මගුලත් නෑ. නොදකින් මූසල විදුලි සංස්ථාව
-- **noisy**: මොන හත්ථිලව්වටද යකො current kapuwe? m sithle thibb ekama සහනය ෆෑන් e. wi. දැන් එ maggulath ne. නොදකින් moosala electricity samsthawa
+- **noisy**: මොන හත්ථිලව්වටද යකො current kapuwe? m sithle thibb ekama සහනය ෆෑන් එ. වි. දැන් එ maggulath නෑ. නොදකින් මූසාල electricity samsthawa
 
-### 9. `1034865248656752641` — label=OFF, realised_noise_rate=0.18
+### 9. `1034865248656752641` — label=OFF, realised_noise_rate=0.16
 - **original**: කරන්න තියෙන ඔක්කොම බලු වැඩ කරලා අහිංසක ජීවිත ගොඩ නොඑන අගාද වලටම ඇදලා දාලා තමන් හොද වෙන්න අර අගාදේ ඉන්න උන්ටම  වරද පටවන සක්කිලි එවුන් මේ ලෝකේ ඉන්නවා.
-- **noisy**: karanna තියෙන ඔක්කොම ba. wa. කරලා innocent life gda noena අගාද වළාටම adala දාලා taman hode වෙන්න අර අගාදේ ඉන්න unthama  වාරද පටවන සක්කිලි එවුන් මෑ ලෝකෙ ඉන්නවා.
+- **noisy**: karanna තියෙන ඔක්කොම බ. වැ. කරලා innocent life ගොඩ nena agada වළාටම ඇදලා දාලා thaman hdha wenna අර අගාදේ ඉන්න ඌන්ටම  waradha පටවන සක්කිලි එවුන් මෑ ලෝකෙ ඉන්නවා.
 
-### 10. `1114535558125162496` — label=OFF, realised_noise_rate=0.19
+### 10. `1114535558125162496` — label=OFF, realised_noise_rate=0.15
 - **original**: @USER මාත් අද ට්‍රේන් එකේ දැක්ක නාකි ලොක්කෙක් රටකජු කවරෙ රේල්පාරට විසික් කරනව.මාත් කල්පනා කරේ ඕකුන් ටික මැරිල ගියාම ඉතුරු වෙන පරම්පාරාවෙ ඔලුගෙඩි ටික හැදුවනම් හරි එයාලව වෙනස් කරන්න මහන්සි නොවී..මොකද කොච්චර කිව්වත් ඒ මිනිස්සුන්ගෙ ආකල්ප වෙනස් කරන්න බෑ
-- **noisy**: @USER math අද train ඒකේ dakka naakee ලොක්කෙක් රැටකජු කවරෙ රේල්පාරට wisik කරනව.math kalpana kare ඕකුන් ටිකා මැරිල ගියාම ithooru වෙන පරම්පාරාවෙ ඔලුගෙඩි ටික haduwanam හරී එයාලව we. ka. tired nowi..මොකද කොච්චරැ kiwwath ඒ මිනිස්සුන්ගෙ ආකල්ප w. ka. be
+- **noisy**: @USER math අද train ඒකේ dakka naakee ලොක්කෙක් රැටකජු කවරෙ රේල්පාරට wisik කරනව.math kalpana kare ඕකුන් ටිකා මැරිල ගියාම ithooru වෙන පරම්පාරාවෙ ඔලුගෙඩි ටික haduwanam හරී එයාලව වෙ. ක. tired නොවී..මොකද kochchaara කිව්වත් ඒ minissunge ආකල්ප වෙ. ක. බෑ
 
-### 11. `1043540564308832256` — label=NOT, realised_noise_rate=0.23
+### 11. `1043540564308832256` — label=NOT, realised_noise_rate=0.20
 - **original**: අඩො ආයෙත් මාස ගානකට fb එන්න වෙන්නෙ නෑ...පරිසිස්සමින්  ඉදහල්ලා මන් යනො සෙට් වෙමු ආයෙ ජීවත් වෙලා හිටියොක්
-- **noisy**: ado ayeth masa ganakata fb ඈන්න wenne නෑ...පරිසිස්සමින්  ඉදහල්ලා man යනො sett wemu aye ji. we. හිටියොක්
+- **noisy**: ado ayeth masa ganakata fb ඈන්න wenne නෑ...පරිසිස්සමින්  ඉදහල්ලා man යනො sett wemu aye ජී. වෙ. හිටියොක්
 
 ### 12. `1237310919266439168` — label=OFF, realised_noise_rate=0.06
 - **original**: @USER පචයාගේ ඊලඟ පක්ශේ කියා ඔබත් නයෙක් දිනා ගන්න.
@@ -624,9 +624,9 @@ For each: does the noisy text read like something a real person would type, does
 - **original**: උපුල් නුවන් විදහා ඔබ ගොනා උනා  මම සිනා සුනා
 - **noisy**: උපුල් eyes widaha ඔබ gona una  මම sin suna
 
-### 18. `1436158396906946571` — label=NOT, realised_noise_rate=0.18
+### 18. `1436158396906946571` — label=NOT, realised_noise_rate=0.12
 - **original**: @USER @USER  ස' මුන් ඉන්ටර්නෙට් එකටත් දහස් ගනං ගෙවනවා ස' මාසේගානේ. ඉන්ටර්නෙට් මොන එසෙන්ශල්ද ස. ස'මාර්ට් ෆෝනුත් නැති එකේ ඉන්ටර්නෙට් මොකටද. ඔන්න 2G දෙන්න 4G අයින් කරලා. 5G වලට සල්ලි වියදම් කරන්න එපා ස'. ස' හොඳට තදට කරන්න ස'. දෙන්න එපා ස' බුරුලක් ස. ස' තමයි හොඳටම කරේ ස'
-- **noisy**: @USER @USER  ස' මුන් internet එකටාත් දහස් ganam gewanawa ස' මාසේගානේ. ඉන්ටර්නෙට් mna එසෙන්ශල්ද sa. sa'mart fonuth නැති එකේ intarnet මොකටද. onn 2G dennaa 4G අයින් කරලා. 5G walata money expenses ka. e. sa'. ස' හොඳට thadata කරන්න ස'. de. e. sa' බුරුලක් s. sa' thamayi හොඳටම kaare ස'
+- **noisy**: @USER @USER  ස' මුන් internet එකටාත් දහස් ganam gewanawa ස' මාසේගානේ. ඉන්ටර්නෙට් mna එසෙන්ශල්ද ස. ස'mart fonuth නැති eke ඉන්ටර්නෙට් mkatada. ඔන්න 2G deaanna 4G ayin කරලා. 5G වලට money expenses ක. එ. ස'. sa' හොඳට තදට කරන්න ස'. දෙ. එ. ස' burulak ස. සැ' තමයි හොඳටම කරේ ස'
 
 ### 19. `925165333907898368` — label=NOT, realised_noise_rate=0.25
 - **original**: අල්ලපු ගෙදර එකාගෙ ඔලුවට තඩි ගලකින් ගසා ඔලුව පැලීම #childhoodmemories
@@ -652,23 +652,23 @@ For each: does the noisy text read like something a real person would type, does
 - **original**: සැබෑ ආදරය බලාගන්න ඕනනම් පල කණ්නාඩිය ඉස්සරහට,තොට තෝ විතරයි,මට මන් විතරයි..
 - **noisy**: සැබෑ love බලාගන්න ඕනනම් පල කණ්නාඩිය ඉස්සරහට,තොට tho විතරයි,mata man witharai..
 
-### 25. `1394214649910882307` — label=NOT, realised_noise_rate=0.17
+### 25. `1394214649910882307` — label=NOT, realised_noise_rate=0.16
 - **original**: තමන්ගේ කැමැත්ත අකමැත්ත මත එන්නත් නොගන්න එක වෙනම එකක්, හැබැයි තමන්ගේ මෝඩ, අන්තවාදී මතවාද සමාජ මාධ්‍ය ඔස්සේ පතුරවලා යම්කිසි කොටසක් brainwash කරන්න තැත් කරනවා නම් ඔවුන්ට විරුද්ධව නීතිමය ක්‍රියාමාර්ග ගන්න ඕන.  තමන් මෝඩයෙක් උනාට කමක් නෑ, රටක ඔළු විනාස කරලා ඒ රටේ herd immunity එකට...
-- **noisy**: thamange කමැත්ත akamaththa මත එන්නත් noganna එක වෙනම ekak, හැබැයි තමන්ගේ මෝඩ, anthawadi mathawad social මාධ්‍ය ඔස්සේ pathurawala යම්කිසි kotasak brainwash කරන්න තැත් ka. n. ovunta විරුද්ධව nithimaaya khriyamarga ගන්න oba.  තාමන් මෝදයෙක් උනාට kamak නෑ, රටක ඔළු winasha කරලා ඒ counntry එකේ herd immunnity එකට...
+- **noisy**: thamange කමැත්ත akamaththa මත එන්නත් noganna එක වෙනම ekak, හැබැයි තමන්ගේ මෝඩ, anthawadi mathawad social මාධ්‍ය ඔස්සේ pathurawala යම්කිසි kotasak brainwash කරන්න තැත් ක. න. ovunta wiruddawa නීතිමයා kriyamarga ganna ඔන.  thhaman මෝදයෙක් උනාට කමක් ne, රටක ඔළු විනාසැ karala ඒ counntry එකේ herd immunnity එකට...
 
-### 26. `970628615867047936` — label=NOT, realised_noise_rate=0.11
+### 26. `970628615867047936` — label=NOT, realised_noise_rate=0.08
 - **original**: වෛරය වෙනුවට ආදරය පතුරුවන්න අමාරු ඇයි...  ප්‍රචණ්ඩත්වයට වඩා ලිංගිකත්වයට ආස මිනිස්සු වෛරයට වඩා ආදරයට ආස නැත්තේ ඇයි?
-- **noisy**: hate වෙනුවට love පතුරුවන්න අමාරු ඇයි...  ප්‍රචණ්ඩත්වයට වඩා ලිංගිකත්වයට ආස මීනිස්සු වෛරයට වඩා ආදරයට ආස na. a.?
+- **noisy**: hate වෙනුවට love පතුරුවන්න අමාරු ඇයි...  ප්‍රචණ්ඩත්වයට වඩා ලිංගිකත්වයට ආස මීනිස්සු වෛරයට වඩා ආදරයට ආස නැ. ඇ.?
 
-### 27. `1080864516206776321` — label=NOT, realised_noise_rate=0.22
+### 27. `1080864516206776321` — label=NOT, realised_noise_rate=0.15
 - **original**: @USER වැදගත් ගොනා කවුද කියලා මං මේ කල්පනා කලේ  උන් දෙන්නම වැදගත් නෑනේ
-- **noisy**: @USER imporyant ගොන ka. ki. mam මෙ කල්පනා කලේ  උන් දෙන්නම important නෑනේ
+- **noisy**: @USER imporyant ගොන ක. කි. මං මෙ කල්පනා කලේ  උන් දෙන්නම important නෑනේ
 
 ## compound/light (27 items)
 
 ### 1. `692684303071838208` — label=OFF, realised_noise_rate=0.13
 - **original**: මෝඩ සින්හල හැත්ත, තොපිට 10.000ක් වැඩි කලේ මේවා ගෙවන්න තමයී,  දැන් ඉතින් ගෙවපියව්,  මීට හකීම් අන්කල් ( හම්මෝ මෙයාට... URL
-- **noisy**: මෝඩ Sinhala හැත්ත, තොපිට 10.000ක් වැඩි kale මේවා gewanna තමයී,  d. i. ගෙවපියව්,  mitta හකීම් අන්කල් ( හම්මෝ මෙයාට... URL
+- **noisy**: මෝඩ Sinhala හැත්ත, තොපිට 10.000ක් වැඩි kale මේවා gewanna තමයී,  දැ. ඉ. gewapiyaw,  මීටා hakim අන්කල් ( හම්මෝ මේයාට... URL
 
 ### 2. `1070363717269839872` — label=NOT, realised_noise_rate=0.15
 - **original**: @USER සිරිසෙන අනිත් පක්ශවල අඩුපාඩු හොයනවා. තමන්ගෙ පක්ශෙ පිස්සු කෙලිනකොට
@@ -678,13 +678,13 @@ For each: does the noisy text read like something a real person would type, does
 - **original**: @USER අඩො නෝ...අඩො Y බං
 - **noisy**: @USER ado no...අඩො Y බං
 
-### 4. `1485013095164559361` — label=OFF, realised_noise_rate=0.09
+### 4. `1485013095164559361` — label=OFF, realised_noise_rate=0.08
 - **original**: @USER තොපි වගේ කාලකන්නි අවජාතක බල්ලෝ මුංට කඩේ යනකම් රට විකුණනවා බොරු කිය කියා. යකෝ මේවා විකුණුවේ ප්‍රකෝටි ගණන් කොමිස් ගහලා. තුට්ට දෙකට කඩේ යන කාලකන්නි තොපිට කොහෙද රටක් ගැන කැක්කුමක් දඩාවතේ යන බල්ලෝ!
-- **noisy**: @USER tho. wa. කාලකන්නි අවජාතක බල්ලෝ munta shop එකේ යනකම් රට විකුණනවා බොරු කිය kiya. යකෝ මේවා විකුණුවේ ප්‍රකෝටි ගණන් කොමිස් ගහලා. thutta දෙකට shop එකේ yana kalakanni thopita කොහෙද රටක් ගැන කැක්කුමක් දඩාවතේ යන බල්ලෝ!
+- **noisy**: @USER තො. ව. කාලකන්නි අවජාතක බල්ලෝ මුංට shop එකේ yanakam රට විකුණනවා බොරු කිය කියා. යකෝ mewa විකුණුවේ ප්‍රකෝටි ගණන් කොමිස් ගහලා. තුට්ට දෙකට shop eke යන kalakanni thopita koheda රටක් ගැන කැක්කුමක් දඩාවතේ යන බල්ලෝ!
 
-### 5. `1427961519980138496` — label=NOT, realised_noise_rate=0.12
+### 5. `1427961519980138496` — label=NOT, realised_noise_rate=0.09
 - **original**: @USER මන් ඌට මැසේජ් එකක් දෑම්මා දැන් ටික කාලෙකට කලින් වැඩ සෙට් වෙයි කරන් පලයන් කියල. ඌ සතියකට පස්සෙ වගේ රිප්ලයි කලේ . ඕකුන් ඔක්කොම එකයි බන්.
-- **noisy**: @USER මන් උට message එකක් දෑම්මා දැන් ටික කාලෙකට kaliwn වැඩ සෙට් වෙයි කරන් palayan කියල. u සතියකට පස්සෙ වගේ රිප්ලයි kale . okoon o. e. බන්.
+- **noisy**: @USER මන් උට message එකක් දෑම්මා දැන් ටික කාලෙකට kaliwn වැඩ සෙට් වෙයි කරන් palayan කියල. ඌ සතියකට පස්සෙ වගේ රිප්ලයි kale . okoon ඔ. එ. බන්.
 
 ### 6. `705425769485438976` — label=NOT, realised_noise_rate=0.15
 - **original**: @USER @USER  @USER  ඒච්ච අපි දුප්පත් යකූ
@@ -694,29 +694,29 @@ For each: does the noisy text read like something a real person would type, does
 - **original**: @USER  @USER යකෝ ඔච්චර හොද කෑම තියන රටේ මොන ලබ්බටද අමු මාලු කන්නෙ
 - **noisy**: @USER  @USER යකෝ ඔච්චර good කෑම තියන රටේ මොන ලාබ්බටද අමු මාලු kanne
 
-### 8. `1162344731239563264` — label=OFF, realised_noise_rate=0.10
+### 8. `1162344731239563264` — label=OFF, realised_noise_rate=0.09
 - **original**: @USER මේ වගේ අමු පට්ටපල් බොරු දාලා, delete නොකර ඉන්නේ මොකෝ දන්නේ නෑ NGO uncle?  Delete කරොත් account එකට වැටෙන $ ටිකට කෙල වෙන නිසාද ? ඊයා ලැජ්ජයි මේ වගේ සක්කිලි වැඩ ගැන. අන්න ජාත්‍යන්තර මාධ්‍ය වලත් යනවා. ඒකනේ කරගන්න ඕන උනේ නෙහ්?
-- **noisy**: @USER මේ වගේ අමු පට්ටපල් බොරු dala, delete nokara ඉණ්නේ moko දන්නේ ne NGO uncle?  Delete කරොත් account එකට වැටෙන $ ටිකට කෙල wena නිසාද ? ඊයා ලැජ්ජයි me w. sa. work ගැන. අන්න jathyanthar මාධ්‍ය වලත් යනවා. ekane කරගන්න ඕන උනේ නෙහ්?
+- **noisy**: @USER මේ වගේ අමු පට්ටපල් බොරු dala, delete nokara ඉණ්නේ moko දන්නේ ne NGO uncle?  Delete කරොත් account එකට වැටෙන $ ටිකට කෙල wena නිසාද ? ඊයා ලැජ්ජයි me ව. ස. work gana. අන්න ජාත්‍යන්තර madhy වලත් යනවා. ඒකනේ karaganna ඕන උනේ නෙහ්?
 
-### 9. `1092246692861218822` — label=OFF, realised_noise_rate=0.09
+### 9. `1092246692861218822` — label=OFF, realised_noise_rate=0.07
 - **original**: නිදහස් දිනේ සමරන්නෙ නැත්තන් සමරන්නෙ නැතුව ඉඳපන් ඕයි නිකන් පකේ ටෝක්ස් දෙන්නෙ නැතුව. මේක හරි එක නෙමෙයිලු, රණවිරුවො හොරුන්ට වඳින දවසලු  අනේ බං තොපි හුජ්ජ දැන් ඇඬුවට අවුරුදු 133 ඉංග්‍රීසින්ට යට වෙලා හිටපු උන්ට අද ලොකු වෙන්න ඇති. ඇරත් පාර්ලිමේන්තුවේ ඉන්නෙ මේ සමාජෙන්ම ආපු එවුන් තමා.
-- **noisy**: ණිදහස් දිනේ සාමරන්නෙ නැත්තන් samaranne නැතුව ඉඳපන් ඕයි නිකන් පකේ talks දෙන්නෙ නැතුව. මේක hari එක නෙමෙයිලු, රණවිරුවො හොරුන්ට වඳින දවසලු  අනේ බං තොපී හුජ්ජ දැන් ඇඬුවට awurudu 133 ඉංග්‍රීසින්ට යට වෙලා හිටපු උන්ට අද ලොකු we. a.. ඇරත් parlimenthuwe inne මේ samajenma apu එවුන් thama.
+- **noisy**: ණිදහස් දිනේ සාමරන්නෙ නැත්තන් samaranne නැතුව ඉඳපන් ඕයි නිකන් පකේ talks දෙන්නෙ නැතුව. මේක hari එක නෙමෙයිලු, රණවිරුවො හොරුන්ට වඳින දවසලු  අනේ බං තොපී හුජ්ජ දැන් ඇඬුවට awurudu 133 ඉංග්‍රීසින්ට යට වෙලා හිටපු උන්ට අද ලොකු වෙ. ඇ.. ඇරත් පාර්ලිමේන්තුවේ inne me සමාජෙන්ම aapu ewun තමා.
 
 ### 10. `1422195779989508098` — label=OFF, realised_noise_rate=0.17
 - **original**: @USER  @USER අඩෝ සිරාවට කව්ද ඒ පිස්සා
 - **noisy**: @USER  @USER ado සිරාවට කව්ද e maniac
 
-### 11. `821879500875010048` — label=OFF, realised_noise_rate=0.17
+### 11. `821879500875010048` — label=OFF, realised_noise_rate=0.15
 - **original**: @USER ,  @USER  @USER තියෙනවා... ඔය ඩයල් එක හෙන වල් හලෝ. ඒකයි
-- **noisy**: @USER ,  @USER  @USER තියෙනවා... ඔය dial e. he. වල් හලෝ. ඒකයි
+- **noisy**: @USER ,  @USER  @USER තියෙනවා... ඔය dial ඈ. හෙ. වල් හලෝ. ඒකැයි
 
-### 12. `900228007117410306` — label=OFF, realised_noise_rate=0.30
+### 12. `900228007117410306` — label=OFF, realised_noise_rate=0.17
 - **original**: @USER පට්ට බැල්ලි ගහනව තොට වැලි
-- **noisy**: @USER awesome බැල්ලි ගහනව tho. wa.
+- **noisy**: @USER awesome බැල්ලි ගහනව තො. වැ.
 
-### 13. `835332875285254146` — label=OFF, realised_noise_rate=0.17
+### 13. `835332875285254146` — label=OFF, realised_noise_rate=0.12
 - **original**: @USER පල පල මම සුදුයි යකෝ..තොට තෑන්ක්ස් කරාටත් පාඩුයි නොදකින් විතරක්
-- **noisy**: @USER පල පල මම සුදුයි යකෝ..තොට thanks කරාටත් psduyi no. wi.
+- **noisy**: @USER පල පල මම සුදුයි යකෝ..තොට thanks කරාටත් psduyi නො. වි.
 
 ### 14. `1127782149791162370` — label=NOT, realised_noise_rate=0.16
 - **original**: @USER ආයේ නාවට කමක් නේ
@@ -730,21 +730,21 @@ For each: does the noisy text read like something a real person would type, does
 - **original**: @USER තව නෙලුම් කුලුනක් හදමු
 - **noisy**: @USER තව නෙලුම් tower එකක් හඩාමු
 
-### 17. `1461734587537637377` — label=NOT, realised_noise_rate=0.08
+### 17. `1461734587537637377` — label=NOT, realised_noise_rate=0.06
 - **original**: ඔන්න අපි මොනව හරි කන්න ගන්නකොටම ගෙදර බල්ලා හරි පූසා හරි ඇවිල්ලා "අඩෝ මොනවද බොසා කන්නෙ, අපිටත් දියංකො" කියන්න වගේ බලන් ඉන්නව හරිද. අනේ අපිටත් ඉතින් දුක හිතිලා ඒකෙන් ටිකක් දෙනවා. දෙනකන් ඉඳල ඉවකරලා "හෑයියා මේ මොන ජරාවක්ද" කියන්න වගේ ඌ යනවා.   ඉතින් එතකොට අපි mk යාලුවනේ?
-- **noisy**: onna අපි මෝනව හරි කන්න ගන්නකොටම ge. ba. හරි පූසා හරි ඇවිල්ලා "අඩෝ mnawada බොසා කන්නෙ, apitath diyanko" කියන්න වගේ balan ඉන්නව okay da. ane අපිටත් ඉතින් duka හිතිලා ඒකෙන් ටිකක් දෙනවා. දෙනකන් ඉඳල ඉවකරලා "හෑයියා මේ මොන ජරාවක්ද" කියන්න වගේ ඌ යනවා.   ඉතින් එතකොට අපි mk යාලුවණෙ?
+- **noisy**: onna අපි මෝනව හරි කන්න ගන්නකොටම ගෙ. බ. හරි පූසා හරි ඇවිල්ලා "අඩෝ මොනවද බොසා kann, අපිටත් දියංකො" kiyanna වගේ balan ඉන්නව okay ද. ane අපිටත් ඉතින් duka හිතිලා ඒකෙන් tikak දෙනවා. දෙනකන් ඉඳල ඉවකරලා "හෑයියා මේ මොන ජරාවක්ද" කියන්න වගේ ඌ යනවා.   ඉතින් එතකොට අපි mk යාලුවණෙ?
 
-### 18. `1057174122323632135` — label=NOT, realised_noise_rate=0.10
+### 18. `1057174122323632135` — label=NOT, realised_noise_rate=0.09
 - **original**: -සුදු පැටියෝ  -ඇයි ඒයි  -කවද්ද ඔවා මාව බඳින්නේ  -මං ඔවාව බඳින්නේ නෑ  මොකද මනුස්ස්යෝ ඒ  -මට බයයි  -ඇයි අනේ   -දැන්ම ඔයා පුදුම වදයක් දෙන්නෙ මට මහ රෑට ඒම මේම කරන්න කියලා.බැන්දම මාසෙටම අර දවස් දෙක තුනක් හැර කවදාවත් නිදාගන්න නැති වේවී  -මැරියන් තෝ
-- **noisy**: -සුදු පැටියෝ  -ayi eyi  -කවද්ද ඔවා මාව බඳින්නේ  -මං owawa බඳින්නේ නෑ  මොකද මානුස්ස්යෝ ඒ  -mat බයයි  -ඇයි ane   -danma oaya පුදුම වදයක් දෙන්නෙ මට මහ රෑට ඒම මේම ka. ki..bandama masetama ara දවස් දෙක තුනක් හැර කවදාවත් nidagann නැති වේවී  -die tho
+- **noisy**: -සුදු පැටියෝ  -ayi eyi  -කවද්ද ඔවා මාව බඳින්නේ  -මං owawa බඳින්නේ නෑ  මොකද මානුස්ස්යෝ ඒ  -mat බයයි  -ඇයි ane   -danma oaya පුදුම වදයක් දෙන්නෙ මට මහ රෑට ඒම මේම ක. කි..බැන්දම masetama ara දවස් deka තුනක් හැර කවදාවත් නිදාගන්න nethi වේවී  -die තෝ
 
 ### 19. `998266543728308224` — label=NOT, realised_noise_rate=0.21
 - **original**: @USER  @USER ඇයි අයිසෙ මාව මෙන්සන් කරේ..
 - **noisy**: @USER  @USER ayi අයිසෙ මාව menthion kare..
 
-### 20. `1370612183185301504` — label=NOT, realised_noise_rate=0.09
+### 20. `1370612183185301504` — label=NOT, realised_noise_rate=0.14
 - **original**: @USER කමෙක් නෑ. ඒකුන්ව පෝෂණය කරන්ඩත් බදු ගෙවන්ඩ හුදී ජනයලා සැදී පැහැදී ඉන්නෝ
-- **noisy**: @USER කමෙක් ne. ඒකුන්ව පෝෂණය කරන්ඩත් tax ගෙවන්ඩ හුදී ජනයලා sadi pahadi ඉන්නෝ
+- **noisy**: @USER කමෙක් ණෑ. ඒකුණ්ව පෝෂණය කරන්ඩත් tax ගෙවන්ඩ හුදී ජණයලා සැදී pahhadi inno
 
 ### 21. `726485303712604161` — label=OFF, realised_noise_rate=0.05
 - **original**: නොට්ටිගේ..මාමාගේ නොට්ටිගේ..පුතා මේ දිනවල පිස්සු බලු බෙහෙත් බීමෙන් වැලකී සිටින නිසා..  මහජනතාවනී ඉතා ප්‍රවේසම්වන්න !!
@@ -754,17 +754,17 @@ For each: does the noisy text read like something a real person would type, does
 - **original**: @USER ^ටහුඩු..!! මුං   @USER  දැං උඩින් යන්නේ නෙහ්..
 - **noisy**: @USER ^ටහුඩු..!! මුං   @USER  dam above යන්නේ නෙහ්..
 
-### 23. `978568732761976833` — label=OFF, realised_noise_rate=0.17
+### 23. `978568732761976833` — label=OFF, realised_noise_rate=0.15
 - **original**: බැල්ලි කිව්වටම තරහ යන්නෙ නෑ මුලට විශේශන පදයක් දාන්න ඕන.
-- **noisy**: balli කිව්වටම ථරහ යන්නෙ නෑ මුලට විශේශන word එකක් d. o..
+- **noisy**: balli කිව්වටම ථරහ යන්නෙ නෑ මුලට විශේශන word එකක් දා. ඔ්..
 
 ### 24. `1179717950829285377` — label=NOT, realised_noise_rate=0.21
 - **original**: @USER ඇප නෑ ... වෛරය,
 - **noisy**: @USER bail නෑ ... wairaya,
 
-### 25. `605634121662996480` — label=OFF, realised_noise_rate=0.25
+### 25. `605634121662996480` — label=OFF, realised_noise_rate=0.10
 - **original**: මෙක මහ කරුමයක් යකො රෙද්ද....
-- **noisy**: මෙක ma. ka. යකො redda....
+- **noisy**: මෙක ම. ක. යකො රෙද්ද....
 
 ### 26. `1427926012218679297` — label=NOT, realised_noise_rate=0.05
 - **original**: කොරෝනා මිනිස්සුන්ගෙ ජීවිත කොච්චර වෙනස් කරනවද කියනවනම් මේ මොහොතෙ අපේ අම්මයි තාත්තයි හෙන උනන්දුවෙන් ඩොක්ටර් නවරියන් බලනවා
