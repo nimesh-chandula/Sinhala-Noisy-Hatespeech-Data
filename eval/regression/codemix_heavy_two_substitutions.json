@@ -2,10 +2,10 @@
   "id": "codemix_heavy_two_substitutions",
   "kind": "noiser",
   "noiser": "codemix",
-  "description": "Three eligible, plausible word-bank entries ('සල්ලි'->money, 'බස්'->bus, 'ආදරේ'->love, all human-verified/source=native or loanword). At heavy severity (k=2) exactly 2 distinct word TYPES must be substituted, not 1 and not 3 — proves heavy genuinely draws 2 when 2+ are available, distinct from the capped-at-1 behavior covered by codemix_lexicon_substitution.json.",
+  "description": "Three eligible, plausible word-bank entries ('සල්ලි'->money, 'බස්'->bus, 'ආදරේ'->love, all human-verified/source=native or loanword). At heavy severity (k=2) exactly 2 distinct word TYPES must be substituted, not 1 and not 3 — proves heavy genuinely draws 2 when 2+ are available, distinct from the capped-at-1 behavior covered by codemix_lexicon_substitution.json. UPDATED round 4: this now also demonstrates the attestation-aware selection redesign (src/noisers/codemix.py's 4-level priority) — 'bus' and 'love' both have PRIMARY evidence (real SOLD sentences where a person actually switched to them, see data/lexicon/codemix_attested_vocabulary.json), while 'money' has only TERTIARY evidence (count=2, excluded from the selection gate — see the module docstring's 'crazy' finding for why). So the plausible+attested pool is exactly {'බස්','ආදරේ'} (size 2 == k), and the draw becomes FORCED rather than a 2-of-3 random pick: 'සල්ලි' is never chosen at this seed or any other, because it never enters the top-priority pool at all. Pre-round-4 expected_text was 'money bus ආදරේ' (a uniform draw over all 3); re-derived here by re-running the noiser at the frozen seed per LOG.md convention.",
   "text": "සල්ලි බස් ආදරේ",
   "severity": "heavy",
   "seed": 0,
-  "expected_text": "money bus ආදරේ",
+  "expected_text": "සල්ලි bus love එක",
   "expected_rate": 0.6666666666666666
 }

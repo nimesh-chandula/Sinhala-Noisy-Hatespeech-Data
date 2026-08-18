@@ -990,3 +990,108 @@
 {"sinhala": "හොරෙක්ට", "action": "correct", "english": "thief කෙනෙක්ට", "note": "round 3, was 'thief' (MD entry #3128, 2026-08-14 snapshot)"}
 {"sinhala": "ළඟට", "action": "correct", "english": "closely", "note": "round 3, was 'close' (MD entry #3134, 2026-08-14 snapshot)"}
 {"sinhala": "ළමයින්ව", "action": "correct", "english": "children ලාව", "note": "round 3, was 'kids' (MD entry #3135, 2026-08-14 snapshot)"}
+{"sinhala": "පිස්සු", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "පිස්සා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "බල්ලා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "හොර", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "හොරා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "පිස්සුද", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "මෝඩයා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "හොරෙක්", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "පිස්සො", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "මෝඩයෙක්", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "ඌරෙක්", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "මොඩ", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "ශිට්", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "ඌරු", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "යකෙක්", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "දේශද්‍රෝහී", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "හොරෙක්ට", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "බල්ලව", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "යකා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "ඌරා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "ශික්", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "දේශදෝරහි", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "අමනයා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "රාක්ෂ", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "මැට්ටා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "යකු", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "සුන්ඛයා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "කුපාඩියා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "මැට්ටෝ", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "බොරුකාර", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "කියන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "උදව්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "කන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "දන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "දන්නේ", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "මැරියන්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "එන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "පාවිච්චි", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "නතර", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "අත්අඩංගුවට", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "කට්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "හිනා", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "වරෙන්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "තේරුම්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "පටන්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "හදන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "පෙන්නන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "ජීවත්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "නින්ද", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "උදවු", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "දන්නවා", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "පෙන්නන්නේ", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "දැනගන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "විශ්වාස", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "නිදි", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "කපලා", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "නිදාගන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "දන්නව", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "නවත්වන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "වීවෘත", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "මැරිය", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "බීම", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "බොන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "අමතන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "තේරෙන්නේ", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "බොන", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "නිදියන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "යවන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "දුවනවා", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "තේරෙන්නෙ", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "හොයාගන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "ජිවත්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "අල්ලන", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "අනුගමනය", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "මැරියං", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "බලාංකො", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "ලං", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "ඉගෙනගන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "බාවිතා", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "සවාරි", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "බලන්ඩ", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "හිටු", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "භාවිතා", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "ෆොලෝ", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "පාවිච්චිකරනව", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "ඉදපන්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "කියපං", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "අහපං", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "පැරදුනාම", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "තෙරුම්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "ෆලෝත්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "වරෙං", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "නිදා", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "දුවන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "කිට්ටු", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "තියාගනින්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "දීපං", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "බල්ලට", "action": "remove", "note": "round4 tier 1b: english side is an evaluative/abusive term ('dog'), caught by eval/invariants.py's check_codemix_no_affect_substitution as a non-firing bank entry missed by the fired-only Stage 0 proposal"}
+{"sinhala": "බල්ල", "action": "remove", "note": "round4 tier 1b: english side is an evaluative/abusive term ('dog'), caught by eval/invariants.py's check_codemix_no_affect_substitution as a non-firing bank entry missed by the fired-only Stage 0 proposal"}
+{"sinhala": "චොර", "action": "remove", "note": "round4 tier 1b: english side is an evaluative/abusive term ('thief'), caught by eval/invariants.py's check_codemix_no_affect_substitution as a non-firing bank entry missed by the fired-only Stage 0 proposal"}
+{"sinhala": "බල්ලාට", "action": "remove", "note": "round4 tier 1b: english side is an evaluative/abusive term ('dog'), caught by eval/invariants.py's check_codemix_no_affect_substitution as a non-firing bank entry missed by the fired-only Stage 0 proposal"}
+{"sinhala": "හොරගෙඩියා", "action": "remove", "note": "round4 tier 1b: english side is an evaluative/abusive term ('thief'), caught by eval/invariants.py's check_codemix_no_affect_substitution as a non-firing bank entry missed by the fired-only Stage 0 proposal"}
+{"sinhala": "ඔල්මාදකාරයා", "action": "remove", "note": "round4 tier 1b: english side is an evaluative/abusive term ('lunatic'), caught by eval/invariants.py's check_codemix_no_affect_substitution as a non-firing bank entry missed by the fired-only Stage 0 proposal"}
+{"sinhala": "කුපාඩිය", "action": "remove", "note": "round4 tier 1b: english side is an evaluative/abusive term ('rascal'), caught by eval/invariants.py's check_codemix_no_affect_substitution as a non-firing bank entry missed by the fired-only Stage 0 proposal"}
+{"sinhala": "පීස්සුද", "action": "remove", "note": "round4 tier 1b: english side is an evaluative/abusive term ('crazy'), caught by eval/invariants.py's check_codemix_no_affect_substitution as a non-firing bank entry missed by the fired-only Stage 0 proposal"}

@@ -153,11 +153,16 @@ def main() -> None:
     lines = [
         "# Code-mix word bank usage review",
         "",
-        "**Status: fully reviewed.** This snapshot reflects the word bank AFTER 3 rounds "
-        "of human review (2026-08-13 to 2026-08-14, 992 corrections applied — 910 "
-        "corrected, 82 removed — see data/lexicon/codemix_review_corrections.jsonl and "
-        "LOG.md for the full record). Entries below are impact-ordered against the "
-        "corrected bank, so this is an audit trail of what shipped, not a fresh TODO list.",
+        "**Status: fully reviewed.** This snapshot reflects the word bank AFTER 4 rounds "
+        "of human review (rounds 1-3: 2026-08-13 to 2026-08-14, 992 corrections — 910 "
+        "corrected, 82 removed; round 4: 2026-08-18, 97 further removals — 30 "
+        "affect-bearing, 67 bare-verb, evidence-based via "
+        "data/lexicon/codemix_removals_round4.md, plus an attestation-aware selection "
+        "redesign, see data/lexicon/codemix_selection_comparison.md — see "
+        "data/lexicon/codemix_review_corrections.jsonl and LOG.md for the full record). "
+        "Entries below are impact-ordered against the corrected bank, so this is an "
+        "audit trail of what shipped, not a fresh TODO list. Previous snapshot archived "
+        "at codemix_usage_review_round3.md.",
         "",
         f"{len(rows_out)} word bank entries actually fired during generation "
         f"(out of {len(wordbank)} in the bank), impact-ordered — the top entries here "

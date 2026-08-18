@@ -929,6 +929,174 @@ iteration-by-iteration record, including the real bugs found and fixed
 along the way (a slur-filter import pointing at the wrong module, two
 particle-romanization errors, an incomplete trailing-token parser).
 
+### 9.10 Round 4: evidence-based removal + attestation-aware selection
+
+An external reviewer objected that code-mixing places switches unnaturally
+— that in real bilingual speech, which words get switched, and where,
+follows patterns the noiser ignores. This section is the methodology for
+testing that claim and fixing what turned out to be genuinely wrong.
+
+**The claim splits into three, tested separately against SOLD's own
+naturally-occurring code-switching** (956 intrasentential English
+insertions — a Latin-script token with a Sinhala grapheme-cluster run on
+both sides — extracted from `data/sold/train.jsonl`):
+
+| Sub-claim | Verdict | Evidence |
+|---|---|---|
+| Switch **position** is unnatural | Refuted | Positional decile JSD vs natural SOLD = 0.0017 (0–1 scale) |
+| Switch **licensing** is unnatural | Refuted | Share followed by an `එක`/`කර` particle: 0.42 generated vs 0.44 natural, identical top-5 following tokens in identical rank order |
+| **Word choice** is unnatural | Upheld | 75% of pre-round-4 insertions used English types with zero natural attestation |
+
+The position/licensing result is **structural, not tuned**: `_apply()`
+performs in-place type substitution — an eligible Sinhala word is replaced
+by its English equivalent exactly where that word already stood in the
+sentence. The switch site is inherited from a real, previously-authored
+Sinhala sentence and is therefore always a grammatically licensed
+content-word slot; a position-blind selection algorithm cannot help but
+match the natural distribution, because it never has the option to place a
+switch anywhere else. This is why fixing word choice below did not require
+touching position logic at all.
+
+**A bug found along the way**: `slur_flag` in
+`codemix_translation_worklist.jsonl` is `False` for all 7,969 rows — it has
+never fired once, confirming the `_SLUR_SUBSTRINGS` wrong-import no-op bug
+already recorded in §9.6/LOG.md Phase 3 v2 meant no slur filtering was ever
+actually applied to the word bank, at any point before this round.
+
+**Part A — evidence-based removal (round 4 of the correction mechanism).**
+`scripts/propose_codemix_removals.py` re-derives which bank entries
+actually fired (diffing `original_text`/`noisy_text` via `text_runs`, the
+same discipline as `build_codemix_usage_report.py`) and sorts them into
+three tiers:
+
+- **Tier 1, affect-bearing** (30 entries — `පිස්සු`→crazy, `බල්ලා`→dog,
+  `මෝඩයා`→idiot, …). Translating an insult into English reads weaker,
+  silently undermining the offensive signal the SOLD label depends on —
+  this is a label-integrity defect, not a style one, and squarely in scope
+  for GATE B's label-retention criterion. Independently confirmed against
+  natural attestation: 18/18 sampled entries have **zero** occurrences as a
+  real code-switch anywhere in SOLD. Also the least natural switch category
+  on independent grounds: natural code-switching is measurably depressed in
+  offensive posts (0.691 vs 0.801 insertions per 100 Sinhala tokens;
+  two-proportion z = 2.62, p = 0.009), consistent with the literature on L1
+  preference for negative affect (Rudra et al., *Understanding Language
+  Preference for Expression of Opinion and Sentiment*, EMNLP 2016,
+  Hindi–English).
+- **Tier 2, bare English finite verb** (65 entries — `කියන්න`→say,
+  `කන්න`→eat, …). Sinhala borrows English verbs as
+  `V + කරනවා/කරන්න/කරලා`, never bare; a construction like `කියන්න → say`
+  is not one a bilingual speaker would produce. Confirmed near-zero natural
+  attestation (14/15 sampled). `source=loanword` entries are excluded —
+  switching an English word already written in Sinhala script back to
+  Latin (`කෝල්→call`) is the most natural move available, not a defect.
+- **Tier 3, `codemix_plausible=False`** (606 entries), already flagged weak
+  by review rounds 1–3, still reachable via `_apply()`'s fallback pool when
+  a post has no plausible candidate. **Left unremoved** — a deliberate
+  decision, not an oversight: removing all 606 costs 8.7% coverage for a
+  category already judged weak rather than dangerous, reversing part of the
+  Phase 3 density trade-off for a marginal naturalness gain, and Part B's
+  selection redesign doesn't reduce this tier's firing rate regardless
+  (it's only ever reached via the same full-fallback path in both the old
+  and new selection algorithms — an independent finding, not an assumption).
+
+Applied through the existing append-only correction mechanism
+(`codemix_review_corrections.jsonl`, `action: "remove"`) — the same one
+rounds 1–3 used — via `scripts/apply_codemix_removals.py`: 97 Tier 1+2
+entries removed, 4,118 → 4,021. **A second pass caught 8 more**: the new
+structural invariant below (`check_codemix_no_affect_substitution`) found 8
+affect-bearing entries still present in the rebuilt bank that had never
+fired in the original 20,000-row generation — inflected or misspelled
+surface-form variants (`බල්ලට`→dog, `චොර`→thief, `පීස්සුද`→crazy) invisible
+to a fired-only impact report by construction. Removed as "tier 1b",
+4,021 → **4,013 entries**. This gap is the reason the guarantee is checked
+against the frozen word bank directly rather than against generated output
+— a usage-impact report can only ever describe what a specific generation
+run happened to touch, not what the bank could still produce.
+
+**Part B — attestation-aware selection.** Even after removal, the
+surviving pool for a given post was drawn **uniformly at random** — no
+preference for words real Sinhala speakers are actually known to switch to
+over words that merely survived review. `scripts/build_codemix_attestation.py`
+builds `data/lexicon/codemix_attested_vocabulary.json`, an evidence index
+of English headwords with real proof of being switched, ranked by source
+reliability:
+
+- `primary` — mined fresh from `data/sold/{train,test}.jsonl` (737 types,
+  1,260 instances): the exact register this noiser is applied to.
+- `secondary` — `codemix_reference_stats.json`'s existing
+  `eka_construction_vocabulary`: English stems observed directly attached
+  to a Sinhala `එක` particle in SOLD's own text, the exact construction
+  many bank entries encode.
+- `tertiary` — the same file's broader `candidate_english_vocabulary`,
+  pooled loosely across corpora with a much looser filter. **Excluded from
+  the selection gate**: a first draft let `crazy` (tertiary count=2) pass
+  as "attested" despite zero real intrasentential evidence anywhere in
+  SOLD — the count of 2 traced back to loose scrape/quote noise, not
+  genuine code-switching. Kept only as report-level context.
+
+Selection in `_apply()` now follows a 4-level priority, first non-empty
+pool wins: `plausible ∩ attested` → `plausible` → `eligible ∩ attested` →
+`eligible` (where "attested" means `primary`/`secondary` tier only). The
+draw itself — `rng.sample(pool, min(k, len(pool)))` — is unchanged; only
+which pool it draws from changes.
+
+**Validated before adoption, not assumed**:
+`scripts/compare_codemix_selection.py` ran both the pre-round-4 algorithm
+and the attestation-aware variant across all 20,000 rows at the real
+generation seeds and compared them directly (permanent record:
+`data/lexicon/codemix_selection_comparison.md`):
+
+| Metric | Pre-round-4 | Attestation-aware |
+|---|---|---|
+| Word picked has real evidence behind it | 23.4% | 41.6% |
+| Touched-post coverage | 91.3% | 91.3% (unchanged) |
+| Positional JSD vs. natural | 0.0017 | 0.0026 (rebuttal intact) |
+
+**The honest limit, checked directly rather than assumed away**: insult
+picks fell 825→632 out of 20,000 rows under the new selection alone (23%,
+not to zero). Inspecting *why*: in roughly half the remaining cases, the
+flagged word was the *only* reviewer-approved candidate present in that
+specific post — no preference mechanism can avoid a choice with one option.
+**Parts A and B are therefore complementary, not substitutes**: A is the
+only mechanism that can guarantee a category never fires; B is a general
+improvement to word choice everywhere else. Removing Part A's word-bank
+edits on the theory that Part B makes them redundant would silently
+reopen the label-integrity risk Part A exists to close.
+
+**Verifier changes**: `check_codemix_no_affect_substitution` (new,
+structural — checks the word bank itself, so it catches a regression
+before anything is even generated from it; 16 → 17 invariants).
+`check_codemix_substitution_spec` updated to re-derive the same 4-level
+pool independently — its pre-round-4 formula would otherwise start failing
+against real output, since the new pool can be genuinely *smaller* than the
+old plausible-only pool when an attested subset exists with fewer than `k`
+members (verified as intended behaviour by direct construction, not a
+latent bug: see the re-derived `codemix_heavy_two_substitutions` regression
+case, where `money` [tertiary-only] is now excluded from the draw and
+`bus`/`love` [both primary-attested] are chosen deterministically instead
+of a uniform 2-of-3 pick). `TARGET_NOISE_RATE` re-measured and re-frozen:
+light 0.0884→0.0847, heavy 0.1317→0.1112.
+
+**Results**: touched-post coverage 93.2%/93.9% → 91.1%/92.1% (train/test),
+in line with the predicted Tier 1+2 coverage cost. Full harness: 17/17
+invariants, 24/24 regression, `status: PASS`. Position/licensing
+independently re-verified on the final regenerated output:
+`codemix_heavy` JSD=0.0012, licensing rate=0.489 (natural 0.44) — the
+rebuttal survives both changes. (The same metric on `compound_heavy` reads
+much lower, 0.144; investigated and confirmed as a measurement artifact,
+not a regression — `compound` also runs transliteration, which romanizes
+many neighbouring Sinhala words, and the script-only Latin/Sinhala
+heuristic then miscounts those as false "switches." The rebuttal concerns
+codemix's own mechanism specifically, measured cleanly on its own output.)
+
+**Residual, stated honestly rather than hidden**: type-attestation against
+natural switches improved substantially but stays well below 1.0 by
+design — the word bank was deliberately built for coverage under the
+Phase 3 "density over natural-rate realism" directive (see §9.3), and
+Part B is a *preference*, not a rewrite of that bank. GATE B human
+re-review (108 of 297 rows — every codemix and compound cell, the only
+conditions either change touches) was pending at the time of writing.
+
 ---
 
 ## 11. Misspelling noiser methodology (Phase 4a)

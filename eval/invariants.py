@@ -384,28 +384,35 @@ def check_grapheme_integrity() -> bool:
 
 
 def check_codemix_substitution_spec() -> bool:
-    """codemix v2's real design spec, checked independently of trusting
-    src.noisers.codemix's own correctness: for every persisted codemix
-    output row, recompute the eligible-word-type pool straight from the
-    frozen word bank + original_text (reusing the noiser's own wordbank
-    loader and src.graphemes.text_runs, but NOT calling apply()/_apply() —
-    this must independently re-derive the pool, not just re-run the same
-    selection code and trivially agree with it), and assert:
+    """codemix v2/round-4's real design spec, checked independently of
+    trusting src.noisers.codemix's own correctness: for every persisted
+    codemix output row, recompute the eligible-word-type pool straight from
+    the frozen word bank + attested vocabulary + original_text (reusing the
+    noiser's own pure loaders/helpers and src.graphemes.text_runs, but NOT
+    calling apply()/_apply() — this must independently re-derive the pool,
+    not just re-run the same selection code and trivially agree with it),
+    and assert:
       1. n_substitutions == min(k, pool_size), where k is 1 (light) or 2
-         (heavy) and pool_size prefers plausible-flagged types, falling
-         back to all eligible types only when none are plausible — the
-         exact "prefer plausible, fall back to eligible, cap at k" contract
-         from the module docstring's "honest tradeoff" section.
+         (heavy) and pool_size follows round 4's 4-level priority: prefer
+         plausible+attested types, then plausible-only, then
+         eligible+attested, then all eligible — see src.noisers.codemix's
+         module docstring "Round 4" section. NOTE this can be SMALLER than
+         the pre-round-4 plausible-only pool when an attested subset exists
+         but has fewer than k members (the draw stays within that subset
+         rather than topping up from the larger plausible pool) — this was
+         validated, not a bug; see data/lexicon/codemix_selection_comparison.md.
       2. A post with pool_size == 0 is byte-identical to its source
          (noisy_text == original_text) — forced selection must never
          invent a substitution where nothing is eligible.
-    This is the primary correctness gate for the v2 redesign — the whole
-    point of the redesign was fixing v1's 85.8%/79.7% untouched-row rate,
-    so the invariant checks the SPEC that fixes it, not a calibrated rate
-    number (see TARGET_NOISE_RATE's docstring in src/noisers/codemix.py for
-    why that's demoted to a drift tripwire instead)."""
+    This is the primary correctness gate for the selection redesign — the
+    whole point of v2 was fixing v1's 85.8%/79.7% untouched-row rate, so the
+    invariant checks the SPEC that fixes it, not a calibrated rate number
+    (see TARGET_NOISE_RATE's docstring in src/noisers/codemix.py for why
+    that's demoted to a drift tripwire instead)."""
     from src.graphemes import text_runs as _text_runs
-    from src.noisers.codemix import _WORDS_PER_POST, _load_wordbank
+    from src.noisers.codemix import (
+        _ATTESTED_SELECTION_TIERS, _WORDS_PER_POST, _headword, _load_attested_vocabulary, _load_wordbank,
+    )
 
     outputs_dir = REPO_ROOT / "data" / "outputs"
     codemix_files = []
@@ -422,6 +429,21 @@ def check_codemix_substitution_spec() -> bool:
     if not wordbank:
         _notes["codemix_substitution_spec"] = "vacuous: data/lexicon/codemix_wordbank.jsonl not yet built"
         return True
+    attested = _load_attested_vocabulary()
+
+    def _pool_size(sinhala_words: set[str]) -> int:
+        eligible = sinhala_words & wordbank.keys()
+        plausible = {w for w in eligible if wordbank[w]["codemix_plausible"]}
+        is_att = lambda w: attested.get(_headword(wordbank[w]["english"]), {}).get("tier") in _ATTESTED_SELECTION_TIERS
+        plausible_attested = {w for w in plausible if is_att(w)}
+        if plausible_attested:
+            return len(plausible_attested)
+        if plausible:
+            return len(plausible)
+        eligible_attested = {w for w in eligible if is_att(w)}
+        if eligible_attested:
+            return len(eligible_attested)
+        return len(eligible)
 
     checked = 0
     bad = []
@@ -431,9 +453,7 @@ def check_codemix_substitution_spec() -> bool:
         for row in _load_jsonl(path):
             checked += 1
             sinhala_words = {run for is_sinhala, run in _text_runs(row["original_text"]) if is_sinhala}
-            eligible = sinhala_words & wordbank.keys()
-            plausible = {w for w in eligible if wordbank[w]["codemix_plausible"]}
-            pool_size = len(plausible) if plausible else len(eligible)
+            pool_size = _pool_size(sinhala_words)
             expected_n = min(k, pool_size)
             actual_n = row.get("n_substitutions", -1)
             if actual_n != expected_n:
@@ -448,6 +468,58 @@ def check_codemix_substitution_spec() -> bool:
     ok = not bad
     if not ok:
         _notes["codemix_substitution_spec"] = f"{len(bad)}(+)/{checked} rows violate the substitution spec, e.g. {bad[:5]}"
+    return ok
+
+
+def check_codemix_no_affect_substitution() -> bool:
+    """Round 4, Part A's guarantee, checked structurally rather than by
+    scanning output: no entry in the CURRENT frozen word bank may have an
+    English side that is an evaluative/abusive/slur headword. This is a
+    check on the wordbank itself, not on generated rows, precisely because
+    it must catch a REGRESSION (an affect-bearing entry silently reappearing
+    in a future bank rebuild) even before anything is generated from it —
+    "no output row substitutes one" would already be true vacuously the
+    instant an offending entry can't be selected, which is a weaker
+    guarantee than "the entry doesn't exist in the bank at all."
+
+    Deliberately re-implements its own copy of the abusive-headword set
+    rather than importing scripts/propose_codemix_removals.py's
+    _ABUSIVE_HEADWORDS — same "independently re-derive, don't trust the same
+    code path" discipline as check_codemix_substitution_spec above. Keep the
+    two lists in sync by hand if either is edited; a mismatch only ever
+    makes this check MORE conservative (flags something the removal proposal
+    didn't), never less, since both were seeded from the same round-4
+    analysis of data/lexicon/codemix_removals_round4.md's Tier 1.
+    """
+    from src.noisers.codemix import LEXICON_PATH
+
+    abusive_headwords = {
+        "maniac", "crazy", "idiot", "fool", "stupid", "dog", "pig", "devil",
+        "demon", "traitor", "thief", "liar", "shit", "moron", "beast", "swine",
+        "bastard", "whore", "bitch", "rascal", "wretch", "filth", "madman",
+        "lunatic",
+    }
+
+    if not LEXICON_PATH.exists():
+        _notes["codemix_no_affect_substitution"] = "vacuous: data/lexicon/codemix_wordbank.jsonl not yet built"
+        return True
+
+    bad = []
+    for row in _load_jsonl(LEXICON_PATH):
+        english = row.get("english", "")
+        headword = english.split()[0].lower().strip(".,") if english else ""
+        if headword in abusive_headwords:
+            bad.append((row["sinhala"], english))
+        if len(bad) > 20:
+            break
+
+    ok = not bad
+    if not ok:
+        _notes["codemix_no_affect_substitution"] = (
+            f"{len(bad)}(+) affect-bearing entries present in the word bank, e.g. {bad[:5]} "
+            "— round 4 Tier 1 removed these; check data/lexicon/codemix_review_corrections.jsonl "
+            "for a missing or overwritten removal row"
+        )
     return ok
 
 
@@ -703,6 +775,7 @@ def run_invariants() -> dict[str, bool]:
         "determinism": check_determinism,
         "grapheme_integrity": check_grapheme_integrity,
         "codemix_substitution_spec": check_codemix_substitution_spec,
+        "codemix_no_affect_substitution": check_codemix_no_affect_substitution,
         "misspell_substitution_spec": check_misspell_substitution_spec,
         "abbreviate_substitution_spec": check_abbreviate_substitution_spec,
         "split_isolation": check_split_isolation,

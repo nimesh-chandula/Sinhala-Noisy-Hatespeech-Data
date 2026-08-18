@@ -1,28 +1,22 @@
 {"sinhala": "පට්ට", "english": "awesome", "source": "native", "codemix_plausible": true, "sold_frequency": 457, "evidence": "reviewed (native): reconsidered slang intensifier — consistently 'very/awesome' in casual use, low polysemy risk unlike හරි"}
-{"sinhala": "පිස්සු", "english": "crazy", "source": "native", "codemix_plausible": true, "sold_frequency": 344, "evidence": "reviewed (native): from the initial top-50 audit; moderate confidence, weak latin-token attestation (2)"}
 {"sinhala": "හෙන", "english": "very", "source": "native", "codemix_plausible": true, "sold_frequency": 317, "evidence": "reviewed (native): reconsidered slang intensifier"}
 {"sinhala": "වැඩ", "english": "work", "source": "llm", "codemix_plausible": true, "sold_frequency": 294, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කතා", "english": "talk", "source": "llm", "codemix_plausible": false, "sold_frequency": 290, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "කියන්න", "english": "say", "source": "llm", "codemix_plausible": false, "sold_frequency": 281, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "රට", "english": "country", "source": "llm", "codemix_plausible": true, "sold_frequency": 277, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "වැඩක්", "english": "work", "source": "llm", "codemix_plausible": false, "sold_frequency": 261, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මිනිස්සු", "english": "people", "source": "llm", "codemix_plausible": true, "sold_frequency": 256, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "රටේ", "english": "country එකේ", "source": "llm", "codemix_plausible": true, "sold_frequency": 237, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "බල්ලා", "english": "dog", "source": "llm", "codemix_plausible": false, "sold_frequency": 204, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දෙයක්", "english": "thing", "source": "llm", "codemix_plausible": false, "sold_frequency": 191, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ගෙදර", "english": "home", "source": "llm", "codemix_plausible": true, "sold_frequency": 186, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "සල්ලි", "english": "money", "source": "native", "codemix_plausible": true, "sold_frequency": 185, "evidence": "SOLD freq 185; latin_token(money)=2 — MODERATE CONFIDENCE, low attestation count, flagged for review"}
 {"sinhala": "අම්ම", "english": "mom", "source": "native", "codemix_plausible": true, "sold_frequency": 179, "evidence": "reviewed (native): LOW CONFIDENCE, colloquial form of අම්මා"}
 {"sinhala": "කෑල්ල", "english": "girl", "source": "llm", "codemix_plausible": false, "sold_frequency": 179, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "පිස්සා", "english": "maniac", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 160, "evidence": "round 1, was 'crazy' (MD entry #12, 2026-08-13 snapshot)"}
 {"sinhala": "කටට", "english": "mouth එකට", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 151, "evidence": "round 1, was 'mouth' (MD entry #26, 2026-08-13 snapshot)"}
 {"sinhala": "සෙට්", "english": "set", "source": "llm", "codemix_plausible": true, "sold_frequency": 143, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ඩාලින්", "english": "darling", "source": "loanword", "codemix_plausible": true, "sold_frequency": 139, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
 {"sinhala": "අවුරුදු", "english": "years", "source": "llm", "codemix_plausible": false, "sold_frequency": 138, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "කන්න", "english": "eat", "source": "llm", "codemix_plausible": false, "sold_frequency": 135, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "හොඳ", "english": "good", "source": "native", "codemix_plausible": true, "sold_frequency": 124, "evidence": "reviewed (native): reconsidered adjective"}
 {"sinhala": "ලංකාවේ", "english": "Sri Lanka වල", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 121, "evidence": "round 1, was 'Sri Lanka එකේ' (MD entry #497, 2026-08-13 snapshot)"}
-{"sinhala": "එන්න", "english": "come", "source": "llm", "codemix_plausible": false, "sold_frequency": 120, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බස්", "english": "bus", "source": "loanword", "codemix_plausible": true, "sold_frequency": 120, "evidence": "Phase 3 frequency scan, hand-verified"}
 {"sinhala": "දේවල්", "english": "things", "source": "llm", "codemix_plausible": false, "sold_frequency": 119, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අනිත්", "english": "other", "source": "llm", "codemix_plausible": false, "sold_frequency": 116, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -38,23 +32,19 @@
 {"sinhala": "කෙල්ලෙක්", "english": "girl", "source": "llm", "codemix_plausible": true, "sold_frequency": 100, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කඩේ", "english": "shop එකේ", "source": "native", "codemix_plausible": true, "sold_frequency": 99, "evidence": "reviewed (native): locative inflected form (like ගමේ/ලෝකයේ), moderate confidence"}
 {"sinhala": "සිංහල", "english": "Sinhala", "source": "llm", "codemix_plausible": true, "sold_frequency": 99, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "දන්නේ", "english": "know", "source": "llm", "codemix_plausible": false, "sold_frequency": 97, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "හිත", "english": "heart එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 96, "evidence": "round 1, was 'heart' (MD entry #23, 2026-08-13 snapshot)"}
 {"sinhala": "රටක්", "english": "country එකක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 91, "evidence": "round 1, was 'country' (MD entry #18, 2026-08-13 snapshot)"}
 {"sinhala": "උඩ", "english": "up", "source": "llm", "codemix_plausible": false, "sold_frequency": 83, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "වෙනස්", "english": "different", "source": "native", "codemix_plausible": true, "sold_frequency": 83, "evidence": "reviewed (native): reconsidered adjective"}
 {"sinhala": "ගල්", "english": "rock", "source": "native", "codemix_plausible": true, "sold_frequency": 79, "evidence": "reviewed (native): reconsidered low-plausibility-concrete"}
 {"sinhala": "ආදරේ", "english": "love එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 78, "evidence": "round 1, was 'love' (MD entry #32, 2026-08-13 snapshot)"}
-{"sinhala": "දන්න", "english": "know", "source": "llm", "codemix_plausible": false, "sold_frequency": 76, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දේශපාලන", "english": "political", "source": "native", "codemix_plausible": true, "sold_frequency": 76, "evidence": "reviewed (native): political-commentary register, moderate confidence"}
 {"sinhala": "සුදු", "english": "white", "source": "native", "codemix_plausible": true, "sold_frequency": 75, "evidence": "reviewed (native): reconsidered adjective"}
 {"sinhala": "මිනිස්සුන්ට", "english": "people ලාට", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 73, "evidence": "round 1, was 'people එකට' (MD entry #764, 2026-08-13 snapshot)"}
 {"sinhala": "ලස්සන", "english": "beautiful", "source": "native", "codemix_plausible": true, "sold_frequency": 71, "evidence": "reviewed (native): reconsidered adjective"}
 {"sinhala": "ගල", "english": "stone එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 70, "evidence": "round 1, was 'stone' (MD entry #187, 2026-08-13 snapshot)"}
 {"sinhala": "ජනාධිපති", "english": "president", "source": "native", "codemix_plausible": true, "sold_frequency": 69, "evidence": "latin_token(president)=6"}
-{"sinhala": "හදන්න", "english": "make", "source": "llm", "codemix_plausible": false, "sold_frequency": 69, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "හොඳයි", "english": "good", "source": "native", "codemix_plausible": true, "sold_frequency": 68, "evidence": "reviewed (native): reconsidered adjective"}
-{"sinhala": "දන්නවා", "english": "know", "source": "llm", "codemix_plausible": false, "sold_frequency": 67, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මහින්ද", "english": "Mahinda", "source": "llm", "codemix_plausible": true, "sold_frequency": 67, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ලංකාවෙ", "english": "Sri Lanka වල", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 67, "evidence": "round 1, was 'Sri Lanka' (MD entry #496, 2026-08-13 snapshot)"}
 {"sinhala": "මල්", "english": "flower", "source": "native", "codemix_plausible": true, "sold_frequency": 66, "evidence": "reviewed (native): reconsidered low-plausibility-concrete"}
@@ -89,7 +79,6 @@
 {"sinhala": "අයියා", "english": "brother", "source": "native", "codemix_plausible": true, "sold_frequency": 53, "evidence": "reviewed (native): LOW CONFIDENCE — elder brother, vocative risk"}
 {"sinhala": "කොල්ලෙක්", "english": "boy", "source": "llm", "codemix_plausible": true, "sold_frequency": 53, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "තාත්තා", "english": "dad", "source": "native", "codemix_plausible": true, "sold_frequency": 53, "evidence": "reviewed (native): LOW CONFIDENCE — same caution class as already-included family terms"}
-{"sinhala": "පටන්", "english": "start", "source": "llm", "codemix_plausible": false, "sold_frequency": 53, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පොල්", "english": "coconut", "source": "native", "codemix_plausible": true, "sold_frequency": 53, "evidence": "reviewed (native): reconsidered low-plausibility-concrete"}
 {"sinhala": "ලංකාව", "english": "Sri Lanka", "source": "llm", "codemix_plausible": true, "sold_frequency": 53, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ළමයි", "english": "children", "source": "native", "codemix_plausible": true, "sold_frequency": 52, "evidence": "reviewed (native): safe redundant addition alongside දරුවෝ->children, already-established target"}
@@ -105,17 +94,13 @@
 {"sinhala": "පොර", "english": "boss", "source": "llm", "codemix_plausible": true, "sold_frequency": 48, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කොරෝනා", "english": "corona", "source": "loanword", "codemix_plausible": true, "sold_frequency": 47, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
 {"sinhala": "රනිල්", "english": "Ranil", "source": "llm", "codemix_plausible": true, "sold_frequency": 47, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "හිනා", "english": "laugh", "source": "llm", "codemix_plausible": false, "sold_frequency": 47, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ක්‍රිකට්", "english": "cricket", "source": "loanword", "codemix_plausible": true, "sold_frequency": 46, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
-{"sinhala": "තේරුම්", "english": "understand", "source": "llm", "codemix_plausible": false, "sold_frequency": 46, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බඩු", "english": "stuff", "source": "llm", "codemix_plausible": false, "sold_frequency": 46, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "වරෙන්", "english": "come", "source": "llm", "codemix_plausible": false, "sold_frequency": 46, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කෝල්", "english": "call", "source": "loanword", "codemix_plausible": true, "sold_frequency": 45, "evidence": "Phase 3 frequency scan, hand-verified"}
 {"sinhala": "ජාතික", "english": "national", "source": "llm", "codemix_plausible": true, "sold_frequency": 45, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ජීවිතේ", "english": "life එක", "source": "native", "codemix_plausible": true, "sold_frequency": 45, "evidence": "SOLD freq 45; colloquial spelling of ජීවිතය"}
 {"sinhala": "යට", "english": "under", "source": "llm", "codemix_plausible": false, "sold_frequency": 45, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ඇමති", "english": "minister", "source": "native", "codemix_plausible": true, "sold_frequency": 44, "evidence": "SOLD freq 44; plausible, moderate confidence (no direct latin-token hit)"}
-{"sinhala": "ජීවත්", "english": "live", "source": "llm", "codemix_plausible": false, "sold_frequency": 44, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අවුලක්", "english": "problem එකක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 43, "evidence": "round 1, was 'problem' (MD entry #82, 2026-08-13 snapshot)"}
 {"sinhala": "පාලනය", "english": "control", "source": "llm", "codemix_plausible": true, "sold_frequency": 43, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ෆොටෝ", "english": "photo", "source": "loanword", "codemix_plausible": true, "sold_frequency": 43, "evidence": "Phase 3 frequency scan, hand-verified"}
@@ -138,12 +123,10 @@
 {"sinhala": "බබා", "english": "baby", "source": "loanword", "codemix_plausible": true, "sold_frequency": 39, "evidence": "reviewed (loanword): phonetic spelling of 'baby', alt form of already-verified බේබි"}
 {"sinhala": "රිප්ලයි", "english": "reply", "source": "loanword", "codemix_plausible": true, "sold_frequency": 38, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
 {"sinhala": "විනාශ", "english": "destroy", "source": "llm", "codemix_plausible": false, "sold_frequency": 38, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "හොරා", "english": "thief", "source": "native", "codemix_plausible": true, "sold_frequency": 38, "evidence": "reviewed (native): definite form of හොර"}
 {"sinhala": "අපිව", "english": "us", "source": "llm", "codemix_plausible": false, "sold_frequency": 37, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පාරේ", "english": "road එකේ", "source": "llm", "codemix_plausible": false, "sold_frequency": 37, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පිට", "english": "back", "source": "llm", "codemix_plausible": false, "sold_frequency": 37, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පිරිමි", "english": "men", "source": "llm", "codemix_plausible": false, "sold_frequency": 37, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "හොර", "english": "thief", "source": "native", "codemix_plausible": true, "sold_frequency": 37, "evidence": "reviewed (native): common political-corruption insult register, moderate confidence"}
 {"sinhala": "හොරු", "english": "thieves", "source": "native", "codemix_plausible": true, "sold_frequency": 37, "evidence": "reviewed (native): plural of හොර"}
 {"sinhala": "කෑල්ලක්", "english": "piece එකක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 36, "evidence": "round 1, was 'piece' (MD entry #846, 2026-08-13 snapshot)"}
 {"sinhala": "ට්විටර්", "english": "twitter", "source": "loanword", "codemix_plausible": true, "sold_frequency": 36, "evidence": "Phase 3 frequency scan, hand-verified"}
@@ -166,10 +149,8 @@
 {"sinhala": "ජාතිය", "english": "nation", "source": "llm", "codemix_plausible": false, "sold_frequency": 33, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "නැත්තං", "english": "otherwise", "source": "llm", "codemix_plausible": false, "sold_frequency": 33, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "නිව්ස්", "english": "news", "source": "loanword", "codemix_plausible": true, "sold_frequency": 33, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
-{"sinhala": "පෙන්නන්න", "english": "show", "source": "llm", "codemix_plausible": false, "sold_frequency": 33, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පෝස්ට්", "english": "post", "source": "loanword", "codemix_plausible": true, "sold_frequency": 33, "evidence": "Phase 3 frequency scan, hand-verified"}
 {"sinhala": "බදු", "english": "tax", "source": "native", "codemix_plausible": true, "sold_frequency": 33, "evidence": "reviewed (native): political/financial commentary register, moderate confidence"}
-{"sinhala": "බොන්න", "english": "drink", "source": "llm", "codemix_plausible": false, "sold_frequency": 33, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ලංකා", "english": "Lanka", "source": "llm", "codemix_plausible": true, "sold_frequency": 33, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ලොකුම", "english": "biggest", "source": "native", "codemix_plausible": true, "sold_frequency": 33, "evidence": "reviewed (native): reconsidered adjective"}
 {"sinhala": "වාහන", "english": "vehicles", "source": "llm", "codemix_plausible": true, "sold_frequency": 33, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -191,7 +172,6 @@
 {"sinhala": "කොළඹ", "english": "Colombo", "source": "llm", "codemix_plausible": true, "sold_frequency": 31, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ජාතියක්", "english": "species එකක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 31, "evidence": "round 2, was 'species' (MD entry #1522, 2026-08-14 snapshot)"}
 {"sinhala": "තාමත්", "english": "still", "source": "llm", "codemix_plausible": false, "sold_frequency": 31, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "දන්නව", "english": "know", "source": "llm", "codemix_plausible": false, "sold_frequency": 31, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "නව", "english": "new", "source": "native", "codemix_plausible": true, "sold_frequency": 31, "evidence": "reviewed (native): reconsidered adjective, formal register"}
 {"sinhala": "මඩ", "english": "mud", "source": "llm", "codemix_plausible": false, "sold_frequency": 31, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මදි", "english": "not enough", "source": "llm", "codemix_plausible": false, "sold_frequency": 31, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -289,28 +269,22 @@
 {"sinhala": "ඩයල්", "english": "dial", "source": "loanword", "codemix_plausible": true, "sold_frequency": 24, "evidence": "reviewed (loanword): phone-call register, phonetic spelling"}
 {"sinhala": "දවසේ", "english": "day එකේ", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 24, "evidence": "round 2, was 'day' (MD entry #1267, 2026-08-14 snapshot)"}
 {"sinhala": "දිග", "english": "long", "source": "llm", "codemix_plausible": false, "sold_frequency": 24, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "පාවිච්චි", "english": "use", "source": "llm", "codemix_plausible": true, "sold_frequency": 24, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "පිස්සුද", "english": "crazy", "source": "llm", "codemix_plausible": true, "sold_frequency": 24, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පුරුදු", "english": "habit", "source": "llm", "codemix_plausible": false, "sold_frequency": 24, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "විහිලු", "english": "joke", "source": "native", "codemix_plausible": true, "sold_frequency": 24, "evidence": "reviewed (native): moderate confidence"}
 {"sinhala": "අදහස්", "english": "comments", "source": "native", "codemix_plausible": true, "sold_frequency": 23, "evidence": "reviewed (native): plural of already-included අදහස->comment"}
 {"sinhala": "අම්මලා", "english": "mothers", "source": "llm", "codemix_plausible": false, "sold_frequency": 23, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ආසයි", "english": "like", "source": "native", "codemix_plausible": true, "sold_frequency": 23, "evidence": "reviewed (native): reconsidered adjective/verb-adjacent"}
-{"sinhala": "උදව්", "english": "help", "source": "native", "codemix_plausible": true, "sold_frequency": 23, "evidence": "reviewed (native): common social-media register, moderate confidence"}
 {"sinhala": "එහා", "english": "next", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 23, "evidence": "round 3, was 'beyond' (MD entry #2763, 2026-08-14 snapshot)"}
 {"sinhala": "ඔලුව", "english": "head", "source": "llm", "codemix_plausible": false, "sold_frequency": 23, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කාලය", "english": "time එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 23, "evidence": "round 1, was 'time' (MD entry #186, 2026-08-13 snapshot)"}
 {"sinhala": "කෙනා", "english": "person", "source": "llm", "codemix_plausible": false, "sold_frequency": 23, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කොටි", "english": "tiger", "source": "llm", "codemix_plausible": false, "sold_frequency": 23, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "දැනගන්න", "english": "know", "source": "llm", "codemix_plausible": false, "sold_frequency": 23, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පාර්ලිමේන්තු", "english": "parliament", "source": "native", "codemix_plausible": true, "sold_frequency": 23, "evidence": "reviewed (native): clear institutional political term, high confidence"}
 {"sinhala": "බලාපොරොත්තු", "english": "hope", "source": "llm", "codemix_plausible": true, "sold_frequency": 23, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මිනිස්සුන්ගේ", "english": "people", "source": "llm", "codemix_plausible": false, "sold_frequency": 23, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මිනිහෙක්", "english": "guy", "source": "llm", "codemix_plausible": false, "sold_frequency": 23, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "යවන්න", "english": "send", "source": "llm", "codemix_plausible": false, "sold_frequency": 23, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "සාපයක්", "english": "curse එකක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 23, "evidence": "round 1, was 'curse' (MD entry #449, 2026-08-13 snapshot)"}
 {"sinhala": "සුපිරි", "english": "super", "source": "native", "codemix_plausible": true, "sold_frequency": 23, "evidence": "reviewed (native): reconsidered slang intensifier, close to an existing loanword sense"}
-{"sinhala": "හොයාගන්න", "english": "find", "source": "llm", "codemix_plausible": false, "sold_frequency": 23, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ආණ්ඩුවට", "english": "government එකට", "source": "native", "codemix_plausible": true, "sold_frequency": 22, "evidence": "dative form"}
 {"sinhala": "ආන්ඩුව", "english": "government එක", "source": "native", "codemix_plausible": true, "sold_frequency": 22, "evidence": "reviewed (native): alt spelling of ආණ්ඩුව"}
 {"sinhala": "ඇහුවා", "english": "asked", "source": "llm", "codemix_plausible": false, "sold_frequency": 22, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -319,7 +293,6 @@
 {"sinhala": "තාත්ත", "english": "father", "source": "llm", "codemix_plausible": false, "sold_frequency": 22, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "තැනක්", "english": "place එකක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 22, "evidence": "round 3, was 'place' (MD entry #2076, 2026-08-14 snapshot)"}
 {"sinhala": "නැවත", "english": "again", "source": "llm", "codemix_plausible": false, "sold_frequency": 22, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "නින්ද", "english": "sleep", "source": "llm", "codemix_plausible": false, "sold_frequency": 22, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පාරවල්", "english": "roads", "source": "llm", "codemix_plausible": true, "sold_frequency": 22, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පැත්ත", "english": "side එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 22, "evidence": "round 1, was 'side' (MD entry #487, 2026-08-13 snapshot)"}
 {"sinhala": "මාස්ක්", "english": "mask", "source": "loanword", "codemix_plausible": true, "sold_frequency": 22, "evidence": "Phase 3 frequency scan, hand-verified"}
@@ -333,7 +306,6 @@
 {"sinhala": "ආපහු", "english": "again", "source": "llm", "codemix_plausible": true, "sold_frequency": 21, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ඉතා", "english": "very", "source": "native", "codemix_plausible": true, "sold_frequency": 21, "evidence": "reviewed (native): reconsidered formal intensifier"}
 {"sinhala": "ඉන්දියන්", "english": "Indian", "source": "llm", "codemix_plausible": true, "sold_frequency": 21, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "කපලා", "english": "cut", "source": "llm", "codemix_plausible": false, "sold_frequency": 21, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කල්පනා", "english": "think", "source": "llm", "codemix_plausible": false, "sold_frequency": 21, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කොහෙවත්", "english": "anywhere", "source": "llm", "codemix_plausible": false, "sold_frequency": 21, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කෝමද", "english": "how", "source": "llm", "codemix_plausible": false, "sold_frequency": 21, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -424,8 +396,6 @@
 {"sinhala": "චන්ද", "english": "vote", "source": "llm", "codemix_plausible": true, "sold_frequency": 18, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ජනතා", "english": "public", "source": "llm", "codemix_plausible": true, "sold_frequency": 18, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ටොයිලට්", "english": "toilet", "source": "loanword", "codemix_plausible": true, "sold_frequency": 18, "evidence": "reviewed (loanword): phonetic spelling"}
-{"sinhala": "තේරෙන්නේ", "english": "understand", "source": "llm", "codemix_plausible": false, "sold_frequency": 18, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "නතර", "english": "stop", "source": "llm", "codemix_plausible": true, "sold_frequency": 18, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "නයි", "english": "snakes", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 18, "evidence": "round 3, was 'snake' (MD entry #2909, 2026-08-14 snapshot)"}
 {"sinhala": "නරක", "english": "bad", "source": "native", "codemix_plausible": true, "sold_frequency": 18, "evidence": "reviewed (native): reconsidered adjective"}
 {"sinhala": "නවත්තන්න", "english": "stop කරන්න", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 18, "evidence": "round 3, was 'stop' (MD entry #2911, 2026-08-14 snapshot)"}
@@ -446,7 +416,6 @@
 {"sinhala": "ඉස්සෙල්ලා", "english": "first", "source": "llm", "codemix_plausible": false, "sold_frequency": 17, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ඊළඟ", "english": "next", "source": "llm", "codemix_plausible": true, "sold_frequency": 17, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "උපදෙස්", "english": "advice", "source": "llm", "codemix_plausible": true, "sold_frequency": 17, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "ඌරා", "english": "pig", "source": "llm", "codemix_plausible": false, "sold_frequency": 17, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "එළියට", "english": "outside", "source": "llm", "codemix_plausible": false, "sold_frequency": 17, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කමෙන්ට්", "english": "comment", "source": "loanword", "codemix_plausible": true, "sold_frequency": 17, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
 {"sinhala": "කාර්", "english": "car", "source": "loanword", "codemix_plausible": true, "sold_frequency": 17, "evidence": "reviewed (loanword): phonetic spelling"}
@@ -465,11 +434,8 @@
 {"sinhala": "පොලිසිය", "english": "police", "source": "loanword", "codemix_plausible": true, "sold_frequency": 17, "evidence": "Phase 3 frequency scan, hand-verified"}
 {"sinhala": "බැන", "english": "scold", "source": "llm", "codemix_plausible": false, "sold_frequency": 17, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බූට්", "english": "boot", "source": "loanword", "codemix_plausible": true, "sold_frequency": 17, "evidence": "reviewed (loanword): phonetic spelling, moderate confidence"}
-{"sinhala": "බොන", "english": "drink", "source": "llm", "codemix_plausible": false, "sold_frequency": 17, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මනුස්සයා", "english": "man", "source": "llm", "codemix_plausible": false, "sold_frequency": 17, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මල්ලී", "english": "brother", "source": "llm", "codemix_plausible": false, "sold_frequency": 17, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "මෝඩයා", "english": "idiot", "source": "llm", "codemix_plausible": true, "sold_frequency": 17, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "යකා", "english": "devil", "source": "llm", "codemix_plausible": false, "sold_frequency": 17, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "යහපාලනය", "english": "good governance", "source": "llm", "codemix_plausible": true, "sold_frequency": 17, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "රටක", "english": "country එකක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 17, "evidence": "round 3, was 'country' (MD entry #2437, 2026-08-14 snapshot)"}
 {"sinhala": "ලේසි", "english": "easy", "source": "llm", "codemix_plausible": true, "sold_frequency": 17, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -492,7 +458,6 @@
 {"sinhala": "ඇඩ්", "english": "ad", "source": "loanword", "codemix_plausible": true, "sold_frequency": 16, "evidence": "reviewed (loanword): advertisement, phonetic spelling"}
 {"sinhala": "එකවුන්ට්", "english": "account", "source": "loanword", "codemix_plausible": true, "sold_frequency": 16, "evidence": "reviewed (loanword): alt spelling of the already-verified අකවුන්ට්"}
 {"sinhala": "ඔප්පු", "english": "prove", "source": "llm", "codemix_plausible": false, "sold_frequency": 16, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "කට්", "english": "cut", "source": "llm", "codemix_plausible": true, "sold_frequency": 16, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කලු", "english": "black", "source": "native", "codemix_plausible": true, "sold_frequency": 16, "evidence": "reviewed (native): reconsidered adjective"}
 {"sinhala": "කළු", "english": "black", "source": "llm", "codemix_plausible": false, "sold_frequency": 16, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කෙල්ලෙක්ට", "english": "girl", "source": "llm", "codemix_plausible": false, "sold_frequency": 16, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -510,8 +475,6 @@
 {"sinhala": "දේශපාලනය", "english": "politics", "source": "native", "codemix_plausible": true, "sold_frequency": 16, "evidence": "reviewed (native): noun form of දේශපාලන, companion entry"}
 {"sinhala": "නයිට්", "english": "night", "source": "loanword", "codemix_plausible": true, "sold_frequency": 16, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
 {"sinhala": "නැට්ට", "english": "tail", "source": "llm", "codemix_plausible": false, "sold_frequency": 16, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "නිදාගන්න", "english": "sleep", "source": "llm", "codemix_plausible": false, "sold_frequency": 16, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "නිදි", "english": "sleep", "source": "llm", "codemix_plausible": false, "sold_frequency": 16, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ප්‍රධාන", "english": "main", "source": "llm", "codemix_plausible": true, "sold_frequency": 16, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ප්‍රසිද්ධ", "english": "public", "source": "llm", "codemix_plausible": true, "sold_frequency": 16, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පාස්", "english": "pass", "source": "llm", "codemix_plausible": true, "sold_frequency": 16, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -523,7 +486,6 @@
 {"sinhala": "මතකද", "english": "remember", "source": "llm", "codemix_plausible": false, "sold_frequency": 16, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මහන්සි", "english": "tired", "source": "llm", "codemix_plausible": true, "sold_frequency": 16, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මාලු", "english": "fish", "source": "llm", "codemix_plausible": false, "sold_frequency": 16, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "මැරියන්", "english": "die", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 16, "evidence": "round 1, was 'Marian' (MD entry #495, 2026-08-13 snapshot)"}
 {"sinhala": "ලිංගික", "english": "sexual", "source": "llm", "codemix_plausible": true, "sold_frequency": 16, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ලීක්", "english": "leak", "source": "loanword", "codemix_plausible": true, "sold_frequency": 16, "evidence": "reviewed (loanword): alt vowel-length spelling of the already-verified ලික්"}
 {"sinhala": "වැලි", "english": "sand", "source": "llm", "codemix_plausible": false, "sold_frequency": 16, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -555,13 +517,11 @@
 {"sinhala": "ජාති", "english": "race", "source": "llm", "codemix_plausible": false, "sold_frequency": 15, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ජිවිත", "english": "lives", "source": "llm", "codemix_plausible": false, "sold_frequency": 15, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "තවම", "english": "still", "source": "llm", "codemix_plausible": false, "sold_frequency": 15, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "තේරෙන්නෙ", "english": "understand", "source": "llm", "codemix_plausible": false, "sold_frequency": 15, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දකින්න", "english": "see කරන්න", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 15, "evidence": "round 3, was 'see' (MD entry #2094, 2026-08-14 snapshot)"}
 {"sinhala": "දරුවන්", "english": "children", "source": "llm", "codemix_plausible": false, "sold_frequency": 15, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දුප්පත්", "english": "poor", "source": "llm", "codemix_plausible": true, "sold_frequency": 15, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දොස්තර", "english": "doctor", "source": "native", "codemix_plausible": true, "sold_frequency": 15, "evidence": "reviewed (native): alt spelling of already-verified ඩොක්ටර්"}
 {"sinhala": "නිදහස", "english": "freedom එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 15, "evidence": "round 1, was 'freedom' (MD entry #545, 2026-08-13 snapshot)"}
-{"sinhala": "නිදා", "english": "sleep", "source": "llm", "codemix_plausible": false, "sold_frequency": 15, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පලවෙනි", "english": "first", "source": "llm", "codemix_plausible": true, "sold_frequency": 15, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පොස්ට්", "english": "post", "source": "loanword", "codemix_plausible": true, "sold_frequency": 15, "evidence": "Phase 3 frequency scan, hand-verified"}
 {"sinhala": "බණ", "english": "sermon", "source": "llm", "codemix_plausible": false, "sold_frequency": 15, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -579,7 +539,6 @@
 {"sinhala": "වචනයක්", "english": "word එකක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 15, "evidence": "round 2, was 'word' (MD entry #1639, 2026-08-14 snapshot)"}
 {"sinhala": "වැඩකට", "english": "work", "source": "llm", "codemix_plausible": false, "sold_frequency": 15, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "වැනි", "english": "like", "source": "llm", "codemix_plausible": false, "sold_frequency": 15, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "විශ්වාස", "english": "believe", "source": "llm", "codemix_plausible": false, "sold_frequency": 15, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "සමාජය", "english": "society එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 15, "evidence": "round 1, was 'society' (MD entry #406, 2026-08-13 snapshot)"}
 {"sinhala": "සමාව", "english": "pardon", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 15, "evidence": "round 1, was 'sorry' (MD entry #408, 2026-08-13 snapshot)"}
 {"sinhala": "සුබ", "english": "good", "source": "llm", "codemix_plausible": false, "sold_frequency": 15, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -696,14 +655,11 @@
 {"sinhala": "සොරි", "english": "sorry", "source": "llm", "codemix_plausible": true, "sold_frequency": 13, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "හද", "english": "heart", "source": "llm", "codemix_plausible": false, "sold_frequency": 13, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "හිත්", "english": "heart", "source": "llm", "codemix_plausible": false, "sold_frequency": 13, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "හොරෙක්", "english": "thief කෙනෙක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 13, "evidence": "round 3, was 'thief' (MD entry #2671, 2026-08-14 snapshot)"}
 {"sinhala": "ළඟ", "english": "near", "source": "llm", "codemix_plausible": false, "sold_frequency": 13, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අංක", "english": "numbers", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 12, "evidence": "round 1, was 'number' (MD entry #352, 2026-08-13 snapshot)"}
-{"sinhala": "අත්අඩංගුවට", "english": "arrest", "source": "llm", "codemix_plausible": true, "sold_frequency": 12, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අධ්‍යාපන", "english": "education", "source": "native", "codemix_plausible": true, "sold_frequency": 12, "evidence": "reviewed (native): institutional register, moderate confidence"}
 {"sinhala": "අම්මේ", "english": "mom", "source": "llm", "codemix_plausible": false, "sold_frequency": 12, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අයිය", "english": "brother", "source": "llm", "codemix_plausible": false, "sold_frequency": 12, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "අල්ලන", "english": "catch", "source": "llm", "codemix_plausible": false, "sold_frequency": 12, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ආය", "english": "again", "source": "llm", "codemix_plausible": false, "sold_frequency": 12, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ආරක්ෂාව", "english": "security එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 12, "evidence": "round 1, was 'security' (MD entry #593, 2026-08-13 snapshot)"}
 {"sinhala": "ආර්ථිකය", "english": "economy එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 12, "evidence": "round 1, was 'economy' (MD entry #460, 2026-08-13 snapshot)"}
@@ -762,7 +718,6 @@
 {"sinhala": "පෞද්ගලික", "english": "private", "source": "llm", "codemix_plausible": true, "sold_frequency": 12, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බඩේ", "english": "stomach එකේ", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 12, "evidence": "round 2, was 'stomach' (MD entry #1318, 2026-08-14 snapshot)"}
 {"sinhala": "බරක්", "english": "weight", "source": "llm", "codemix_plausible": false, "sold_frequency": 12, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "බල්ලට", "english": "dog", "source": "llm", "codemix_plausible": false, "sold_frequency": 12, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බාගෙට", "english": "half එකට", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 12, "evidence": "round 3, was 'half' (MD entry #2304, 2026-08-14 snapshot)"}
 {"sinhala": "බැවින්", "english": "since", "source": "llm", "codemix_plausible": false, "sold_frequency": 12, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බොහොම", "english": "very", "source": "llm", "codemix_plausible": false, "sold_frequency": 12, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -891,7 +846,6 @@
 {"sinhala": "ඉස්කෝලේ", "english": "school", "source": "llm", "codemix_plausible": true, "sold_frequency": 10, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "උදේම", "english": "morning එකේ", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 10, "evidence": "round 3, was 'morning' (MD entry #2750, 2026-08-14 snapshot)"}
 {"sinhala": "උසාවි", "english": "court", "source": "native", "codemix_plausible": true, "sold_frequency": 10, "evidence": "reviewed (native): legal register; bare form more frequent than the earlier-rejected definite form උසාවිය"}
-{"sinhala": "ඌරු", "english": "pig", "source": "llm", "codemix_plausible": false, "sold_frequency": 10, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "එස්", "english": "S", "source": "llm", "codemix_plausible": false, "sold_frequency": 10, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ඔහුගේ", "english": "his", "source": "llm", "codemix_plausible": false, "sold_frequency": 10, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කකුල", "english": "leg", "source": "llm", "codemix_plausible": false, "sold_frequency": 10, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -914,18 +868,15 @@
 {"sinhala": "ජනතාවගේ", "english": "public", "source": "llm", "codemix_plausible": false, "sold_frequency": 10, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ජාතියේ", "english": "nation එකේ", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 10, "evidence": "round 3, was 'nation' (MD entry #2028, 2026-08-14 snapshot)"}
 {"sinhala": "ජාතිවාදය", "english": "racism", "source": "llm", "codemix_plausible": true, "sold_frequency": 10, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "ජිවත්", "english": "live", "source": "llm", "codemix_plausible": false, "sold_frequency": 10, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "තද", "english": "tight", "source": "llm", "codemix_plausible": false, "sold_frequency": 10, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "තනිකරම", "english": "totally", "source": "llm", "codemix_plausible": true, "sold_frequency": 10, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "තේරුමක්", "english": "meaning එකක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 10, "evidence": "round 3, was 'meaning' (MD entry #2089, 2026-08-14 snapshot)"}
 {"sinhala": "තොරතුරු", "english": "information", "source": "native", "codemix_plausible": true, "sold_frequency": 10, "evidence": "reviewed (native): moderate confidence"}
 {"sinhala": "දවල්", "english": "daytime එකේ", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 10, "evidence": "round 3, was 'day' (MD entry #2102, 2026-08-14 snapshot)"}
-{"sinhala": "දුවනවා", "english": "run", "source": "llm", "codemix_plausible": false, "sold_frequency": 10, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දෙවල්", "english": "things", "source": "llm", "codemix_plausible": false, "sold_frequency": 10, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "නංගී", "english": "sister", "source": "llm", "codemix_plausible": false, "sold_frequency": 10, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "නටන්න", "english": "dance කරන්න", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 10, "evidence": "round 1, was 'dance' (MD entry #436, 2026-08-13 snapshot)"}
 {"sinhala": "නරකද", "english": "bad ද", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 10, "evidence": "round 3, was 'bad' (MD entry #2910, 2026-08-14 snapshot)"}
-{"sinhala": "නවත්වන්න", "english": "stop", "source": "llm", "codemix_plausible": true, "sold_frequency": 10, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "නෝ", "english": "no", "source": "llm", "codemix_plausible": true, "sold_frequency": 10, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පවුලේ", "english": "family", "source": "llm", "codemix_plausible": true, "sold_frequency": 10, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පාටයි", "english": "colour", "source": "llm", "codemix_plausible": false, "sold_frequency": 10, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -984,7 +935,6 @@
 {"sinhala": "ආප්ප", "english": "hoppers", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 9, "evidence": "round 1, was 'app' (MD entry #827, 2026-08-13 snapshot)"}
 {"sinhala": "ආයතනයක්", "english": "institution එකක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 9, "evidence": "round 1, was 'institute' (MD entry #592, 2026-08-13 snapshot)"}
 {"sinhala": "ඇතුළු", "english": "including", "source": "llm", "codemix_plausible": false, "sold_frequency": 9, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "ඉදපන්", "english": "wait", "source": "llm", "codemix_plausible": false, "sold_frequency": 9, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ඉන්දියාව", "english": "India", "source": "llm", "codemix_plausible": true, "sold_frequency": 9, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ඉන්දියාවට", "english": "India වලට", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 9, "evidence": "round 1, was 'India එකට' (MD entry #419, 2026-08-13 snapshot)"}
 {"sinhala": "ඉපදුන", "english": "born", "source": "llm", "codemix_plausible": false, "sold_frequency": 9, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -1053,7 +1003,6 @@
 {"sinhala": "බෑග්", "english": "bag", "source": "loanword", "codemix_plausible": true, "sold_frequency": 9, "evidence": "reviewed (loanword): phonetic spelling"}
 {"sinhala": "මැති", "english": "minister", "source": "llm", "codemix_plausible": false, "sold_frequency": 9, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මීටර්", "english": "meter", "source": "loanword", "codemix_plausible": true, "sold_frequency": 9, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
-{"sinhala": "මොඩ", "english": "stupid", "source": "llm", "codemix_plausible": true, "sold_frequency": 9, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මොලයක්", "english": "brain එකක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 9, "evidence": "round 1, was 'brain' (MD entry #661, 2026-08-13 snapshot)"}
 {"sinhala": "යක්කු", "english": "devils", "source": "llm", "codemix_plausible": false, "sold_frequency": 9, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "යොදා", "english": "using", "source": "llm", "codemix_plausible": false, "sold_frequency": 9, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -1062,7 +1011,6 @@
 {"sinhala": "රැකියා", "english": "jobs", "source": "llm", "codemix_plausible": true, "sold_frequency": 9, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "රැප්", "english": "rap", "source": "loanword", "codemix_plausible": true, "sold_frequency": 9, "evidence": "reviewed (loanword): music genre, phonetic spelling"}
 {"sinhala": "රෝහල්", "english": "hospital", "source": "native", "codemix_plausible": true, "sold_frequency": 9, "evidence": "reviewed (native): native synonym alongside the already-verified loanword හොස්පිටල්"}
-{"sinhala": "ලං", "english": "close", "source": "llm", "codemix_plausible": false, "sold_frequency": 9, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ලජ්ජා", "english": "shame", "source": "llm", "codemix_plausible": true, "sold_frequency": 9, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ලිස්ට්", "english": "list", "source": "loanword", "codemix_plausible": true, "sold_frequency": 9, "evidence": "reviewed (loanword): phonetic spelling"}
 {"sinhala": "ලෙඩේ", "english": "disease එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 9, "evidence": "round 3, was 'disease' (MD entry #2475, 2026-08-14 snapshot)"}
@@ -1115,7 +1063,6 @@
 {"sinhala": "ඈත", "english": "far", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ඉක්මන්", "english": "quick", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ඉක්මනින්", "english": "quickly", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "ඉගෙනගන්න", "english": "learn", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ඉල්ලපු", "english": "asked", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ඉස්සරහින්", "english": "front එකෙන්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 8, "evidence": "round 2, was 'front' (MD entry #1168, 2026-08-14 snapshot)"}
 {"sinhala": "ඉහල", "english": "up", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -1164,7 +1111,6 @@
 {"sinhala": "ටෙස්ට්", "english": "test", "source": "loanword", "codemix_plausible": true, "sold_frequency": 8, "evidence": "Phase 3 frequency scan, hand-verified"}
 {"sinhala": "තාත්තයි", "english": "father", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "තානාපති", "english": "ambassador", "source": "native", "codemix_plausible": true, "sold_frequency": 8, "evidence": "reviewed (native): diplomatic/institutional register, moderate confidence"}
-{"sinhala": "තියාගනින්", "english": "keep", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "තෝව", "english": "you", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දන්නා", "english": "known", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දරුවො", "english": "kids", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -1204,7 +1150,6 @@
 {"sinhala": "පිරිමින්ට", "english": "men ලාට", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 8, "evidence": "round 3, was 'men' (MD entry #2950, 2026-08-14 snapshot)"}
 {"sinhala": "පේපර්", "english": "paper", "source": "loanword", "codemix_plausible": true, "sold_frequency": 8, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
 {"sinhala": "පොහොර", "english": "fertilizer", "source": "llm", "codemix_plausible": true, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "බල්ල", "english": "dog", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බැනල", "english": "scold කරලා", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 8, "evidence": "round 3, was 'scold' (MD entry #2976, 2026-08-14 snapshot)"}
 {"sinhala": "බිමට", "english": "ground", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බුදුන්", "english": "Buddha", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -1238,7 +1183,6 @@
 {"sinhala": "ලෝකය", "english": "world එක", "source": "native", "codemix_plausible": true, "sold_frequency": 8, "evidence": "bare/definite form"}
 {"sinhala": "වචනය", "english": "word එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 8, "evidence": "round 1, was 'word' (MD entry #500, 2026-08-13 snapshot)"}
 {"sinhala": "වරාය", "english": "port එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 8, "evidence": "round 3, was 'port' (MD entry #2492, 2026-08-14 snapshot)"}
-{"sinhala": "වරෙං", "english": "come", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "වස්තු", "english": "assets", "source": "native", "codemix_plausible": true, "sold_frequency": 8, "evidence": "reviewed (native): financial register, moderate confidence"}
 {"sinhala": "ව්‍යවස්ථාව", "english": "constitution", "source": "native", "codemix_plausible": true, "sold_frequency": 8, "evidence": "reviewed (native): institutional/legal term, high confidence"}
 {"sinhala": "වැඩිම", "english": "most", "source": "native", "codemix_plausible": true, "sold_frequency": 8, "evidence": "reviewed (native): reconsidered adjective"}
@@ -1260,7 +1204,6 @@
 {"sinhala": "සේවය", "english": "service එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 8, "evidence": "round 2, was 'service' (MD entry #1116, 2026-08-14 snapshot)"}
 {"sinhala": "හට", "english": "to", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "හම", "english": "skin", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "හිටු", "english": "stop", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "හිතා", "english": "think", "source": "llm", "codemix_plausible": false, "sold_frequency": 8, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "හොටෙල්", "english": "hotel", "source": "loanword", "codemix_plausible": true, "sold_frequency": 8, "evidence": "Phase 3 frequency scan, hand-verified"}
 {"sinhala": "හොයන්", "english": "find කරන්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 8, "evidence": "round 2, was 'find' (MD entry #1688, 2026-08-14 snapshot)"}
@@ -1286,7 +1229,6 @@
 {"sinhala": "ඇබ්බැහි", "english": "addicted", "source": "llm", "codemix_plausible": true, "sold_frequency": 7, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ඇමැති", "english": "minister", "source": "llm", "codemix_plausible": true, "sold_frequency": 7, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ඉස්සරහා", "english": "front", "source": "llm", "codemix_plausible": false, "sold_frequency": 7, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "උදවු", "english": "help", "source": "native", "codemix_plausible": true, "sold_frequency": 7, "evidence": "reviewed (native): alt spelling of උදව්"}
 {"sinhala": "උදෑසනක්", "english": "morning එකක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 7, "evidence": "round 1, was 'morning' (MD entry #465, 2026-08-13 snapshot)"}
 {"sinhala": "උපාධි", "english": "degrees", "source": "native", "codemix_plausible": true, "sold_frequency": 7, "evidence": "reviewed (native): educational register, moderate confidence"}
 {"sinhala": "උල්", "english": "sharp", "source": "llm", "codemix_plausible": false, "sold_frequency": 7, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -1389,7 +1331,6 @@
 {"sinhala": "බහුතර", "english": "majority", "source": "native", "codemix_plausible": true, "sold_frequency": 7, "evidence": "reviewed (native): political/demographic register, moderate confidence"}
 {"sinhala": "බැච්", "english": "batch", "source": "loanword", "codemix_plausible": true, "sold_frequency": 7, "evidence": "reviewed (loanword): phonetic spelling, moderate confidence"}
 {"sinhala": "බීච්", "english": "beach", "source": "loanword", "codemix_plausible": true, "sold_frequency": 7, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
-{"sinhala": "බීම", "english": "drink", "source": "native", "codemix_plausible": true, "sold_frequency": 7, "evidence": "reviewed (native): reconsidered concrete noun"}
 {"sinhala": "බුද්ධ", "english": "buddha", "source": "llm", "codemix_plausible": true, "sold_frequency": 7, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බොරැ", "english": "lie", "source": "llm", "codemix_plausible": false, "sold_frequency": 7, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බෝතලේ", "english": "bottle එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 7, "evidence": "round 3, was 'bottle' (MD entry #2346, 2026-08-14 snapshot)"}
@@ -1403,7 +1344,6 @@
 {"sinhala": "මියුට්", "english": "mute", "source": "llm", "codemix_plausible": true, "sold_frequency": 7, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මුදල", "english": "money වලට", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 7, "evidence": "round 2, was 'money' (MD entry #1611, 2026-08-14 snapshot)"}
 {"sinhala": "මොළේ", "english": "brain එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 7, "evidence": "round 1, was 'brain' (MD entry #914, 2026-08-13 snapshot)"}
-{"sinhala": "යකු", "english": "demon", "source": "llm", "codemix_plausible": false, "sold_frequency": 7, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "යටට", "english": "under", "source": "llm", "codemix_plausible": false, "sold_frequency": 7, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "රත්", "english": "hot", "source": "llm", "codemix_plausible": false, "sold_frequency": 7, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "රහට", "english": "taste එකට", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 7, "evidence": "round 2, was 'taste' (MD entry #1628, 2026-08-14 snapshot)"}
@@ -1513,7 +1453,6 @@
 {"sinhala": "කාන්තාවන්", "english": "women", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කැමතිම", "english": "favourite ම", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 6, "evidence": "round 2, was 'favourite' (MD entry #1923, 2026-08-14 snapshot)"}
 {"sinhala": "කෑවේ", "english": "ate", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "කියපං", "english": "tell", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කියවල", "english": "read", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කිව", "english": "say", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කීව", "english": "said", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -1548,9 +1487,7 @@
 {"sinhala": "දැනටමත්", "english": "already", "source": "llm", "codemix_plausible": true, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දිනලා", "english": "won", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දියුනු", "english": "develop", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "දීපං", "english": "give", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දුවන", "english": "running", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "දුවන්න", "english": "run", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දෙවනි", "english": "second", "source": "llm", "codemix_plausible": true, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දෙවි", "english": "god", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දේශපාලකයන්", "english": "politicians", "source": "llm", "codemix_plausible": true, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -1582,7 +1519,6 @@
 {"sinhala": "පැටියො", "english": "baby", "source": "llm", "codemix_plausible": true, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පැතුම", "english": "wish", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පින", "english": "merit", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "පිස්සො", "english": "crazy", "source": "llm", "codemix_plausible": true, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පුද්ගලයෙක්", "english": "person", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පුදුමයි", "english": "surprising", "source": "native", "codemix_plausible": true, "sold_frequency": 6, "evidence": "reviewed (native): reconsidered adjective"}
 {"sinhala": "පුරවන්න", "english": "fill", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -1605,7 +1541,6 @@
 {"sinhala": "බුද්ධි", "english": "intelligence", "source": "llm", "codemix_plausible": true, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බේරා", "english": "save කර", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 6, "evidence": "round 3, was 'save' (MD entry #2986, 2026-08-14 snapshot)"}
 {"sinhala": "බොරුව", "english": "lie එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 6, "evidence": "round 3, was 'lie' (MD entry #2339, 2026-08-14 snapshot)"}
-{"sinhala": "භාවිතා", "english": "use", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මණ්ඩලය", "english": "board එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 6, "evidence": "round 2, was 'board' (MD entry #1069, 2026-08-14 snapshot)"}
 {"sinhala": "මනින්න", "english": "measure", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මනුස්සකම", "english": "humanity", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -1614,7 +1549,6 @@
 {"sinhala": "මහජනතාව", "english": "public", "source": "llm", "codemix_plausible": true, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මාමේ", "english": "uncle", "source": "llm", "codemix_plausible": true, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මැඩම්", "english": "madam", "source": "loanword", "codemix_plausible": true, "sold_frequency": 6, "evidence": "reviewed (loanword): alt of නෝනා"}
-{"sinhala": "මැරිය", "english": "die", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මැරුන", "english": "died", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මැරුවා", "english": "killed", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මිත්‍රයා", "english": "friend", "source": "native", "codemix_plausible": true, "sold_frequency": 6, "evidence": "formal synonym of යාළුවා"}
@@ -1623,7 +1557,6 @@
 {"sinhala": "මොනවහරි", "english": "something", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මොහොතේ", "english": "moment එකේ", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 6, "evidence": "round 3, was 'moment' (MD entry #3023, 2026-08-14 snapshot)"}
 {"sinhala": "මොළයක්", "english": "brain එකක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 6, "evidence": "round 1, was 'brain' (MD entry #560, 2026-08-13 snapshot)"}
-{"sinhala": "මෝඩයෙක්", "english": "idiot", "source": "llm", "codemix_plausible": true, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මෝඩයො", "english": "fools", "source": "llm", "codemix_plausible": true, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "යාළුවො", "english": "friends", "source": "llm", "codemix_plausible": true, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "යුද්දෙ", "english": "war", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -1653,7 +1586,6 @@
 {"sinhala": "විශේෂයෙන්", "english": "especially", "source": "llm", "codemix_plausible": true, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "විසදුමක්", "english": "solution එකක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 6, "evidence": "round 1, was 'solution' (MD entry #677, 2026-08-13 snapshot)"}
 {"sinhala": "වෛරසය", "english": "virus එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 6, "evidence": "round 2, was 'virus' (MD entry #1652, 2026-08-14 snapshot)"}
-{"sinhala": "ශික්", "english": "shit", "source": "llm", "codemix_plausible": true, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ෂෝ", "english": "show", "source": "loanword", "codemix_plausible": true, "sold_frequency": 6, "evidence": "reviewed (loanword): phonetic spelling"}
 {"sinhala": "සංශෝධනය", "english": "amendment එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 6, "evidence": "round 2, was 'amendment' (MD entry #1656, 2026-08-14 snapshot)"}
 {"sinhala": "සටන", "english": "fight", "source": "llm", "codemix_plausible": false, "sold_frequency": 6, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -1731,7 +1663,6 @@
 {"sinhala": "උත්සව", "english": "festivals", "source": "llm", "codemix_plausible": false, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "උද්ඝෝෂණ", "english": "protest", "source": "llm", "codemix_plausible": true, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "උසට", "english": "height", "source": "llm", "codemix_plausible": false, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "ඌරෙක්", "english": "pig කෙනෙක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 5, "evidence": "round 2, was 'pig' (MD entry #1842, 2026-08-14 snapshot)"}
 {"sinhala": "එක්තරා", "english": "certain", "source": "llm", "codemix_plausible": false, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "එල්ලිලා", "english": "hanging", "source": "llm", "codemix_plausible": false, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "එහෙනන්", "english": "then", "source": "llm", "codemix_plausible": false, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -1788,13 +1719,11 @@
 {"sinhala": "තරුණියන්", "english": "girls ලා", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 5, "evidence": "round 3, was 'girls' (MD entry #2069, 2026-08-14 snapshot)"}
 {"sinhala": "තහවුරු", "english": "confirm", "source": "llm", "codemix_plausible": true, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "තාප්ප", "english": "walls", "source": "llm", "codemix_plausible": false, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "තෙරුම්", "english": "understand", "source": "llm", "codemix_plausible": false, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "තෝරා", "english": "select කර", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 5, "evidence": "round 3, was 'select' (MD entry #2875, 2026-08-14 snapshot)"}
 {"sinhala": "දැනෙනව", "english": "feel වෙනවා", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 5, "evidence": "round 3, was 'feel' (MD entry #2112, 2026-08-14 snapshot)"}
 {"sinhala": "දෑන්", "english": "now", "source": "llm", "codemix_plausible": false, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දියේ", "english": "water එකේ", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 5, "evidence": "round 3, was 'water' (MD entry #2891, 2026-08-14 snapshot)"}
 {"sinhala": "දිස්", "english": "this", "source": "llm", "codemix_plausible": true, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "දේශද්‍රෝහී", "english": "traitor", "source": "llm", "codemix_plausible": true, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දොරෙන්", "english": "door", "source": "llm", "codemix_plausible": false, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දෝණි", "english": "daughter", "source": "llm", "codemix_plausible": false, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "නංගිලා", "english": "sisters ලා", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 5, "evidence": "round 3, was 'sisters' (MD entry #2150, 2026-08-14 snapshot)"}
@@ -1896,7 +1825,6 @@
 {"sinhala": "විසාල", "english": "big", "source": "llm", "codemix_plausible": false, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "වීඩියෝව", "english": "video එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 5, "evidence": "round 1, was 'video' (MD entry #782, 2026-08-13 snapshot)"}
 {"sinhala": "වීරයෙක්", "english": "hero", "source": "llm", "codemix_plausible": true, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "ශිට්", "english": "shit", "source": "llm", "codemix_plausible": true, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ශෙයාර්", "english": "share", "source": "llm", "codemix_plausible": true, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "සංගමය", "english": "association එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 5, "evidence": "round 1, was 'association' (MD entry #785, 2026-08-13 snapshot)"}
 {"sinhala": "සභාවේ", "english": "council එකේ", "source": "llm", "codemix_plausible": true, "sold_frequency": 5, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -1938,7 +1866,6 @@
 {"sinhala": "අන්", "english": "other", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අන්දන", "english": "fooling", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අනික්වා", "english": "others", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "අනුගමනය", "english": "follow", "source": "llm", "codemix_plausible": true, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අඳින", "english": "wear කරන", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 4, "evidence": "round 2, was 'draw' (MD entry #1722, 2026-08-14 snapshot)"}
 {"sinhala": "අපහාසයක්", "english": "insult එකක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 4, "evidence": "round 2, was 'insult' (MD entry #1727, 2026-08-14 snapshot)"}
 {"sinhala": "අප්ඩේට්", "english": "update", "source": "loanword", "codemix_plausible": true, "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
@@ -1953,7 +1880,6 @@
 {"sinhala": "අවුරුද්දෙ", "english": "year එකේ", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 4, "evidence": "round 3, was 'year' (MD entry #2715, 2026-08-14 snapshot)"}
 {"sinhala": "අසික්කිතයි", "english": "rude", "source": "llm", "codemix_plausible": true, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අහන්ඩ", "english": "ask", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "අහපං", "english": "ask", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අහුවෙලා", "english": "caught", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ආඩම්බරයක්", "english": "proud", "source": "llm", "codemix_plausible": true, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ආදායම්", "english": "income", "source": "llm", "codemix_plausible": true, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -2007,7 +1933,6 @@
 {"sinhala": "කාර්ය", "english": "task එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 4, "evidence": "round 3, was 'task' (MD entry #2790, 2026-08-14 snapshot)"}
 {"sinhala": "කැන්සල්", "english": "cancel", "source": "llm", "codemix_plausible": true, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කෑගහන", "english": "shouting", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "කිට්ටු", "english": "close", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කිලෝමීටර්", "english": "kilometer", "source": "llm", "codemix_plausible": true, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කිවුවේ", "english": "said", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කිහිප", "english": "few", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -2051,7 +1976,6 @@
 {"sinhala": "චන්දිමාල්", "english": "Chandimal", "source": "llm", "codemix_plausible": true, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "චීනෙට", "english": "China වලට", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 4, "evidence": "round 2, was 'China' (MD entry #1233, 2026-08-14 snapshot)"}
 {"sinhala": "චීනේ", "english": "china වල", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 4, "evidence": "round 2, was 'China' (MD entry #1516, 2026-08-14 snapshot)"}
-{"sinhala": "චොර", "english": "thief", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ජන්දේ", "english": "vote එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 4, "evidence": "round 3, was 'vote' (MD entry #2024, 2026-08-14 snapshot)"}
 {"sinhala": "ජනාදිපති", "english": "president", "source": "llm", "codemix_plausible": true, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ජපන්", "english": "Japan", "source": "llm", "codemix_plausible": true, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -2144,7 +2068,6 @@
 {"sinhala": "පුත්තලම්", "english": "Puttalam", "source": "llm", "codemix_plausible": true, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පුද්ගලයින්", "english": "people", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පෙට්ටිය", "english": "box", "source": "llm", "codemix_plausible": true, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "පෙන්නන්නේ", "english": "show", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පොකුරු", "english": "bunch", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පොල්ලකින්", "english": "stick එකකින්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 4, "evidence": "round 3, was 'stick' (MD entry #2963, 2026-08-14 snapshot)"}
 {"sinhala": "පොලිසියෙ", "english": "police", "source": "llm", "codemix_plausible": true, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -2152,10 +2075,8 @@
 {"sinhala": "පෝර", "english": "fertilizer", "source": "llm", "codemix_plausible": true, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බඳින", "english": "tie", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බයිසිකල්", "english": "bicycle", "source": "loanword", "codemix_plausible": true, "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
-{"sinhala": "බලන්ඩ", "english": "see", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බලන්නද", "english": "watch කරන්නද", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 4, "evidence": "round 3, was 'watch' (MD entry #2971, 2026-08-14 snapshot)"}
 {"sinhala": "බලපන්කො", "english": "look", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "බල්ලාට", "english": "dog", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බායි", "english": "bye", "source": "llm", "codemix_plausible": true, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බැට්", "english": "bat", "source": "llm", "codemix_plausible": true, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බැඳල", "english": "married", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 4, "evidence": "round 3, was 'tied' (MD entry #2316, 2026-08-14 snapshot)"}
@@ -2177,7 +2098,6 @@
 {"sinhala": "මහේන්ද්‍රන්", "english": "Mahendran", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මාර්තු", "english": "march", "source": "loanword", "codemix_plausible": true, "sold_frequency": 4, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
 {"sinhala": "මාලිගාවට", "english": "palace එකට", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 4, "evidence": "round 3, was 'palace' (MD entry #2387, 2026-08-14 snapshot)"}
-{"sinhala": "මැරියං", "english": "die", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මැරිලද", "english": "dead ද", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 4, "evidence": "round 2, was 'dead' (MD entry #1075, 2026-08-14 snapshot)"}
 {"sinhala": "මිදෙන්න", "english": "escape", "source": "llm", "codemix_plausible": false, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මුඩුක්කු", "english": "slum", "source": "llm", "codemix_plausible": true, "sold_frequency": 4, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -2296,7 +2216,6 @@
 {"sinhala": "අපාය", "english": "hell", "source": "llm", "codemix_plausible": true, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අපේක්ෂකයන්", "english": "candidates", "source": "llm", "codemix_plausible": true, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අභියෝග", "english": "challenges", "source": "llm", "codemix_plausible": true, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "අමතන්න", "english": "call", "source": "llm", "codemix_plausible": true, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අමාරැ", "english": "hard", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අඹු", "english": "wife", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අය්යා", "english": "brother", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -2495,7 +2414,6 @@
 {"sinhala": "නාවික", "english": "navy", "source": "llm", "codemix_plausible": true, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "නෑදෑ", "english": "relatives", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "නිදාගන්නත්", "english": "sleep", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "නිදියන්න", "english": "sleep", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "නිරුවත්", "english": "nude", "source": "llm", "codemix_plausible": true, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "නිලධාරින්", "english": "officers", "source": "llm", "codemix_plausible": true, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "නිවසේ", "english": "home", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -2520,7 +2438,6 @@
 {"sinhala": "පාස්වර්ඩ්", "english": "password", "source": "loanword", "codemix_plausible": true, "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
 {"sinhala": "පැක්", "english": "pack", "source": "llm", "codemix_plausible": true, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පැයක්", "english": "hour එකක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 3, "evidence": "round 3, was 'hour' (MD entry #2942, 2026-08-14 snapshot)"}
-{"sinhala": "පැරදුනාම", "english": "lose", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පැවැත්මට", "english": "survival", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පෑන්", "english": "pen", "source": "llm", "codemix_plausible": true, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පිටේ", "english": "back එකේ", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 3, "evidence": "round 3, was 'back' (MD entry #2946, 2026-08-14 snapshot)"}
@@ -2559,10 +2476,8 @@
 {"sinhala": "බර්ත්", "english": "birth", "source": "loanword", "codemix_plausible": true, "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
 {"sinhala": "බලපත්‍ර", "english": "licenses", "source": "llm", "codemix_plausible": true, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බලපෑමක්", "english": "impact එකක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 3, "evidence": "round 2, was 'impact' (MD entry #1324, 2026-08-14 snapshot)"}
-{"sinhala": "බල්ලව", "english": "dog ව", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 3, "evidence": "round 3, was 'dog' (MD entry #2298, 2026-08-14 snapshot)"}
 {"sinhala": "බ්ලැක්", "english": "black", "source": "llm", "codemix_plausible": true, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බාන්න", "english": "download කරන්න", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 3, "evidence": "round 3, was 'download' (MD entry #2305, 2026-08-14 snapshot)"}
-{"sinhala": "බාවිතා", "english": "use", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බැනර්", "english": "banner", "source": "llm", "codemix_plausible": true, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බැන්දා", "english": "married", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බැඳලත්", "english": "married", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -2595,8 +2510,6 @@
 {"sinhala": "මාතෘ", "english": "mother", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මාරයි", "english": "awesome", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මාර්කටින්", "english": "marketing", "source": "llm", "codemix_plausible": true, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "මැට්ටා", "english": "idiot", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "මැට්ටෝ", "english": "idiot", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මැප්", "english": "map", "source": "llm", "codemix_plausible": true, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මැයි", "english": "May", "source": "llm", "codemix_plausible": true, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මැරුවේ", "english": "killed", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -2619,7 +2532,6 @@
 {"sinhala": "මොකක්හරි", "english": "something", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "මොලෙ", "english": "brain එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 3, "evidence": "round 3, was 'brain' (MD entry #2421, 2026-08-14 snapshot)"}
 {"sinhala": "මෝටර්", "english": "motor", "source": "loanword", "codemix_plausible": true, "sold_frequency": 3, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
-{"sinhala": "යකෙක්", "english": "devil කෙනෙක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 3, "evidence": "round 3, was 'devil' (MD entry #3026, 2026-08-14 snapshot)"}
 {"sinhala": "යවනවා", "english": "send කරනවා", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 3, "evidence": "round 3, was 'send' (MD entry #3027, 2026-08-14 snapshot)"}
 {"sinhala": "යවලා", "english": "sent", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "යාපනය", "english": "Jaffna", "source": "llm", "codemix_plausible": true, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -2731,7 +2643,6 @@
 {"sinhala": "හීන්", "english": "thin", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "හුළං", "english": "wind", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "හොරාකන", "english": "steal", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "හොරෙක්ට", "english": "thief කෙනෙක්ට", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 3, "evidence": "round 3, was 'thief' (MD entry #3128, 2026-08-14 snapshot)"}
 {"sinhala": "හොල්මන්", "english": "ghost", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ළං", "english": "close", "source": "llm", "codemix_plausible": false, "sold_frequency": 3, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ළමයෝ", "english": "child", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 3, "evidence": "round 2, was 'kids' (MD entry #1421, 2026-08-14 snapshot)"}
@@ -2767,7 +2678,6 @@
 {"sinhala": "අප්‍රාණිකත්වය", "english": "impotence", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අපී", "english": "we", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අබවුට්", "english": "about", "source": "llm", "codemix_plausible": true, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "අමනයා", "english": "idiot", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අම්මටයි", "english": "mother", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අම්මි", "english": "mummy", "source": "llm", "codemix_plausible": true, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "අමුඩේ", "english": "loincloth", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -3062,7 +2972,6 @@
 {"sinhala": "බිත්තියේ", "english": "wall එකේ", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 2, "evidence": "round 3, was 'wall' (MD entry #2980, 2026-08-14 snapshot)"}
 {"sinhala": "බුද්දිමත්", "english": "intelligent", "source": "llm", "codemix_plausible": true, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බෙඩ්", "english": "bed", "source": "llm", "codemix_plausible": true, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "බොරුකාර", "english": "liar", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බෝතලේට", "english": "bottle එකට", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 2, "evidence": "round 3, was 'bottle' (MD entry #2347, 2026-08-14 snapshot)"}
 {"sinhala": "බෝර්ඩ්", "english": "board", "source": "llm", "codemix_plausible": true, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "භාවිතයේ", "english": "use එකේ", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 2, "evidence": "round 3, was 'use' (MD entry #2350, 2026-08-14 snapshot)"}
@@ -3152,7 +3061,6 @@
 {"sinhala": "විෂ්", "english": "wish", "source": "llm", "codemix_plausible": true, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "විසිට්", "english": "visit", "source": "loanword", "codemix_plausible": true, "sold_frequency": 2, "evidence": "reviewed (loanword): phonetic spelling"}
 {"sinhala": "වීරසේකර", "english": "Weerasekara", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "වීවෘත", "english": "open", "source": "llm", "codemix_plausible": true, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "වෙනදාට", "english": "usually", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "වෙලාවල්", "english": "times", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "වේගෙන්", "english": "speed", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -3173,7 +3081,6 @@
 {"sinhala": "සමාජේ", "english": "society එක", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 2, "evidence": "round 2, was 'society' (MD entry #1398, 2026-08-14 snapshot)"}
 {"sinhala": "සමූහය", "english": "group එක", "source": "native", "codemix_plausible": true, "sold_frequency": 2, "evidence": "eka_construction(group)=4; native form rare in SOLD (freq 2)"}
 {"sinhala": "සයිකල්", "english": "cycle", "source": "loanword", "codemix_plausible": true, "sold_frequency": 2, "evidence": "src.romanizers.aksharamukha._LOANWORD_OVERRIDES (Phase 2, hand-verified)"}
-{"sinhala": "සවාරි", "english": "ride", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "සවුදි", "english": "Saudi", "source": "llm", "codemix_plausible": true, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "සහයෝගයෙන්", "english": "cooperation එකෙන්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 2, "evidence": "round 3, was 'cooperation' (MD entry #2577, 2026-08-14 snapshot)"}
 {"sinhala": "ස්ක්‍රිප්ට්", "english": "script", "source": "llm", "codemix_plausible": true, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -3225,7 +3132,6 @@
 {"sinhala": "හොදයිනෙ", "english": "good", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "හොදායි", "english": "good", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "හොරකමක්", "english": "theft", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "හොරගෙඩියා", "english": "thief", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "හොරට", "english": "fake", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "හොරුන්ව", "english": "thieves", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "හෝදනවා", "english": "wash", "source": "llm", "codemix_plausible": false, "sold_frequency": 2, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -3390,7 +3296,6 @@
 {"sinhala": "ඔතා", "english": "wrapped", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ඔයගොල්ලෝ", "english": "you all", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ඔල්මාද", "english": "mad", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "ඔල්මාදකාරයා", "english": "lunatic", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ඔලූව", "english": "head එකේ", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 1, "evidence": "round 2, was 'head' (MD entry #1866, 2026-08-14 snapshot)"}
 {"sinhala": "ඔස්ටේලියාවට", "english": "Australia වලට", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 1, "evidence": "round 2, was 'Australia එකට' (MD entry #1867, 2026-08-14 snapshot)"}
 {"sinhala": "ඔළුවෙ", "english": "head එකේ", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -3462,8 +3367,6 @@
 {"sinhala": "කුණාටුවට", "english": "storm එකට", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 1, "evidence": "round 3, was 'storm' (MD entry #2804, 2026-08-14 snapshot)"}
 {"sinhala": "කුනුහරපයක්ද", "english": "swear word එකක්ද", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 1, "evidence": "round 2, was 'swear word' (MD entry #1947, 2026-08-14 snapshot)"}
 {"sinhala": "කුනුහරපවල", "english": "swear words", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "කුපාඩිය", "english": "rascal", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "කුපාඩියා", "english": "rascal", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කුමාරයාගේ", "english": "prince ගේ", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 1, "evidence": "round 2, was 'prince' (MD entry #1949, 2026-08-14 snapshot)"}
 {"sinhala": "කුමාරයො", "english": "prince ලා", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 1, "evidence": "round 3, was 'princes' (MD entry #2806, 2026-08-14 snapshot)"}
 {"sinhala": "කුරුම්බා", "english": "king coconut", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -3642,7 +3545,6 @@
 {"sinhala": "දෙවිවරු", "english": "gods", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දෙවෙනියට", "english": "second", "source": "llm", "codemix_plausible": true, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දෙශපාලකයා", "english": "politician", "source": "llm", "codemix_plausible": true, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "දේශදෝරහි", "english": "traitor", "source": "llm", "codemix_plausible": true, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දේශප්‍රේමි", "english": "patriotic", "source": "llm", "codemix_plausible": true, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දේශපාලණයක්", "english": "politics", "source": "llm", "codemix_plausible": true, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "දේශපාලනටෝක්ස්", "english": "politics talks", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -3739,7 +3641,6 @@
 {"sinhala": "ප්‍රොසෙසින්ද", "english": "processing ද", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 1, "evidence": "round 3, was 'processing' (MD entry #2230, 2026-08-14 snapshot)"}
 {"sinhala": "පාපිස්ස", "english": "doormat", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පාලකෙයා්", "english": "rulers", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "පාවිච්චිකරනව", "english": "use", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පාස්කූ", "english": "Easter", "source": "llm", "codemix_plausible": true, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පැට්ය", "english": "baby", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පැටියෝඕ", "english": "baby", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -3764,7 +3665,6 @@
 {"sinhala": "පිලිතුරැ", "english": "answers", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පිහියෙන්ද", "english": "knife එකෙන්ද", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 1, "evidence": "round 3, was 'knife' (MD entry #2953, 2026-08-14 snapshot)"}
 {"sinhala": "පීරන්න", "english": "comb කරන්න", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 1, "evidence": "round 3, was 'comb' (MD entry #2254, 2026-08-14 snapshot)"}
-{"sinhala": "පීස්සුද", "english": "crazy", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පුත්‍රයා", "english": "son", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පුතෙක්ගේ", "english": "son's", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "පුදුමයක්", "english": "surprise", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -3793,7 +3693,6 @@
 {"sinhala": "බබ්බුද", "english": "babies", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බර්ත්ඩෙ", "english": "birthday", "source": "llm", "codemix_plausible": true, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බලන්ඉන්නෙ", "english": "waiting", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "බලාංකො", "english": "look", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බලාපොරොත්තුවද", "english": "expectation", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බසුත්", "english": "bus", "source": "llm", "codemix_plausible": true, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "බළල්ලු", "english": "cats ලා", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 1, "evidence": "round 3, was 'cats' (MD entry #2301, 2026-08-14 snapshot)"}
@@ -3911,7 +3810,6 @@
 {"sinhala": "රස්නෙන්", "english": "heat එකෙන්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 1, "evidence": "round 3, was 'heat' (MD entry #3034, 2026-08-14 snapshot)"}
 {"sinhala": "රස්නෙයිනෙ", "english": "hot", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "රහයිද", "english": "tasty", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "රාක්ෂ", "english": "demon", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "රැක්ස්", "english": "Rex", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "රැයක්", "english": "night", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "රැස්වීමකට", "english": "meeting", "source": "llm", "codemix_plausible": true, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
@@ -4052,7 +3950,6 @@
 {"sinhala": "සීන්ස්", "english": "scene", "source": "llm", "codemix_plausible": true, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "සීලිං", "english": "ceiling", "source": "llm", "codemix_plausible": true, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "සුනඛයන්", "english": "dogs", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
-{"sinhala": "සුන්ඛයා", "english": "dog", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "සුන්දරයි", "english": "beautiful", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "සුපර්ස්ටාර්", "english": "superstar", "source": "llm", "codemix_plausible": true, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "සුරංගනාවියක්", "english": "fairy කෙනෙක්", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 1, "evidence": "round 3, was 'fairy' (MD entry #2614, 2026-08-14 snapshot)"}
@@ -4108,11 +4005,9 @@
 {"sinhala": "ළඳ", "english": "maiden", "source": "llm", "codemix_plausible": false, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ළමයින්ව", "english": "children ලාව", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 1, "evidence": "round 3, was 'kids' (MD entry #3135, 2026-08-14 snapshot)"}
 {"sinhala": "ෆලොවස්ලා", "english": "followers ලා", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 1, "evidence": "round 3, was 'followers' (MD entry #2679, 2026-08-14 snapshot)"}
-{"sinhala": "ෆලෝත්", "english": "follow", "source": "llm", "codemix_plausible": true, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ෆෙන්", "english": "friend", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 1, "evidence": "round 3, was 'fan' (MD entry #2681, 2026-08-14 snapshot)"}
 {"sinhala": "ෆෙරෙශ්", "english": "fresh", "source": "llm", "codemix_plausible": true, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ෆෙල්ලා", "english": "fellow", "source": "human_corrected", "codemix_plausible": true, "sold_frequency": 1, "evidence": "round 3, was 'fellow' (MD entry #2682, 2026-08-14 snapshot)"}
-{"sinhala": "ෆොලෝ", "english": "follow", "source": "llm", "codemix_plausible": true, "sold_frequency": 1, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ඊයේ", "english": "yesterday", "source": "llm", "codemix_plausible": false, "sold_frequency": 0, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "කොහාෙමද", "english": "how", "source": "llm", "codemix_plausible": false, "sold_frequency": 0, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}
 {"sinhala": "ප්‍රේතයකුව", "english": "ghost", "source": "llm", "codemix_plausible": false, "sold_frequency": 0, "evidence": "llm-translated (batch msgbatch_01Dr5jfNm4Ysw3AEansE9sGm)"}

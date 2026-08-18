@@ -47,6 +47,18 @@
     "heldout_words": {
       "path": "data/gold/heldout_words.txt",
       "n": 2000
+    },
+    "codemix_wordbank": {
+      "path": "data/lexicon/codemix_wordbank.jsonl",
+      "n": 4013,
+      "sha256": "ca2cf2418d6b79dc347fb83b2ed9bb90ff31e40b26c0fb2a8246e90603f64f47",
+      "note": "post-round-4: 97 Tier 1+2 removals (evidence-based, see data/lexicon/codemix_removals_round4.md) + 8 tier-1b removals caught by eval/invariants.py's check_codemix_no_affect_substitution, from a pre-round-4 base of 4,118"
+    },
+    "codemix_attested_vocabulary": {
+      "path": "data/lexicon/codemix_attested_vocabulary.json",
+      "n": 2641,
+      "sha256": "2741e3c5ed437a8b610f4e47ae802ec76fafeeadc4a032cfa67c5dd8f51f57da",
+      "note": "round 4: evidence index driving src/noisers/codemix.py's attestation-aware selection; see docs/research_documentation.md §9.10"
     }
   }
 }
