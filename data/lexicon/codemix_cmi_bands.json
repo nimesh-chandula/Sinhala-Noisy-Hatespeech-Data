@@ -1,0 +1,87 @@
+{
+  "methodology_note": "light bands = SOLD's own natural CMI distribution (data/lexicon/codemix_cmi_reference.json), including an explicit 0-weight band for the ~86.7% of posts that are naturally monolingual. heavy bands = this corpus's measured achievable ceiling under the still-fully-intact reviewer-plausibility gate (mean ~16.7, not the literature's ~27.5 -- see src/noisers/codemix.py's module docstring 'Round 5' section and docs/research_documentation.md for the full defense). Computed by scripts/freeze_codemix_cmi_bands.py, which calls src.noisers.codemix._find_max_units directly (the SAME function _apply() uses at generation time) so this measurement can never drift from runtime behaviour.",
+  "bands": {
+    "light": [
+      {
+        "lo": 0,
+        "hi": 0,
+        "weight": 0.867
+      },
+      {
+        "lo": 1,
+        "hi": 10,
+        "weight": 0.0821
+      },
+      {
+        "lo": 11,
+        "hi": 20,
+        "weight": 0.0358
+      },
+      {
+        "lo": 21,
+        "hi": 30,
+        "weight": 0.0071
+      },
+      {
+        "lo": 31,
+        "hi": 40,
+        "weight": 0.0033
+      },
+      {
+        "lo": 41,
+        "hi": 50,
+        "weight": 0.0014
+      },
+      {
+        "lo": 51,
+        "hi": 100,
+        "weight": 0.0033
+      }
+    ],
+    "heavy": [
+      {
+        "lo": 0.0,
+        "hi": 0.0,
+        "weight": 0.0909
+      },
+      {
+        "lo": 1.0,
+        "hi": 10.0,
+        "weight": 0.3175
+      },
+      {
+        "lo": 11.0,
+        "hi": 20.0,
+        "weight": 0.3504
+      },
+      {
+        "lo": 21.0,
+        "hi": 30.0,
+        "weight": 0.1305
+      },
+      {
+        "lo": 31.0,
+        "hi": 40.0,
+        "weight": 0.052
+      },
+      {
+        "lo": 41.0,
+        "hi": 100.0,
+        "weight": 0.0345
+      }
+    ]
+  },
+  "heavy_ceiling_stats": {
+    "n_posts": 10000,
+    "mean_ceiling": 14.76069877536032,
+    "median_ceiling": 12.5,
+    "bucket_counts": {
+      "0-0": 909,
+      "1-10": 3175,
+      "11-20": 3504,
+      "21-30": 1305,
+      "31-40": 520,
+      "41-100": 345
+    }
+  }
+}

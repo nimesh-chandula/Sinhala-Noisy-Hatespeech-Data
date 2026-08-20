@@ -990,3 +990,263 @@
 {"sinhala": "හොරෙක්ට", "action": "correct", "english": "thief කෙනෙක්ට", "note": "round 3, was 'thief' (MD entry #3128, 2026-08-14 snapshot)"}
 {"sinhala": "ළඟට", "action": "correct", "english": "closely", "note": "round 3, was 'close' (MD entry #3134, 2026-08-14 snapshot)"}
 {"sinhala": "ළමයින්ව", "action": "correct", "english": "children ලාව", "note": "round 3, was 'kids' (MD entry #3135, 2026-08-14 snapshot)"}
+{"sinhala": "පිස්සු", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "පිස්සා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "බල්ලා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "හොර", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "හොරා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "පිස්සුද", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "මෝඩයා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "හොරෙක්", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "පිස්සො", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "මෝඩයෙක්", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "ඌරෙක්", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "මොඩ", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "ශිට්", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "ඌරු", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "යකෙක්", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "දේශද්‍රෝහී", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "හොරෙක්ට", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "බල්ලව", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "යකා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "ඌරා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "ශික්", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "දේශදෝරහි", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "අමනයා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "රාක්ෂ", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "මැට්ටා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "යකු", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "සුන්ඛයා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "කුපාඩියා", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "මැට්ටෝ", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "බොරුකාර", "action": "remove", "note": "round4 tier 1: english side is an evaluative/abusive term"}
+{"sinhala": "කියන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "උදව්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "කන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "දන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "දන්නේ", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "මැරියන්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "එන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "පාවිච්චි", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "නතර", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "අත්අඩංගුවට", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "කට්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "හිනා", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "වරෙන්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "තේරුම්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "පටන්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "හදන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "පෙන්නන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "ජීවත්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "නින්ද", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "උදවු", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "දන්නවා", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "පෙන්නන්නේ", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "දැනගන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "විශ්වාස", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "නිදි", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "කපලා", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "නිදාගන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "දන්නව", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "නවත්වන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "වීවෘත", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "මැරිය", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "බීම", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "බොන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "අමතන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "තේරෙන්නේ", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "බොන", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "නිදියන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "යවන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "දුවනවා", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "තේරෙන්නෙ", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "හොයාගන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "ජිවත්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "අල්ලන", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "අනුගමනය", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "මැරියං", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "බලාංකො", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "ලං", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "ඉගෙනගන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "බාවිතා", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "සවාරි", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "බලන්ඩ", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "හිටු", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "භාවිතා", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "ෆොලෝ", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "පාවිච්චිකරනව", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "ඉදපන්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "කියපං", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "අහපං", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "පැරදුනාම", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "තෙරුම්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "ෆලෝත්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "වරෙං", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "නිදා", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "දුවන්න", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "කිට්ටු", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "තියාගනින්", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "දීපං", "action": "remove", "note": "round4 tier 2: bare English finite verb substituted for a native Sinhala verb form (no karanawa/karanna licensor)"}
+{"sinhala": "බල්ලට", "action": "remove", "note": "round4 tier 1b: english side is an evaluative/abusive term ('dog'), caught by eval/invariants.py's check_codemix_no_affect_substitution as a non-firing bank entry missed by the fired-only Stage 0 proposal"}
+{"sinhala": "බල්ල", "action": "remove", "note": "round4 tier 1b: english side is an evaluative/abusive term ('dog'), caught by eval/invariants.py's check_codemix_no_affect_substitution as a non-firing bank entry missed by the fired-only Stage 0 proposal"}
+{"sinhala": "චොර", "action": "remove", "note": "round4 tier 1b: english side is an evaluative/abusive term ('thief'), caught by eval/invariants.py's check_codemix_no_affect_substitution as a non-firing bank entry missed by the fired-only Stage 0 proposal"}
+{"sinhala": "බල්ලාට", "action": "remove", "note": "round4 tier 1b: english side is an evaluative/abusive term ('dog'), caught by eval/invariants.py's check_codemix_no_affect_substitution as a non-firing bank entry missed by the fired-only Stage 0 proposal"}
+{"sinhala": "හොරගෙඩියා", "action": "remove", "note": "round4 tier 1b: english side is an evaluative/abusive term ('thief'), caught by eval/invariants.py's check_codemix_no_affect_substitution as a non-firing bank entry missed by the fired-only Stage 0 proposal"}
+{"sinhala": "ඔල්මාදකාරයා", "action": "remove", "note": "round4 tier 1b: english side is an evaluative/abusive term ('lunatic'), caught by eval/invariants.py's check_codemix_no_affect_substitution as a non-firing bank entry missed by the fired-only Stage 0 proposal"}
+{"sinhala": "කුපාඩිය", "action": "remove", "note": "round4 tier 1b: english side is an evaluative/abusive term ('rascal'), caught by eval/invariants.py's check_codemix_no_affect_substitution as a non-firing bank entry missed by the fired-only Stage 0 proposal"}
+{"sinhala": "පීස්සුද", "action": "remove", "note": "round4 tier 1b: english side is an evaluative/abusive term ('crazy'), caught by eval/invariants.py's check_codemix_no_affect_substitution as a non-firing bank entry missed by the fired-only Stage 0 proposal"}
+{"sinhala": "රට", "action": "correct", "english": "country එක", "note": "round6: full-review correction"}
+{"sinhala": "මිනිස්සු", "action": "correct", "english": "people ලා", "note": "round6: full-review correction"}
+{"sinhala": "කැමති", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "කතා", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ගල්", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "කෙල්ලෙක්", "action": "correct", "english": "girl කෙනෙක්", "note": "round6: full-review correction"}
+{"sinhala": "වැඩක්", "action": "correct", "english": "work එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ජීවිත", "action": "correct", "english": "lives", "note": "round6: full-review correction"}
+{"sinhala": "ආසයි", "action": "correct", "english": "like කරනවා", "note": "round6: full-review correction"}
+{"sinhala": "කෙල්ලො", "action": "correct", "english": "girls ලා", "note": "round6: full-review correction"}
+{"sinhala": "කොල්ලෙක්", "action": "correct", "english": "boy කෙනෙක්", "note": "round6: full-review correction"}
+{"sinhala": "පොර", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "උදේ", "action": "correct", "english": "morning එකේ", "note": "round6: full-review correction"}
+{"sinhala": "ගාන", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "තැනක", "action": "correct", "english": "place එකක", "note": "round6: full-review correction"}
+{"sinhala": "කෙල්ලෝ", "action": "correct", "english": "girls ලා", "note": "round6: full-review correction"}
+{"sinhala": "ගේම", "action": "correct", "english": "game එක", "note": "round6: full-review correction"}
+{"sinhala": "ජාතියක්", "action": "correct", "english": "race එකක්", "note": "round6: full-review correction"}
+{"sinhala": "දිය", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "කොල්ලෝ", "action": "correct", "english": "boys ලා", "note": "round6: full-review correction"}
+{"sinhala": "දෙයක්", "action": "correct", "english": "thing එකක්", "note": "round6: full-review correction"}
+{"sinhala": "සමාව", "action": "correct", "english": "pardon එක", "note": "round6: full-review correction"}
+{"sinhala": "කෝච්චිය", "action": "correct", "english": "train එක", "note": "round6: full-review correction"}
+{"sinhala": "ගොඩක්", "action": "correct", "english": "lot එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ගිවිසුම", "action": "correct", "english": "agreement එක", "note": "round6: full-review correction"}
+{"sinhala": "අවස්ථාවාදී", "action": "correct", "english": "opportunistic", "note": "round6: full-review correction"}
+{"sinhala": "කොහෙන්ද", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ගුටි", "action": "correct", "english": "beatings", "note": "round6: full-review correction"}
+{"sinhala": "ප්‍රජාතන්ත්‍රවාදය", "action": "correct", "english": "democracy එක", "note": "round6: full-review correction"}
+{"sinhala": "අලුත්ම", "action": "correct", "english": "newest", "note": "round6: full-review correction"}
+{"sinhala": "අවස්තාව", "action": "correct", "english": "moment එක", "note": "round6: full-review correction"}
+{"sinhala": "ඇමතිවරු", "action": "correct", "english": "ministers ලා", "note": "round6: full-review correction"}
+{"sinhala": "ජන්දය", "action": "correct", "english": "vote එක", "note": "round6: full-review correction"}
+{"sinhala": "ජය", "action": "correct", "english": "victory එක", "note": "round6: full-review correction"}
+{"sinhala": "දැන්නම්", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "නමක්", "action": "correct", "english": "name එකක්", "note": "round6: full-review correction"}
+{"sinhala": "පස්සෙන්", "action": "correct", "english": "behind එකෙන්", "note": "round6: full-review correction"}
+{"sinhala": "විවාහ", "action": "correct", "english": "marry", "note": "round6: full-review correction"}
+{"sinhala": "හැදුවේ", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "හැමෝටම", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ආන්ඩුවක්", "action": "correct", "english": "government එකක්", "note": "round6: full-review correction"}
+{"sinhala": "උබව", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "කොහමද", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ගති", "action": "correct", "english": "nature එක", "note": "round6: full-review correction"}
+{"sinhala": "තීරණය", "action": "correct", "english": "decide", "note": "round6: full-review correction"}
+{"sinhala": "යාළුවො", "action": "correct", "english": "friends ලා", "note": "round6: full-review correction"}
+{"sinhala": "රස්නේ", "action": "correct", "english": "heat එකේ", "note": "round6: full-review correction"}
+{"sinhala": "ව්‍යවස්ථාව", "action": "correct", "english": "constitution එක", "note": "round6: full-review correction"}
+{"sinhala": "වාහනයක්", "action": "correct", "english": "vehicle එකක්", "note": "round6: full-review correction"}
+{"sinhala": "විනාශය", "action": "correct", "english": "disaster එක", "note": "round6: full-review correction"}
+{"sinhala": "වීරයෙක්", "action": "correct", "english": "hero කෙනෙක්", "note": "round6: full-review correction"}
+{"sinhala": "සිංදුව", "action": "correct", "english": "song එක", "note": "round6: full-review correction"}
+{"sinhala": "අපිව", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "අවධානයෙන්", "action": "correct", "english": "attention එකෙන්", "note": "round6: full-review correction"}
+{"sinhala": "අස්සේ", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ඇන්ටිලා", "action": "correct", "english": "aunty ලා", "note": "round6: full-review correction"}
+{"sinhala": "එජාපයේ", "action": "correct", "english": "unp එකේ", "note": "round6: full-review correction"}
+{"sinhala": "එළ", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ඔක්කොටම", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "කොලනිය", "action": "correct", "english": "colony එක", "note": "round6: full-review correction"}
+{"sinhala": "ගහෙන්", "action": "correct", "english": "tree එකෙන්", "note": "round6: full-review correction"}
+{"sinhala": "ගාව", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ජාත්‍යන්තරයට", "action": "correct", "english": "international එකට", "note": "round6: full-review correction"}
+{"sinhala": "ටී", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "තිසර", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "තේරුම", "action": "correct", "english": "meaning එක", "note": "round6: full-review correction"}
+{"sinhala": "දෙන්", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "පන", "action": "correct", "english": "life එක", "note": "round6: full-review correction"}
+{"sinhala": "බබාගෙ", "action": "correct", "english": "baby ගේ", "note": "round6: full-review correction"}
+{"sinhala": "බිබී", "action": "correct", "english": "drink kara කර", "note": "round6: full-review correction"}
+{"sinhala": "වේදනාව", "action": "correct", "english": "pain එක", "note": "round6: full-review correction"}
+{"sinhala": "සත්‍ය", "action": "correct", "english": "truth එක", "note": "round6: full-review correction"}
+{"sinhala": "හට", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "අනතුරු", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "අපාය", "action": "correct", "english": "hell එක", "note": "round6: full-review correction"}
+{"sinhala": "අයිති", "action": "correct", "english": "belong වෙන්නේ", "note": "round6: full-review correction"}
+{"sinhala": "අලි", "action": "correct", "english": "elephant", "note": "round6: full-review correction"}
+{"sinhala": "අවධානය", "action": "correct", "english": "attention එක", "note": "round6: full-review correction"}
+{"sinhala": "ආඩම්බරයක්", "action": "correct", "english": "pride එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ආස", "action": "correct", "english": "like කරන්නේ", "note": "round6: full-review correction"}
+{"sinhala": "ඉස්තාලයේ", "action": "correct", "english": "stable එකේ", "note": "round6: full-review correction"}
+{"sinhala": "ඉස්සරහට", "action": "correct", "english": "front එකට", "note": "round6: full-review correction"}
+{"sinhala": "ඊජිප්තුවෙත්", "action": "correct", "english": "Egypt වලත්", "note": "round6: reviewer-confirmed override of auto-derived reading"}
+{"sinhala": "උණ", "action": "correct", "english": "fever එක", "note": "round6: full-review correction"}
+{"sinhala": "උපදෙස", "action": "correct", "english": "advice එක", "note": "round6: full-review correction"}
+{"sinhala": "උබලාගේ", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "උරුම", "action": "correct", "english": "inherit", "note": "round6: full-review correction"}
+{"sinhala": "ඔලු", "action": "correct", "english": "heads", "note": "round6: full-review correction"}
+{"sinhala": "කන්ද", "action": "correct", "english": "mountain එක", "note": "round6: full-review correction"}
+{"sinhala": "කිවුවා", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ගෙනාවේ", "action": "correct", "english": "bring kale", "note": "round6: full-review correction"}
+{"sinhala": "ජොකා", "action": "correct", "english": "underwear එක", "note": "round6: full-review correction"}
+{"sinhala": "ටූ", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "තරහ", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "තාක්ශණය", "action": "correct", "english": "technology එක", "note": "round6: full-review correction"}
+{"sinhala": "තැනත්", "action": "correct", "english": "place එකක්", "note": "round6: full-review correction"}
+{"sinhala": "දැකල", "action": "correct", "english": "seen කරලා", "note": "round6: full-review correction"}
+{"sinhala": "දොර", "action": "correct", "english": "door එක", "note": "round6: full-review correction"}
+{"sinhala": "නඩුත්", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "පවුලේ", "action": "correct", "english": "family එකේ", "note": "round6: full-review correction"}
+{"sinhala": "බෝම්බයක්", "action": "correct", "english": "bomb එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ලියුම", "action": "correct", "english": "letter එක", "note": "round6: full-review correction"}
+{"sinhala": "වෙනි", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "සංවිධානය", "action": "correct", "english": "organization එක", "note": "round6: full-review correction"}
+{"sinhala": "සිත", "action": "correct", "english": "mind එක", "note": "round6: full-review correction"}
+{"sinhala": "ඒකිගෙ", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ඔක්කෝටම", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ඔබව", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "කකුල", "action": "correct", "english": "leg එක", "note": "round6: full-review correction"}
+{"sinhala": "කතාවක", "action": "correct", "english": "story එකක", "note": "round6: full-review correction"}
+{"sinhala": "ක්‍රියාවලිය", "action": "correct", "english": "process එක", "note": "round6: full-review correction"}
+{"sinhala": "කාරනාව", "action": "correct", "english": "matter එක", "note": "round6: full-review correction"}
+{"sinhala": "කුහක", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ගහ", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ගැටුම", "action": "correct", "english": "clash එක", "note": "round6: full-review correction"}
+{"sinhala": "චනලය", "action": "correct", "english": "channel එක", "note": "round6: full-review correction"}
+{"sinhala": "ජිඋවිතේට", "action": "correct", "english": "life එකට", "note": "round6: full-review correction"}
+{"sinhala": "තෝව", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "දඬුවම", "action": "correct", "english": "punishment එක", "note": "round6: full-review correction"}
+{"sinhala": "දර්ශනය", "action": "correct", "english": "scene එක", "note": "round6: full-review correction"}
+{"sinhala": "දරුකමට", "action": "correct", "english": "adopt කර", "note": "round6: full-review correction"}
+{"sinhala": "දැනෙනවා", "action": "correct", "english": "feel වෙනවා", "note": "round6: full-review correction"}
+{"sinhala": "දෙනා", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "දෙබලක", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "දේව", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "නගර", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "නරකෙයි", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "නැතිවුනානේ", "action": "correct", "english": "got lost", "note": "round6: full-review correction"}
+{"sinhala": "නිදාගමු", "action": "correct", "english": "lets sleep", "note": "round6: full-review correction"}
+{"sinhala": "පැතුම", "action": "correct", "english": "wish එක", "note": "round6: full-review correction"}
+{"sinhala": "පී", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "පුතාලට", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "පුදුමෙ", "action": "correct", "english": "suprise එක", "note": "round6: full-review correction"}
+{"sinhala": "පුලුවන්නෙත්", "action": "correct", "english": "able වෙන්නේ", "note": "round6: full-review correction"}
+{"sinhala": "බලාපොරොත්තුවද", "action": "correct", "english": "expectations ද", "note": "round6: full-review correction"}
+{"sinhala": "මල්ලේ", "action": "correct", "english": "brother", "note": "round6: full-review correction"}
+{"sinhala": "මහත්මයෙක්", "action": "correct", "english": "gentleman කෙනෙක්", "note": "round6: full-review correction"}
+{"sinhala": "මිනිස්සුන්ගේ", "action": "correct", "english": "peopla ලාගේ", "note": "round6: full-review correction"}
+{"sinhala": "මිනිස්සුන්ව", "action": "correct", "english": "people ලාව", "note": "round6: full-review correction"}
+{"sinhala": "මිනිසුන්ට", "action": "correct", "english": "people ලාට", "note": "round6: full-review correction"}
+{"sinhala": "මෙන්", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "යුද්ධෙට", "action": "correct", "english": "war එකට", "note": "round6: full-review correction"}
+{"sinhala": "රටකට", "action": "correct", "english": "country එකකට", "note": "round6: full-review correction"}
+{"sinhala": "යාලුවේ", "action": "correct", "english": "lamp post එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ලොව", "action": "correct", "english": "world එකේ", "note": "round6: full-review correction"}
+{"sinhala": "වද", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "වයිපරේ", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "වැනි", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "වින්ටරේ", "action": "correct", "english": "winter එකේ", "note": "round6: full-review correction"}
+{"sinhala": "වෙද්‍යලද", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ශරි", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "සංඛ්‍යාව", "action": "correct", "english": "number එක", "note": "round6: full-review correction"}
+{"sinhala": "හිර", "action": "correct", "english": "marriage", "note": "round6: confirmed idiom (හිර වෙනවා = get tied down/married) against firing example"}
+{"sinhala": "හොය", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "හොරකන්", "action": "correct", "english": "steal", "note": "round6: full-review correction"}

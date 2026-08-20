@@ -6,13 +6,19 @@ a human reviewer works through an impact-ordered list where the top ~100-200
 rows cover the large majority of all substitutions in the corpus, instead of
 the old pipeline's 12,000-row blind candidate CSV.
 
-Recomputes, per generated codemix output row, exactly which word TYPES were
-substituted by re-running src.noisers.codemix._apply with the same seed
-generate_codemix.py used (see scripts/generate_codemix.py's _row_seed) —
-the persisted rows only carry a substitution COUNT (n_substitutions), not
-the substituted words themselves, so this is the one place that needs to
-know which. Same "recompute via the real implementation, don't hand-derive"
-principle as eval/invariants.py's check_codemix_substitution_spec.
+Recomputes, per generated codemix output row, exactly which UNITS (single
+words AND round-5 phrase-bank spans) were substituted by re-running
+src.noisers.codemix._apply with the same seed generate_codemix.py used (see
+scripts/generate_codemix.py's _row_seed) — the persisted rows only carry a
+substitution COUNT (n_substitutions), not the substituted content itself,
+so this is the one place that needs to know which. Same "recompute via the
+real implementation, don't hand-derive" principle as eval/invariants.py's
+check_codemix_substitution_spec.
+
+Round 5: reports word-bank and phrase-bank entries together in one
+impact-ordered list (a `kind` column distinguishes them), since both are
+now real substitutable sources a reviewer needs to see ranked by impact,
+not just the word bank.
 
 Writes:
   data/lexicon/codemix_usage_review.csv  (for marking up: verdict, corrected_english)
@@ -42,6 +48,7 @@ from generate_codemix import _row_seed  # noqa: E402
 OUTPUTS_DIR = REPO_ROOT / "data" / "outputs"
 LEXICON_DIR = REPO_ROOT / "data" / "lexicon"
 WORDBANK_PATH = LEXICON_DIR / "codemix_wordbank.jsonl"
+PHRASEBANK_PATH = LEXICON_DIR / "codemix_phrasebank.jsonl"
 CSV_PATH = LEXICON_DIR / "codemix_usage_review.csv"
 MD_PATH = LEXICON_DIR / "codemix_usage_review.md"
 MAX_EXAMPLES = 3
@@ -63,18 +70,24 @@ def _load_full_wordbank() -> dict[str, dict]:
     return {row["sinhala"]: row for row in _load_jsonl(WORDBANK_PATH)}
 
 
+def _load_full_phrasebank() -> dict[str, dict]:
+    """Same idea as _load_full_wordbank(), for the round-5 phrase bank."""
+    return {row["sinhala"]: row for row in _load_jsonl(PHRASEBANK_PATH)}
+
+
 def main() -> None:
     wordbank = _load_wordbank()  # used only to drive _apply()'s recomputation below
     full_wordbank = _load_full_wordbank()  # used for display metadata (source, frequency)
+    full_phrasebank = _load_full_phrasebank()
     if not wordbank:
         print("[build_codemix_usage_report] data/lexicon/codemix_wordbank.jsonl is empty/missing — "
               "run build_codemix_wordbank.py first")
         return
 
-    n_posts_light: dict[str, int] = defaultdict(int)
-    n_posts_heavy: dict[str, int] = defaultdict(int)
-    total_occurrences: dict[str, int] = defaultdict(int)
-    examples: dict[str, list[tuple[str, str]]] = defaultdict(list)
+    n_posts_light: dict[tuple[str, str], int] = defaultdict(int)
+    n_posts_heavy: dict[tuple[str, str], int] = defaultdict(int)
+    total_occurrences: dict[tuple[str, str], int] = defaultdict(int)
+    examples: dict[tuple[str, str], list[tuple[str, str]]] = defaultdict(list)
 
     n_rows_checked = 0
     for split in ("train", "test"):
@@ -84,40 +97,58 @@ def main() -> None:
             for row in rows:
                 n_rows_checked += 1
                 seed = _row_seed(row["source_id"])
-                noisy_text, rate, substituted = _apply(row["original_text"], severity, seed=seed)
+                noisy_text, rate, chosen_units, target_cmi = _apply(row["original_text"], severity, seed=seed)
                 # sanity: recomputation should match the persisted row; if it
-                # doesn't, the wordbank has moved on since generation — count
+                # doesn't, a frozen file has moved on since generation — count
                 # it but don't let a stale file corrupt the impact report.
                 if noisy_text != row["noisy_text"]:
                     continue
-                for word in substituted:
-                    if severity == "light":
-                        n_posts_light[word] += 1
+                for unit in chosen_units:
+                    if unit["entry"] is None:
+                        key = ("word", unit["text"])
                     else:
-                        n_posts_heavy[word] += 1
-                    occ = row["original_text"].count(word)
-                    total_occurrences[word] += occ
-                    if len(examples[word]) < MAX_EXAMPLES:
-                        examples[word].append((row["original_text"], row["noisy_text"]))
+                        key = ("phrase", unit["entry"]["sinhala"])
+                    if severity == "light":
+                        n_posts_light[key] += 1
+                    else:
+                        n_posts_heavy[key] += 1
+                    sinhala_form = key[1]
+                    occ = row["original_text"].count(sinhala_form)
+                    total_occurrences[key] += occ
+                    if len(examples[key]) < MAX_EXAMPLES:
+                        examples[key].append((row["original_text"], row["noisy_text"]))
 
-    fired_words = set(n_posts_light) | set(n_posts_heavy)
+    fired_keys = set(n_posts_light) | set(n_posts_heavy)
+    n_fired_words = sum(1 for kind, _ in fired_keys if kind == "word")
+    n_fired_phrases = sum(1 for kind, _ in fired_keys if kind == "phrase")
     print(f"[build_codemix_usage_report] checked {n_rows_checked} rows across train+test x light+heavy; "
-          f"{len(fired_words)}/{len(wordbank)} wordbank entries actually fired")
+          f"{n_fired_words}/{len(wordbank)} wordbank entries + {n_fired_phrases} phrasebank entries actually fired")
 
     rows_out = []
-    for word in fired_words:
-        entry = full_wordbank.get(word, {})
-        impact = n_posts_light[word] + n_posts_heavy[word]
+    for key in fired_keys:
+        kind, sinhala_form = key
+        if kind == "word":
+            entry = full_wordbank.get(sinhala_form, {})
+            english = entry.get("english", "")
+            source = entry.get("source", "?")
+            plausible = entry.get("codemix_plausible", False)
+        else:
+            entry = full_phrasebank.get(sinhala_form, {})
+            english = entry.get("english", "")
+            source = entry.get("source", "?")
+            plausible = entry.get("codemix_plausible", False)
+        impact = n_posts_light[key] + n_posts_heavy[key]
         rows_out.append({
-            "sinhala": word,
-            "english": entry.get("english", ""),
-            "source": entry.get("source", "?"),
-            "codemix_plausible": entry.get("codemix_plausible", False),
-            "n_posts_light": n_posts_light[word],
-            "n_posts_heavy": n_posts_heavy[word],
-            "total_occurrences_replaced": total_occurrences[word],
+            "kind": kind,
+            "sinhala": sinhala_form,
+            "english": english,
+            "source": source,
+            "codemix_plausible": plausible,
+            "n_posts_light": n_posts_light[key],
+            "n_posts_heavy": n_posts_heavy[key],
+            "total_occurrences_replaced": total_occurrences[key],
             "impact": impact,
-            "examples": examples[word],
+            "examples": examples[key],
             "verdict": "",
             "corrected_english": "",
         })
@@ -126,7 +157,7 @@ def main() -> None:
     LEXICON_DIR.mkdir(parents=True, exist_ok=True)
     with CSV_PATH.open("w", newline="", encoding="utf-8-sig") as f:
         writer = csv.DictWriter(f, fieldnames=[
-            "sinhala", "english", "source", "codemix_plausible",
+            "kind", "sinhala", "english", "source", "codemix_plausible",
             "n_posts_light", "n_posts_heavy", "total_occurrences_replaced",
             "example_1_before", "example_1_after",
             "example_2_before", "example_2_after",
@@ -141,7 +172,7 @@ def main() -> None:
                 flat_examples[f"example_{i + 1}_before"] = before
                 flat_examples[f"example_{i + 1}_after"] = after
             writer.writerow({
-                "sinhala": r["sinhala"], "english": r["english"], "source": r["source"],
+                "kind": r["kind"], "sinhala": r["sinhala"], "english": r["english"], "source": r["source"],
                 "codemix_plausible": r["codemix_plausible"],
                 "n_posts_light": r["n_posts_light"], "n_posts_heavy": r["n_posts_heavy"],
                 "total_occurrences_replaced": r["total_occurrences_replaced"],
@@ -151,25 +182,34 @@ def main() -> None:
     print(f"[build_codemix_usage_report] wrote {len(rows_out)} rows -> {CSV_PATH}")
 
     lines = [
-        "# Code-mix word bank usage review",
+        "# Code-mix word + phrase bank usage review",
         "",
-        "**Status: fully reviewed.** This snapshot reflects the word bank AFTER 3 rounds "
-        "of human review (2026-08-13 to 2026-08-14, 992 corrections applied — 910 "
-        "corrected, 82 removed — see data/lexicon/codemix_review_corrections.jsonl and "
-        "LOG.md for the full record). Entries below are impact-ordered against the "
-        "corrected bank, so this is an audit trail of what shipped, not a fresh TODO list.",
+        "**Status: round 5.** This snapshot reflects the word bank AFTER 4 rounds "
+        "of human review (rounds 1-3: 2026-08-13 to 2026-08-14, 992 corrections — 910 "
+        "corrected, 82 removed; round 4: 2026-08-18, 97 further removals — 30 "
+        "affect-bearing, 67 bare-verb, evidence-based via "
+        "data/lexicon/codemix_removals_round4.md, plus an attestation-aware selection "
+        "redesign, see data/lexicon/codemix_selection_comparison.md), PLUS round 5's new "
+        "phrase bank (data/lexicon/codemix_phrasebank.jsonl, 1,160 plausible 2-3 word "
+        "spans out of 8,682 mined and translated — see docs/research_documentation.md "
+        "§9.11). Entries below are impact-ordered, word and phrase entries together (the "
+        "`kind` column distinguishes them), so this is an audit trail of what shipped, "
+        "not a fresh TODO list. Previous word-only snapshot archived at "
+        "codemix_usage_review_round3.md.",
         "",
-        f"{len(rows_out)} word bank entries actually fired during generation "
-        f"(out of {len(wordbank)} in the bank), impact-ordered — the top entries here "
-        "cover the large majority of all substitutions in the corpus. Machine-translated "
-        "entries (source=llm) and anything flagged codemix_plausible=False are where the "
-        "review risk concentrates; verify those first.",
+        f"{len(rows_out)} entries actually fired during generation "
+        f"({n_fired_words}/{len(wordbank)} word bank, {n_fired_phrases} phrase bank), "
+        "impact-ordered — the top entries here cover the large majority of all "
+        "substitutions in the corpus. Machine-translated entries (source=llm) and "
+        "anything flagged codemix_plausible=False are where the review risk "
+        "concentrates; verify those first.",
         "",
     ]
     for i, r in enumerate(rows_out, 1):
+        kind_flag = f" [{r['kind'].upper()}]"
         flag = " ⚠️ LLM-TRANSLATED" if r["source"] == "llm" else ""
         plausible_flag = "" if r["codemix_plausible"] else " ⚠️ NOT MARKED PLAUSIBLE"
-        lines.append(f"## {i}. `{r['sinhala']}` -> `{r['english']}`{flag}{plausible_flag}")
+        lines.append(f"## {i}.{kind_flag} `{r['sinhala']}` -> `{r['english']}`{flag}{plausible_flag}")
         lines.append(f"- impact: {r['impact']} posts ({r['n_posts_light']} light, {r['n_posts_heavy']} heavy), "
                       f"{r['total_occurrences_replaced']} total occurrences replaced")
         lines.append(f"- source: {r['source']}")

@@ -1,0 +1,233 @@
+{"action": "remove", "sinhala": "පිස්සු හැදිලද", "note": "round5 tier1: evaluative/abusive headword, same criterion as round4 word-bank Tier1"}
+{"action": "remove", "sinhala": "මෝඩ ප්‍රශ්ණ", "note": "round5 tier1: evaluative/abusive headword, same criterion as round4 word-bank Tier1"}
+{"action": "remove", "sinhala": "ඔයාට පිස්සු", "note": "round5 tier1: evaluative/abusive headword, same criterion as round4 word-bank Tier1"}
+{"action": "remove", "sinhala": "මගේ බල්ලා", "note": "round5 tier1: evaluative/abusive headword, same criterion as round4 word-bank Tier1"}
+{"action": "remove", "sinhala": "මෝඩ මිනිස්සු", "note": "round5 tier1: evaluative/abusive headword, same criterion as round4 word-bank Tier1"}
+{"action": "remove", "sinhala": "උඹට පිස්සු", "note": "round5 tier1: evaluative/abusive headword, same criterion as round4 word-bank Tier1"}
+{"action": "remove", "sinhala": "තනිකර පිස්සු", "note": "round5 tier1: evaluative/abusive headword, same criterion as round4 word-bank Tier1"}
+{"action": "remove", "sinhala": "පිස්සු වැඩ", "note": "round5 tier1: evaluative/abusive headword, same criterion as round4 word-bank Tier1"}
+{"action": "remove", "sinhala": "බොරු කාරයෙක්", "note": "round5 tier1: evaluative/abusive headword, same criterion as round4 word-bank Tier1"}
+{"action": "remove", "sinhala": "මාව පිස්සු වට්ටනවා", "note": "round5 tier1: evaluative/abusive headword, same criterion as round4 word-bank Tier1"}
+{"action": "remove", "sinhala": "මෝඩ ජෝක්ස්", "note": "round5 tier1: evaluative/abusive headword, same criterion as round4 word-bank Tier1"}
+{"action": "remove", "sinhala": "මෝඩ තර්ක", "note": "round5 tier1: evaluative/abusive headword, same criterion as round4 word-bank Tier1"}
+{"sinhala": "සෙට් එක", "action": "correct", "english": "set එක", "note": "round6: full-review correction"}
+{"sinhala": "කරන්ට් එක", "action": "correct", "english": "current එක", "note": "round6: full-review correction"}
+{"sinhala": "හොඳ වැඩේ", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ඇප් එක", "action": "correct", "english": "app එක", "note": "round6: full-review correction"}
+{"sinhala": "එක්සත් ජාතික පක්ෂය", "action": "correct", "english": "united national party", "note": "round6: row435 trigram extension (variant 1/2, occurs 4x in SOLD)"}
+{"sinhala": "එක්සත් ජාතික පක්ෂෙ", "action": "correct", "english": "united national party", "note": "round6: row435 trigram extension (variant 2/2, occurs 1x in SOLD)"}
+{"sinhala": "ඩොලර් එක", "action": "correct", "english": "dollar එක", "note": "round6: full-review correction"}
+{"sinhala": "කට වහන්", "action": "correct", "english": "shut up වෙලා", "note": "round6: full-review correction"}
+{"sinhala": "ගැන කතා කරන්න", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "චැනල් එක", "action": "correct", "english": "channel එක", "note": "round6: full-review correction"}
+{"sinhala": "ජාතික ගීය", "action": "correct", "english": "national anthem එක", "note": "round6: full-review correction"}
+{"sinhala": "ජොබ් එකක්", "action": "correct", "english": "job එකක්", "note": "round6: full-review correction"}
+{"sinhala": "නිව්ස් එක", "action": "correct", "english": "news එක", "note": "round6: full-review correction"}
+{"sinhala": "පාස්කු ප්‍රහාරයට", "action": "correct", "english": "easter attack එකට", "note": "round6: full-review correction"}
+{"sinhala": "පෝන් එක", "action": "correct", "english": "phone එක", "note": "round6: full-review correction"}
+{"sinhala": "ෆොටෝ එකක්", "action": "correct", "english": "photo එකක්", "note": "round6: full-review correction"}
+{"sinhala": "අනිත් පැත්ත", "action": "correct", "english": "other side එක", "note": "round6: full-review correction"}
+{"sinhala": "කපල් එකක්", "action": "correct", "english": "couple එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ට්විටර් එක", "action": "correct", "english": "twitter එක", "note": "round6: full-review correction"}
+{"sinhala": "ට්වීට් එකක්", "action": "correct", "english": "tweet එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ද ඩාලින්", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "පොටෝ එකක්", "action": "correct", "english": "photo එකක්", "note": "round6: full-review correction"}
+{"sinhala": "පොස්ට් එකක්", "action": "correct", "english": "post එකක්", "note": "round6: full-review correction"}
+{"sinhala": "මයික් එක", "action": "correct", "english": "mike එක", "note": "round6: full-review correction"}
+{"sinhala": "මැච් එකක්", "action": "correct", "english": "match එකක්", "note": "round6: full-review correction"}
+{"sinhala": "මෛත්‍රීපාල සිරිසේනට", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ලොකු වෙනසක්", "action": "correct", "english": "big difference එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ලොකු සීන්", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ශ්‍රී ලංකාවේ", "action": "correct", "english": "sRI Lanka වල", "note": "round6: full-review correction"}
+{"sinhala": "සැබෑ ආදරය", "action": "correct", "english": "true love එක", "note": "round6: full-review correction"}
+{"sinhala": "හොද වැඩේ", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "අස් වෙන්න", "action": "correct", "english": "resign වෙන්න", "note": "round6: full-review correction"}
+{"sinhala": "කාර් එක", "action": "correct", "english": "car එක", "note": "round6: full-review correction"}
+{"sinhala": "කැම්පේන් එකක්", "action": "correct", "english": "campaign එකක්", "note": "round6: full-review correction"}
+{"sinhala": "කොරෝනා හැදිලා", "action": "correct", "english": "corona infect වෙලා", "note": "round6: full-review correction"}
+{"sinhala": "ගුඩ් නයිට් කියන්", "action": "correct", "english": "good night kiyan", "note": "round6: full-review correction"}
+{"sinhala": "ගේම් එකක්", "action": "correct", "english": "game එකක්", "note": "round6: full-review correction"}
+{"sinhala": "චාන්ස් එක", "action": "correct", "english": "chance එක", "note": "round6: full-review correction"}
+{"sinhala": "චැට් කරන්න", "action": "correct", "english": "chat කරන්න", "note": "round6: full-review correction"}
+{"sinhala": "ජාතික වීරයෙක්", "action": "correct", "english": "national hero කෙනෙක්", "note": "round6: full-review correction"}
+{"sinhala": "ට්වීට් එකේ", "action": "correct", "english": "tweet එකේ", "note": "round6: full-review correction"}
+{"sinhala": "ටීම් එක", "action": "correct", "english": "team එක", "note": "round6: full-review correction"}
+{"sinhala": "තාම නෑ", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "වර්ග දෙකයි", "action": "correct", "english": "two types", "note": "round6: row1117 promoted to phrase bigram, occurs 1x in SOLD"}
+{"sinhala": "නෙලුම් කුලුනක්", "action": "correct", "english": "lotus tower එකක්", "note": "round6: full-review correction"}
+{"sinhala": "පොටෝ එක", "action": "correct", "english": "photo එක", "note": "round6: full-review correction"}
+{"sinhala": "පොස්ට් එක", "action": "correct", "english": "post එක", "note": "round6: full-review correction"}
+{"sinhala": "මගේ හද", "action": "correct", "english": "my heart එක", "note": "round6: full-review correction"}
+{"sinhala": "මාධ්‍ය ආයතනයක්", "action": "correct", "english": "media institution එකක්", "note": "round6: full-review correction"}
+{"sinhala": "මැච් එක ඉවර", "action": "correct", "english": "match eka over", "note": "round6: full-review correction"}
+{"sinhala": "මේස රෙද්ද", "action": "correct", "english": "table cloth එක", "note": "round6: full-review correction"}
+{"sinhala": "රටේ ජනතාව", "action": "correct", "english": "friends ලා", "note": "round6: full-review correction"}
+{"sinhala": "වීඩියෝ එක", "action": "correct", "english": "video එක", "note": "round6: full-review correction"}
+{"sinhala": "වීඩියෝ එකක්", "action": "correct", "english": "video එකක්", "note": "round6: full-review correction"}
+{"sinhala": "සෙල්ලම් බඩුව", "action": "correct", "english": "toy එක", "note": "round6: full-review correction"}
+{"sinhala": "අප්ඩේට් එකක්", "action": "correct", "english": "update එකක්", "note": "round6: full-review correction"}
+{"sinhala": "අමාරු අවුරුද්දක්", "action": "correct", "english": "tough year එකක්", "note": "round6: full-review correction"}
+{"sinhala": "අමාරු සීන් එකක්", "action": "correct", "english": "tough scene එකක්", "note": "round6: full-review correction"}
+{"sinhala": "අර බඩුව", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "අවුට් උනා", "action": "correct", "english": "out උනා", "note": "round6: particle confirmed from row's own sinhala key"}
+{"sinhala": "ආමි එකේ", "action": "correct", "english": "army එකේ", "note": "round6: full-review correction"}
+{"sinhala": "ඇත්ත ජිවිතේ", "action": "correct", "english": "real life එක", "note": "round6: full-review correction"}
+{"sinhala": "ඉවර වෙලා", "action": "correct", "english": "finish වෙලා", "note": "round6: full-review correction"}
+{"sinhala": "ඉස්කෝලෙ යන කාලෙ", "action": "correct", "english": "school days වල", "note": "round6: full-review correction"}
+{"sinhala": "එකතු වෙන්න", "action": "correct", "english": "join වෙන්න", "note": "round6: full-review correction"}
+{"sinhala": "ඔප්පු කරන්න", "action": "correct", "english": "prove කරන්න", "note": "round6: full-review correction"}
+{"sinhala": "කැප කිරීම්", "action": "correct", "english": "sacrifice එකක්", "note": "round6: full-review correction"}
+{"sinhala": "කොමෙන්ට් කරනවා", "action": "correct", "english": "comment කරනවා", "note": "round6: full-review correction"}
+{"sinhala": "කෝල් කරල", "action": "correct", "english": "call කරලා", "note": "round6: full-review correction"}
+{"sinhala": "ගෙදර ආව", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ගෙදරට වෙලා", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ගේම් ගහලා", "action": "correct", "english": "games ගහලා", "note": "round6: particle confirmed from row's own sinhala key"}
+{"sinhala": "ජාතික ආණ්ඩුවක්", "action": "correct", "english": "national government එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ජෝක් එකක්", "action": "correct", "english": "joke එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ටයිම් ලයින් එක", "action": "correct", "english": "timeline එක", "note": "round6: full-review correction"}
+{"sinhala": "ටවුන් එක", "action": "correct", "english": "town එක", "note": "round6: full-review correction"}
+{"sinhala": "ට්විටර් එකට", "action": "correct", "english": "twitter එකට", "note": "round6: full-review correction"}
+{"sinhala": "ට්විටර් එකේ", "action": "correct", "english": "twitter එකේ", "note": "round6: full-review correction"}
+{"sinhala": "ට්‍රිප් එකක්", "action": "correct", "english": "trip එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ටැටූ එකක්", "action": "correct", "english": "tatoo එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ඩිලීට් කරන්න", "action": "correct", "english": "delete කරන්න", "note": "round6: full-review correction"}
+{"sinhala": "ත්‍රෙඩ් එකක්", "action": "correct", "english": "thread එකක්", "note": "round6: full-review correction"}
+{"sinhala": "තීරණ ගන්න", "action": "correct", "english": "decisions ගන්න", "note": "round6: full-review correction"}
+{"sinhala": "දෙපාරක් හිතන්", "action": "correct", "english": "twice think karan", "note": "round6: reviewer-confirmed against fuller sentence context"}
+{"sinhala": "නරක වචනයක්", "action": "correct", "english": "bad word එකක්", "note": "round6: full-review correction"}
+{"sinhala": "පස්ස පැත්තෙන්", "action": "correct", "english": "backside", "note": "round6: full-review correction"}
+{"sinhala": "ප්ලේස් එකක්", "action": "correct", "english": "place එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ප්‍රකාශ කරන්න", "action": "correct", "english": "declare කරන්න", "note": "round6: full-review correction"}
+{"sinhala": "ප්‍රතික්ෂේප කරනවා", "action": "correct", "english": "reject කරනවා", "note": "round6: full-review correction"}
+{"sinhala": "පාස් වෙලා", "action": "correct", "english": "pass වෙලා", "note": "round6: full-review correction"}
+{"sinhala": "පාස්වර්ඩ් එක", "action": "correct", "english": "password එක", "note": "round6: full-review correction"}
+{"sinhala": "පුදුම රටක්", "action": "correct", "english": "weird country එකක්", "note": "round6: full-review correction"}
+{"sinhala": "පෝස්ට් සෙයාකරන", "action": "correct", "english": "post share කරන", "note": "round6: full-review correction"}
+{"sinhala": "බස් එක", "action": "correct", "english": "bus එක", "note": "round6: full-review correction"}
+{"sinhala": "බෑග් එකක්", "action": "correct", "english": "bag එකක්", "note": "round6: full-review correction"}
+{"sinhala": "බිස්කට් එකක්", "action": "correct", "english": "biscuit එකක්", "note": "round6: full-review correction"}
+{"sinhala": "බිස්නස් එකක්", "action": "correct", "english": "business එකක්", "note": "round6: full-review correction"}
+{"sinhala": "මාකට් එකේ", "action": "correct", "english": "market එකේ", "note": "round6: full-review correction"}
+{"sinhala": "මාකට් කරන්න", "action": "correct", "english": "market කරන්න", "note": "round6: full-review correction"}
+{"sinhala": "මාව බ්ලොක් කරලා", "action": "correct", "english": "blocked me කරලා", "note": "round6: full-review correction"}
+{"sinhala": "මැච් එක බලන්න", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "මැසෙජ් එක", "action": "correct", "english": "message එක", "note": "round6: full-review correction"}
+{"sinhala": "මැසේජ් එකක්", "action": "correct", "english": "message එකක්", "note": "round6: full-review correction"}
+{"sinhala": "මැසේජ් දාලා", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "මියුට් කරල", "action": "correct", "english": "mute කරලා", "note": "round6: full-review correction"}
+{"sinhala": "මීඩියා වලට", "action": "correct", "english": "media වලට", "note": "round6: full-review correction"}
+{"sinhala": "මීම් එකක්", "action": "correct", "english": "meme එකක්", "note": "round6: full-review correction"}
+{"sinhala": "මුළු රටේම", "action": "correct", "english": "whole country eke ම", "note": "round6: full-review correction"}
+{"sinhala": "මේ පොටෝ එක", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "මේ රෑට", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "යූස් කරන්න", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "රටේ ආරක්ෂාව", "action": "correct", "english": "national security එක", "note": "round6: full-review correction"}
+{"sinhala": "රිප්ලයි එක", "action": "correct", "english": "reply එක", "note": "round6: full-review correction"}
+{"sinhala": "රිප්ලයි එකක්", "action": "correct", "english": "reply එකක්", "note": "round6: full-review correction"}
+{"sinhala": "රිප්ලයි කරන්න", "action": "correct", "english": "reply කරන්න", "note": "round6: full-review correction"}
+{"sinhala": "රිප්ලයි කරලා", "action": "correct", "english": "reply කරලා", "note": "round6: full-review correction"}
+{"sinhala": "රිපෝට් කරන්න", "action": "correct", "english": "report කරන්න", "note": "round6: full-review correction"}
+{"sinhala": "රිපෝට් කරල", "action": "correct", "english": "report කරලා", "note": "round6: full-review correction"}
+{"sinhala": "ලයික් එකක්", "action": "correct", "english": "like එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ලව් එක", "action": "correct", "english": "love එක", "note": "round6: full-review correction"}
+{"sinhala": "ලින්ක් එක", "action": "correct", "english": "link එක", "note": "round6: full-review correction"}
+{"sinhala": "ලුක් එකක්", "action": "correct", "english": "look එක", "note": "round6: full-review correction"}
+{"sinhala": "ලොක් එක", "action": "correct", "english": "lock එක", "note": "round6: full-review correction"}
+{"sinhala": "ලොකු පොරක්", "action": "correct", "english": "big shot කෙනෙක්", "note": "round6: full-review correction"}
+{"sinhala": "විකට් එක", "action": "correct", "english": "wicket එක", "note": "round6: full-review correction"}
+{"sinhala": "විඩියෝ එකක්", "action": "correct", "english": "video එකක්", "note": "round6: full-review correction"}
+{"sinhala": "සති අන්තෙ", "action": "correct", "english": "weekend එකේ", "note": "round6: full-review correction"}
+{"sinhala": "සමාජ සම්මතයක්", "action": "correct", "english": "social norm එකක්", "note": "round6: full-review correction"}
+{"sinhala": "සිංහල ජාතිය", "action": "correct", "english": "sinhala race එක", "note": "round6: full-review correction"}
+{"sinhala": "සීට් එක", "action": "correct", "english": "seat එක", "note": "round6: full-review correction"}
+{"sinhala": "සෙට් කරන්න", "action": "correct", "english": "set කරන්න", "note": "round6: full-review correction"}
+{"sinhala": "සෝන්ග් එක", "action": "correct", "english": "song එක", "note": "round6: full-review correction"}
+{"sinhala": "හිතන්නේ නෑ", "action": "correct", "english": "don't think", "note": "round6: full-review correction"}
+{"sinhala": "ෆ්‍රිජ් එක", "action": "correct", "english": "fridge එක", "note": "round6: full-review correction"}
+{"sinhala": "ෆේස්බුක් එකේ", "action": "correct", "english": "facebook එකේ", "note": "round6: full-review correction"}
+{"sinhala": "ෆොටො එකක්", "action": "correct", "english": "photo එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ෆොන් එක", "action": "correct", "english": "phone එක", "note": "round6: full-review correction"}
+{"sinhala": "අත්අඩංගුවට ගෙන", "action": "correct", "english": "arrest කර", "note": "round6: full-review correction"}
+{"sinhala": "අන්ෆ්‍රෙන්ඩ් කරනවා", "action": "correct", "english": "unfriend කරනවා", "note": "round6: full-review correction"}
+{"sinhala": "අපායට යන්න", "action": "correct", "english": "hell ekata යන්න", "note": "round6: full-review correction"}
+{"sinhala": "අලුත් පරපුරේ", "action": "correct", "english": "new generation එකේ", "note": "round6: full-review correction"}
+{"sinhala": "ආදරේ කියන්නේ", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "උම්මා එකක්", "action": "correct", "english": "kiss එකක්", "note": "round6: full-review correction"}
+{"sinhala": "එඩිට් කරලා", "action": "correct", "english": "edit කරලා", "note": "round6: full-review correction"}
+{"sinhala": "එපා ප්ලීස්", "action": "correct", "english": "epa please", "note": "round6: full-review correction"}
+{"sinhala": "ඒ ලෙවල්", "action": "correct", "english": "a/L", "note": "round6: full-review correction"}
+{"sinhala": "ඒ සීන් එක", "action": "correct", "english": "e scene එක", "note": "round6: full-review correction"}
+{"sinhala": "ඔන් කරගෙන", "action": "correct", "english": "on කරගෙන", "note": "round6: full-review correction"}
+{"sinhala": "ඔපිස් එකේ ගෑනු", "action": "correct", "english": "office girls ලා", "note": "round6: full-review correction"}
+{"sinhala": "කාඩ් එක", "action": "correct", "english": "card එක", "note": "round6: full-review correction"}
+{"sinhala": "කැම්පස් එකේ", "action": "correct", "english": "campus එකේ", "note": "round6: full-review correction"}
+{"sinhala": "කේක් එකක්", "action": "correct", "english": "cake එකක්", "note": "round6: full-review correction"}
+{"sinhala": "කෝල් එක", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "කෝල් කරනවා", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ගාසා තීරයේ", "action": "correct", "english": "gaza strip එකේ", "note": "round6: full-review correction"}
+{"sinhala": "ගැප් එක", "action": "correct", "english": "gap එක", "note": "round6: full-review correction"}
+{"sinhala": "චීන තානාපති කාර්යාලයෙන්", "action": "correct", "english": "chinese embassy එකෙන්", "note": "round6: full-review correction"}
+{"sinhala": "ජාතික උරුමයක්", "action": "correct", "english": "national heritage එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ට්විටර් එකෙන්", "action": "correct", "english": "twitter එකෙන්", "note": "round6: full-review correction"}
+{"sinhala": "ට්වීට් එක", "action": "correct", "english": "tweet එක", "note": "round6: full-review correction"}
+{"sinhala": "ට්වීට් කරන", "action": "correct", "english": "tweet කරන", "note": "round6: full-review correction"}
+{"sinhala": "ටැග් කරලා", "action": "correct", "english": "tag කරලා", "note": "round6: full-review correction"}
+{"sinhala": "ටීම් එකට", "action": "correct", "english": "team එකට", "note": "round6: full-review correction"}
+{"sinhala": "ටීවී එක", "action": "correct", "english": "tV එක", "note": "round6: full-review correction"}
+{"sinhala": "ටීවී එකේ", "action": "correct", "english": "tV එකේ", "note": "round6: full-review correction"}
+{"sinhala": "ටුවිට් එක", "action": "correct", "english": "tweet එක", "note": "round6: full-review correction"}
+{"sinhala": "ටුවිට් එකක්", "action": "correct", "english": "tweet එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ටොයිලට් එක", "action": "correct", "english": "toilet එක", "note": "round6: full-review correction"}
+{"sinhala": "ඩ්‍රාමා එකක්", "action": "correct", "english": "drama එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ඩොලර් වලින්", "action": "correct", "english": "dollar වලින්", "note": "round6: full-review correction"}
+{"sinhala": "දෙමල ඩයස්පෝරාව", "action": "correct", "english": "tamil diaspora එක", "note": "round6: full-review correction"}
+{"sinhala": "නායක සජිත් ප්‍රේමදාස", "action": "correct", "english": "opposition leader sajith premadasa", "note": "round6: casing fix; 4-word විපක්ෂ extension not applied (_find_max_units has no 4-word match path)"}
+{"sinhala": "නින්ද යන්නෙත් නෑ", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "නිල ඇදුම", "action": "correct", "english": "uniform එක", "note": "round6: full-review correction"}
+{"sinhala": "නිව්ස් එකක්", "action": "correct", "english": "news එකක්", "note": "round6: full-review correction"}
+{"sinhala": "නිවුස් එකක්", "action": "correct", "english": "news එකක්", "note": "round6: full-review correction"}
+{"sinhala": "පමණක් නොව", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "ප්‍රවෘත්ති වල", "action": "correct", "english": "news වල", "note": "round6: full-review correction"}
+{"sinhala": "පාර බ්ලොක්", "action": "correct", "english": "road eka block", "note": "round6: full-review correction"}
+{"sinhala": "පාස් වෙන්න", "action": "correct", "english": "pass වෙන්න", "note": "round6: full-review correction"}
+{"sinhala": "පැය ගාන", "action": "correct", "english": "few hours", "note": "round6: full-review correction"}
+{"sinhala": "පේජ් එක", "action": "correct", "english": "page එක", "note": "round6: full-review correction"}
+{"sinhala": "පේපර් එක", "action": "correct", "english": "paper එක", "note": "round6: full-review correction"}
+{"sinhala": "පොටෝ එකක් ගන්න", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "පෝං එකේ", "action": "correct", "english": "phone එකේ", "note": "round6: full-review correction"}
+{"sinhala": "පෝට් සිටියට", "action": "correct", "english": "port city එකට", "note": "round6: full-review correction"}
+{"sinhala": "පෝස්ට් එකක්", "action": "correct", "english": "post එකක්", "note": "round6: full-review correction"}
+{"sinhala": "බ්ලොක් කරල", "action": "correct", "english": "block කරලා", "note": "round6: full-review correction"}
+{"sinhala": "බැඳුම්කර කොමිසමට", "action": "correct", "english": "bond commission එකට", "note": "round6: full-review correction"}
+{"sinhala": "බැහැලා යන්න බෑ", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "බොරු දාන්න එපා", "action": "correct", "english": "don't post lies.", "note": "round6: full-review correction"}
+{"sinhala": "මයික් එකක්", "action": "correct", "english": "mic එකක්", "note": "round6: full-review correction"}
+{"sinhala": "මහ දවල්", "action": "correct", "english": "in broad daylight", "note": "round6: full-review correction"}
+{"sinhala": "මානසික ලෙඩක්", "action": "correct", "english": "mental Illness එකක්", "note": "round6: full-review correction"}
+{"sinhala": "මාව බ්ලොක්", "action": "correct", "english": "i'm blocked.", "note": "round6: full-review correction"}
+{"sinhala": "රජයේ සේවකයන්ට", "action": "correct", "english": "government servent ලාට", "note": "round6: full-review correction"}
+{"sinhala": "ලංකා පොලිසියට", "action": "correct", "english": "lanka police එකට", "note": "round6: full-review correction"}
+{"sinhala": "ලැප් එක", "action": "correct", "english": "laptop එක", "note": "round6: full-review correction"}
+{"sinhala": "වැඩ ටිකක්", "action": "correct", "english": "work tikak", "note": "round6: full-review correction"}
+{"sinhala": "වැන් එකක්", "action": "correct", "english": "van එකක්", "note": "round6: full-review correction"}
+{"sinhala": "විශ් කරන්න", "action": "correct", "english": "wish කරන්න", "note": "round6: full-review correction"}
+{"sinhala": "වීඩියො එකේ", "action": "correct", "english": "video එකේ", "note": "round6: full-review correction"}
+{"sinhala": "වොල් එකේ", "action": "correct", "english": "wall එකේ", "note": "round6: full-review correction"}
+{"sinhala": "ශීට් එක", "action": "correct", "english": "sheet එක", "note": "round6: full-review correction"}
+{"sinhala": "සපෝට් එකක්", "action": "correct", "english": "support එකක්", "note": "round6: full-review correction"}
+{"sinhala": "සබ් එකක්", "action": "correct", "english": "sub එකක්", "note": "round6: full-review correction"}
+{"sinhala": "සයිට් එකට", "action": "correct", "english": "site එකට", "note": "round6: full-review correction"}
+{"sinhala": "ස්විච් එක", "action": "correct", "english": "switch එක", "note": "round6: full-review correction"}
+{"sinhala": "සෙට් එකම", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "හම්බන්තොට වරායේ", "action": "correct", "english": "hambanthota port එකේ", "note": "round6: full-review correction"}
+{"sinhala": "හරි දේ", "action": "correct", "english": "right thing එක", "note": "round6: full-review correction"}
+{"sinhala": "හිතෙන්නෙ මට විතරද", "action": "remove", "note": "round6: full-review removal"}
+{"sinhala": "හොස්පිට්ල් එකේ", "action": "correct", "english": "hospital එකේ", "note": "round6: full-review correction"}
+{"sinhala": "ෆන් එකක්", "action": "correct", "english": "fun එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ෆෑන් එක", "action": "correct", "english": "fan එක", "note": "round6: full-review correction"}
+{"sinhala": "ෆෑන් කෙනෙක්", "action": "correct", "english": "fan කෙනෙක්", "note": "round6: full-review correction"}
+{"sinhala": "ෆිට් එකක්", "action": "correct", "english": "fit එකක්", "note": "round6: full-review correction"}
+{"sinhala": "ෆොටෝ එක", "action": "correct", "english": "photo එක", "note": "round6: full-review correction"}
+{"sinhala": "ෆොටෝ දාන්න", "action": "correct", "english": "photo දාන්න", "note": "round6: full-review correction"}
+{"sinhala": "ෆොටෝ වගයක්", "action": "correct", "english": "photo වගයක්", "note": "round6: full-review correction"}
+{"sinhala": "ෆොටෝස් ටික", "action": "correct", "english": "photos ටික", "note": "round6: full-review correction"}
