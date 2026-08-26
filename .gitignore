@@ -44,3 +44,9 @@ Thumbs.db
 CLAUDE.md
 KICKOFF_PROMPT.md
 LOG.md
+logs
+*.log 
+*.pid
+*.pt
+*model
+benchmark_results

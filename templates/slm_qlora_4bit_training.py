@@ -64,7 +64,7 @@ DATASETS = {
 
 # Train on one dataset and evaluate on multiple datasets.
 # You may put more than one item in TRAIN_DATASETS to run several independent training jobs.
-TRAIN_DATASETS = ["clean"]
+TRAIN_DATASETS = ["transliteration_heavy"]
 TEST_DATASETS = ["clean",  "codemix_heavy", "transliteration_heavy"]
 TRAIN_SUBSET = None  # e.g. 200 for a smoke test
 
@@ -92,7 +92,7 @@ MODELS = {
 # Sansala - Qwen/Qwen3-4B
 # Dulakshi - Qwen/Qwen3-8B
 # Janodi - meta-llama/Llama-3.2-3B, meta-llama/Llama-3.1-8B
-ACTIVE_MODELS = ["qwen_4b"]  # Ungated default. Use "llama_3b_gated" only after HF access is approved.
+ACTIVE_MODELS = ["llama_3b_gated"]  # Ungated default. Use "llama_3b_gated" only after HF access is approved.
 
 EPOCHS = 3.0
 LEARNING_RATE = 2e-4
