@@ -12,6 +12,27 @@ data/raw/
 eval/report.json
 eval/report.md
 
+# SLM experiment outputs and heavyweight artifacts
+templates/benchmark_results/
+qwen4b/**/lora_results/
+qwen4b/**/zero_shot_*_results/
+qwen7b/**/lora_results/
+qwen7b/**/zero_shot_*_results/
+sinllama/**/lora_results/
+sinllama/**/zero_shot_*_results/
+sinllama/**/merged_*/
+sinllama/runs/
+llama8b/**/lora_results/
+llama8b/**/zero_shot_*_results/
+**/checkpoints/
+**/checkpoint-*/
+**/adapter/
+**/adapter_model.safetensors
+**/optimizer.pt
+**/trainer_state.json
+**/training_args.bin
+**/events.out.tfevents*
+
 # OS cruft
 .DS_Store
 Thumbs.db
@@ -23,3 +44,9 @@ Thumbs.db
 CLAUDE.md
 KICKOFF_PROMPT.md
 LOG.md
+logs
+*.log 
+*.pid
+*.pt
+*model
+benchmark_results

@@ -2,10 +2,10 @@
   "id": "codemix_forced_single_substitution",
   "kind": "noiser",
   "noiser": "codemix",
-  "description": "Replaces codemix_attempt_probability_gate.json, whose whole premise (a probabilistic per-word 'attempt draw' that can leave an eligible lexicon match unsubstituted) no longer exists in v2 — see LOG.md / the plan for the v1->v2 redesign. 'ආණ්ඩුව' is the ONLY eligible word in this sentence (word bank entry, source=native, codemix_plausible=true). At light severity (k=1) it MUST always be substituted, for every seed, unconditionally — proving selection is now forced, not a probability-gated draw.",
+  "description": "Round 5 REPLACES this case's old premise entirely: v2/round4 forced exactly k substitutions every time light ran (a fixed count regardless of post length), which round 5 deliberately abandons in favor of sampling a per-post target CMI from SOLD's own natural distribution (mean ~10.6, with ~86.7% of draws landing on 0 -- see src/noisers/codemix.py's module docstring). So light no longer 'forces' a substitution for every seed; at THIS text and severity, only some seeds draw a positive target at all (e.g. seed=0 draws target_cmi=0 and stays byte-identical -- verified separately, not itself a regression case). Seed=2 is the one pinned here: 'ආණ්ඩුව' is the ONLY eligible word in this sentence (word bank entry, source=native, codemix_plausible=true), light draws target_cmi=19.53 at this seed (a non-zero, natural-looking draw), producing a budget that selects the single eligible unit deterministically -- proving that WHEN light does draw a positive target, selection over a single-candidate pool is still exact and deterministic, not a second independent coin flip on top of the CMI draw.",
   "text": "ආණ්ඩුව අසාධාරණයි",
   "severity": "light",
-  "seed": 0,
+  "seed": 2,
   "expected_text": "government එක අසාධාරණයි",
   "expected_rate": 0.5
 }

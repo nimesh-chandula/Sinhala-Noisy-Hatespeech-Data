@@ -340,28 +340,36 @@ def check_grapheme_integrity() -> bool:
 
 
 def check_codemix_substitution_spec() -> bool:
-    """codemix v2's real design spec, checked independently of trusting
-    src.noisers.codemix's own correctness: for every persisted codemix
-    output row, recompute the eligible-word-type pool straight from the
-    frozen word bank + original_text (reusing the noiser's own wordbank
-    loader and src.graphemes.text_runs, but NOT calling apply()/_apply() —
-    this must independently re-derive the pool, not just re-run the same
-    selection code and trivially agree with it), and assert:
-      1. n_substitutions == min(k, pool_size), where k is 1 (light) or 2
-         (heavy) and pool_size prefers plausible-flagged types, falling
-         back to all eligible types only when none are plausible — the
-         exact "prefer plausible, fall back to eligible, cap at k" contract
-         from the module docstring's "honest tradeoff" section.
-      2. A post with pool_size == 0 is byte-identical to its source
-         (noisy_text == original_text) — forced selection must never
-         invent a substitution where nothing is eligible.
-    This is the primary correctness gate for the v2 redesign — the whole
-    point of the redesign was fixing v1's 85.8%/79.7% untouched-row rate,
-    so the invariant checks the SPEC that fixes it, not a calibrated rate
-    number (see TARGET_NOISE_RATE's docstring in src/noisers/codemix.py for
-    why that's demoted to a drift tripwire instead)."""
-    from src.graphemes import text_runs as _text_runs
-    from src.noisers.codemix import _WORDS_PER_POST, _load_wordbank
+    """codemix round 5's real design spec (budget-capped, distribution-
+    sampled CMI), checked independently of trusting src.noisers.codemix's
+    own correctness: for every persisted codemix output row, recompute the
+    MAXIMAL non-overlapping unit set straight from original_text via
+    src.noisers.codemix._find_max_units — a PURE function with no
+    severity/budget/rng dependency, so calling it here is re-deriving
+    structure, not re-running the RNG-driven selection and trivially
+    agreeing with it (same discipline the pre-round-5 version of this check
+    used for the word-only pool). Then assert the packing contract
+    _pack_units_to_budget implements:
+      1. n_substitutions present, target_cmi present and within [0, 100].
+      2. n_substitutions == 0  <=>  noisy_text == original_text — forced
+         selection must never invent a substitution from nothing, and
+         conversely a chosen unit must always show up in the output.
+      3. Let max_tokens = sum of n_words over every unit in the maximal set,
+         and implied_budget = round(target_cmi/100 * n_sinhala_words).
+         If max_tokens <= implied_budget: the full ceiling was necessarily
+         used, so n_substitutions must equal len(maximal_units) exactly
+         (nothing left on the table when the budget covers everything).
+         Otherwise: n_substitutions must be <= len(maximal_units) (can never
+         choose more units than exist) — this is the bound side of the
+         packing contract; it cannot also assert an exact count here
+         because _pack_units_to_budget's rng-seeded packing is legitimately
+         one of several budget-satisfying subsets, and re-deriving THAT
+         exact subset without calling the RNG-driven code would mean
+         reimplementing _pack_units_to_budget's own randomised bin-packing
+         a second time — precisely the "second copy that could drift"
+         situation this discipline exists to avoid.
+    """
+    from src.noisers.codemix import _find_max_units, _load_cmi_bands
 
     outputs_dir = REPO_ROOT / "data" / "outputs"
     codemix_files = []
@@ -374,28 +382,44 @@ def check_codemix_substitution_spec() -> bool:
         _notes["codemix_substitution_spec"] = "vacuous: no data/outputs/*/codemix_*.jsonl yet"
         return True
 
-    wordbank = _load_wordbank()
-    if not wordbank:
-        _notes["codemix_substitution_spec"] = "vacuous: data/lexicon/codemix_wordbank.jsonl not yet built"
+    try:
+        _load_cmi_bands()
+    except FileNotFoundError:
+        _notes["codemix_substitution_spec"] = "vacuous: data/lexicon/codemix_cmi_bands.json not yet built"
         return True
 
     checked = 0
     bad = []
     for path in codemix_files:
-        severity = "heavy" if "heavy" in path.stem else "light"
-        k = _WORDS_PER_POST[severity]
         for row in _load_jsonl(path):
             checked += 1
-            sinhala_words = {run for is_sinhala, run in _text_runs(row["original_text"]) if is_sinhala}
-            eligible = sinhala_words & wordbank.keys()
-            plausible = {w for w in eligible if wordbank[w]["codemix_plausible"]}
-            pool_size = len(plausible) if plausible else len(eligible)
-            expected_n = min(k, pool_size)
+            source_id = row["source_id"]
+            target_cmi = row.get("target_cmi")
             actual_n = row.get("n_substitutions", -1)
-            if actual_n != expected_n:
-                bad.append((path.name, row["source_id"], f"n_substitutions={actual_n}, expected {expected_n}"))
-            elif pool_size == 0 and row["noisy_text"] != row["original_text"]:
-                bad.append((path.name, row["source_id"], "pool_size=0 but noisy_text != original_text"))
+            if target_cmi is None or not (0.0 <= target_cmi <= 100.0):
+                bad.append((path.name, source_id, f"target_cmi={target_cmi!r} out of [0,100]"))
+                continue
+
+            runs, units = _find_max_units(row["original_text"])
+            n_sinhala_words = sum(1 for is_sinhala, _run in runs if is_sinhala)
+            max_tokens = sum(u["n_words"] for u in units)
+            implied_budget = round(target_cmi / 100 * n_sinhala_words) if n_sinhala_words else 0
+
+            is_changed = row["noisy_text"] != row["original_text"]
+            if actual_n == 0 and is_changed:
+                bad.append((path.name, source_id, "n_substitutions=0 but noisy_text != original_text"))
+            elif actual_n > 0 and not is_changed:
+                bad.append((path.name, source_id, f"n_substitutions={actual_n} but noisy_text == original_text"))
+            elif max_tokens <= implied_budget and actual_n != len(units):
+                bad.append((path.name, source_id,
+                            f"n_substitutions={actual_n}, expected {len(units)} (budget covers full ceiling)"))
+            elif actual_n > len(units):
+                bad.append((path.name, source_id,
+                            f"n_substitutions={actual_n} exceeds max achievable units={len(units)}"))
+            elif target_cmi > 0 and units and actual_n == 0:
+                bad.append((path.name, source_id,
+                            f"target_cmi={target_cmi:.2f} > 0 with {len(units)} eligible unit(s) "
+                            "but n_substitutions=0 -- budget=0-but-target>0 fallback did not fire"))
             if len(bad) > 20:
                 break
         if len(bad) > 20:
@@ -404,6 +428,113 @@ def check_codemix_substitution_spec() -> bool:
     ok = not bad
     if not ok:
         _notes["codemix_substitution_spec"] = f"{len(bad)}(+)/{checked} rows violate the substitution spec, e.g. {bad[:5]}"
+    return ok
+
+
+def check_codemix_cmi_distribution() -> bool:
+    """Does what actually got generated match the declared target?
+    Recomputes realised CMI over every persisted codemix row using
+    eval.cmi's SCRIPT-ONLY classifier (script_only=True — not the natural-
+    text LID filter, which specifically undercounts this project's own
+    generated vocabulary; see eval/cmi.py's token_sequence_script_only
+    docstring), and asserts the realised mean CMI per severity is within a
+    generous +/-5 point tolerance of that severity's frozen band-implied
+    mean (data/lexicon/codemix_cmi_bands.json)."""
+    from src.noisers.codemix import _load_cmi_bands
+    from eval import cmi as cmi_mod
+
+    if not cmi_mod.is_available():
+        _notes["codemix_cmi_distribution"] = f"vacuous: eval.cmi unavailable ({cmi_mod.unavailable_reason()})"
+        return True
+
+    outputs_dir = REPO_ROOT / "data" / "outputs"
+    codemix_files = []
+    for split in ("train", "test"):
+        split_dir = outputs_dir / split
+        if split_dir.exists():
+            codemix_files.extend(sorted(split_dir.glob("codemix_*.jsonl")))
+    if not codemix_files:
+        _notes["codemix_cmi_distribution"] = "vacuous: no data/outputs/*/codemix_*.jsonl yet"
+        return True
+
+    try:
+        bands = _load_cmi_bands()
+    except FileNotFoundError:
+        _notes["codemix_cmi_distribution"] = "vacuous: data/lexicon/codemix_cmi_bands.json not yet built"
+        return True
+
+    def _band_implied_mean(severity: str) -> float:
+        total_w = sum(b[2] for b in bands[severity])
+        return sum(((b[0] + b[1]) / 2) * b[2] for b in bands[severity]) / total_w
+
+    TOLERANCE = 5.0
+    bad = []
+    detail: dict[str, dict] = {}
+    for path in codemix_files:
+        severity = "heavy" if "heavy" in path.stem else "light"
+        rows = _load_jsonl(path)
+        texts = [row["noisy_text"] for row in rows]
+        stats = cmi_mod.corpus_cmi_stats(texts, script_only=True, only_mixed=False)
+        realised_mean = stats["cmi_mean"] if stats["cmi_mean"] is not None else 0.0
+        expected_mean = _band_implied_mean(severity)
+        diff = abs(realised_mean - expected_mean)
+        detail[path.stem] = {"realised_mean": round(realised_mean, 2), "expected_mean": round(expected_mean, 2)}
+        if diff > TOLERANCE:
+            bad.append((path.name, f"realised_mean={realised_mean:.2f}, expected={expected_mean:.2f}, "
+                                    f"diff={diff:.2f} > {TOLERANCE}"))
+    _notes["codemix_cmi_distribution_detail"] = json.dumps(detail, ensure_ascii=False)
+
+    ok = not bad
+    if not ok:
+        _notes["codemix_cmi_distribution"] = f"{len(bad)} file(s) drifted from their declared CMI target: {bad}"
+    return ok
+
+
+def check_codemix_no_affect_substitution() -> bool:
+    """No entry in the CURRENT frozen word bank or phrase bank may have an
+    English side that is an evaluative/abusive/slur headword — checked
+    structurally against the frozen files themselves, not generated output,
+    so it catches a regression even before anything is generated from it."""
+    from src.noisers.codemix import LEXICON_PATH, PHRASEBANK_PATH
+
+    abusive_headwords = {
+        "maniac", "crazy", "idiot", "fool", "stupid", "dog", "pig", "devil",
+        "demon", "traitor", "thief", "liar", "shit", "moron", "beast", "swine",
+        "bastard", "whore", "bitch", "rascal", "wretch", "filth", "madman",
+        "lunatic",
+    }
+
+    if not LEXICON_PATH.exists():
+        _notes["codemix_no_affect_substitution"] = "vacuous: data/lexicon/codemix_wordbank.jsonl not yet built"
+        return True
+
+    bad = []
+    for row in _load_jsonl(LEXICON_PATH):
+        english = row.get("english", "")
+        headword = english.split()[0].lower().strip(".,") if english else ""
+        if headword in abusive_headwords:
+            bad.append(("wordbank", row["sinhala"], english))
+        if len(bad) > 20:
+            break
+
+    if len(bad) <= 20 and PHRASEBANK_PATH.exists():
+        for row in _load_jsonl(PHRASEBANK_PATH):
+            if not row.get("codemix_plausible"):
+                continue
+            english = row.get("english", "")
+            words = {w.lower().strip(".,") for w in english.split()}
+            if words & abusive_headwords:
+                bad.append(("phrasebank", row["sinhala"], english))
+            if len(bad) > 20:
+                break
+
+    ok = not bad
+    if not ok:
+        _notes["codemix_no_affect_substitution"] = (
+            f"{len(bad)}(+) affect-bearing entries present, e.g. {bad[:5]} "
+            "— check data/lexicon/codemix_review_corrections.jsonl or codemix_phrase_"
+            "review_corrections.jsonl for a missing or overwritten removal row"
+        )
     return ok
 
 
@@ -459,6 +590,8 @@ def run_invariants() -> dict[str, bool]:
         "determinism": check_determinism,
         "grapheme_integrity": check_grapheme_integrity,
         "codemix_substitution_spec": check_codemix_substitution_spec,
+        "codemix_cmi_distribution": check_codemix_cmi_distribution,
+        "codemix_no_affect_substitution": check_codemix_no_affect_substitution,
         "split_isolation": check_split_isolation,
     }
     return {name: fn() for name, fn in checks.items()}

@@ -2,10 +2,10 @@
   "id": "codemix_prefers_plausible",
   "kind": "noiser",
   "noiser": "codemix",
-  "description": "'රට' (country) is codemix_plausible=true; 'කතා' (talk) is an eligible word-bank entry but codemix_plausible=false (the LLM translator judged 'talk' as not a word a bilingual speaker would actually code-mix in). At light severity (k=1), the pool must prefer the plausible word — 'රට' must be the one substituted, for EVERY seed, never 'කතා', since selection only falls back to implausible words when NOTHING plausible is available (see src/noisers/codemix.py's `pool = plausible if plausible else eligible`).",
-  "text": "රට කතා",
+  "description": "Round 6 REPLACES the previous test pair: 'රට'/'කතා' no longer demonstrates a genuine preference, since round 6's full human review REMOVED 'කතා' from the word bank entirely (row 33's verdict was 'Remove') -- meaning only one word ('රට') is even eligible now, collapsing this case into a duplicate of codemix_forced_single_substitution.json rather than testing preference. Re-derived against a still-valid plausible/non-plausible PAIR mined fresh from the current bank: 'පරණ' (old) is codemix_plausible=true; 'කෑල්ල' (girl/piece, slang) is an eligible word-bank entry but codemix_plausible=false. Both occur adjacent in real SOLD text. At seed=2, light draws a non-zero target_cmi=19.53 (the same draw codemix_forced_single_substitution.json uses, since the draw only depends on (severity, seed, n_words), not wordbank content), and the resulting single-unit budget must select 'පරණ' (the plausible candidate), never 'කෑල්ල' -- selection only falls back to implausible words when nothing plausible is available (see src/noisers/codemix.py's _single_word_pool 4-level priority).",
+  "text": "පරණ කෑල්ල",
   "severity": "light",
-  "seed": 0,
-  "expected_text": "country කතා",
+  "seed": 2,
+  "expected_text": "old කෑල්ල",
   "expected_rate": 0.5
 }

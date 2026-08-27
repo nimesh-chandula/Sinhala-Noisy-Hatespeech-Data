@@ -1,0 +1,92 @@
+{
+  "methodology_note": "Natural CMI/SPF/I-index measured on SOLD train+test using eval/cmi.py, reusing scripts/measure_codemix_rate.py's LID (Swa-Bhasha negative filter + loanword table + Twitter-scrape artifact cleaning). Band shares, SPF, and I-index are computed over CODE-MIXED posts only (cmi > 0); line_rate reports the share of ALL posts that are mixed at all, computed separately. See docs/research_documentation.md for the full write-up and the plan's citations (Das & Gambäck 2014, Pratapa et al. 2018, Guzmán et al. 2017).",
+  "pooled": {
+    "n_posts": 10000,
+    "n_mixed": 1330,
+    "line_rate": 0.133,
+    "cmi_mean": 10.620984702949178,
+    "cmi_median": 8.333333333333337,
+    "cmi_band_counts": {
+      "0-10": 821,
+      "11-20": 358,
+      "21-30": 71,
+      "31-40": 33,
+      "41-50": 14,
+      "50+": 33
+    },
+    "cmi_band_shares": {
+      "0-10": 0.6172932330827068,
+      "11-20": 0.26917293233082706,
+      "21-30": 0.05338345864661654,
+      "31-40": 0.02481203007518797,
+      "41-50": 0.010526315789473684,
+      "50+": 0.02481203007518797
+    },
+    "spf_mean": 0.1662124268192298,
+    "spf_median": 0.13333333333333333,
+    "i_index_mean": 0.15247730809416293
+  },
+  "per_split": {
+    "train": {
+      "n_posts": 7500,
+      "n_mixed": 999,
+      "line_rate": 0.1332,
+      "cmi_mean": 10.830496441951311,
+      "cmi_median": 8.695652173913048,
+      "cmi_band_counts": {
+        "0-10": 607,
+        "11-20": 272,
+        "21-30": 60,
+        "31-40": 24,
+        "41-50": 12,
+        "50+": 24
+      },
+      "cmi_band_shares": {
+        "0-10": 0.6076076076076076,
+        "11-20": 0.2722722722722723,
+        "21-30": 0.06006006006006006,
+        "31-40": 0.024024024024024024,
+        "41-50": 0.012012012012012012,
+        "50+": 0.024024024024024024
+      },
+      "spf_mean": 0.16759077230406366,
+      "spf_median": 0.13333333333333333,
+      "i_index_mean": 0.15371842792530171
+    },
+    "test": {
+      "n_posts": 2500,
+      "n_mixed": 331,
+      "line_rate": 0.1324,
+      "cmi_mean": 9.98865169006963,
+      "cmi_median": 7.692307692307687,
+      "cmi_band_counts": {
+        "0-10": 214,
+        "11-20": 86,
+        "21-30": 11,
+        "31-40": 9,
+        "41-50": 2,
+        "50+": 9
+      },
+      "cmi_band_shares": {
+        "0-10": 0.6465256797583081,
+        "11-20": 0.2598187311178248,
+        "21-30": 0.03323262839879154,
+        "31-40": 0.027190332326283987,
+        "41-50": 0.006042296072507553,
+        "50+": 0.027190332326283987
+      },
+      "spf_mean": 0.16205240525019934,
+      "spf_median": 0.125,
+      "i_index_mean": 0.14873145096030302
+    }
+  },
+  "unigram_lexicon_attrition": {
+    "top_n_per_post": 4,
+    "n_candidate_types": 7967,
+    "n_in_bank": 3682,
+    "in_bank_rate": 0.46215639512991086,
+    "n_plausible": 2085,
+    "plausible_rate_of_candidates": 0.26170453119116355,
+    "plausible_rate_of_in_bank": 0.5662683324280282
+  }
+}

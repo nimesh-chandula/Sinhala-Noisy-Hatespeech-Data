@@ -35,7 +35,22 @@ class Row:
                                   # this. Additive field with a default so
                                   # every existing call site (which all pass
                                   # keyword args, never positional) keeps
-                                  # working unchanged.
+                                  # working unchanged. codemix round 5 changes
+                                  # this to occurrence-level UNITS (spans +
+                                  # singles), not distinct types — see
+                                  # src/noisers/codemix.py's module docstring.
+    target_cmi: float = 0.0      # codemix round 5: the per-post Code-Mixing
+                                  # Index sampled from that severity's frozen
+                                  # band distribution BEFORE fill (see
+                                  # src/noisers/codemix.py's _apply()) — the
+                                  # DECLARED target, checked against structure
+                                  # by eval/invariants.py's check_codemix_
+                                  # substitution_spec. The independently
+                                  # measured, actually-realised CMI is a
+                                  # separate post-hoc computation (eval/cmi.py),
+                                  # never just this field echoed back. 0.0 for
+                                  # every non-codemix condition (additive
+                                  # default, same precedent as n_substitutions).
 
     def validate(self) -> None:
         assert self.condition in CONDITIONS, self.condition

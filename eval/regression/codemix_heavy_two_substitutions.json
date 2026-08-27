@@ -2,10 +2,10 @@
   "id": "codemix_heavy_two_substitutions",
   "kind": "noiser",
   "noiser": "codemix",
-  "description": "Three eligible, plausible word-bank entries ('සල්ලි'->money, 'බස්'->bus, 'ආදරේ'->love, all human-verified/source=native or loanword). At heavy severity (k=2) exactly 2 distinct word TYPES must be substituted, not 1 and not 3 — proves heavy genuinely draws 2 when 2+ are available, distinct from the capped-at-1 behavior covered by codemix_lexicon_substitution.json.",
+  "description": "Three eligible, plausible word-bank entries ('සල්ලි'->money, 'බස්'->bus, 'ආදරේ'->love, all human-verified/source=native or loanword). Round 4's attestation gate still applies unchanged: 'bus' and 'love' both have PRIMARY evidence (real SOLD sentences where a person actually switched to them), while 'money' has only TERTIARY evidence (excluded from the selection gate), so the plausible+attested single-word pool is exactly {'බස්','ආදරේ'} -- 'සල්ලි' can never be chosen regardless of budget. Round 5 changes HOW MANY get chosen: no longer a fixed k=2, but a budget derived from a sampled target CMI (see src/noisers/codemix.py's module docstring 'Round 5' section). At seed=56, heavy draws target_cmi=74.03 on this 3-word post, producing budget=round(0.7403*3)=2 -- enough to pack BOTH plausible+attested units ('bus' and 'love'), demonstrating heavy CAN select multiple units in one post when the sampled budget is large enough, not just the single-unit case codemix_forced_single_substitution.json and codemix_prefers_plausible.json cover.",
   "text": "සල්ලි බස් ආදරේ",
   "severity": "heavy",
-  "seed": 0,
-  "expected_text": "money bus ආදරේ",
+  "seed": 56,
+  "expected_text": "සල්ලි bus love එක",
   "expected_rate": 0.6666666666666666
 }

@@ -68,7 +68,7 @@ def generate_split_severity(split: str, severity: str, rows: list[dict]) -> dict
     n_substituted_rows = 0
     with out_path.open("w", encoding="utf-8") as f:
         for row in rows:
-            noisy_text, realised_rate, substituted_types = _apply(
+            noisy_text, realised_rate, chosen_units, target_cmi = _apply(
                 row["text"], severity, seed=_row_seed(row["post_id"]))
             out_row = Row(
                 source_id=row["post_id"],
@@ -80,12 +80,13 @@ def generate_split_severity(split: str, severity: str, rows: list[dict]) -> dict
                 label=row["label"],
                 realised_noise_rate=realised_rate,
                 generator_version=GENERATOR_VERSION,
-                n_substitutions=len(substituted_types),
+                n_substitutions=len(chosen_units),
+                target_cmi=target_cmi,
             )
             out_row.validate()
             f.write(json.dumps(out_row.to_dict(), ensure_ascii=False) + "\n")
             rates.append(realised_rate)
-            n_substituted_rows += bool(substituted_types)
+            n_substituted_rows += bool(chosen_units)
 
     avg_rate = sum(rates) / len(rates) if rates else 0.0
     pct_touched = n_substituted_rows / len(rows) if rows else 0.0
