@@ -60,13 +60,30 @@ DATASETS = {
     "codemix_heavy": {"train": Path("outputs/train/codemix_heavy.jsonl"), "test": Path("outputs/test/codemix_heavy.jsonl")},
     "transliteration_light": {"train": Path("outputs/train/transliteration_light.jsonl"), "test": Path("outputs/test/transliteration_light.jsonl")},
     "transliteration_heavy": {"train": Path("outputs/train/transliteration_heavy.jsonl"), "test": Path("outputs/test/transliteration_heavy.jsonl")},
+    "compound_light": {"test": Path("outputs/test/compound_light.jsonl")},
+    "compound_heavy": {"train": Path("outputs/train/compound_heavy.jsonl"), "test": Path("outputs/test/compound_heavy.jsonl")},
+    "misspell_light": {"test": Path("outputs/test/misspell_light.jsonl")},
+    "misspell_heavy": {"train": Path("outputs/train/misspell_heavy.jsonl"), "test": Path("outputs/test/misspell_heavy.jsonl")},
+}
+
+DATASET_ALIASES = {
+    "codemix": "codemix_heavy",
+    "transliteration": "transliteration_heavy",
+    "compound": "compound_heavy",
+    "misspell": "misspell_heavy",
 }
 
 # Train on one dataset and evaluate on multiple datasets.
 # You may put more than one item in TRAIN_DATASETS to run several independent training jobs.
-TRAIN_DATASETS = ["transliteration_heavy"]
-TEST_DATASETS = ["clean",  "codemix_heavy", "transliteration_heavy"]
+
+# "clean", "codemix_heavy", "transliteration_heavy","compound_heavy", "misspell_heavy"
+
+TRAIN_DATASETS = ["clean"]
+TEST_DATASETS = ["clean", "codemix_heavy", "transliteration_heavy","compound_heavy", "misspell_heavy"]
 TRAIN_SUBSET = None  # e.g. 200 for a smoke test
+
+TRAIN_DATASETS = [DATASET_ALIASES.get(name, name) for name in TRAIN_DATASETS]
+TEST_DATASETS = [DATASET_ALIASES.get(name, name) for name in TEST_DATASETS]
 
 # Change ACTIVE_MODELS assigned to you and change TRAIN_DATASETS array if you want to change train
 # datasets. You can also change TEST_DATASETS array if you want to change test datasets. 
@@ -92,7 +109,7 @@ MODELS = {
 # Sansala - Qwen/Qwen3-4B
 # Dulakshi - Qwen/Qwen3-8B
 # Janodi - meta-llama/Llama-3.2-3B, meta-llama/Llama-3.1-8B
-ACTIVE_MODELS = ["llama_3b_gated"]  # Ungated default. Use "llama_3b_gated" only after HF access is approved.
+ACTIVE_MODELS = ["sinllama_gated"]  # Ungated default. Use "llama_3b_gated" only after HF access is approved.
 
 EPOCHS = 3.0
 LEARNING_RATE = 2e-4
