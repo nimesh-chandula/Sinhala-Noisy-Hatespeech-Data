@@ -51,10 +51,15 @@ DATASETS = {
     "codemix_heavy": {"train": Path("outputs/train/codemix_heavy.jsonl"), "test": Path("outputs/test/codemix_heavy.jsonl")},
     "transliteration_light": {"train": Path("outputs/train/transliteration_light.jsonl"), "test": Path("outputs/test/transliteration_light.jsonl")},
     "transliteration_heavy": {"train": Path("outputs/train/transliteration_heavy.jsonl"), "test": Path("outputs/test/transliteration_heavy.jsonl")},
+    "compound_light": {"test": Path("outputs/test/compound_light.jsonl")},
+    "compound_heavy": {"train": Path("outputs/train/compound_heavy.jsonl"), "test": Path("outputs/test/compound_heavy.jsonl")},
+    "misspell_light": {"test": Path("outputs/test/misspell_light.jsonl")},
+    "misspell_heavy": {"train": Path("outputs/train/misspell_heavy.jsonl"), "test": Path("outputs/test/misspell_heavy.jsonl")},
 }
+# "clean", "codemix_heavy", "transliteration_heavy"
 
-TRAIN_DATASETS = ["codemix_heavy"]
-TEST_DATASETS = ["clean", "codemix_heavy", "transliteration_heavy"]
+TRAIN_DATASETS = ["compound_heavy"]
+TEST_DATASETS = [ "clean", "codemix_heavy", "transliteration_heavy","compound_heavy", "misspell_heavy"]
 TRAIN_SUBSET = None  # e.g. 200 for a smoke test
 
 MODELS = {
