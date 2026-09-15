@@ -50,11 +50,13 @@ from transformers import (
 # ============================================================================
 # Configuration: edit these defaults or override from the command line.
 # ============================================================================
-
+# "codemix"
+# "transliteration"
+# "clean"
 SEED = 42
-MODEL_NAME = "llama_3b_gated"
+MODEL_NAME = "llama_8b_gated"
 TRAINED_DATASET = "clean"
-TEST_DATASETS = ["clean"]
+TEST_DATASETS = ["compound","misspell",]
 
 DATA_ROOT = None
 HEAD_ROOT = Path("benchmark_results/classification_head_4bit")
@@ -97,11 +99,69 @@ DATASETS = {
         "train": Path("outputs/train/transliteration_heavy.jsonl"),
         "test": Path("outputs/test/transliteration_heavy.jsonl"),
     },
+    "compound_light": {
+        "test": Path("outputs/test/compound_light.jsonl"),
+    },
+    "compound_heavy": {
+        "test": Path("outputs/test/compound_heavy.jsonl"),
+    },
+    "misspell_light": {
+        "test": Path("outputs/test/misspell_light.jsonl"),
+    },
+    "misspell_heavy": {
+        "test": Path("outputs/test/misspell_heavy.jsonl"),
+    },
+}
+
+TRAINABLE_DATASETS = {
+    name
+    for name, paths in DATASETS.items()
+    if "train" in paths
 }
 
 DATASET_ALIASES = {
     "codemix": "codemix_heavy",
     "transliteration": "transliteration_heavy",
+    "compound": "compound_heavy",
+    "misspell": "misspell_heavy",
+}
+
+METRICS_COLUMNS = [
+    "Model",
+    "Trained Noise Condition",
+    "Test Noise Condition",
+    "Train Size",
+    "Test Size",
+    "Accuracy",
+    "Macro F1",
+    "balanced_accuracy",
+    "Precision (Offensive)",
+    "Recall (Offensive)",
+    "F1 (Offensive)",
+    "Precision (Not-Offensive)",
+    "Recall (Not-Offensive)",
+    "F1 (Not-Offensive)",
+    "Support (Offensive)",
+    "Support (Not-Offensive)",
+]
+
+METRICS_RENAME = {
+    "model": "Model",
+    "train_dataset": "Trained Noise Condition",
+    "test_dataset": "Test Noise Condition",
+    "train_size": "Train Size",
+    "num_test_samples": "Test Size",
+    "accuracy": "Accuracy",
+    "macro_f1": "Macro F1",
+    "balanced_accuracy": "balanced_accuracy",
+    "off_precision": "Precision (Offensive)",
+    "off_recall": "Recall (Offensive)",
+    "off_f1": "F1 (Offensive)",
+    "not_precision": "Precision (Not-Offensive)",
+    "not_recall": "Recall (Not-Offensive)",
+    "not_f1": "F1 (Not-Offensive)",
+    "off_support": "Support (Offensive)",
+    "not_support": "Support (Not-Offensive)",
 }
 
 
@@ -188,9 +248,14 @@ def validate_selection(args):
     trained_dataset = normalize_dataset_name(args.trained_dataset)
     test_datasets = [normalize_dataset_name(name) for name in (split_csv(args.test_dataset) if args.test_dataset else TEST_DATASETS)]
 
-    unknown = {trained_dataset, *test_datasets} - set(DATASETS)
+    unknown = set(test_datasets) - set(DATASETS)
     if unknown:
-        raise KeyError(f"Undefined dataset names: {sorted(unknown)}")
+        raise KeyError(f"Undefined test dataset names: {sorted(unknown)}")
+    if trained_dataset not in TRAINABLE_DATASETS:
+        raise ValueError(
+            f"{trained_dataset!r} is not available for --trained-dataset. "
+            f"Trainable saved-head datasets are: {sorted(TRAINABLE_DATASETS)}"
+        )
 
     run_dir = artifact_dir(args.head_root, args.model, trained_dataset, args.seed)
     state_path = run_dir / "classification_head_state.pt"
@@ -230,6 +295,15 @@ def find_data_root(explicit, test_datasets):
                 return candidate
 
     raise FileNotFoundError("Could not locate selected test files. Set DATA_ROOT explicitly.")
+
+
+def count_jsonl_rows(path):
+    with Path(path).open(encoding="utf-8") as handle:
+        return sum(1 for line in handle if line.strip())
+
+
+def format_metrics_for_csv(results):
+    return results.rename(columns=METRICS_RENAME).reindex(columns=METRICS_COLUMNS)
 
 
 def read_jsonl(path):
@@ -516,7 +590,10 @@ def evaluate_dataset(model, tokenizer, frame, test_dataset, config, output_dir):
         "model_id": config["model_id"],
         "train_dataset": config["trained_dataset"],
         "test_dataset": test_dataset,
+        "train_size": config["train_size"],
         "num_test_samples": len(frame),
+        "off_support": int(np.sum(labels == 1)),
+        "not_support": int(np.sum(labels == 0)),
         **metrics,
     }
     predictions_frame = pd.DataFrame({
@@ -563,6 +640,8 @@ def main():
     data_root = find_data_root(args.data_root, test_datasets)
     print("DATA_ROOT =", data_root.resolve())
     frames = load_test_frames(data_root, test_datasets)
+    train_size = count_jsonl_rows(Path(data_root) / DATASETS[trained_dataset]["train"])
+    print(f"TRAIN SIZE: {train_size}")
 
     dtype = compute_dtype()
     print("torch", torch.__version__, "| CUDA", torch.cuda.is_available(), "| dtype", dtype)
@@ -581,6 +660,7 @@ def main():
         "model_id": model_id,
         "trained_dataset": trained_dataset,
         "test_datasets": test_datasets,
+        "train_size": train_size,
         "seed": args.seed,
         "max_length": max_length,
         "batch_size": args.batch_size,
@@ -599,8 +679,9 @@ def main():
         print(f"{test_dataset:24s} macro_f1={result['macro_f1']:.4f} accuracy={result['accuracy']:.4f}")
 
     results = pd.DataFrame(result_rows)
+    metrics_for_csv = format_metrics_for_csv(results)
     predictions = pd.concat(prediction_frames, ignore_index=True)
-    results.to_csv(output_dir / "metrics.csv", index=False)
+    metrics_for_csv.to_csv(output_dir / "metrics.csv", index=False)
     predictions.to_json(output_dir / "predictions.jsonl", orient="records", lines=True, force_ascii=False)
 
     with (output_dir / "run_summary.json").open("w", encoding="utf-8") as handle:
@@ -611,7 +692,7 @@ def main():
         }, handle, indent=2)
 
     print()
-    print(results.round(4).to_string(index=False))
+    print(metrics_for_csv.round(4).to_string(index=False))
     print("Artifacts:", output_dir.resolve())
 
     del model, tokenizer
