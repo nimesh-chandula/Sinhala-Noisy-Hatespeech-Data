@@ -89,10 +89,6 @@ TEST_DATASETS = [DATASET_ALIASES.get(name, name) for name in TEST_DATASETS]
 # datasets. You can also change TEST_DATASETS array if you want to change test datasets. 
 print("Datasets:", TRAIN_DATASETS, "->", TEST_DATASETS)
 
-# Naveen - Sinllama
-# Sansala - Qwen/Qwen3-4B,
-# Dulakshi - Qwen/Qwen3-8B,
-# Janodi - meta-llama/Llama-3.2-3B,meta-llama/Llama-3.1-8B
 
 # Llama repositories are gated on Hugging Face. Use Qwen defaults unless your
 # HF account has approved access for the selected gated model.
@@ -104,11 +100,6 @@ MODELS = {
     "sinllama_gated": "polyglots/SinLlama_v01",
 }
 
-# Change ACTIVE_MODELS assigned to you and change TRAIN_DATASETS / TEST_DATASETS above.
-# Naveen - SinLlama
-# Sansala - Qwen/Qwen3-4B
-# Dulakshi - Qwen/Qwen3-8B
-# Janodi - meta-llama/Llama-3.2-3B, meta-llama/Llama-3.1-8B
 ACTIVE_MODELS = ["sinllama_gated"]  # Ungated default. Use "llama_3b_gated" only after HF access is approved.
 
 EPOCHS = 3.0
