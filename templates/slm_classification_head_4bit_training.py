@@ -98,8 +98,7 @@ for i in range(torch.cuda.device_count()):
     props = torch.cuda.get_device_properties(i)
     print(f"cuda:{i} {props.name}, {props.total_memory / 2**30:.1f} GiB")
 
-# hf_token = os.environ.get("HF_TOKEN") or get_token()
-hf_token = "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"
+hf_token = os.environ.get("HF_TOKEN") or get_token()
 HF_AUTH_KWARGS = {"token": hf_token} if hf_token else {}
 if os.environ.get("HF_TOKEN"):
     login(token=hf_token, add_to_git_credential=False)

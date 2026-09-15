@@ -1,3 +1,0 @@
-condition,macro_f1,delta_vs_clean,degradation_clean_minus_noisy,delta_ci95_low,delta_ci95_high,prediction_flip_rate,clean_correct_to_noisy_wrong_rate_all,regression_rate_given_clean_correct,noisy_correct_from_clean_wrong_rate_all
-light,0.5012775157232704,0.023927056209794406,-0.023927056209794406,-0.002175571246236568,0.0516298493804378,0.4984,0.2328,0.485,0.2656
-heavy,0.4937699516012769,0.016419492087800913,-0.016419492087800913,-0.009245860059295985,0.043233762540871155,0.5036,0.2376,0.495,0.266
