@@ -6,6 +6,7 @@ requests             # HTTP fetch for SOLD (HF) and Swa-Bhasha (HF mirrors)
 python-Levenshtein   # fast CER; pure-Python fallback lives in eval/gold_cer.py
 numpy
 pandas
+openpyxl              # Excel export for experiment metrics
 scikit-learn         # tiny char-ngram discriminator: real vs generated (optional, Phase 2+)
 
 # Phase 1 (romanizer bake-off)
