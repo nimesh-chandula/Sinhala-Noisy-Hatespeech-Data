@@ -1,125 +1,115 @@
-# Sinhala Noise Dataset Builder
+# Sinhala Noisy Hate-Speech Benchmark
 
-A pipeline that transforms [SOLD](https://huggingface.co/datasets/sinhala-nlp/SOLD)
-(the Sinhala Offensive Language Dataset) into "noised" variants — text
-rendered the way people actually type Sinhala online: romanized
-("Singlish"), code-mixed with English, misspelled, and abbreviated — at
-two severity levels each, for benchmarking hate-speech detection models
-under realistic input noise.
+This repository introduces a benchmark for evaluating Sinhala offensive and
+hate-speech classifiers under realistic social-media noise. Starting from the
+[SOLD](https://huggingface.co/datasets/sinhala-nlp/SOLD) dataset, we create
+aligned clean and noisy train/test sets, then evaluate classical machine
+learning models and small language models (SLMs) across the resulting
+conditions.
 
-**Design principle:** the evaluation harness (`eval/harness.py`) was built
-*before* any noise-generation code. Every subsequent design decision was
-accepted or rejected by whether it improved the harness's measured
-output — CER against a gold romanization set, realism divergence against
-real Singlish text, and a set of hard pass/fail invariants — not by
-inspection alone.
+The benchmark is designed to answer a practical question: how well does a
+model trained on clean Sinhala continue to detect offensive content when the
+same text is written as Singlish, mixed with English, or contains spelling
+noise?
 
-## Status
+## Benchmark tasks
 
-| Phase | Goal | Status |
-|---|---|---|
-| 0 | Build the verifier (harness, metrics, gold/reference data) | Complete |
-| 1 | Select a Sinhala→Romanized ("Singlish") conversion backend | Complete |
-| 2 | Build the transliteration noiser; generate real output | Complete, paused at manual review |
-| 3 | Code-mixing noise vector | Complete — human-review gate closed |
-| 4 | Misspelling / abbreviation noise vectors | Not started |
-| 5 | Full dataset generation | Not started |
+Each post retains its original binary label: `0` for not offensive and `1` for
+offensive. Models can be trained and tested on the following conditions:
 
-**Headline results** (`python eval/harness.py`, full 10,000-post corpus):
-- `gold_cer` (aksharamukha, colloquial scheme) = **0.039** against a
-  target of < 0.10, the best of five backends compared, including the
-  actual live UoM Sinhala Romaniser website.
-- `realism_jsd` (transliteration, light/heavy severity) = **0.105 / 0.107**
-  against a target of 0.076 (30% reduction from baseline) — **target not
-  met**, recorded as-is rather than adjusted to look better. See
-  `docs/research_documentation.md` §7–8 for the full discussion.
-- `codemix`: **93.2% / 93.9%** of posts (train/test) touched by a real
-  substitution, up from an earlier probabilistic design's 14-20% — see
-  `docs/research_documentation.md` §9 for the full v1→v2 redesign and the
-  3-round human review that followed it.
-- All 14 invariants and 13 regression cases pass.
+| Condition | Description |
+| --- | --- |
+| `clean` | Original SOLD Sinhala text. |
+| `transliteration_light` / `transliteration_heavy` | Sinhala text written in Latin-script Singlish. |
+| `codemix_light` / `codemix_heavy` | Sinhala text with English substitutions. |
+| `misspell_light` / `misspell_heavy` | Text with realistic spelling noise. |
+| `compound_light` / `compound_heavy` | Multiple noise types applied together. |
+| `all_noise_light` / `all_noise_heavy` | Combined benchmark noise settings. |
 
-See `docs/research_documentation.md` for the complete methodology,
-data-source provenance, and results writeup.
+This supports clean-to-noisy robustness testing, matched train/test evaluation,
+and cross-condition evaluation (for example, train on clean text and test on
+heavy code-mixed text). Results, tables, and reproduced figures are kept under
+`results/finalresults/reproduced_outputs/`.
 
-## Quickstart
+## Project layout
 
-```bash
-python -m venv .venv
-.venv/Scripts/activate        # or: source .venv/bin/activate
-pip install -r requirements.txt
-
-python scripts/fetch_data.py              # fetch SOLD + Swa-Bhasha, build gold/reference sets
-python eval/harness.py                     # run the full evaluation suite -> eval/report.json
-
-# transliteration
-python scripts/build_word_variants.py      # build the spelling-variant lexicon
-python scripts/generate_transliteration.py # generate the noised dataset
-python scripts/build_review_sample.py --condition transliteration
-
-# code-mixing (word bank already built; these scripts rebuild it from source)
-python scripts/select_codemix_targets.py       # candidate words per post -> translation worklist
-python scripts/translate_codemix_worklist.py --submit   # one-time LLM batch translation
-python scripts/build_codemix_wordbank.py       # merge verified + LLM + human-review-corrections -> frozen word bank
-python scripts/generate_codemix.py             # generate the noised dataset
-python scripts/build_codemix_usage_report.py   # impact-ordered review report
-python scripts/build_review_sample.py --condition codemix
-```
-
-## Repository layout
-
-```
+```text
 data/
-  sold/          SOLD train/test, parsed to JSONL (never edited)
-  gold/          Sinhala<->Romanized pairs held out for CER scoring
-  reference/     real Singlish text used for realism scoring
-  lexicon/       word_variants.jsonl (spelling variants, transliteration);
-                 codemix_wordbank.jsonl (frozen, code-mixing — merged from
-                 the hand-curated lexicon, LLM translation, and 3 rounds of
-                 human review corrections; see docs §9)
-  outputs/       generated noised sets + human-review samples
-src/
-  graphemes.py       grapheme-cluster utilities (Sinhala syllables are multi-codepoint)
-  schema.py          output row schema + validation
-  pipeline.py         compound noising pipeline
-  romanizers/        Sinhala -> Singlish backends (aksharamukha, UoM-rules reimplementation, etc.)
-  noisers/           transliteration.py, codemix.py (both done); misspell/abbreviate (stubs)
-eval/
-  harness.py         runs everything, writes eval/report.json + report.md
-  invariants.py       hard pass/fail checks
-  gold_cer.py         CER vs. the gold set
-  realism.py          char-3-gram JSD vs. a real-Singlish reference corpus
-  regression/         frozen hand-checked cases that must keep passing
-scripts/              one-off / generation scripts (see docstrings for what each does)
-docs/research_documentation.md   full methodology + results writeup
+  sold/                         Original SOLD train/test JSONL files
+  outputs/train/ and outputs/test/
+                                Generated benchmark conditions
+  gold/, reference/, lexicon/   Evaluation references and noise resources
+
+SLMs/
+  encoders/                     Encoder-model notebooks: XLM-R, SinBERT,
+                                LaBSE, and HelaBERT
+  decoders/                     Decoder-model QLoRA and classification-head
+                                training scripts and notebooks
+  sinllama/                     SinLLaMA-specific training, evaluation, and
+                                saved model/result files
+
+MNB/                            Multinomial Naive Bayes baseline notebook
+SVM/                            Support Vector Machine experiment notebooks
+XgBoost/                        XGBoost experiment notebooks
+results/finalresults/           Final benchmark outputs and reproduced plots/tables
+
+src/                            Noise-generation components and utilities
+scripts/                        Dataset preparation and generation scripts
+eval/                           Dataset quality checks and evaluation harness
+docs/                           Method, fine-tuning, and experiment notes
 ```
 
-## Data sources
+## Models evaluated
 
-- **SOLD** — `sinhala-nlp/SOLD` on HuggingFace: 10,000 Sinhala social-media
-  posts labeled offensive/not-offensive. Fetched directly over HTTP by
-  `scripts/fetch_data.py`; exact file hashes recorded in
-  `data/PROVENANCE.json`.
-- **Swa-Bhasha** — a Sinhala-romanization word/sentence corpus, used to
-  build the CER gold set, the realism reference corpus, and the
-  spelling-variant lexicon.
-- **UoM Sinhala Romaniser** (https://nisansads.staff.uom.lk/CodeSamples/sinhala_romaniser.php)
-  — a live third-party tool used as one comparison backend in the
-  romanizer bake-off; called only twice, ever, to build small cached
-  calibration/comparison samples (never in a loop — see
-  `src/romanizers/uom_rules.py`).
+The benchmark includes three model groups:
 
-Full provenance and methodology for all of the above are in
-`docs/research_documentation.md` §2.
+- Classical baselines: Multinomial Naive Bayes, SVM, and XGBoost.
+- Encoder models: XLM-R (base and large), SinBERT, LaBSE, and HelaBERT.
+- Decoder models: QLoRA/classification-head experiments for Llama, Qwen, and
+  SinLLaMA. SinLLaMA has its own implementation in `SLMs/sinllama/`.
 
-## License
+## How to use
 
-The code in this repository is MIT-licensed (see `LICENSE`). This does
-**not** extend to the contents of `data/` — SOLD, Swa-Bhasha, and the UoM
-Sinhala Romaniser's output are third-party data, included here for
-research reproducibility, and remain under whatever terms their original
-authors/publishers set.
+1. Clone the repository and create a Python environment (Python 3.11+).
 
-## Requirements
+   ```bash
+   python -m venv .venv
+   .venv/Scripts/activate  # Windows
+   pip install -r requirements.txt
+   ```
 
-Python 3.11+. See `requirements.txt`.
+2. The benchmark JSONL files are in `data/sold/` (clean) and
+   `data/outputs/train/` / `data/outputs/test/` (noisy conditions). Each row
+   contains text, an identifier, and a binary `label`.
+
+3. Run a model family from its notebook folder:
+
+   - Classical baselines: `MNB/`, `SVM/`, or `XgBoost/`
+   - Encoder experiments: `SLMs/encoders/`
+   - Decoder experiments: `SLMs/decoders/`
+   - SinLLaMA experiments: `SLMs/sinllama/`
+
+   Select the desired training and test conditions in the notebook/script
+   configuration, then run it in Jupyter or with Python. Decoder and SinLLaMA
+   training requires a CUDA-capable GPU and the Hugging Face/PEFT dependencies
+   described in `docs/`.
+
+4. To verify the generated data or regenerate the noise conditions, run:
+
+   ```bash
+   python eval/harness.py
+   python scripts/generate_transliteration.py
+   python scripts/generate_codemix.py
+   ```
+
+   See `docs/research_documentation.md` for the generation methodology and
+   quality checks.
+
+## Data and license
+
+SOLD is sourced from `sinhala-nlp/SOLD` on Hugging Face. The repository also
+uses Swa-Bhasha resources for romanization evaluation and reference text.
+Source provenance is recorded in `data/PROVENANCE.json`.
+
+The repository code is licensed under the MIT License. Third-party datasets
+and derived resources remain subject to their original terms.
